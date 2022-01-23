@@ -1,0 +1,5 @@
+#!/bin/sh
+rsync -avu ./ kw6od_benoit@lewhippet.com:~/whippet --exclude-from=.gitignore --exclude=".*"
+# Flag u to script only recents files
+# Flag v to have informations during transfer
+# Flag progress to have progress bar
