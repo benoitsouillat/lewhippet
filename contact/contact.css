@@ -147,9 +147,21 @@ address {
 
 @media all and (max-width : 470px)
 {
+
+    .bandeau_title > section {
+      font-size: 1.2rem;
+    }
+
     .btn {
         min-width: unset;
         width: 120px;
+    }
+
+    .div_address > img {
+      display: none;
+    }
+    .fa-map-marker {
+      text-indent: -10px;
     }
 
 }
