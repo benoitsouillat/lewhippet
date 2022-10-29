@@ -1,0 +1,512 @@
+
+body {
+	background-color: #000;
+	color: #000;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: auto;
+}
+header {
+	color: #E1ECEC;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	width: 100%;
+
+}
+main {
+	width: 100%;
+	background-color: #fff;
+	text-indent: .5%;
+}
+footer {
+	color: white;
+	text-align: center;
+	font-size: .9em;
+	font-style: italic;
+	padding: 10px;
+}
+table {
+	width: 100%;
+}
+
+address {
+	text-align: center;
+}
+
+#next_naissance h5 {
+	font-weight: bold;
+	text-align: center;
+	font-size: 1rem;
+	color: #CC6699;
+}
+#next_naissance p {
+	font-weight: bold;
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	border: solid 1px black;
+	box-shadow: 2px 2px 2px black;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px;
+	font-size: 1rem;
+	font-weight: bold;
+	text-decoration: unset;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+
+
+	transition-duration: 500ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 50ms;
+}
+.btn:hover {
+	transform: scale(1.1);
+	text-decoration: underline;
+}
+.btn-pink {
+	background-color: #CC6699;
+	color: white;
+}
+
+.btn-gold {
+	background-color: goldenrod;
+	color: black;
+}
+
+
+.menu {
+	margin-top: 0;
+	padding-top: 2px;
+	width: 100%;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	font-weight: bold;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+.menu span {
+	font-size: large;
+}
+.menu_link {
+	color: #CCC;
+	list-style-type: none;
+	text-decoration: underline;
+	padding: 2px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.menu_link:hover {
+	font-weight: bold;
+}
+.infos_update {
+	width: 100%;
+	font-weight: bold;
+	font-size: .8rem;
+	display: flex;
+	justify-content: flex-end;
+}
+.infos_update span {
+	font-size: 0.6rem;
+	color: white;
+}
+.bandeau_title {
+	background-color: #CC6699;
+	color: #FFC;
+	padding: 3px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: auto;
+}
+.bandeau_title img {
+	border: none;
+	width: 154px;
+	height: 101px;
+}
+.bandeau_title section {
+	padding-left: 15px;
+	text-align: center;
+}
+.bandeau_title section a {
+	color: #FFC;
+}
+.bandeau_title section h3 {
+	font-size: 1.5rem;
+	text-align: center;
+}
+.journal_puppy {
+	text-align: center;
+	background-color: #E4E4E4;
+}
+.journal_puppy h3 {
+	font-size: x-large;
+	color: #CC6699;
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	
+}
+.journal_puppy h4 {
+	margin: 0;
+	padding: 0;
+	font-size: x-large;
+	font-weight: 400;
+	
+}
+.center {
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+.vente_dist {
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: xx-small;
+}
+.puppy_dispo {
+	text-align: center;
+	margin-bottom: 10px;
+
+}
+.puppy_dispo h5 {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	color: #C06;
+	font-size: x-large;
+	font-style: italic;
+}
+.puppy_dispo span {
+	color: #000;
+	font-weight: 200;
+	font-size: .8rem;
+}
+.puppy_dispo p {
+	text-align: center;
+	margin-block-start: 0;
+	font-style: italic;
+}
+.puppies_container {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.section_litter {
+	width: 90%;
+	margin: 10px auto;
+	padding: 15px;
+	border: #c06 2px solid;
+	box-shadow: #C06 2px 2px 5px;
+	border-radius: 15px;
+
+
+}
+.section_litter h3 {
+	text-align: center;
+	color: #CC6699;
+	text-decoration: underline;
+	font-size: x-large;
+}
+.section_litter > .gallery {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.puppies_container figure {
+	max-width: 400px;
+	text-align: center;
+	color: rgb(66, 65, 65);
+	font-size: 1.0rem;
+	font-weight: bold;
+}
+.puppies_img {
+	width: auto;
+	max-width: 250px;
+	border-radius: 20px;
+	margin-top: 5px;
+	box-shadow: 2px 2px 5px darkgrey;
+}
+#puppies_articles_container {
+	text-align: center;
+	font-size: .9rem;
+	font-weight: 600;
+	font-style: italic;
+}
+#puppies_articles_container h5 {
+	color: #CC6699;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.3rem;
+}
+#puppies_articles_container p {
+	margin: 30px 10px;
+}
+.puppies_articles_box {
+	margin-top: 30px;
+	padding-top: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #CC6699;
+}
+.puppies_articles_img {
+	max-width: 700px;
+
+	flex-wrap: nowrap;
+	margin: auto;
+}
+.img_medium_vertical {
+	width: calc(30% - 10px);
+	border: solid black 5px;
+}
+.img_medium_horizontal {
+	width: calc(45% - 10px);
+	border: solid black 5px;
+}
+
+.puppy_infos {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.section_infos h6 {
+	color: #CC6699;
+	font-weight: bold;
+	font-style: unset;
+	font-size: 1rem;
+	margin-bottom: 20px;
+}
+.section_infos p {
+	width: 90%;
+	margin: auto;
+}
+
+#male_femelle {
+	border-top: solid 1px grey;
+	background-color: rgb(245, 205, 211);
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 60px;
+
+}
+#male_femelle h2{
+	text-align: center;
+	color: rgb(63, 59, 59);
+	text-decoration: underline;
+}
+#male_femelle > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 40px;
+}
+#male_femelle p {
+	width: auto;
+	min-width: 150px;
+	max-width: 400px;
+	font-weight: bold;
+}
+
+#male_femelle img {
+	border-radius: 5%;
+	min-width: 300px;
+	max-width: 400px;
+}
+
+#choose_damoiseaux {
+	text-align: justify;
+	background-color: rgb(82, 80, 80);
+	color: whitesmoke;
+	padding-top: 25px;
+}
+#choose_damoiseaux h2 {
+	color: pink;
+	background-color: rgb(82, 80, 80);
+	text-align: center;
+}
+#choose_damoiseaux p {
+	margin-left: 20px;
+	max-width: 95%;
+	line-height: 1.1em;
+}
+#choose_damoiseaux span {
+	position: relative;
+	left: 65%;
+	bottom: 10px;
+}
+#choose_damoiseaux img {
+	float: right;
+	max-width: 250px;
+	width: auto;
+	max-height: 180px;
+	border-radius: 5%;
+	margin: 15px;
+}
+
+.div_rose {
+	background-color: #CC6699;
+	color: white;
+	font-weight: bold;
+	padding: 20px 0;
+}
+.div_rose address {
+	background-color: #CC6699;
+}
+.div_rose address h4 {
+
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+.div_rose address a {
+	color: beige;
+	text-decoration: unset;
+	font-size: 1.2rem;
+}
+
+@media all and (max-width: 800px) {
+	body {
+		width: 98%;
+		box-sizing: border-box;
+	}
+	p {
+		margin: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.menu {
+		font-size: 0.9em;
+	}
+	.menu span {
+		display: none;
+	}
+	.infos_update p{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+		flex-wrap: wrap;
+	}
+	.bandeau_title img {
+		padding-left: 10px;
+		width: 100px;
+		height: auto;
+	}
+	.bandeau_title section {
+		width: calc(100% - 122px);
+		padding-right: 10px;
+	}
+	.bandeau_title section h3 {
+		font-size: 1.1rem;
+	}
+	.bandeau_title section p {
+		font-size: .9em;
+	}
+	.bandeau_title section p a {
+		position: relative;
+		right: 8%;
+		font-weight: bold;
+	}
+	.journal_puppy h3 {
+		font-size: unset;
+		padding: 10px;
+	}
+	.journal_puppy h4 {
+		font-size: 0.8em;
+		padding-bottom: 15px;
+	}
+	.vente_dist {
+		font-size: .5em;
+		font-weight: unset;
+		padding: 5px;
+	}
+	.center {
+		font-size: .9rem;
+		font-style: italic;
+		padding-bottom: 15px;
+	}
+	.center a {
+		color: #CC6699;
+	}
+
+	.puppy_dispo h5 {
+		font-size: 1.4rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-bottom: 15px;
+	}
+	.section_litter {
+		border: 0;
+		box-shadow: unset;
+		border-top: #C06 1px solid;
+		border-bottom: #C06 1px solid;
+		border-radius: 0;
+		margin: 0 auto;
+	}
+	.puppies_container figcaption {
+		margin-top: 10px;
+	}
+	.btn {
+		font-size: unset;
+	}
+	.puppy_infos p {
+		font-style: italic;
+		padding-bottom: 10px;
+	}
+	.puppy_infos h6 {
+		margin: 20px, 0;
+	}
+
+	#male_femelle > div > p {
+		padding-top: 20px;
+	}
+	#male_femelle > div {
+		margin-bottom: 20px
+	}
+
+	#choose_damoiseaux p{
+		font-style: italic;
+		margin: unset;
+		padding: 15px;
+	}
+
+	.div_rose address {
+		padding: 5px 15px;
+	}
+	.div_rose address a {
+		font-size: 1em;
+	}
+}
+
+.xl {
+	max-width: 400px;
+}
+
+@media all and (max-width: 600px) {
+	.xl {
+		max-width: 280px;
+	}
+}

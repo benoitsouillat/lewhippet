@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av ./ kw6od_benoit@lewhippet.com:~/whippet --exclude-from=.gitignore --exclude=".*"
