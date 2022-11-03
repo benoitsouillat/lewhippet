@@ -9,12 +9,5 @@ function getBreedAge()  {
     let todayYear = date.getFullYear();
     return(todayYear - breedCreateDate);
 }
-/* function displayBreedAge() {
-    let old = document.querySelector("header div h2");
-    let new_balise = document.createElement("h2");
-    let new_text = document.createTextNode("Elevage Passion du Whippet depuis " + getBreedAge() + " ans !!");
-
-    return(new_text);
-}  */
 
 
