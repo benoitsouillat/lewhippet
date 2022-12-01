@@ -20,7 +20,8 @@
 </div>
 <div class="highlight-puppy-description text-center">
     <h4>Tsar de la Romance des Damoiseaux</h4>
-    <p>Un très joli mâle disponible en cession d'élevage</p>
-    <p>Ce chien a des qualité extraordinaire et il est proposé en condition d'élevage, pour plus d'information n'hésitez pas à m'appeler au <a href="tel:+33609260130" >06.09.26.01.30</a></p>
+    <p>Un très joli mâle disponible en cession d'élevage, il est très joueur et adore les câlins</p>
+    <p>Ce chien a des qualités extraordinaires et il est proposé en condition d'élevage,
+        pour plus d'information n'hésitez pas à m'appeler au <a href="tel:+33609260130" >06.09.26.01.30</a></p>
 </div>
 <hr>

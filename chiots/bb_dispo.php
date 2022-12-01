@@ -88,6 +88,7 @@
                         include './highlight-puppy/highlight-schema.php';
                     ?>
                 </div>
+                <hr>
                 <div class="gallery">
                     <figure>
                         <video autoplay controls muted class="puppies_img xl">
@@ -98,14 +99,7 @@
                         <br>
                         <figcaption>Premier Repas pour nos bébés !! </figcaption>
                     </figure>
-
-
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Tsar/tsar_static.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Suite à un désistement, A 3 mois, Tsar recherche actuellement sa famille <br> Adorable, trés calin et gentil </p>
-                        </figcaption>
-                    </figure>
+                    
 
                     <figure class="card-image">
                         <img src="/chiots_img/2022/Top_modèle/top_grande3.jpg" alt="whippets disponibles" class="puppies_img xl" />
@@ -116,7 +110,7 @@
                     <figure class="card-image">
                         <img src="/chiots_img/2022/Top_modèle/top_grande2.jpg" alt="whippets disponibles" class="puppies_img xl" />
                         <figcaption>
-                            <p> Top-Modèle de la romance des damoiseaux<br> 5 Mois </p>
+                            <p> Top-Modèle de la romance des damoiseaux<br> Son prix est de 1800€</p>
                         </figcaption>
                     </figure>
 

@@ -20,7 +20,9 @@
 </div>
 <div class="highlight-puppy-description text-center">
     <h4>Top Modèle de la Romance des Damoiseaux</h4>
-    <p>Cette magnifique chienne est disponible.</p>
+    <p>Cette magnifique chienne de 5 mois est disponible.
+        Très grandes qualités et très prometteuse pour expo . Top modèle est douce, gentille, joueuse.
+        Elle aime les autres chien, sait se montrer très affectueuse et marche parfaitement.</p>
     <p>Elle a toutes les qualités pour effectuer un parcours en exposition canine, mais sera une excellente chienne de famille , très caline et adorable.</p>
 </div>
 <hr>
