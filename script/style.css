@@ -142,7 +142,7 @@ address {
 .bandeau_title section a {
 	color: #FFC;
 }
-.bandeau_title section h3 {
+.bandeau_title section h1 {
 	font-size: 1.5rem;
 	text-align: center;
 }
@@ -150,7 +150,7 @@ address {
 	text-align: center;
 	background-color: #E4E4E4;
 }
-.journal_puppy h3 {
+.journal_puppy h2 {
 	font-size: x-large;
 	color: #CC6699;
 	margin: 0;
@@ -215,7 +215,7 @@ address {
 
 
 }
-.section_litter h3 {
+.section_litter h1, .section_litter h2, .section_litter h3 {
 	text-align: center;
 	color: #CC6699;
 	text-decoration: underline;
@@ -235,12 +235,20 @@ address {
 	color: rgb(66, 65, 65);
 	font-size: 1.0rem;
 	font-weight: bold;
+	margin: 10px;
+
+}
+
+.puppies_container figcaption {
+	padding: 10px ;
+}
+.puppies_container figcaption > p {
+	margin-bottom: 0;
 }
 .puppies_img {
 	width: auto;
 	max-width: 250px;
 	border-radius: 20px;
-	margin-top: 5px;
 	box-shadow: 2px 2px 5px darkgrey;
 }
 #puppies_articles_container {
@@ -477,7 +485,7 @@ address {
 		padding-bottom: 10px;
 	}
 	.puppy_infos h6 {
-		margin: 20px, 0;
+		margin: 20px 0;
 	}
 
 	#male_femelle > div > p {

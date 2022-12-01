@@ -9,12 +9,14 @@
     <meta name="description" content="Chiots Whippet à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
 
-    <link type="text/css" href="/script/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    
     <link rel="shortcut icon" type="image/ico" href="/script/dog.ico" />
 
     <script>
         document.write('<link type="text/css"  rel="stylesheet" href="/script/style.css?dev=' + Math.floor(Math.random() * 10) + '" \><\//>');
     </script>
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
     <!-- To force uncached data in style.css-->
 </head>
 
@@ -44,7 +46,7 @@
         <div class="bandeau_title">
             <img src="/chiots_img/logo_sabine_%20animation.gif" alt="Amour whippet">
             <section>
-                <h3>La Romance des Damoiseaux, Elevage de lévrier Whippet</h3>
+                <h1>La Romance des Damoiseaux, Elevage de lévrier Whippet</h1>
                 <p>
                     Pour tous renseignements, conseils ou réservation d'un chiot contactez nous au 06.09.26.01.30 <br />
                     Ou envoyez-nous un email en cliquant sur ce lien :
@@ -54,7 +56,7 @@
         </div>
 
         <div class="journal_puppy">
-            <h3>Bienvenue dans le journal des bébés de la Romance des damoiseaux</h3>
+            <h2>Bienvenue dans le journal des bébés de la Romance des damoiseaux</h2>
             <h4>Voici nos chiots Whippet Disponibles</h4>
         </div>
 
@@ -81,6 +83,11 @@
 
             <section id="disponible" class="section_litter">
                 <h3>Nos chiots Whippet disponibles</h3> <!-- Nos chiots Whippet disponibles -->
+                <div>
+                    <?php
+                        include './highlight-puppy/highlight-schema.php';
+                    ?>
+                </div>
                 <div class="gallery">
                     <figure>
                         <video autoplay controls muted class="puppies_img xl">
@@ -352,6 +359,8 @@
         </p>
 
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
-
 </html>
