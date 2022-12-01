@@ -1,0 +1,23 @@
+@import "variables";
+
+.highlight-puppy-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  box-sizing: content-box;
+
+  .carousel-inner {
+    width: 100%;
+  }
+
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.highlight-puppy-description {
+  margin: auto;
+  margin-left: 20px;
+}
