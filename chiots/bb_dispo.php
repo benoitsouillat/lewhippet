@@ -10,6 +10,7 @@
     <title>CHIOTS WHIPPET A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/script/style.css">
     
     <link rel="shortcut icon" type="image/ico" href="/script/dog.ico" />
 
@@ -20,7 +21,7 @@
     <!-- To force uncached data in style.css-->
 </head>
 
-<body>
+<body class="container-fluid">
     <header>
         <div class="menu">
             <span>lewhippet.com | </span>
@@ -115,74 +116,45 @@
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male1/305389615_828372018410735_9023140222970645695_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2022/Jouvence/male1/2mois.jpg" alt="whippets disponibles" class="puppies_img" />
                         <figcaption>
                             <p>Male bringé bleu disponible. Très tendre et très doux.</p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male1/312184017_935851027374233_5500897316474123611_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2022/Jouvence/male1/2mois2.jpg" alt="whippets disponibles" class="puppies_img xl" />
                         <figcaption>
-                            <p>Il aime les câlins et sait se faire discret. Son prix est à 1300 euros</p>
+                            <p>Il aime les câlins et sait se faire discret</p>
                         </figcaption>
                     </figure>
-                    <figure>
-                        <video autoplay controls muted class="puppies_img xl">
-                            <source src="/chiots_img/2022/Jouvence/male_dispo.mp4" type="video/mp4">
-                            Pour voir la vidéo, mettez à jour votre navigateur ou installez Google Chrome
-                        </video>
-                        <br>
-                        <br>
-                        <figcaption></figcaption>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2022/Jouvence/male1/2mois3.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <figcaption>
+                            <p>Joli Mâle Bringé bleu, idéal pour la compagnie et une vie de famille<br> Son prix est de 1000€</p>
+                        </figcaption>
                     </figure>
 
 
+
                     <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male2/305144093_487335416785679_8367243409714211786_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2022/Jouvence/male2/2mois.jpg" alt="whippets disponibles" class="puppies_img" />
                         <figcaption>
-                            <p></p>
+                            <p>Magnifique Mâle bringé disponible, son prix est de 1500€</p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male2/306337780_815361753032280_3004713759213434236_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2022/Jouvence/male2/2mois2.jpg" alt="whippets disponibles" class="puppies_img xl" />
                         <figcaption>
-                            <p></p>
+                            <p>Un grand potentiel pour les expo, il sera un adorable compagnon, trés joueur et proche de vous</p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male2/305155017_2199406643575062_4087923047046196283_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2022/Jouvence/male2/2mois3.jpg" alt="whippets disponibles" class="puppies_img xl" />
                         <figcaption>
                             <p>Male disponible. Très câlin affectueux et doux. Il est sage et joueur </p>
                         </figcaption>
                     </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male2/312637129_526703945511061_4877034001137457243_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Ce bébé est très attachant et tendre</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/Male3/311499679_624173446100824_1817354602882544032_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Notre troisième mâle disponible</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/Male3/312369646_620395786458731_7198554570431734375_n.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Un regard magnifique et attachant</p>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <video autoplay controls muted class="puppies_img xl">
-                            <source src="/chiots_img/2022/Jouvence/male_3.mp4" type="video/mp4">
-                            Pour voir la vidéo, mettez à jour votre navigateur ou installez Google Chrome
-                        </video>
-                        <br>
-                        <br>
-                        <figcaption></figcaption>
-                    </figure>
+                    
 
                 </div>
             </section>

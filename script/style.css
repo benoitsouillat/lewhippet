@@ -1,6 +1,5 @@
 
 body {
-	background-color: #000;
 	color: #000;
 	display: flex;
 	flex-direction: row;
@@ -9,6 +8,13 @@ body {
 	flex-wrap: wrap;
 	width: 80%;
 	margin: auto;
+	padding: 0;
+	padding-left: 0;
+	padding-right: 0;
+
+}
+.container-fluid {
+	padding: 0;
 }
 header {
 	color: #E1ECEC;
@@ -18,7 +24,6 @@ header {
 }
 main {
 	width: 100%;
-	background-color: #fff;
 	text-indent: .5%;
 }
 footer {
@@ -347,6 +352,7 @@ address {
 	background-color: rgb(82, 80, 80);
 	color: whitesmoke;
 	padding-top: 25px;
+	min-height: 480px;
 }
 #choose_damoiseaux h2 {
 	color: pink;
@@ -357,12 +363,23 @@ address {
 	margin-left: 20px;
 	max-width: 95%;
 	line-height: 1.1em;
+
 }
 #choose_damoiseaux span {
 	position: relative;
 	left: 65%;
 	bottom: 10px;
+
 }
+@media all and (min-width: 1200px) {
+
+	#choose_damoiseaux span {
+		left: 90%;
+	}
+}
+
+
+
 #choose_damoiseaux img {
 	float: right;
 	max-width: 250px;

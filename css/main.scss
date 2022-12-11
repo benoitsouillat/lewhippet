@@ -1,14 +1,19 @@
-@import "component/variables";
-@import "component/highlight-puppy";
+@import "component/_variables";
+@import "component/_highlight-puppy";
 
 html {
   font-size: 14px;
 
 }
 body {
+  background-color: lighten(#000, 10);
 
   font-family: Serif;
 
+}
+
+main {
+  background-color: darken(#fff, 10);
 }
 
 h1, h2, h3, h4, h5, h6 {

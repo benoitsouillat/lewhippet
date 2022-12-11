@@ -20,6 +20,7 @@
 
 .highlight-puppy-img {
   width: 60%;
+  flex-direction: column;
 }
 @media all and (max-width: 576px) {
   .highlight-puppy-img {
@@ -34,18 +35,6 @@
 .highlight-puppy-img img {
   border-radius: 20px;
   box-shadow: 2px 2px 5px darkgrey;
-}
-
-.dir-reverse {
-  flex-direction: row-reverse;
-}
-.dir-reverse .carousel-item {
-  transition-delay: 1.2s;
-}
-@media all and (max-width: 768px) {
-  .dir-reverse {
-    flex-direction: column;
-  }
 }
 
 .highlight-puppy-description {
@@ -78,7 +67,12 @@ html {
 }
 
 body {
+  background-color: #1a1a1a;
   font-family: Serif;
+}
+
+main {
+  background-color: #e6e6e6;
 }
 
 h1, h2, h3, h4, h5, h6 {

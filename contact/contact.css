@@ -1,4 +1,9 @@
-
+.menu {
+    background-color: #000;
+}
+body {
+    width: 98%;
+}
 img {
     max-width: 30%;
     max-height: 450px;
