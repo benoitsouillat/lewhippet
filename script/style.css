@@ -79,6 +79,11 @@ address {
 	background-color: #CC6699;
 	color: white;
 }
+.btn-pink:hover {
+	background-color: #C69;
+	color: white;
+	box-shadow: black 2px 2px 2px;
+}
 
 .btn-gold {
 	background-color: goldenrod;
