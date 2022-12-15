@@ -29,12 +29,12 @@
         <div class="bandeau_title">
             <img src="/chiots_img/logo_sabine_%20animation.gif" alt="Amour whippet">
             <section>
-                <h1>La Romance des Damoiseaux, Elevage de lévrier Whippet</h1>
+                <h1>La Romance des Damoiseaux <br> Elevage de lévrier Whippet</h1>
             </section>
         </div>
 
         <div class="index_content">
-            <section class="index__bb__dispo col-12 col-lg-5">
+            <section class="index__bb__dispo col-12 ">
                <h2>Retrouvez nos chiots disponibles</h2>
                 <div id="index_bb" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="4000">
                     <div class="carousel-inner">
@@ -44,13 +44,16 @@
                         <div class="carousel-item">
                             <img src="/chiots_img/2022/dispo/chiot_dispô.jpg" alt="Joli Bébés Whippets Disponibles" />
                         </div>
+                        <div class="carousel-item">
+                            <img src="/chiots_img/2022/IMG_19891.jpg" alt="Joli Bébés Whippets Disponibles Joueur" />
+                        </div>
                     </div>
                 
                 </div>
                 <a class="btn btn-pink" type="button">Voir les bébés</a>
             </section>
             <hr>
-            <section class="index__expo__result col-12 col-lg-5">
+            <section class="index__expo__result col-12 text-center">
                 <h2>Voici nos derniers résultats en exposition</h2>
                 <div>
                     <h3>Tarbes 2022</h3>
@@ -75,14 +78,18 @@
             </section>
             <hr>
 
-            <section class="fr3 col-12 col-lg-5">
+            <section class="fr3 col-12 text-center">
                 <h2>Les whippets de notre élevage passent à la télévision</h2>
-                <iframe title="la romance des damoiseaux whippet chez france télévision" margin-top="20" margin-bottom="20" width="450" height="200" autoplay="1" src="//embedftv-a.akamaihd.net/33a6e5bbd3bce859a7eb7827a71d9404?muted=1" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+                <iframe class="player-css" title="la romance des damoiseaux whippet chez france télévision" autoplay="1" src="//embedftv-a.akamaihd.net/33a6e5bbd3bce859a7eb7827a71d9404?muted=1" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
                 <p>Un grand merci à l'équipe de France 3 pour leur professionnalisme et leur intérêt pour mes loulous.</p>
             </section>
             <hr>
 
-            <section class="accessories col-12 col-lg-5">DIV ACCESSOIRES
+            <section class="index_accessories col-12 text-center">
+                <h2>Retrouvez nos accessoires spécial Whippet</h2>
+                <img src="accessoires-chiens/doudou_pres.jpg" alt="accesoires pour whippets" />
+                <p>Les nouveaux doudous sont disponibles, expédition possible <br> N'hésitez pas à nous contacter</p>
+                <a href="/chiots/articles-chiot.htm" class="btn btn-gold">Nos Accessoires</a>
             </section>
             <hr>
 

@@ -89,7 +89,12 @@ address {
 	background-color: goldenrod;
 	color: black;
 }
-
+.btn-gold:hover {
+	background-color: goldenrod;
+	color: black;
+	font-weight: bold;
+	box-shadow: black 3px 3px 2px;
+}
 
 .menu {
 	margin-top: 0;
@@ -153,8 +158,8 @@ address {
 	color: #FFC;
 }
 .bandeau_title section h1 {
-	font-size: 1.5rem;
 	text-align: center;
+	white-space: nowrap;
 }
 .journal_puppy {
 	text-align: center;
