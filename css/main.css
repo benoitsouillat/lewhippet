@@ -98,12 +98,16 @@
 .index__bb__dispo {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  flex-shrink: 1;
-  flex-grow: 1;
   grid-column: 1;
   grid-row: 1;
   padding-bottom: 50px;
+}
+@media all and (min-width: 992px) {
+  .index__bb__dispo {
+    height: 100%;
+  }
 }
 @media all and (min-width: 992px) {
   .index__bb__dispo .carousel-inner {
