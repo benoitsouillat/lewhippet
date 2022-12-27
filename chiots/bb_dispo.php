@@ -8,56 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="Chiots Whippet à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/script/style.css">
-    
-    <link rel="shortcut icon" type="image/ico" href="/script/dog.ico" />
-
-    <script>
-        document.write('<link type="text/css"  rel="stylesheet" href="/script/style.css?dev=' + Math.floor(Math.random() * 10) + '" \><\//>');
-    </script>
-    <link rel="stylesheet" href="/css/main.css" type="text/css">
-    <!-- To force uncached data in style.css-->
+    <?php
+        require_once(__DIR__ . '../../php/component/head-links.php');
+    ?>
 </head>
 
 <body class="container-fluid">
     <header>
-        <div class="menu">
-            <span>lewhippet.com | </span>
-            <a class="menu_link" href="/index.htm">Accueil</a>
-            |
-            <a class="menu_link" href="/sommaire.htm"> Sommaire</a>
-            |
-            <a class="menu_link" href="/contact/contact.html"> Contact </a>
-            |
-            <a class="menu_link" href="https://la-romance-des-damoiseaux.jimdosite.com/" target="_blank"> Mon Jimdo</a>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="infos_update">
-            <p>
-                CHIOTS WHIPPET A VENDRE </p>
-
-
-        </div>
+        <?php
+            require_once(__DIR__. '../../php/component/menu.php' );
+        ?>
+    
     </header>
     <main>
         <div class="bandeau_title">
-            <img src="/chiots_img/logo_sabine_%20animation.gif" alt="Amour whippet">
+            <div class="logo">
+                <img src="/chiots_img/logo_sabine_%20animation.gif" alt="Amour whippet">
+                <p class="slogan">Le Whippet un jour .. le whippet pour toujours.</p>
+            </div>
             <section>
-                <h1>La Romance des Damoiseaux, Elevage de lévrier Whippet</h1>
+                <h1>La Romance des <span><img src="/script/test/DDD.png" alt="D" />amoiseaux</span></h1>
+                <h2> Elevage de lévrier Whippet</h2>
                 <p>
                     Pour tous renseignements, conseils ou réservation d'un chiot contactez nous au 06.09.26.01.30 <br />
-                    Ou envoyez-nous un email en cliquant sur ce lien :
+                    Ou envoyez-nous un email en cliquant sur ce lien : <br>
                     <a href="mailto:laromancedesdamoiseaux@gmail.com">Envoyer un email</a>
                 </p>
             </section>
         </div>
 
         <div class="journal_puppy">
-            <h2>Bienvenue dans le journal des bébés de la Romance des damoiseaux</h2>
+            <h3>Bienvenue dans le journal des bébés de la Romance des damoiseaux</h3>
             <h4>Voici nos chiots Whippet Disponibles</h4>
         </div>
 
@@ -102,58 +83,14 @@
                     </figure>
                     
 
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Top_modèle/top_grande3.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p> Top-Modèle de la romance des damoiseaux<br> Trés douce et attachante, elle cherche sa famille</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Top_modèle/top_grande2.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p> Top-Modèle de la romance des damoiseaux<br> Son prix est de 1800€</p>
-                        </figcaption>
-                    </figure>
 
-                    <figure class="card-image">
+<!--                    <figure class="card-image">
                         <img src="/chiots_img/2022/Jouvence/male1/2mois.jpg" alt="whippets disponibles" class="puppies_img" />
                         <figcaption>
                             <p>Male bringé bleu disponible. Très tendre et très doux.</p>
                         </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male1/2mois2.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Il aime les câlins et sait se faire discret</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male1/2mois3.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Joli Mâle Bringé bleu, idéal pour la compagnie et une vie de famille<br> Son prix est de 1000€</p>
-                        </figcaption>
-                    </figure>
+                    </figure>-->
 
-
-
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male2/2mois.jpg" alt="whippets disponibles" class="puppies_img" />
-                        <figcaption>
-                            <p>Magnifique Mâle bringé disponible, son prix est de 1500€</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male2/2mois2.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Un grand potentiel pour les expo, il sera un adorable compagnon, trés joueur et proche de vous</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male2/2mois3.jpg" alt="whippets disponibles" class="puppies_img xl" />
-                        <figcaption>
-                            <p>Male disponible. Très câlin affectueux et doux. Il est sage et joueur </p>
-                        </figcaption>
-                    </figure>
                     
 
                 </div>

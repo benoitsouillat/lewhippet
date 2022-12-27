@@ -78,7 +78,11 @@
 }
 .index_content h2 {
   text-decoration: underline;
-  white-space: nowrap;
+}
+@media all and (min-width: 992px) {
+  .index_content h2 {
+    white-space: nowrap;
+  }
 }
 .index_content h2, .index_content h3 {
   text-align: center;
@@ -129,6 +133,7 @@
 .index__expo__result {
   grid-column: 2;
   grid-row: 1/4;
+  padding: auto 10px;
   padding-bottom: 50px;
 }
 .index__expo__result img {
@@ -167,6 +172,26 @@ body {
   background-color: #1a1a1a;
   font-family: Serif;
 }
+body header .menu {
+  transition: transform 2s 0.5s ease-in;
+}
+body header .menu .menu_link {
+  color: #73264d;
+  text-decoration: none;
+}
+body header .menu .menu_link:hover {
+  transform: scale(1.1) translateY(-2px);
+}
+body header {
+  background-color: #fff;
+  color: goldenrod;
+}
+body header .menu {
+  color: goldenrod;
+}
+body header .menu .menu_link {
+  color: goldenrod;
+}
 
 main {
   background-color: #e6e6e6;
@@ -178,8 +203,113 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
 }
 
+h1 {
+  font-family: "Playfair Display", "Oswald", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 5px 5px 8px black;
+  white-space: nowrap;
+}
+h1 span {
+  white-space: nowrap;
+}
+h1 img {
+  max-width: 48px;
+  max-height: 48px;
+  padding: 0;
+}
+@media all and (min-width: 576px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+@media all and (min-width: 768px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+}
+@media all and (min-width: 992px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  h1 img {
+    max-width: 68px;
+    max-height: 68px;
+  }
+}
+
 img {
   vertical-align: unset;
+}
+
+.bandeau_title {
+  background-color: #8a4784;
+  color: #FFC;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  width: auto;
+}
+.bandeau_title .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+@media all and (max-width: 768px) {
+  .bandeau_title .logo {
+    display: none;
+  }
+}
+.bandeau_title .logo img {
+  border: none;
+  width: 154px;
+  height: 101px;
+}
+.bandeau_title .logo .slogan {
+  font-style: italic;
+  font-family: "Oswald", sans-serif;
+  text-shadow: 5px 5px 8px black;
+  white-space: nowrap;
+  font-size: 1.2rem;
+}
+.bandeau_title section {
+  padding-left: 15px;
+  text-align: center;
+}
+.bandeau_title section h2 {
+  font-family: "Playfair Display", "Oswald", sans-serif;
+  text-shadow: 5px 5px 8px black;
+}
+.bandeau_title section a {
+  color: #FFC;
+}
+
+.journal_puppy {
+  text-align: center;
+  background-color: #E4E4E4;
+}
+.journal_puppy h3 {
+  font-size: x-large;
+  color: #8a4784;
+  text-shadow: 5px 5px 8px gray;
+  margin: 10px 0;
+  padding: 0;
+  font-weight: bold;
+}
+.journal_puppy h4 {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: x-large;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=main.css.map */

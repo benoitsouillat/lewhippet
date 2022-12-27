@@ -8,15 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="Chiots Whippet à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    
-    <link rel="shortcut icon" type="image/ico" href="/script/dog.ico" />
-    
-    <script>
-        document.write('<link type="text/css"  rel="stylesheet" href="/script/style.css?dev=' + Math.floor(Math.random() * 10) + '" \><\//>');
-    </script>
-    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <?php
+        require_once(__DIR__ . '/php/component/head-links.php');
+    ?>
 </head>
 <body class="container-fluid">
     <header>
@@ -29,7 +23,7 @@
         <div class="bandeau_title">
             <img src="/chiots_img/logo_sabine_%20animation.gif" alt="Amour whippet">
             <section>
-                <h1>La Romance des Damoiseaux <br> Elevage de lévrier Whippet</h1>
+                <h1>La Romance des <img src="/script/test/DDD.png" alt="D" />amoiseaux <br> Elevage de lévrier Whippet</h1>
             </section>
         </div>
 
@@ -44,7 +38,7 @@
             
             
             <section class="fr3 col-12 text-center">
-                <h2>Les whippets de notre élevage passent à la télévision</h2>
+                <h2>Nos whippets passent à la télévision</h2>
                 <iframe class="player-css" title="la romance des damoiseaux whippet chez france télévision" autoplay="1" src="//embedftv-a.akamaihd.net/33a6e5bbd3bce859a7eb7827a71d9404?muted=1" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
                 <p>Un grand merci à l'équipe de France 3 pour leur professionnalisme et leur intérêt pour mes loulous.</p>
             </section>

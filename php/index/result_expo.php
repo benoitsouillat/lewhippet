@@ -1,5 +1,5 @@
 <section class="index__expo__result col-12 text-center">
-    <h2>Voici nos derniers résultats en exposition</h2>
+    <h2>Nos derniers résultats en exposition</h2>
     <div>
         <h3>Tarbes 2022</h3>
         <p> Un grand merci à tout ceux qui m'ont soutenu lors de l'exposition Canine de Tarbes 2022</p>

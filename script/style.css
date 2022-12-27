@@ -135,51 +135,7 @@ address {
 	font-size: 0.6rem;
 	color: white;
 }
-.bandeau_title {
-	background-color: #CC6699;
-	color: #FFC;
-	padding: 3px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	width: auto;
-}
-.bandeau_title img {
-	border: none;
-	width: 154px;
-	height: 101px;
-}
-.bandeau_title section {
-	padding-left: 15px;
-	text-align: center;
-}
-.bandeau_title section a {
-	color: #FFC;
-}
-.bandeau_title section h1 {
-	text-align: center;
-	white-space: nowrap;
-}
-.journal_puppy {
-	text-align: center;
-	background-color: #E4E4E4;
-}
-.journal_puppy h2 {
-	font-size: x-large;
-	color: #CC6699;
-	margin: 0;
-	padding: 0;
-	font-weight: 500;
-	
-}
-.journal_puppy h4 {
-	margin: 0;
-	padding: 0;
-	font-size: x-large;
-	font-weight: 400;
-	
-}
+
 .center {
 	text-align: center;
 	align-items: center;
@@ -543,5 +499,14 @@ address {
 @media all and (max-width: 600px) {
 	.xl {
 		max-width: 280px;
+	}
+}
+
+@media all and (max-width: 576px) {
+	.bandeau_title section {
+		width: 100%;
+	}
+	.bandeau_title section h1 {
+		white-space: normal;
 	}
 }
