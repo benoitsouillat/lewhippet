@@ -12,6 +12,8 @@ html {
 body {
   background-color: lighten(#000, 10);
   font-family: Serif;
+  box-sizing: border-box;
+
   @include dark_menu;
 
 }
@@ -61,6 +63,13 @@ h1 {
 img {
   vertical-align: unset;
 }
+p {
+  @media all and (max-width: $md) {
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 .bandeau_title {
   background-color: $head-bg;
@@ -71,6 +80,18 @@ img {
   justify-content: space-around;
   align-items: stretch;
   width: auto;
+
+  @media all and (max-width: $sm) {
+    section {
+      padding-left: 15px;
+      text-align: center;
+      width: 100%;
+    }
+    h1 {
+      white-space: normal;
+    }
+
+  }
 
   .logo {
     display: flex;
@@ -105,25 +126,5 @@ img {
     a {
       color: #FFC;
     }
-  }
-}
-.journal_puppy {
-  text-align: center;
-  background-color: #E4E4E4;
-  h3 {
-    font-size: x-large;
-    color: $violet;
-    text-shadow: $shadow-title lighten(black, 50);
-    margin: 10px 0;
-    padding: 0;
-    font-weight: bold;
-
-  }
-  h4 {
-    margin: 0;
-    margin-bottom: 15px ;
-    padding: 0;
-    font-size: x-large;
-    font-weight: 400;
   }
 }
