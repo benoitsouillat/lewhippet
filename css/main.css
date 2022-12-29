@@ -172,25 +172,25 @@ body {
   background-color: #1a1a1a;
   font-family: Serif;
 }
-body header .menu {
-  transition: transform 2s 0.5s ease-in;
-}
 body header .menu .menu_link {
   color: #73264d;
   text-decoration: none;
+  transition: all 0.3s ease-in;
 }
 body header .menu .menu_link:hover {
+  font-weight: bold;
+  text-decoration: underline;
   transform: scale(1.1) translateY(-2px);
 }
 body header {
-  background-color: #fff;
-  color: goldenrod;
+  background-color: #000;
+  color: beige;
 }
 body header .menu {
-  color: goldenrod;
+  color: beige;
 }
 body header .menu .menu_link {
-  color: goldenrod;
+  color: beige;
 }
 
 main {
