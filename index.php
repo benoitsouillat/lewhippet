@@ -20,12 +20,9 @@
     
     </header>
     <main>
-        <div class="bandeau_title">
-            <img src="/chiots_img/logo_sabine_%20animation.gif" alt="Amour whippet">
-            <section>
-                <h1>La Romance des <img src="/script/test/DDD.png" alt="D" />amoiseaux <br> Elevage de lévrier Whippet</h1>
-            </section>
-        </div>
+        <?php
+            require_once(__DIR__ . '/php/component/bandeau-title.php');
+        ?>
 
         <div class="index_content">
             
