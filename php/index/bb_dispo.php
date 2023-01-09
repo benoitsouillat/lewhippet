@@ -14,5 +14,5 @@
         </div>
     
     </div>
-    <a class="btn btn-pink" type="button">Voir les bébés</a>
+    <a class="btn btn-pink" type="button" href="/chiots/bb_dispo.php">Voir les bébés</a>
 </section>

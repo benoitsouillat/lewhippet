@@ -137,7 +137,12 @@
   padding-bottom: 50px;
 }
 .index__expo__result img {
-  max-width: 90%;
+  max-width: 75%;
+}
+@media all and (max-width: 768px) {
+  .index__expo__result img {
+    max-width: 90%;
+  }
 }
 
 .fr3 {
@@ -432,6 +437,9 @@ body header .menu {
 }
 body header .menu .menu_link {
   color: beige;
+}
+body header .menu .menu_link:hover {
+  color: goldenrod;
 }
 
 main {

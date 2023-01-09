@@ -27,7 +27,6 @@
         <div class="index_content">
             
             <?php include_once(__DIR__ . '/php/index/bb_dispo.php') ?>
-
             <hr>
             <?php include_once(__DIR__ . '/php/index/result_expo.php') ?>
             <hr>

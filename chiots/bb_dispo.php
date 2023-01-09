@@ -31,13 +31,7 @@
             <h4>Voici nos chiots Whippet Disponibles</h4>
         </div>
 
-        <div class="vente_dist">
-            <p>
-                L&nbsp;information sur les prix est obligatoire quelles que soient les formes de vente&nbsp;:
-                sur place, à distance (correspondance, Internet)
-                code de la consommation et inspection des fraudes
-            </p>
-        </div>
+
         <p class="center">Pour une pré-réservation, merci de me contacter par email :
             <a href="mailto:laromancedesdamoiseaux@gmail.com">laromancedesdamoiseaux@gmail.com</a>
             ou par téléphone :
@@ -56,7 +50,7 @@
                 <h3>Nos chiots Whippet disponibles</h3> <!-- Nos chiots Whippet disponibles -->
                 <div>
                     <?php
-                        include './highlight-puppy/highlight-schema.php';
+                        //   include './highlight-puppy/highlight-schema.php';
                     ?>
                 </div>
                 <hr>
@@ -71,14 +65,44 @@
                         <figcaption>Premier Repas pour nos bébés !! </figcaption>
                     </figure>
                     
-
-
-<!--                    <figure class="card-image">
-                        <img src="/chiots_img/2022/Jouvence/male1/2mois.jpg" alt="whippets disponibles" class="puppies_img" />
+                    
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/bb_nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img" />
                         <figcaption>
-                            <p>Male bringé bleu disponible. Très tendre et très doux.</p>
+                            <p> - </p>
                         </figcaption>
-                    </figure>-->
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/nefer_maman.jpg" alt="whippets disponibles" class="puppies_img" />
+                        <figcaption>
+                            <p> - </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo2.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <figcaption>
+                            <p> - </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <figcaption>
+                            <p> - </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/nefer_maman2.jpg" alt="whippets disponibles" class="puppies_img" />
+                        <figcaption>
+                            <p> - </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/neffer_bb.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <figcaption>
+                            <p> - </p>
+                        </figcaption>
+                    </figure>
+                    
 
                     
 
@@ -114,6 +138,13 @@
 
 
 
+        </div>
+        <div class="vente_dist">
+            <p>
+                L&nbsp;information sur les prix est obligatoire quelles que soient les formes de vente&nbsp;:
+                sur place, à distance (correspondance, Internet)
+                code de la consommation et inspection des fraudes
+            </p>
         </div>
         <br>
         <div class="puppy_dispo">
