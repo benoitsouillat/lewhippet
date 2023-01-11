@@ -6,8 +6,8 @@
     <meta http-equiv="Content-Language" content="fr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Chiots Whippet à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
-    <title>CHIOTS WHIPPET A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
+    <meta name="description" content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
+    <title>CHIOTS WHIPPET LOF A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
     <?php
         require_once(__DIR__ . '../../php/component/head-links.php');
     ?>
@@ -32,11 +32,7 @@
         </div>
 
 
-        <p class="center">Pour une pré-réservation, merci de me contacter par email :
-            <a href="mailto:laromancedesdamoiseaux@gmail.com">laromancedesdamoiseaux@gmail.com</a>
-            ou par téléphone :
-            <a href="tel:+33609260130">06.09.26.01.30</a>
-        </p>
+
 
         <div class="puppy_dispo">
             <h5>Chiots Whippet Mâles et Femelles disponibles <span>(Photos et Vidéos à la demande)</span></h5>
@@ -108,8 +104,7 @@
 
                 </div>
             </section>
-
-
+        
 
             <figure>
                 <img src="/chiots_img/2022/Louisiane/fem2-5.jpg" alt="whippets disponibles" class="puppies_img xl" />
@@ -136,16 +131,8 @@
                 </figcaption>
             </figure>
 
-
-
         </div>
-        <div class="vente_dist">
-            <p>
-                L&nbsp;information sur les prix est obligatoire quelles que soient les formes de vente&nbsp;:
-                sur place, à distance (correspondance, Internet)
-                code de la consommation et inspection des fraudes
-            </p>
-        </div>
+
         <br>
         <div class="puppy_dispo">
             <h5>Contactez nous au 06.09.26.01.30</h5>
@@ -155,6 +142,18 @@
             <p>Les pré-réservations
                 officielles sont prisent en compte uniquement avec acompte versé par chèque ou par virement bancaire.
             </p>
+            <p class="center w-100 mt-3">Pour une pré-réservation, merci de me contacter par email :
+                <a href="mailto:laromancedesdamoiseaux@gmail.com">laromancedesdamoiseaux@gmail.com</a>
+                ou par téléphone :
+                <a href="tel:+33609260130">06.09.26.01.30</a>
+            </p>
+            <div class="vente_dist">
+                <p class="center">
+                    L&nbsp;information sur les prix est obligatoire quelles que soient les formes de vente&nbsp;:
+                    sur place, à distance (correspondance, Internet)
+                    code de la consommation et inspection des fraudes
+                </p>
+            </div>
             <hr>
         </section>
         <section id="puppies_articles_container">
