@@ -18,8 +18,13 @@ body {
 
 }
 
+.container-fluid {
+  margin-top: $nav-height;
+}
+
 main {
   background-color: darken(#fff, 10);
+
 }
 
 h1, h2, h3, h4, h5, h6 {

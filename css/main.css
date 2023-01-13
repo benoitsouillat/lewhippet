@@ -395,6 +395,12 @@ body {
   font-family: Serif;
   box-sizing: border-box;
 }
+body header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 body header .menu {
   margin-top: 0;
   padding-top: 2px;
@@ -447,6 +453,10 @@ body header .menu .menu_link {
 }
 body header .menu .menu_link:hover {
   color: goldenrod;
+}
+
+.container-fluid {
+  margin-top: 58px;
 }
 
 main {

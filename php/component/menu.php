@@ -1,4 +1,4 @@
-<div class="menu">
+<nav class="menu">
     <span>lewhippet.com | </span>
     <a class="menu_link" href="/index.php">Accueil</a>
     |
@@ -12,4 +12,4 @@
     --><br>
     <br>
     <br>
-</div>
+</nav>
