@@ -114,6 +114,9 @@
     height: 100%;
   }
 }
+.index__bb__dispo .carousel-inner {
+  border-radius: 20px;
+}
 @media all and (min-width: 992px) {
   .index__bb__dispo .carousel-inner {
     max-height: 400px;
