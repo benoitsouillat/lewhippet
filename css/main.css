@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .highlight-puppy-container {
   margin: 20px 0;
   display: flex;
@@ -135,6 +136,12 @@
   grid-row: 1/4;
   padding: auto 10px;
   padding-bottom: 50px;
+  /* Propriété à developper pour afficher des images larges mais pas trop hautes - Design Review
+    div {
+      max-height: 220px;
+      border: solid 2px red;
+      overflow: hidden;
+    }*/
 }
 .index__expo__result img {
   max-width: 75%;
