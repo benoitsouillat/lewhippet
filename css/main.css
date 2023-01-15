@@ -474,6 +474,12 @@ body header .menu .menu_link {
     padding: 1px;
   }
 }
+@media all and (min-width: 992px) {
+  body header .menu .menu_link {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
 body header .menu .menu_link:hover {
   font-weight: bold;
   text-decoration: underline;
