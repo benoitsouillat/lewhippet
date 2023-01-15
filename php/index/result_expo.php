@@ -9,7 +9,7 @@
             <br> Yamamoto dit Yam :  Meilleur de race Baby et meilleur baby de l'exposition. Je suis très fière de mon petit Yam </p>
         <p>Jugés par Mr Barjot parmi 34 Whippets incrits</p>
         <br>
-        <img src="/expo_img/Prodige_Paris_BOB_2023.jpg" alt="Prodige de la romance des damoiseaux whippet en exposition"/>
+        <img src="/expo_img/Prodige_Paris_BOB_2023.jpg" alt="Prodige de la romance des damoiseaux whippet en exposition">
     </div>
     
     <div>
@@ -22,7 +22,7 @@
             <br> Ainsi que Prodige qui s'est vu decerné le CACS en spéciale de race Whippet le dimanche, ainsi que le prix de meilleur lévrier de l'exposition.
         </p>
         <br>
-        <img src="/expo_img/Yam_Rouen_2023.jpg" alt="la romance des damoiseaux whippet en exposition"/>
+        <img src="/expo_img/Yam_Rouen_2023.jpg" alt="la romance des damoiseaux whippet en exposition">
     </div>
     
     <div>
@@ -34,6 +34,6 @@
         </p>
         <p>50 whippets étaient inscrits et jugés par Mme Kleyn</p>
         <br>
-        <img src="/expo_img/Zazie_Nantes_2023.jpg" alt="Zazie whippet en exposition"/>
+        <img src="/expo_img/Zazie_Nantes_2023.jpg" alt="Zazie whippet en exposition">
     </div>
 </section>

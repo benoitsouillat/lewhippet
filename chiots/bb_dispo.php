@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Language" content="fr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
@@ -63,37 +62,37 @@
                     
                     
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/bb_nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img" />
+                        <img src="/chiots_img/2023/Nefertiti/bb_nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img">
                         <figcaption>
                             <p> - </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/nefer_maman.jpg" alt="whippets disponibles" class="puppies_img" />
+                        <img src="/chiots_img/2023/Nefertiti/nefer_maman.jpg" alt="whippets disponibles" class="puppies_img">
                         <figcaption>
                             <p> - </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo2.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo2.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
                             <p> - </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
                             <p> - </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/nefer_maman2.jpg" alt="whippets disponibles" class="puppies_img" />
+                        <img src="/chiots_img/2023/Nefertiti/nefer_maman2.jpg" alt="whippets disponibles" class="puppies_img">
                         <figcaption>
                             <p> - </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/neffer_bb.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                        <img src="/chiots_img/2023/Nefertiti/neffer_bb.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
                             <p> - </p>
                         </figcaption>
@@ -107,25 +106,25 @@
         
 
             <figure>
-                <img src="/chiots_img/2022/Louisiane/fem2-5.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                <img src="/chiots_img/2022/Louisiane/fem2-5.jpg" alt="whippets disponibles" class="puppies_img xl">
                 <figcaption>
                     <p> 'Il est l'heure se faire les dents sur mon Kong' <br> </p>
                 </figcaption>
             </figure>
             <figure>
-                <img src="/chiots_img/2022/Louisiane/fem2-4.jpg" alt="whippets disponibles" class="puppies_img xl" />
+                <img src="/chiots_img/2022/Louisiane/fem2-4.jpg" alt="whippets disponibles" class="puppies_img xl">
                 <figcaption>
                     <p> 'Ah tiens ! Tu es là !' <br> </p>
                 </figcaption>
             </figure>
             <figure>
-                <img src="/chiots_img/2022/IMG_18481.jpg" alt="whippets disponibles" class="puppies_img " />
+                <img src="/chiots_img/2022/IMG_18481.jpg" alt="whippets disponibles" class="puppies_img ">
                 <figcaption>
                     <p>Magnifique regard plein d'amour et de tendresse <br></p>
                 </figcaption>
             </figure>
             <figure>
-                <img src="/chiots_img/2021/idealexphilo/bisous.jpg" alt="whippets disponibles" class="puppies_img" />
+                <img src="/chiots_img/2021/idealexphilo/bisous.jpg" alt="whippets disponibles" class="puppies_img">
                 <figcaption>
                     <p>Chiots whippet disponibles <br>Contactez-nous</p>
                 </figcaption>
@@ -158,9 +157,9 @@
         </section>
         <section id="puppies_articles_container">
             <h5>Mon expérience de 33 ans de whippet à votre service</h5>
-            <p>Nous avons plusieurs références sur place à vous proposer, n'hésitez pas à nous demander conseil <br />
+            <p>Nous avons plusieurs références sur place à vous proposer, n'hésitez pas à nous demander conseil <br>
                 Possibilité d'expédier votre commande par colissimo. Demandez conseils au 06.09.26.01.30 (sms de
-                préférence).<br />
+                préférence).<br>
             </p>
             <a class="btn btn-pink" href="/chiots/articles-chiot.htm">Les accessoires adaptés à votre whippet</a>
             <div class="puppies_articles_box">
@@ -190,8 +189,8 @@
                     personnels c'est pourquoi nous proposons à notre clientèle de vous retrouvez plus près de chez vous si besoin
                     et si l'itinéraire nous le permet.
                     Ainsi les chiots, préalablement réservés, voyagent avec nous en sécurité et pourront vous rejoindre plus
-                    facilement. <br />
-                    Aucune livraison par transport Sernam n 'est envisageable. <br />
+                    facilement. <br>
+                    Aucune livraison par transport Sernam n 'est envisageable. <br>
                     <b>PROCHAINS DEPLACEMENTS POSSIBLES : </b> Région parisienne, Clermont Ferrand, Moulins, Toulouse ou Bordeaux
                 </p>
             </section>
@@ -201,10 +200,10 @@
                     Pour une information transparente, tous nos prix sont indiqués et détaillés en bas des pages de chaque portée.
                     Le tarif se situe entre 1300 et 1600 euros en moyenne et peut varier selon la qualité, l'origine et la rareté
                     du coloris.
-                    à partir de 2000 euros pour une femelle bleue <br />
-                    Nos chiots sont tous en bonne santé, inscrits au LOF, identifiés, vaccinés, vermifugés et ergotés. <br />
-                    Nous proposons des facilités de paiement qui seront notifiés lors de la réservation ou de la vente. <br />
-                    Les réservations seront officielles uniquement une fois l acompte encaissé. <br />
+                    à partir de 2000 euros pour une femelle bleue <br>
+                    Nos chiots sont tous en bonne santé, inscrits au LOF, identifiés, vaccinés, vermifugés et ergotés. <br>
+                    Nous proposons des facilités de paiement qui seront notifiés lors de la réservation ou de la vente. <br>
+                    Les réservations seront officielles uniquement une fois l acompte encaissé. <br>
                 </p>
             </section>
             <section class="section_infos">
@@ -214,7 +213,7 @@
                     suite à l'achat d'un chiot de mon élevage. Je connais parfaitement mes lignées et peux ainsi répondre
                     précisément à toutes vos questions
                     concernant l'éducation, l'alimentation, le comportement ou les différents soins de votre sublime compagnon.
-                    <br />
+                    <br>
                     Je propose également la garde de vos whippets issus de mon élevage lors de vos déplacements ( départ en
                     vacances par exemple )
                     ainsi votre chien sera en confiance en retrouvant ses repères d'enfant et vous pourrez profiter de vos
@@ -233,9 +232,9 @@
             <a href="/guide-pratique/male-femelle.htm" class="btn btn-pink">En savoir plus</a>
         </article>
         <article id="choose_damoiseaux">
-            <h2>Choisir un chiot whippet <br /> de la Romance des Damoiseaux </h2>
+            <h2>Choisir un chiot whippet <br > de la Romance des Damoiseaux </h2>
             <p>
-                <img src="/chiots_img/illus_fichier/chiot-19042009001.jpg" alt="chiot whippet avec un chapeau"/>
+                <img src="/chiots_img/illus_fichier/chiot-19042009001.jpg" alt="chiot whippet avec un chapeau">
                 En choisissant un chiot whippet dans notre élevage vous avez l'assurance que votre bébé a bénéficié de toute
                 notre affection, du confort et de tous les soins depuis sa naissance et qu'il
                 a grandi avec sa mère et ses frères et sœurs jusqu'à huit semaines dans un environnement familial sain, propre,
@@ -247,7 +246,7 @@
                 représentatifs du standard de la race du whippet et conforme à nos attentes.</p>
             <p>Nos chiots whippet sont issus de lignées prestigieuses que nous connaissons parfaitement, que nous aimons et
                 que nous utilisons avec succés depuis maintenant plusieurs générations.</p>
-            <img src="/chiots_img/illus_fichier/chiotFleur.jpg" alt="chiot disponible avec une fleur"/>
+            <img src="/chiots_img/illus_fichier/chiotFleur.jpg" alt="chiot disponible avec une fleur">
             <p>
                 Grâce à cette sélection mais aussi parce que nous élevons tous nos bébés avec amour dans un environnement
                 propice vous avez la certitude d'avoir un joli chiot, sociable et plein de vitalité
@@ -255,7 +254,7 @@
                 <br>Le chiot whippet aime le contact, rien de tel qu'un moment sur vos genoux pour nouer des liens profonds.
             </p>
             <p>Pour finir sachez aussi que comme pour tous les propriétaires de "damoiseaux" nous serons à vos cotés pour vous
-                conseiller avant, pendant et aprés.. <br />
+                conseiller avant, pendant et aprés.. <br>
                 Depuis plus de trente ans nous élevons des whippets et nous sommes toujours disponibles pour eux.
                 Le bien être de nos whippets et la satisfaction des maîtres est une priorité absolue et il est de notre devoir
                 d'informer, de vous conseiller et de vous accompagner car nous savons qu'un maître averti vivra heureux et en
