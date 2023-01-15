@@ -411,7 +411,7 @@ body header .menu {
   color: white;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: nowrap;
   font-weight: bold;
@@ -421,6 +421,32 @@ body header .menu {
   body header .menu {
     font-size: 0.9em;
   }
+}
+body header .menu .nav-link, body header .menu .social {
+  height: 58px;
+  padding: 2px;
+}
+body header .menu .nav-link .bi, body header .menu .social .bi {
+  color: beige;
+  font-size: xx-large;
+}
+@media all and (max-width: 576px) {
+  body header .menu .nav-link .bi, body header .menu .social .bi {
+    font-size: x-large;
+  }
+}
+body header .menu .nav-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+body header .menu .social {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 body header .menu span {
   font-size: large;
@@ -433,11 +459,20 @@ body header .menu span {
 body header .menu .menu_link {
   color: #73264d;
   list-style-type: none;
-  padding: 2px;
-  padding-right: 5px;
-  padding-left: 5px;
   text-decoration: none;
   transition: all 0.3s ease-in;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+@media all and (max-width: 325px) {
+  body header .menu .menu_link {
+    padding: 2px;
+  }
+}
+@media all and (max-width: 300px) {
+  body header .menu .menu_link {
+    padding: 1px;
+  }
 }
 body header .menu .menu_link:hover {
   font-weight: bold;
