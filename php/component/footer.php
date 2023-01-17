@@ -3,3 +3,4 @@
     SIRET: 391602406 00020 <br>
     Elevage de whippet déclaré aux services vétérinaires et à la préfecture de la Corrèze sous le n° 20050219
 </p>
+<p class="text-center"><a href="/Condition_Confidentialité.php" >Mentions Légales et CGV</a></p>

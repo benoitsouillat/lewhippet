@@ -1,6 +1,7 @@
 <nav class="menu">
-    <span>lewhippet.com</span>
-    
+    <a href="/index.php" class="menu_link">
+        <span>lewhippet.com</span>
+    </a>
     <div class="nav-link">
         <a class="menu_link" href="/index.php">Accueil</a>
         |

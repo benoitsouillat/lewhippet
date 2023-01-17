@@ -273,12 +273,7 @@
         </div>
     </main>
     <footer>
-        <p>
-            Sabine Bourget, diplômée de l' Ecole Nationale du Chien N° ELEVEUR: 030488 / 51229 - N° MSA: 190 984 700 322
-            SIRET: 391602406 00020 <br>
-            Elevage de whippet déclaré aux services vétérinaires et à la préfecture de la Corrèze sous le n° 20050219
-        </p>
-
+        <?php require_once(__DIR__. '/php/component/footer.php' ); ?>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
