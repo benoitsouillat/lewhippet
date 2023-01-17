@@ -13,7 +13,7 @@
     </div>
     
     <div class="social">
-        <a href="https://www.facebook.com/sabine.bourget" target="_blank" title="Retrouvez-nous sur Facebook"><i class="bi bi-facebook"></i></a>
+        <a class="menu_link" href="https://www.facebook.com/sabine.bourget" target="_blank" title="Retrouvez-nous sur Facebook"><i class="bi bi-facebook"></i></a>
     </div>
 
 </nav>

@@ -430,6 +430,9 @@ body header .menu .nav-link .bi, body header .menu .social .bi {
   color: beige;
   font-size: xx-large;
 }
+body header .menu .nav-link .bi:hover, body header .menu .social .bi:hover {
+  color: goldenrod;
+}
 @media all and (max-width: 576px) {
   body header .menu .nav-link .bi, body header .menu .social .bi {
     font-size: x-large;
