@@ -19,3 +19,6 @@
 
        <!-- Favicon Bootstrap -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        
+        <!-- fontAwesome Icon -->
+<script src="https://kit.fontawesome.com/5944b63bf2.js" crossorigin="anonymous"></script>

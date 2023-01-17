@@ -1,6 +1,7 @@
 @import "component/_variables";
 @import "component/_highlight-puppy";
 @import "component/_index";
+@import "component/_contact";
 @import "component/_bb_dispo";
 @import "component/_mixins";
 
@@ -20,6 +21,8 @@ body {
 
 .container-fluid {
   margin-top: $nav-height;
+  padding: 0;
+
 }
 
 main {
