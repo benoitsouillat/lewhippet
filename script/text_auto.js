@@ -1,1 +1,0 @@
-document.getElementById("title_year").innerHTML =  getBreedAge() + " ans de passion et de bonheur pour une seule race .. Le Whippet !!";

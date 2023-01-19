@@ -9,7 +9,7 @@
         |
         <a class="menu_link" href="/chiots/bb_dispo.php"> Nos chiots</a>
         |
-        <a class="menu_link" href="/contact/contact.html"> Contact </a>
+        <a class="menu_link" href="/contact/contact.php"> Contact </a>
     </div>
     
     <div class="social">
