@@ -280,6 +280,17 @@ address {
   min-height: unset;
   max-width: 97%;
   max-height: 230px;
+  border-radius: 5%;
+  border: solid black 1px;
+  box-shadow: 3px 2px 2px black;
+  box-sizing: border-box;
+  margin: 15px auto;
+}
+.where_is_content .diapo_contact .carousel-caption {
+  padding-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
 }
 
 #g_map {
@@ -312,6 +323,15 @@ address {
   font-size: 1.1em;
   background-color: #fff;
   width: 100%;
+}
+.div_address img {
+  max-width: 30%;
+  max-height: 230px;
+  border-radius: 5%;
+  border: solid black 1px;
+  box-shadow: 3px 2px 2px black;
+  box-sizing: border-box;
+  margin: 15px auto;
 }
 @media all and (max-width: 380px) {
   .div_address > img {
