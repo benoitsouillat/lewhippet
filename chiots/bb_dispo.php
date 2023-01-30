@@ -59,8 +59,50 @@
                         <br>
                         <figcaption>Premier Repas pour nos bébés !! </figcaption>
                     </figure>
-                    
-                    
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Oracle/325468647_876671950317355_3303173646111487727_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>
+                            <p> Les bébés d'Oracle sont arrivés !!! </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Oracle/326272756_1312984222814492_7361074400586658270_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>
+                            <p> Bonjour tout le monde </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/326310338_5803681369726569_6345815648555465198_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>
+                            <p> Femelle Bringée disponible, née le 6 Décembre <br> Son prix est de 1400€ </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/326794037_770231214615171_3711510771402926616_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>
+                            <p> Fille de Néfertiti </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/327246161_6266342450063151_5143470316709733989_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>
+                            <p>-</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/327265876_460156576172281_7309212729592022667_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>
+                            <p> Femelle Bringée disponible, née le 6 Décembre <br> Son prix est de 1400€ </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Nefertiti/326741964_3472290066375589_190440939378056735_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>
+                            <p> - </p>
+                        </figcaption>
+                    </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Nefertiti/bb_nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img">
                         <figcaption>
@@ -73,30 +115,7 @@
                             <p> - </p>
                         </figcaption>
                     </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo2.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> - </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/nefer_dispo.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> - </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/nefer_maman2.jpg" alt="whippets disponibles" class="puppies_img">
-                        <figcaption>
-                            <p> - </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Nefertiti/neffer_bb.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> - </p>
-                        </figcaption>
-                    </figure>
+
                     
 
                     

@@ -1,6 +1,19 @@
 <section class="index__expo__result col-12 text-center">
     <h2>Nos derniers résultats en exposition</h2>
     <div>
+        <h3>Perpignan CACIB 2023</h3>
+        <p> Un excellent week-end avec la Romance des Damoiseaux à Perpignan cette année 2023</p>
+        <p> Voici nos résultats :
+            <br> Impériale : Meilleur Lévrier de l'exposition en vétérans <br> Un grand combat avec ma pepette !
+            <br> Signature : Meilleur du groupe Lévrier en classe Jeune
+            <br> Zero To One dite Zazie s'est classée meilleur champion et meilleur de race ainsi que deuxième meilleur du groupe des lévriers
+            <br> Yamamoto dit Yam :  Meilleur Baby de l'exposition et Best-in Show le Dimanche</p>
+        <p>Jugés par Mr Barjot parmi 34 Whippets incrits</p>
+        <br>
+        <p>Encore une journée trés intense en émotion, et je remercie tout le monde qui m'a soutenue de près ou de loin.</p>
+        <img src="/expo_img/Yam_Perpi_2023.jpg" alt="Exposition Canine La Romance des Damoiseaux">
+    </div>
+    <div>
         <h3>Paris Dog Show 2023</h3>
         <p> Un grand merci à tout ceux qui m'ont soutenu lors de la Paris Dog Show 2023</p>
         <p> Voici nos résultats :
@@ -25,7 +38,7 @@
         <img src="/expo_img/Yam_Rouen_2023.jpg" alt="la romance des damoiseaux whippet en exposition">
     </div>
     
-    <div>
+   <!-- <div>
         <h3>Nantes 2022</h3>
         <p>Une exposition pleine de succès à l'exposition intrnationale de Nantes 2022</p>
         <p>Voici nos résultats :
@@ -35,5 +48,5 @@
         <p>50 whippets étaient inscrits et jugés par Mme Kleyn</p>
         <br>
         <img src="/expo_img/Zazie_Nantes_2023.jpg" alt="Zazie whippet en exposition">
-    </div>
+    </div>-->
 </section>
