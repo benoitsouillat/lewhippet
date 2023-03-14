@@ -61,52 +61,42 @@
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Oracle/3sem/329962448_1332012314312067_2930737939585532068_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <img src="/chiots_img/2023//24jan/blanche2.jpg" alt="whippets disponibles" class="puppies_img">
                         <figcaption>
-                                <p> Un gros dodo pour les bébés d'Oracle <br> Nés le 24 Décembre 2022</p>
+                                <p> Femelle Whippet bicolore disponible <br> Nés le 24 Décembre 2022</p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Oracle/3sem/328859045_5975364102529254_4130814329266587685_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/24jan/blanche.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
-                            <p> Bonjour tout le monde </p>
+                            <p> Jolie Femelle disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/24jan/tourterelle2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>
+                            <p> Magnifique Femelle Tourterelle ouverte à la réservation </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Oracle/3sem/331266765_774286614276752_623239530420805642_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Oracle/3sem/330781996_726406419087852_6734900420600201116_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Oracle/3sem/fezfzrzr.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Oracle/3sem/330384263_521327176751807_7486314607307740874_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/24jan/tourterelle.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
                             <p>Chiot Whippets disponible à la réservation</p>
                         </figcaption>
                     </figure>
-
-
-
-
-
-
-
-
-
-
-
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/24jan/bi-colore2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>
+                            <p>Femelle Bicolore </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/24jan/bi-colore.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>
+                            <p></p>
+                        </figcaption>
+                    </figure>
                 </div>
             </section>
         
