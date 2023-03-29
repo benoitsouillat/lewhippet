@@ -1,6 +1,20 @@
 <section class="index__expo__result col-12 text-center">
     <h2>Nos derniers résultats en exposition</h2>
     <div>
+        <h3>Montluçon CACIB 2023</h3>
+        <p> Une superbe exposition avec la Romance des Damoiseaux à Montluçon cette année 2023</p>
+        <p> Voici nos résultats :
+            <br> Impériale : 1ere excellent + CACIB V + BOB V + BOG V + BIS ( 3 ). Juge Mme melchior ( Luxembourg)
+            <br> Signature : 1ere excellent en classe jeune, CACIB Jeune + BOB + BOG + BIS Jugé par Mr Beccarelli et Mr Favre
+            <br> Zero To One dite Zazie
+            Zazie 1ere excellent classe champion + Meilleur de race + Meilleur du groupe + BIS ( 3 ) jugé par Mr Beccarelli</p>
+        <p>Jugés par Mr Barjot parmi 34 Whippets incrits</p>
+        <br>
+        <p>Journée géniale en compagnie du soutien de La Romance des Damoiseaux, merci encore à tous.</p>
+        <img src="/expo_img/zazie_bis_montlucon23.jpg" alt="Exposition Canine La Romance des Damoiseaux">
+    </div>
+    
+    <div>
         <h3>Perpignan CACIB 2023</h3>
         <p> Un excellent week-end avec la Romance des Damoiseaux à Perpignan cette année 2023</p>
         <p> Voici nos résultats :
@@ -23,19 +37,6 @@
         <p>Jugés par Mr Barjot parmi 34 Whippets incrits</p>
         <br>
         <img src="/expo_img/Prodige_Paris_BOB_2023.jpg" alt="Prodige de la romance des damoiseaux whippet en exposition">
-    </div>
-    
-    <div>
-        <h3>Rouen 2022</h3>
-        <p>Nous sommes allés cette année à l'exposition internationale de Rouen et la Romance des Damoiseaux a vraiment bien été représentée avec grand succès.</p>
-        <p>Voici nos résultats :
-            <br> Zero to One dite Zazie a fait le CACS et meilleur whippet de l'exposition le samedi
-            <br> Yamamoto dit Yam : Meilleur de Race en classe Baby
-            <br> Signature de la romance des damoiseaux est également meilleur whippet en classe jeune, une carrière très prometteuse pour ma jolie Signature.
-            <br> Ainsi que Prodige qui s'est vu decerné le CACS en spéciale de race Whippet le dimanche, ainsi que le prix de meilleur lévrier de l'exposition.
-        </p>
-        <br>
-        <img src="/expo_img/Yam_Rouen_2023.jpg" alt="la romance des damoiseaux whippet en exposition">
     </div>
     
    <!-- <div>

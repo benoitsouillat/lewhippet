@@ -148,6 +148,7 @@
 }
 .index__expo__result img {
   max-width: 75%;
+  max-height: 480px;
 }
 @media all and (max-width: 768px) {
   .index__expo__result img {
