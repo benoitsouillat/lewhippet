@@ -60,29 +60,18 @@
                         <figcaption>Premier Repas pour nos bébés !! </figcaption>
                     </figure>
 
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023//24jan/blanche2.jpg" alt="whippets disponibles" class="puppies_img">
-                        <figcaption>
-                                <p> Mâle Whippet bicolore disponible <br> Nés le 24 Décembre 2022</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/24jan/blanche.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> Joli Mâle disponible </p>
-                        </figcaption>
-                    </figure>
+
 
                     <figure class="card-image">
                         <img src="/chiots_img/2023/24jan/tourterelle2.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
-                            <p> Magnifique Femelle Tourterelle ouverte à la réservation </p>
+                            <p> Magnifique Femelle Tourterelle </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/24jan/tourterelle.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
-                            <p>Chiot Whippets disponible à la réservation</p>
+                            <p>En cours de réservation</p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
@@ -94,7 +83,7 @@
                     <figure class="card-image">
                         <img src="/chiots_img/2023/24jan/bi-colore.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>
-                            <p>Disponible pour réservation</p>
+                            <p>Réservée</p>
                         </figcaption>
                     </figure>
                 </div>
