@@ -12,19 +12,18 @@ photos/
 poeme/
 sommaire/
 Video/
-lewhippet_react/
-node_modules/
-
 albums-galeries-whippet.htm
 Cgv.htm
 copyright.htm
 guide-whippet.htm
+
+lewhippet_react/
+node_modules/
 webpack.config.js
-
-
 
 vendors
 _*
+secret
 
 !.gitignore
 !guide-pratique/
