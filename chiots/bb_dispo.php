@@ -30,9 +30,6 @@
             <h4>Voici nos chiots Whippet Disponibles</h4>
         </div>
 
-
-
-
         <div class="puppy_dispo">
             <h5>Chiots Whippet Mâles et Femelles disponibles <span>(Photos et Vidéos à la demande)</span></h5>
             <p>Nos dernières naissances des bébés whippet</p>
@@ -60,32 +57,193 @@
                         <figcaption>Premier Repas pour nos bébés !! </figcaption>
                     </figure>
 
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/fem1-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Femelle N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/fem1-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Femelle N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/fem1-3.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Femelle N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male1-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male1-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male1-3.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male2-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°2 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male2-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°2 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male2-3.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°2 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male3-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°3 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male3-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°3 disponible </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jouvence/male3-3.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jouvence <br> Male N°3 disponible </p>
+                        </figcaption>
+                    </figure>
+                    
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/male1-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Male N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/male1-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Male N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/male2-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Male N°2 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/male2-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Male N°2 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/male3-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Male N°3 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/male3-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Male N°3 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/fem1-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Femelle disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/fem1-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Philosophe <br> Femelle disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/male1-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Prestance et Poopy <br> Mâle N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/male1-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Poopy <br> Mâle N°1 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/male2-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Prestance et Poopy <br> Mâle N°2 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/male2-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Poopy <br> Mâle N° 2 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/male3-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Prestance et Poopy <br> Mâle N°3 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/male3-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Poopy <br> Mâle N°3 disponible </p>
+                        </figcaption>
+                    </figure>
 
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/24jan/tourterelle2.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p> Magnifique Femelle Tourterelle </p>
+                        <img src="/chiots_img/2023/Prestance/male4-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Prestance et Poopy <br> Mâle N°4 disponible </p>
                         </figcaption>
                     </figure>
+
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/24jan/tourterelle.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p>En cours de réservation</p>
+                        <img src="/chiots_img/2023/Prestance/male4-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Poopy <br> Mâle N°4 disponible </p>
                         </figcaption>
                     </figure>
+
+
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/24jan/bi-colore2.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p>Femelle Bicolore </p>
+                        <img src="/chiots_img/2023/Prestance/male5-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Prestance et Poopy <br> Mâle N°5 disponible </p>
                         </figcaption>
                     </figure>
+
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/24jan/bi-colore.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>
-                            <p>Réservée</p>
+                        <img src="/chiots_img/2023/Prestance/male5-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Poopy <br> Mâle N°5 disponible </p>
                         </figcaption>
                     </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/fem2-1.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Prestance et Poopy <br> Mâle N°5 disponible </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/fem2-2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Jeune-Fille et Poopy <br> Mâle N°5 disponible </p>
+                        </figcaption>
+                    </figure>
+
                 </div>
             </section>
         
@@ -258,7 +416,7 @@
         </div>
     </main>
     <footer>
-        <?php require_once(__DIR__. '/php/component/footer.php' ); ?>
+        <?php require_once(__DIR__ . '../../php/component/footer.php'); ?>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
