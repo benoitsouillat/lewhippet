@@ -9,3 +9,8 @@ function getAllUsers()
 {
     return "SELECT email FROM users";
 }
+
+function getUser($email)
+{
+    return "SELECT * FROM users WHERE email=$email";
+}
