@@ -18,7 +18,7 @@
         <a class="btn btn-danger btn_red w-50 m-5" href="../index.php">Retourner à l'accueil</a>
     </div>
     <section class="d-flex justify-content-center">
-        <form class="form_administration w-25" method="post">
+        <form class="form_administration w-25" method="post" action="./user/register.php">
             <label for="username">Adresse Email</label>
             <input class="form-control" name="username" id="username" type="email" />
             <br>
