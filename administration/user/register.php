@@ -1,6 +1,6 @@
 <?php
 
-const DEFAULT_PROFILE_PATH_IMG = "/user_img/default.jpg";
+define('DEFAULT_PROFILE_PATH_IMG', '/user_img/default.jpg');
 require_once(__DIR__ . '/../../secret/connexion.php');
 require_once(__DIR__ . '/../utilities/usefull_functions.php');
 require_once(__DIR__ . '/../sql/users_request.php');

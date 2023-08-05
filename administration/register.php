@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription La Romance des Damoiseaux</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="important_message alert alert-danger d-flex flex-column justify-content-center align-items-center mb-5">
-        <h1 class="red_message bold_message">Cette page est réservée à l'administration du site, si vous êtes arrivé ici
+        <h1 class="text-center">Cette page est réservée à l'administration du site, si vous êtes arrivé ici
             par
             erreur, merci de retourner sur
             <a href="../index.php">la page d'accueil</a>
