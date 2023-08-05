@@ -11,7 +11,7 @@
 
 <body>
     <div class="important_message alert alert-danger d-flex flex-column justify-content-center align-items-center mb-5">
-        <h1 class="red_message bold_message">Cette page est réservée à l'administration du site, si vous êtes arrivé ici
+        <h1 class="text-center">Cette page est réservée à l'administration du site, si vous êtes arrivé ici
             par erreur, merci de retourner sur
             <a href="../index.php">la page d'accueil</a>
         </h1>
@@ -28,10 +28,8 @@
             if (isset($_GET['error'])) {
                 if ($_GET['error'] === "mdp") {
                     echo '<div class="alert alert-danger text-center"><p>Identifiants incorrects</p></div>';
-                }
-                else {
+                } else {
                     echo '<div class="alert alert-danger text-center"><p>Une erreur s\'est produite</p></div>';
-
                 }
                 //Peut-être exclu vers un autre fichier pour géré l'affichage des bandeaux d'erreur et l'HTML à part et l'importer en variable
             }
