@@ -80,13 +80,16 @@
 .index_content h2 {
   text-decoration: underline;
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 380px) {
   .index_content h2 {
     white-space: nowrap;
   }
 }
 .index_content h2, .index_content h3 {
   text-align: center;
+  color: #572d54;
+}
+.index_content h2 a, .index_content h3 a {
   color: #572d54;
 }
 
@@ -96,7 +99,7 @@
 }
 @media all and (max-width: 768px) {
   #index_bb {
-    width: 80%;
+    max-width: 350px;
   }
 }
 
@@ -106,6 +109,14 @@
   align-items: center;
   grid-column: 1;
   grid-row: 1;
+}
+.index__bb__dispo .btn {
+  scale: 1.5;
+}
+@media all and (max-width: 768px) {
+  .index__bb__dispo .btn {
+    scale: 1.2;
+  }
 }
 @media all and (min-width: 992px) {
   .index__bb__dispo {
@@ -178,6 +189,10 @@
   width: 550px;
   border-radius: 20px;
   border: solid goldenrod 2px;
+}
+
+.annonce_bb_nés {
+  font-size: 1.2em;
 }
 
 address {

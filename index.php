@@ -31,13 +31,13 @@
             <hr>
             
             <section class="fr3 col-12 text-center">
-                <h2>Nos whippets passent à la télévision</h2>
+                <h2>Nos whippets passent à la télé</h2>
                 <iframe class="player-css" title="la romance des damoiseaux whippet chez france télévision?autoplay=1" src="//embedftv-a.akamaihd.net/33a6e5bbd3bce859a7eb7827a71d9404?muted=1" allowfullscreen=""></iframe>
                 <p>Un grand merci à l'équipe de France 3 pour leur professionnalisme et leur intérêt pour mes loulous.</p>
             </section>
             <hr>
             <section class="index_accessories col-12 text-center">
-                <h2>Retrouvez nos accessoires spécial Whippet</h2>
+                <h2>Tout nos accessoires Whippet</h2>
                 <img src="accessoires-chiens/doudou_pres.jpg" alt="accessoires pour whippets" >
                 <p>Les nouveaux doudous sont disponibles, expédition possible <br> N'hésitez pas à nous contacter</p>
                 <a href="/chiots/articles-chiot.htm" class="btn btn-gold">Nos Accessoires</a>
@@ -47,7 +47,7 @@
 
     </main>
     <footer>
-        <?php require_once(__DIR__. '/php/component/footer.php' ); ?>
+        <?php require_once(__DIR__ . '/php/component/footer.php' ); ?>
     </footer>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

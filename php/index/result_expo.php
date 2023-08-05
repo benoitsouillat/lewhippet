@@ -1,5 +1,14 @@
 <section class="index__expo__result col-12 text-center">
-    <h2>Nos derniers résultats en exposition</h2>
+    <h2>Nos derniers résultats en expo</h2>
+
+    <div>
+        <h3>Carcassonne CACIB 2023</h3>
+        <p> Voici les résultats de la Romance des Damoiseaux à Carcassonne cette année</p>
+        <p> Zazie best in show champion les deux jours à Carcassonne + suprême best  in show
+            En bonne compagnie sur le podium avec la représentante de la mairie de Carcassonne et Mr Stibel ( juge venant tout droit de Macédoine )</p>
+        <img src="/expo_img/zazie_carcasonne_23.jpg" alt="Exposition Canine La Romance des Damoiseaux à Carcassonne">
+    </div>
+    
     <div>
         <h3>Montluçon CACIB 2023</h3>
         <p> Une superbe exposition avec la Romance des Damoiseaux à Montluçon cette année 2023</p>
@@ -11,7 +20,7 @@
         <p>Jugés par Mr Barjot parmi 34 Whippets incrits</p>
         <br>
         <p>Journée géniale en compagnie du soutien de La Romance des Damoiseaux, merci encore à tous.</p>
-        <img src="/expo_img/zazie_bis_montlucon23.jpg" alt="Exposition Canine La Romance des Damoiseaux">
+        <img src="/expo_img/zazie_bis_montlucon23.jpg" alt="Exposition Canine La Romance des Damoiseaux à Montlucon">
     </div>
     
     <div>
@@ -27,17 +36,7 @@
         <p>Encore une journée trés intense en émotion, et je remercie tout le monde qui m'a soutenue de près ou de loin.</p>
         <img src="/expo_img/Yam_Perpi_2023.jpg" alt="Exposition Canine La Romance des Damoiseaux">
     </div>
-    <div>
-        <h3>Paris Dog Show 2023</h3>
-        <p> Un grand merci à tout ceux qui m'ont soutenu lors de la Paris Dog Show 2023</p>
-        <p> Voici nos résultats :
-            <br> Prodige : 1er Excellent, CACS, et Meilleur de Race le Samedi et le Dimanche
-            <br> Signature : Meilleure Whippet et meilleur de groupe Lévrier en classe Jeune
-            <br> Yamamoto dit Yam :  Meilleur de race Baby et meilleur baby de l'exposition. Je suis très fière de mon petit Yam </p>
-        <p>Jugés par Mr Barjot parmi 34 Whippets incrits</p>
-        <br>
-        <img src="/expo_img/Prodige_Paris_BOB_2023.jpg" alt="Prodige de la romance des damoiseaux whippet en exposition">
-    </div>
+
     
    <!-- <div>
         <h3>Nantes 2022</h3>
