@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../secret/connexion.php');
+require_once(__DIR__ . '/../../secret/connexion.php');
 
 
 function addPuppy()

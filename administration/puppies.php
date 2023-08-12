@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once(__DIR__ . '/../secret/connexion.php');
+require_once(__DIR__ . '/utilities/usefull_functions.php');
+require_once(__DIR__ . '/sql/puppies_request.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,7 +11,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gérer les chiots</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body>
@@ -20,38 +24,48 @@ session_start();
 
         <h1 class="text-center alert alert-info p-5">Retrouvez tous les chiots sur cette page</h1>
 
-        <div>
+        <div class="d-flex flex-row justify-content-center m-2 p-2">
             <a href="#" class="btn btn-success">Créer un nouveau chiot</a>
         </div>
-        <div class="puppies_container d-flex justify-content-around">
+        <div class="puppies_container d-flex justify-content-around flex-wrap">
+            <?php
+            $stmt = $conn->query(getAllPuppies());
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+            ?>
+            <div class="card col-2 m-3">
+                <img class="card-img-top" src="../puppies_img/photo.jpg" alt="Chiot Whippet disponible">
+                <div class="card-body">
+                    <?php
+                        if ($row['sex'] === "femelle") {
+                            echo "<h3 class=\"card-title text-danger\">" . ucfirst(htmlspecialchars($row['name'])) . "</h3>";
+                        } else {
+                            echo "<h3 class=\"card-title text-primary\">" . htmlspecialchars($row['name']) . "</h3>";
+                        }
+                        ?>
+                    <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                    <?php
+                        if ($row['available'] === "En Option") {
+                            echo ("<p class=\"alert alert-warning\">En Option</p>");;
+                        } else if ($row['available'] === "Réservé" || $row['available'] === 'réservé') {
+                            if ($row['sex'] === "femelle") {
+                                echo ("<p class=\"alert alert-danger\">Réservée</p>");
+                            } else {
+                                echo ("<p class=\"alert alert-danger\">Réservé</p>");
+                            }
+                        } else {
+                            echo ("<p class=\"alert alert-success\">Disponible</p>");;
+                        }
+                        ?>
+                    <div class="btn-container d-flex flex-row justify-content-around">
+                        <a href="" class="btn btn-primary">Modifier</a>
+                        <a href="" class="btn btn-danger">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+            <?php
+            endwhile;
+            ?>
 
-            <div class="card w-25">
-                <img class="card-img-top" src="../puppies_img/photo.jpg" alt="Chiot Whippet disponible">
-                <div class="card-body">
-                    <h3 class="card-title">Josette</h3>
-                    <p class="card-text">Jolie femelle disponible, né le 31 Juillet 2023, fille de Samourai et
-                        Philosophe, disponible à partir du 30 Octobre 2023.</p>
-                    <p class="alert alert-warning">En Option</p>
-                </div>
-            </div>
-            <div class="card w-25">
-                <img class="card-img-top" src="../puppies_img/photo.jpg" alt="Chiot Whippet disponible">
-                <div class="card-body">
-                    <h3 class="card-title">Poupy</h3>
-                    <p class="card-text">Jolie femelle disponible, né le 31 Juillet 2023, fille de Samourai et
-                        Philosophe, disponible à partir du 30 Octobre 2023.</p>
-                    <p class="alert alert-danger">Réservé</p>
-                </div>
-            </div>
-            <div class="card w-25">
-                <img class="card-img-top" src="../puppies_img/photo.jpg" alt="Chiot Whippet disponible">
-                <div class="card-body">
-                    <h3 class="card-title">Josette</h3>
-                    <p class="card-text">Jolie femelle disponible, né le 31 Juillet 2023, fille de Samourai et
-                        Philosophe, disponible à partir du 30 Octobre 2023.</p>
-                    <p class="alert alert-success">Disponible</p>
-                </div>
-            </div>
 
 
         </div>

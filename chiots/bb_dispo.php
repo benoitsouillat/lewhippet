@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
+    <meta name="description"
+        content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET LOF A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
     <?php
     require_once(__DIR__ . '../../php/component/head-links.php');
@@ -59,298 +60,326 @@
 
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jouvence/male2/joli.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Jouvence/male2/joli.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Jouvence et Poopy <br> Mâle Tourterelle Bringé bleu disponible
                             <br> Né le 10 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jouvence/male2/bien.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Jouvence/male2/bien.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Jouvence et Poopy <br> Mâle Tourterelle Bringé bleu disponible
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jouvence/male2/364211102_1018843975911784_4710377221791296665_n.jpg" alt="whippets disponibles" class="puppies_img">
+                        <img src="/chiots_img/2023/Jouvence/male2/364211102_1018843975911784_4710377221791296665_n.jpg"
+                            alt="whippets disponibles" class="puppies_img">
                         <figcaption>Chiot disponible de Jouvence et Poopy <br> Mâle Tourterelle Bringé bleu disponible
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male1/364207131_268032969294524_5852578914269311499_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Jeunefille/male1/364207131_268032969294524_5852578914269311499_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Bicolore beige bleuté
                             <br> Né le 20 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male1/364205980_1347957606145680_3261437561642514249_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Jeunefille/male1/364205980_1347957606145680_3261437561642514249_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Bicolore beige bleuté
                             <br> Né le 20 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male1/364220234_684324006875449_807642773464245391_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Jeunefille/male1/364220234_684324006875449_807642773464245391_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Bicolore beige bleuté
                             <br> Né le 20 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male2/male2-1.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Sable charbonné
-                            <br> Né le 20 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male2/364215503_1105164257554273_5042804769607118568_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Sable charbonné
-                            <br> Né le 20 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male2/364219268_171435515955754_1947860324274963590_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Sable charbonné
-                            <br> Né le 20 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/fem1/363514759_800378951869615_7104962343393439962_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/fem1/363514759_800378951869615_7104962343393439962_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/fem1/aze.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/fem1/aze.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male1/364213983_825126799018286_2087214604312768939_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male1/364213983_825126799018286_2087214604312768939_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male bringé bleu disponible
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male1/364213978_687049493302104_7469015803837769534_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male1/364213978_687049493302104_7469015803837769534_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male bringé bleu disponible
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male1/364220238_599355445701612_4378709767762893580_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male1/364220238_599355445701612_4378709767762893580_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male bringé bleu disponible
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male2/bien.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male2/bien.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Tourterelle bringé bleu
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male2/364207130_1957765384590559_2106386973552254167_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male2/364207130_1957765384590559_2106386973552254167_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Tourterelle bringé bleu
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male2/363794013_629065769329847_3387672368848463918_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male2/363794013_629065769329847_3387672368848463918_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Tourterelle bringé bleu
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male3/bien.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male3/bien.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Fauve et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male3/coucou.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male3/coucou.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Fauve et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male3/364208884_616201307246971_3784458467010902775_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male3/364208884_616201307246971_3784458467010902775_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Fauve et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male4/bien.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male4/bien.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Beige et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male4/363747343_271628902162267_4444532438767979274_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male4/363747343_271628902162267_4444532438767979274_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Beige et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male4/364204719_799958651831516_5055931400861113665_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male4/364204719_799958651831516_5055931400861113665_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Beige et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male5/bien.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male5/bien.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Bicolore bringé bleuté
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male5/364207130_1942599769445552_6585553431883023049_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male5/364207130_1942599769445552_6585553431883023049_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Bicolore bringé bleuté
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male5/364202607_1517447115456731_5073398544305123728_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male5/364202607_1517447115456731_5073398544305123728_n.jpg"
+                            alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Bicolore bringé bleuté
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image" id="prodige">
-                        <img src="/chiots_img/2023/Prodige/fem1/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/fem1/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy <br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem1/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/fem1/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem2/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/fem2/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy <br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem2/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Prodige et Poopy </p>
-                        </figcaption>
-                    </figure>
-
-
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem3/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Prodige et Poopy <br> </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem3/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/fem2/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy </p>
                         </figcaption>
                     </figure>
 
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/mal1/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/fem3/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy <br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/mal1/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/fem3/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Chiot disponible de Prodige et Poopy </p>
+                        </figcaption>
+                    </figure>
+
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prodige/mal1/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Chiot disponible de Prodige et Poopy <br> </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prodige/mal1/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/mal2/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/mal2/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy <br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/mal2/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/mal2/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/mal3/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/mal3/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy <br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/mal3/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prodige/mal3/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prodige et Poopy </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/fem1/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/fem1/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/fem1/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/fem1/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/fem2/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/fem2/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/fem2/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/fem2/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/fem3/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/fem3/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/fem3/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/fem3/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal1/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/mal1/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal1/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/mal1/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal2/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/mal2/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal2/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/mal2/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal3/baby.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/mal3/baby.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal3/baby2.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Miss/mal3/baby2.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
@@ -394,13 +423,23 @@
                         whippet</a>
                     <div class="puppies_articles_box">
                         <div class="puppies_articles_img">
-                            <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG" alt="whippet et accessoires">
-                            <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG" alt="whippet et accessoires">
-                            <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG" alt="whippet et accessoires">
+                            <img class="img_medium_vertical"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG"
+                                alt="whippet et accessoires">
+                            <img class="img_medium_vertical"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG"
+                                alt="whippet et accessoires">
+                            <img class="img_medium_vertical"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG"
+                                alt="whippet et accessoires">
                         </div>
                         <div class="puppies_articles_img">
-                            <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG" alt="whippet et accessoires">
-                            <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG" alt="whippet et accessoires"><br>
+                            <img class="img_medium_horizontal"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG"
+                                alt="whippet et accessoires">
+                            <img class="img_medium_horizontal"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG"
+                                alt="whippet et accessoires"><br>
                         </div>
                         <p>
                             Jouets de 5 à 26 euros selon la référence, les
@@ -468,7 +507,8 @@
                 <article id="male_femelle">
                     <h2>Mâle ou Femelle : Que choisir ??</h2>
                     <div>
-                        <img src="/chiots_img/illus_fichier/chiotschapeau.jpg" alt="whippet calme et équilibré joue avec un chapeau">
+                        <img src="/chiots_img/illus_fichier/chiotschapeau.jpg"
+                            alt="whippet calme et équilibré joue avec un chapeau">
                         <p>Nos chiots whippets sont calmes et équilibrés, ils évoluent dans un environnement
                             sain qui leur permet de s'adapter facilement à leur nouvelle vie.</p>
                     </div>
@@ -530,8 +570,10 @@
         <?php require_once(__DIR__ . '../../php/component/footer.php'); ?>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 </body>
 
