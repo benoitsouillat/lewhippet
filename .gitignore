@@ -10,6 +10,7 @@ journal_bb/
 journal_damoiseaux/
 photos/
 poeme/
+puppies_img/
 sommaire/
 Video/
 albums-galeries-whippet.htm
@@ -27,6 +28,6 @@ secret
 
 !.gitignore
 !guide-pratique/
-
+!puppies_img/default.jpg
 
 
