@@ -59,68 +59,74 @@
 
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jouvence/male2/joli.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jouvence et Poopy <br> Mâle Tourterelle Bringé bleu disponible
+                        <img src="/chiots_img/2023/Jouvence/male2/2m.jpg" alt="whippets disponibles" class="puppies_img ">
+                        <figcaption>Ugo est disponible <br> fils de Jouvence et Poopy - Bringé bleu disponible
                             <br> Né le 10 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jouvence/male2/bien.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jouvence et Poopy <br> Mâle Tourterelle Bringé bleu disponible
+                        <img src="/chiots_img/2023/Jouvence/male2/avecmaman.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>"Coucou Papa Poopy" <br> Mâle Tourterelle Bringé bleu disponible
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jouvence/male2/364211102_1018843975911784_4710377221791296665_n.jpg" alt="whippets disponibles" class="puppies_img">
-                        <figcaption>Chiot disponible de Jouvence et Poopy <br> Mâle Tourterelle Bringé bleu disponible
-                        </figcaption>
-                    </figure>
-
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male1/364207131_268032969294524_5852578914269311499_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Bicolore beige bleuté
-                            <br> Né le 20 Juin 2023 </p>
+                        <img src="/chiots_img/2023/Jouvence/male2/coucou.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Ugo disponible dès maintenant
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male1/364205980_1347957606145680_3261437561642514249_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Bicolore beige bleuté
-                            <br> Né le 20 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male1/364220234_684324006875449_807642773464245391_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Bicolore beige bleuté
-                            <br> Né le 20 Juin 2023 </p>
+                        <img src="/chiots_img/2023/Jouvence/male2/ugo.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>"J'aime bien être dans les bras" <br> Ugo disponible
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male2/male2-1.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Sable charbonné
+                        <img src="/chiots_img/2023/Jeunefille/male1/2m.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Utah réservé de Jeunefille et Philosophe <br> Mâle Bicolore beige bleuté
+                            <br> Né le 20 Juin 2023 </p>
+                        </figcaption>
+                    </figure>
+
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/fem1/coucou.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Femelle disponible de Jeunefille et Philosophe <br> Sable Masquée
                             <br> Né le 20 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male2/364215503_1105164257554273_5042804769607118568_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Sable charbonné
+                        <img src="/chiots_img/2023/Jeunefille/fem1/mignon.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Petite chipie qui surveille tout<br> Femelle sable disponible
                             <br> Né le 20 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Jeunefille/male2/364219268_171435515955754_1947860324274963590_n.jpg" alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Mâle Sable charbonné
+                        <img src="/chiots_img/2023/Jeunefille/fem1/jeu.jpg" alt="whippets disponibles" class="puppies_img">
+                        <figcaption>"J'ai beaucoup de malice à revendre" <br> Femelle sable disponible
+                            <br> Né le 20 Juin 2023 </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Jeunefille/fem1/tete.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Jeunefille et Philosophe <br> Femelle sable disponible
                             <br> Né le 20 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/fem1/363514759_800378951869615_7104962343393439962_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/fem1/grandi.jpg" alt=" whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/fem1/aze.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/fem1/regard.jpg" alt=" whippets disponibles" class="puppies_img xl">
+                        <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
+                            <br> Né le 28 Juin 2023 </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Prestance/fem1/portrait.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
@@ -184,19 +190,19 @@
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male4/bien.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male4/regard.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Beige et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male4/363747343_271628902162267_4444532438767979274_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male4/joueur.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Beige et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male4/364204719_799958651831516_5055931400861113665_n.jpg" alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male4/posé.jpg" alt="whippets disponibles" class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male Beige et Blanc
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
