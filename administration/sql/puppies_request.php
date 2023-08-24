@@ -7,6 +7,11 @@ function addPuppy()
 {
 }
 
+function deletePuppy($id)
+{
+    return "DELETE FROM `puppies` WHERE `id` = :id";
+}
+
 function getAllPuppies()
 {
     return "SELECT * FROM puppies";
