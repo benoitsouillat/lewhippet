@@ -10,7 +10,7 @@ journal_bb/
 journal_damoiseaux/
 photos/
 poeme/
-puppies_img/
+puppies_img/*
 sommaire/
 Video/
 albums-galeries-whippet.htm
@@ -24,11 +24,12 @@ webpack.config.js
 
 vendors
 _*
-secret
+secret/*
 
 !.gitignore
 !guide-pratique/
 !puppies_img/default.jpg
+!secret/bddScript.php
 
 
 
