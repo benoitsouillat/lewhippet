@@ -14,9 +14,11 @@ $table_puppies = "CREATE TABLE `damoiseaux_php`.`puppies` (`id` INT NOT NULL AUT
 
 function random_status()
 {
-    $rand = rand(1, 2);
+    $rand = rand(1, 3);
     if ($rand === 1) {
         return 'Disponible';
+    } else if ($rand === 3) {
+        return 'En option';
     } else {
         return 'Réservé';
     }
@@ -32,7 +34,16 @@ function random_sex()
 }
 
 
-$path_img = "../puppies_img/photo.jpg";
+$path_img = "../puppies_img/default.jpg";
+
+for ($i = 0; $i < 3; $i++) {
+    $rand_status = random_status();
+    $rand_sex = random_sex();
+
+    $test_puppies = "INSERT INTO `puppies` (name, sex, available, description, main_img_path) VALUES ('Jean', '$rand_sex', '$rand_status', 'Ceci est une description !!' , '$path_img')";
+    $conn->exec($test_puppies);
+}
+
 $rand_status = random_status();
 $rand_sex = random_sex();
 
