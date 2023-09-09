@@ -30,6 +30,7 @@ secret/*
 !guide-pratique/
 !puppies_img/default.jpg
 !secret/bddScript.php
+!secret/bddDeleteSomeData.php
 
 
 
