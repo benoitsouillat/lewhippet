@@ -16,3 +16,8 @@ function getAllPuppies()
 {
     return "SELECT * FROM puppies";
 };
+
+function getPuppyFromId($id)
+{
+    return "SELECT * FROM puppies where `id` = :id";
+}

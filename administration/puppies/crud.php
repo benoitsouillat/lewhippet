@@ -22,7 +22,19 @@ if (isset($_GET['id'])) {
         }
     }
     // Modify
-    echo "Nous allons modifier => " . $_GET['id'];
+    $id = $_GET['id'];
+    $stmt = $conn->prepare(getPuppyFromId($id));
+    $stmt->bindValue(':id', $id);
+    try {
+        $puppy = $stmt->execute();
+        echo "Voici " . $puppy['name'];
+    } catch (PDOException $e) {
+        echo "Une erreur s'est produite : " . $e->getMessage();
+    }
+    echo "Nous allons modifier => " . $id;
+    // Get Template de la page d'administration
+
+    // Affichage du formulaire pré-rempli avec les données de $get['id']
 }
 // Create
 else {

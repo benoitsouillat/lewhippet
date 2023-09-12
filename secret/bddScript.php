@@ -46,6 +46,3 @@ for ($i = 0; $i < 3; $i++) {
 
 $rand_status = random_status();
 $rand_sex = random_sex();
-
-$test_puppies = "INSERT INTO `puppies` (name, sex, available, description, main_img_path) VALUES ('Geroges', '$rand_sex', '$rand_status', 'Ceci est une description !!' , '$path_img')";
-$conn->exec($test_puppies);
