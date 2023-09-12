@@ -24,10 +24,11 @@ if (isset($_GET['id'])) {
     // Modify
     $id = $_GET['id'];
     $stmt = $conn->prepare(getPuppyFromId($id));
-    $stmt->bindValue(':id', $id);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
     try {
-        $puppy = $stmt->execute();
-        echo "Voici " . $puppy['name'];
+        $puppy = $stmt->fetch(PDO::FETCH_OBJ);
+        include('../templates/puppy_form.php');
     } catch (PDOException $e) {
         echo "Une erreur s'est produite : " . $e->getMessage();
     }
@@ -37,6 +38,11 @@ if (isset($_GET['id'])) {
     // Affichage du formulaire pré-rempli avec les données de $get['id']
 }
 // Create
-else {
+elseif (isset($_POST['name']) && $_POST['name'] != null) {
+    echo "Les données ont étaient postés";
+} elseif ($_POST['name'] == null) {
+    echo "Il n'y a pas de nom";
+} else {
     echo "Il faut créer un nouveau chiot";
+    include_once('../templates/puppy_form.php');
 }
