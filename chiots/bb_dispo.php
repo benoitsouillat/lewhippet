@@ -87,94 +87,40 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/fem1/intrigue.jpg" alt=" whippets disponibles"
-                            class="puppies_img">
-                        <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
-                            <br> Né le 28 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/fem1/joueuse.jpg" alt=" whippets disponibles"
-                            class="puppies_img xl">
-                        <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
-                            <br> Né le 28 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/fem1/coucou.jpg" alt="whippets disponibles"
-                            class="puppies_img xl">
-                        <figcaption>Chiot disponible de Prestance et Poopy <br> Femelle bringée bleue
-                            <br> Né le 28 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
+
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male1/364213983_825126799018286_2087214604312768939_n.jpg"
-                            alt="whippets disponibles" class="puppies_img ">
+                        <img src="/chiots_img/2023/Prestance/male2/bringe.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male bringé bleu disponible
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male1/364213978_687049493302104_7469015803837769534_n.jpg"
-                            alt="whippets disponibles" class="puppies_img xl">
-                        <figcaption>Chiot disponible de Prestance et Poopy <br> Male bringé bleu disponible
-                            <br> Né le 28 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male1/364220238_599355445701612_4378709767762893580_n.jpg"
-                            alt="whippets disponibles" class="puppies_img xl">
+                        <img src="/chiots_img/2023/Prestance/male2/bringee.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
                         <figcaption>Chiot disponible de Prestance et Poopy <br> Male bringé bleu disponible
                             <br> Né le 28 Juin 2023 </p>
                         </figcaption>
                     </figure>
 
 
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male5/posé.jpg" alt="whippets disponibles"
-                            class="puppies_img xl ">
-                        <figcaption>Chiot disponible de Prestance et Poopy <br> Male Bicolore bringé bleuté
-                            <br> Né le 28 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male5/assis.jpg" alt="whippets disponibles"
-                            class="puppies_img xl">
-                        <figcaption>Chiot disponible de Prestance et Poopy <br> Male Bicolore bringé bleuté
-                            <br> Né le 28 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Prestance/male5/topmodele.jpg" alt="whippets disponibles"
-                            class="puppies_img xl">
-                        <figcaption>Chiot disponible de Prestance et Poopy <br> Male Bicolore bringé bleuté
-                            <br> Né le 28 Juin 2023 </p>
-                        </figcaption>
-                    </figure>
 
-                    <figure class="card-image" id="prodige">
-                        <img src="/chiots_img/2023/Prodige/fem1/static.jpg" alt="whippets disponibles"
-                            class="puppies_img xl">
-                        <figcaption>Femelle disponible de Prodige et Poopy <br> </p>
-                        </figcaption>
-                    </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem1/staticverso.jpg" alt="whippets disponibles"
+                        <img src="/chiots_img/2023/Prodige/fem2/tunnel.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
                         <figcaption>Femelle disponible de Prodige et Poopy </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem2/static.jpg" alt="whippets disponibles"
+                        <img src="/chiots_img/2023/Prodige/fem2/grande.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
                         <figcaption>Femelle disponible de Prodige et Poopy <br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Prodige/fem2/staticverso.jpg" alt="whippets disponibles"
+                        <img src="/chiots_img/2023/Prodige/fem2/grande_joue.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
                         <figcaption>Femelle disponible de Prodige et Poopy </p>
                         </figcaption>
@@ -276,55 +222,118 @@
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal1/cache.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde<br> </p>
+                        <figcaption>Mâle disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal1/hello.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde </p>
+                        <figcaption>Mâle disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal1/joli.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde </p>
+                        <figcaption>Mâle disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal2/calme.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde </p>
+                        <figcaption>Mâle disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal2/choupi.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde </p>
+                        <figcaption>Mâle disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal2/regard.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde </p>
+                        <figcaption>Mâle disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal3/static.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde<br> </p>
+                        <figcaption>Mâle disponible de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal3/staticverso.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Chiot disponible de Miss-monde </p>
+                        <figcaption>Mâle disponible de Miss-monde </p>
                         </figcaption>
                     </figure>
 
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal1/mois.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°1 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal1/regard.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°1 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
 
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal2/peluche.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°2 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal2/regard.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°2 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal3/amuse.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°3 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal3/fier.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°3 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal4/nid.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°4 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal4/regard.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°4 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal5/fatigue.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°5 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card-image">
+                        <img src="/chiots_img/2023/Promesse/mal5/static.jpg" alt="whippets disponibles"
+                            class="puppies_img xl">
+                        <figcaption>Mâle N°5 disponible de Promesse </p>
+                        </figcaption>
+                    </figure>
                 </div>
 
                 <br>
