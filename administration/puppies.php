@@ -37,8 +37,8 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                         <?php
                         if ($row['sex'] === "femelle") {
                             echo "
-                    <a  class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
-                    <h3 class=\"card-title text-danger text-center\">" . ucfirst(htmlspecialchars($row['name'])) . "</h3></a>";
+                            <a  class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
+                            <h3 class=\"card-title text-danger text-center\">" . ucfirst(htmlspecialchars($row['name'])) . "</h3></a>";
                         } else {
                             echo "
                             <a class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
@@ -58,7 +58,7 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             echo ("<p class=\"alert alert-success\">Disponible</p>");;
                         }
                         ?>
-                        <div class="btn-container d-flex flex-row justify-content-around">
+                        <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
                             <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Modifier</a>
                             <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>&delete=true" class="btn btn-danger">Supprimer</a>
                         </div>

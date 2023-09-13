@@ -32,14 +32,25 @@ if (isset($_GET['id'])) {
     } catch (PDOException $e) {
         echo "Une erreur s'est produite : " . $e->getMessage();
     }
-    // Get Template de la page d'administration
-
-    // Affichage du formulaire pré-rempli avec les données de $get['id']
 }
 // Create
 elseif (isset($_POST['name']) && $_POST['name'] != null) {
-    echo "Les données ont étaient postés";
-} elseif ($_POST['name'] == null) {
+    $puppy = $_POST;
+
+    $stmt = $conn->prepare(updatePuppy());
+    $stmt->bindParam(':id', $puppy['puppy_id']);
+    $stmt->bindParam(':name', $puppy['name']);
+    $stmt->bindParam(':sex', $puppy['sex']);
+    $stmt->bindParam(':available', $puppy['available']);
+    $stmt->bindParam(':description', $puppy['description']);
+    $stmt->bindValue(':main_img_path', '../puppies_img/default.jpg');
+    try {
+        $stmt->execute();
+        header('Location:../puppies.php');
+    } catch (PDOException $e) {
+        var_dump($e->getMessage());
+    }
+} elseif (isset($_POST['name']) && $_POST['name'] == null) {
     echo "Il n'y a pas de nom";
 } else {
     echo "Il faut créer un nouveau chiot";
