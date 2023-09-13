@@ -11,7 +11,8 @@ require_once(__DIR__ . '/sql/puppies_request.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gérer les chiots</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body>
@@ -31,10 +32,10 @@ require_once(__DIR__ . '/sql/puppies_request.php');
             $stmt = $conn->query(getAllPuppies());
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
             ?>
-                <div class="card col-3 p-2">
-                    <img class="card-img-top" src="../puppies_img/photo.jpg" alt="Chiot Whippet disponible">
-                    <div class="card-body">
-                        <?php
+            <div class="card col-3 p-2">
+                <img class="card-img-top" src="../<?php echo $row['main_img_path'] ?>" alt="Chiot Whippet disponible">
+                <div class="card-body">
+                    <?php
                         if ($row['sex'] === "femelle") {
                             echo "
                             <a  class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
@@ -45,7 +46,7 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             <h3 class=\"card-title text-primary text-center\">" . htmlspecialchars($row['name']) . "</h3></a>";
                         }
                         ?> <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
-                        <?php
+                    <?php
                         if ($row['available'] === "En option") {
                             echo ("<p class=\"alert alert-warning\">En Option</p>");;
                         } else if ($row['available'] === "Réservé" || $row['available'] === 'réservé') {
@@ -58,12 +59,13 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             echo ("<p class=\"alert alert-success\">Disponible</p>");;
                         }
                         ?>
-                        <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
-                            <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Modifier</a>
-                            <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>&delete=true" class="btn btn-danger">Supprimer</a>
-                        </div>
+                    <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
+                        <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Modifier</a>
+                        <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>&delete=true"
+                            class="btn btn-danger">Supprimer</a>
                     </div>
                 </div>
+            </div>
             <?php
             endwhile;
             ?>

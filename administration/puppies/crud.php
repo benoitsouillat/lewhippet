@@ -41,7 +41,18 @@ if (isset($_GET['id'])) {
     $stmt->bindParam(':sex', $puppy['sex']);
     $stmt->bindParam(':available', $puppy['available']);
     $stmt->bindParam(':description', $puppy['description']);
-    $stmt->bindValue(':main_img_path', '../puppies_img/default.jpg');
+    $file_name = $puppy['name'] . $puppy['sex'];
+    $file_destination = '';
+
+    if (isset($_FILES['main_img_path'])) {
+        //IL FAUT GERER LES IDS SUR LES NOM DE FICHIERS
+        $file_tmp = $_FILES['main_img_path']['tmp_name'];
+        $file_destination = '../../puppies_img/' . str_replace(' ', '', $file_name) . '.jpg';
+        if (move_uploaded_file($file_tmp, $file_destination)) {
+            echo "L'image a été enregistrée avec succès.";
+        }
+    }
+    $stmt->bindValue(':main_img_path',  $file_destination);
 
     try {
         $stmt->execute();
@@ -52,13 +63,26 @@ if (isset($_GET['id'])) {
 }
 // Create
 elseif (isset($_POST['name'])) {
+
     $puppy = $_POST;
     $stmt = $conn->prepare(createPuppy());
     $stmt->bindParam(':name', $puppy['name']);
     $stmt->bindParam(':sex', $puppy['sex']);
     $stmt->bindParam(':available', $puppy['available']);
     $stmt->bindParam(':description', $puppy['description']);
-    $stmt->bindValue(':main_img_path', '../puppies_img/default.jpg');
+
+    $file_name = $puppy['name'] . $puppy['sex'];
+    $file_destination = '';
+
+    if (isset($_FILES['main_img_path'])) {
+        //IL FAUT GERER LES IDS SUR LES NOM DE FICHIERS
+        $file_tmp = $_FILES['main_img_path']['tmp_name'];
+        $file_destination = '../../puppies_img/' . str_replace(' ', '', $file_name) . '.jpg';
+        if (move_uploaded_file($file_tmp, $file_destination)) {
+            echo "L'image a été enregistrée avec succès.";
+        }
+    }
+    $stmt->bindValue(':main_img_path', $file_destination);
 
     try {
         $stmt->execute();

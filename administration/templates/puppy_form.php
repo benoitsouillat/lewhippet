@@ -4,7 +4,9 @@ include_once('../gerance.php');
 
 ?>
 
-<form class='w-75 text-center' method='post' action='../puppies/crud.php'>
+<form class='w-75 text-center' method='post' action='../puppies/crud.php' enctype="multipart/form-data">
+    <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
+
     <?php
     if (isset($_GET['id'])) {
         echo "
@@ -54,7 +56,10 @@ include_once('../gerance.php');
         <option value='Réservé'>Réservé</option>
         ";
         }
-        echo "</select>";
+        echo "</select>
+        <label for='main_img_path'>Son image principale :</label>
+        <img class='w-25' src='{$puppy->main_img_path}' />
+        <input type='file' name='main_img_path'/>";
     } else {
     ?>
         <label for="name">Nom du chiot</label>
@@ -74,6 +79,8 @@ include_once('../gerance.php');
             <option value='En option'>En Option</option>
             <option value='Réservé'>Réservé</option>
         </select>
+        <label for="main_img_path">Son image principale :</label>
+        <input type="file" name="main_img_path" />
     <?php
     }
     ?>
