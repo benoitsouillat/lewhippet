@@ -2,11 +2,6 @@
 
 require_once(__DIR__ . '/../../secret/connexion.php');
 
-
-function addPuppy()
-{
-}
-
 function deletePuppy()
 {
     return "DELETE FROM `puppies` WHERE `id` = :id";
@@ -16,6 +11,11 @@ function getAllPuppies()
 {
     return "SELECT * FROM puppies";
 };
+
+function createPuppy()
+{
+    return "INSERT INTO `puppies` (name, sex, available, description, main_img_path) VALUES (:name, :sex, :available, :description, :main_img_path)";
+}
 
 function updatePuppy()
 {

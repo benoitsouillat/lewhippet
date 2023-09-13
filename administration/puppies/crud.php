@@ -32,9 +32,7 @@ if (isset($_GET['id'])) {
     } catch (PDOException $e) {
         echo "Une erreur s'est produite : " . $e->getMessage();
     }
-}
-// Create
-elseif (isset($_POST['name']) && $_POST['name'] != null) {
+} elseif (isset($_POST['name']) && $_POST['name'] != null && isset($_POST['puppy_id'])) {
     $puppy = $_POST;
 
     $stmt = $conn->prepare(updatePuppy());
@@ -44,15 +42,30 @@ elseif (isset($_POST['name']) && $_POST['name'] != null) {
     $stmt->bindParam(':available', $puppy['available']);
     $stmt->bindParam(':description', $puppy['description']);
     $stmt->bindValue(':main_img_path', '../puppies_img/default.jpg');
+
     try {
         $stmt->execute();
         header('Location:../puppies.php');
     } catch (PDOException $e) {
         var_dump($e->getMessage());
     }
-} elseif (isset($_POST['name']) && $_POST['name'] == null) {
-    echo "Il n'y a pas de nom";
+}
+// Create
+elseif (isset($_POST['name'])) {
+    $puppy = $_POST;
+    $stmt = $conn->prepare(createPuppy());
+    $stmt->bindParam(':name', $puppy['name']);
+    $stmt->bindParam(':sex', $puppy['sex']);
+    $stmt->bindParam(':available', $puppy['available']);
+    $stmt->bindParam(':description', $puppy['description']);
+    $stmt->bindValue(':main_img_path', '../puppies_img/default.jpg');
+
+    try {
+        $stmt->execute();
+        header('Location:../puppies.php');
+    } catch (PDOException $e) {
+        var_dump($e->getMessage());
+    }
 } else {
-    echo "Il faut créer un nouveau chiot";
     include_once('../templates/puppy_form.php');
 }
