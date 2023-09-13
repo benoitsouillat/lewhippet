@@ -574,6 +574,18 @@ address {
 }
 
 /* Menu */
+.img-admin-list {
+  max-height: 30vh;
+  max-width: 98%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-sizing: border-box;
+}
+
+.form-control {
+  background-color: #000;
+}
+
 html {
   font-size: 14px;
 }
@@ -696,7 +708,12 @@ main {
   background-color: #e6e6e6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 1em auto;
   font-weight: bold;
   line-height: 1.3;
@@ -808,5 +825,3 @@ img {
 .bandeau_title section a {
   color: #FFC;
 }
-
-/*# sourceMappingURL=main.css.map */

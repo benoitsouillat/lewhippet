@@ -11,6 +11,7 @@ require_once(__DIR__ . '/sql/puppies_request.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gérer les chiots</title>
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
@@ -27,13 +28,14 @@ require_once(__DIR__ . '/sql/puppies_request.php');
         <div class="d-flex flex-row justify-content-center m-2 p-2">
             <a href="./puppies/crud.php" class="btn btn-success">Créer un nouveau chiot</a>
         </div>
-        <div class="puppies_container d-flex justify-content-around flex-wrap">
+        <div class="puppies-admin-container d-flex justify-content-around flex-wrap">
             <?php
             $stmt = $conn->query(getAllPuppies());
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
             ?>
-            <div class="card col-3 p-2">
-                <img class="card-img-top" src="../<?php echo $row['main_img_path'] ?>" alt="Chiot Whippet disponible">
+            <div class="card col-6 col-sm-4 col-lg-3 p-2">
+                <img class="card-img-top img-admin-list" src="../<?php echo $row['main_img_path'] ?>"
+                    alt="Chiot Whippet disponible">
                 <div class="card-body">
                     <?php
                         if ($row['sex'] === "femelle") {
