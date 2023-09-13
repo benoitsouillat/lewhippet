@@ -58,7 +58,7 @@ include_once('../gerance.php');
         }
         echo "</select>
         <label for='main_img_path'>Son image principale :</label>
-        <img class='w-25' src='{$puppy->main_img_path}' />
+        <img class='w-25' src='../{$puppy->main_img_path}' />
         <input type='file' name='main_img_path'/>";
     } else {
     ?>

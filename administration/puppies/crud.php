@@ -41,16 +41,13 @@ if (isset($_GET['id'])) {
     $stmt->bindParam(':sex', $puppy['sex']);
     $stmt->bindParam(':available', $puppy['available']);
     $stmt->bindParam(':description', $puppy['description']);
-    $file_name = $puppy['name'] . $puppy['sex'];
+    $file_name = $puppy['puppy_id'] . '-' . strtolower($puppy['name']);
     $file_destination = '';
 
     if (isset($_FILES['main_img_path'])) {
-        //IL FAUT GERER LES IDS SUR LES NOM DE FICHIERS
         $file_tmp = $_FILES['main_img_path']['tmp_name'];
         $file_destination = '../../puppies_img/' . str_replace(' ', '', $file_name) . '.jpg';
-        if (move_uploaded_file($file_tmp, $file_destination)) {
-            echo "L'image a été enregistrée avec succès.";
-        }
+        move_uploaded_file($file_tmp, $file_destination);
     }
     $stmt->bindValue(':main_img_path',  $file_destination);
 
@@ -71,11 +68,17 @@ elseif (isset($_POST['name'])) {
     $stmt->bindParam(':available', $puppy['available']);
     $stmt->bindParam(':description', $puppy['description']);
 
-    $file_name = $puppy['name'] . $puppy['sex'];
     $file_destination = '';
 
     if (isset($_FILES['main_img_path'])) {
         //IL FAUT GERER LES IDS SUR LES NOM DE FICHIERS
+        $stmt_id = $conn->prepare("SELECT id from puppies");
+        $stmt_id->execute();
+        $idArray = $stmt_id->fetchAll(PDO::FETCH_OBJ);
+        $id_name = end($idArray)->id + 1;
+        $file_name = $id_name . '-' . $puppy['name'];
+
+
         $file_tmp = $_FILES['main_img_path']['tmp_name'];
         $file_destination = '../../puppies_img/' . str_replace(' ', '', $file_name) . '.jpg';
         if (move_uploaded_file($file_tmp, $file_destination)) {
