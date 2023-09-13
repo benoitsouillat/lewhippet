@@ -32,7 +32,6 @@ if (isset($_GET['id'])) {
     } catch (PDOException $e) {
         echo "Une erreur s'est produite : " . $e->getMessage();
     }
-    echo "Nous allons modifier => " . $id;
     // Get Template de la page d'administration
 
     // Affichage du formulaire pré-rempli avec les données de $get['id']
