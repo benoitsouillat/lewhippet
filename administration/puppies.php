@@ -33,9 +33,12 @@ require_once(__DIR__ . '/sql/puppies_request.php');
             $stmt = $conn->query(getAllPuppies());
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
             ?>
-            <div class="card col-6 col-sm-4 col-lg-3 p-2">
-                <img class="card-img-top img-admin-list" src="../<?php echo $row['main_img_path'] ?>"
-                    alt="Chiot Whippet disponible">
+            <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1">
+                <?php echo ("
+                <a href=\"./puppies/crud.php?id={$row['id']}\">
+                <img class='card-img-top img-admin-list' src='../{$row['main_img_path']}'
+                alt='Chiot Whippet disponible'></a>
+                "); ?>
                 <div class="card-body">
                     <?php
                         if ($row['sex'] === "femelle") {
