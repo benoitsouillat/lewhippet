@@ -68,10 +68,9 @@ elseif (isset($_POST['name'])) {
     $stmt->bindParam(':available', $puppy['available']);
     $stmt->bindParam(':description', $puppy['description']);
 
-    $file_destination = '';
+    $file_destination = '../../puppies_img/default.jpg';
 
-    if (isset($_FILES['main_img_path'])) {
-        //IL FAUT GERER LES IDS SUR LES NOM DE FICHIERS
+    if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
         $stmt_id = $conn->prepare("SELECT id from puppies");
         $stmt_id->execute();
         $idArray = $stmt_id->fetchAll(PDO::FETCH_OBJ);
