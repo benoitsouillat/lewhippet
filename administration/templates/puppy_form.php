@@ -17,7 +17,7 @@ if (isset($_GET['error'])) {
 
 <form class='col-xl-4 col-md-6 col-9 text-center m-1' method='post' action='../puppies/crud.php'
     enctype="multipart/form-data">
-    <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
 
     <?php
     if (isset($_GET['id'])) {
@@ -46,7 +46,7 @@ if (isset($_GET['error'])) {
     <label for='description' class='m-2' >Description du bébé </label>
     <textarea id='description' class='form-control' type='text' name='description'>{$puppy->description} </textarea>
     
-    <label for='available' class='m-2' >Disponibilité : </label>
+    <label for='available' class='mt-2 mb-2' >Disponibilité : </label>
     <select class='form-control' for='available' id='available' name='available'>
     ";
         if ($puppy->available === 'Réservé') {
@@ -93,8 +93,8 @@ if (isset($_GET['error'])) {
         ?>
     </textarea>
 
-    <label for='available' class='m-2'>Choisir sa Disponibilité : </label>
-    <select class='form-control m-2' for='available' id='available' name='available'>
+    <label for='available' class='mt-2 mb-2'>Choisir sa Disponibilité : </label>
+    <select class='form-control mt-2 mb-2' for='available' id='available' name='available'>
         <option value='Disponible'>Disponible</option>
         <option value='En option'>En Option</option>
         <option value='Réservé'>Réservé</option>
