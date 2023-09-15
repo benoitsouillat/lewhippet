@@ -18,6 +18,7 @@ if (isset($_POST['username'], $_POST['password'])) {
     if (password_verify($password, $hash)) {
         session_start();
         $_SESSION['username'] = $bddUser['email'];
+        $_SESSION['role'] = $bddUser['role'];
         header("Location:../gerance.php");
     } else {
         header("Location:../login.php?error=mdp");

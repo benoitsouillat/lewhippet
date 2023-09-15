@@ -30,7 +30,7 @@
             <div class="d-flex flex-row justify-content-between mt-5">
                 <button type="reset" class="btn btn-secondary justify-self-end">Effacer</button>
                 <button type="submit" class="btn btn-success btn-pink justify-self-end">S'inscrire</button>
-            </div>'
+            </div>
         </form>
     </section>
 

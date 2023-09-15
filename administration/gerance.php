@@ -1,5 +1,10 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['username'])) {
+    header('Location:./logout.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,7 +18,8 @@ session_start();
 </head>
 
 <?php
-include_once('templates/menu_admin.php');
+include_once(__DIR__ . '/templates/menu_admin.php');
+
 ?>
 
 </html>

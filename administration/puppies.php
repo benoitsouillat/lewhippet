@@ -17,22 +17,26 @@ require_once(__DIR__ . '/sql/puppies_request.php');
 </head>
 
 <body>
-    <main>
-
+    <main class="d-flex flex-column justify-content-center">
         <?php
-        // Désactivé pour le développement if (isset($_SESSION['username'])) {
+        if (isset($_SESSION['username'])) {
         ?>
 
-        <h1 class="text-center alert alert-info p-5">Retrouvez tous les chiots sur cette page</h1>
+        <h1 class="text-center alert alert-info p-4 m-0">Retrouvez tous les chiots sur cette page</h1>
+        <p class="w-50 text-right align-self-end alert alert-success p-1 m-0">Connecté en tant que :
+            <?php echo $_SESSION['username'] ?></p>
 
         <div class="d-flex flex-row justify-content-center m-2 p-2">
-            <a href="./puppies/crud.php" class="btn btn-success">Créer un nouveau chiot</a>
+            <a href="puppies/crud.php" class="btn btn-success m-1">Créer un nouveau chiot</a>
+            <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>
+            <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
+
         </div>
         <div class="puppies-admin-container d-flex justify-content-around flex-wrap">
             <?php
-            $stmt = $conn->query(getAllPuppies());
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-            ?>
+                $stmt = $conn->query(getAllPuppies());
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+                ?>
             <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1">
                 <?php echo ("
                 <a href=\"./puppies/crud.php?id={$row['id']}\">
@@ -41,29 +45,29 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                 "); ?>
                 <div class="card-body">
                     <?php
-                        if ($row['sex'] === "femelle") {
-                            echo "
+                            if ($row['sex'] === "femelle") {
+                                echo "
                             <a  class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
                             <h3 class=\"card-title text-danger text-center\">" . ucfirst(htmlspecialchars($row['name'])) . "</h3></a>";
-                        } else {
-                            echo "
+                            } else {
+                                echo "
                             <a class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
                             <h3 class=\"card-title text-primary text-center\">" . htmlspecialchars($row['name']) . "</h3></a>";
-                        }
-                        ?> <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
-                    <?php
-                        if ($row['available'] === "En option") {
-                            echo ("<p class=\"alert alert-warning\">En Option</p>");;
-                        } else if ($row['available'] === "Réservé" || $row['available'] === 'réservé') {
-                            if ($row['sex'] === "femelle") {
-                                echo ("<p class=\"alert alert-danger\">Réservée</p>");
-                            } else {
-                                echo ("<p class=\"alert alert-danger\">Réservé</p>");
                             }
-                        } else {
-                            echo ("<p class=\"alert alert-success\">Disponible</p>");;
-                        }
-                        ?>
+                            ?> <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                    <?php
+                            if ($row['available'] === "En option") {
+                                echo ("<p class=\"alert alert-warning\">En Option</p>");;
+                            } else if ($row['available'] === "Réservé" || $row['available'] === 'réservé') {
+                                if ($row['sex'] === "femelle") {
+                                    echo ("<p class=\"alert alert-danger\">Réservée</p>");
+                                } else {
+                                    echo ("<p class=\"alert alert-danger\">Réservé</p>");
+                                }
+                            } else {
+                                echo ("<p class=\"alert alert-success\">Disponible</p>");;
+                            }
+                            ?>
                     <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
                         <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Modifier</a>
                         <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>&delete=true"
@@ -72,18 +76,13 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                 </div>
             </div>
             <?php
-            endwhile;
-            ?>
-
-
-
+                endwhile;
+                ?>
         </div>
-
         <?php
-        /* Désactivé pour le développement
         } else {
-            echo "<div class='text-center alert alert-danger'><p>Vous n'êtes pas connecté !!! </p><br><a href='./login.php'>Se connecter</a></div>";
-        }*/
+            echo "<div class='text-center alert alert-danger'><p>Vous n'êtes pas connecté !!! </p><br><a class='btn btn-success' href='./login.php'>Se connecter</a></div>";
+        }
         ?>
 
     </main>

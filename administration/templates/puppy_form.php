@@ -1,6 +1,6 @@
 <?php
 
-include_once('../gerance.php');
+include_once(__DIR__ . '/../gerance.php');
 
 ?>
 
