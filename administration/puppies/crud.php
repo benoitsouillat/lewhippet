@@ -47,7 +47,7 @@ if (check_session_start($_SESSION)) {
 
         if (isset($_FILES['main_img_path'])) {
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
-            $file_destination = '../../puppies_img/' . str_replace(' ', '', $file_name) . '.jpg';
+            $file_destination = '../../puppies_img/' . str_replace(' ', '', replace_accent($file_name)) . '.jpg';
             move_uploaded_file($file_tmp, $file_destination);
         }
         $stmt->bindValue(':main_img_path',  $file_destination);
@@ -80,7 +80,7 @@ if (check_session_start($_SESSION)) {
 
 
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
-            $file_destination = '../../puppies_img/' . str_replace(' ', '', $file_name) . '.jpg';
+            $file_destination = '../../puppies_img/' . str_replace(' ', '', replace_accent($file_name)) . '.jpg';
             if (move_uploaded_file($file_tmp, $file_destination)) {
                 echo "L'image a été enregistrée avec succès.";
             }

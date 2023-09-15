@@ -54,7 +54,8 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             <a class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
                             <h3 class=\"card-title text-primary text-center\">" . htmlspecialchars($row['name']) . "</h3></a>";
                             }
-                            ?> <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                            ?> <p class="card-text">
+                        <?php echo htmlspecialchars($row['description']); ?></p>
                     <?php
                             if ($row['available'] === "En option") {
                                 echo ("<p class=\"alert alert-warning\">En Option</p>");;

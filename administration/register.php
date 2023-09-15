@@ -31,6 +31,9 @@
                 <button type="reset" class="btn btn-secondary justify-self-end">Effacer</button>
                 <button type="submit" class="btn btn-success btn-pink justify-self-end">S'inscrire</button>
             </div>
+            <div class="w-100">
+                <a class="btn btn-dark p-3 m-4" href='./logout.php'>ou Accéder à la page de connexion</a>
+            </div>
         </form>
     </section>
 
