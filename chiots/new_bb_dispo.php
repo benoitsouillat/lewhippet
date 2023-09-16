@@ -65,19 +65,36 @@
 
                     $stmt = $conn->query(getAllPuppies());
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-                        echo "
-                    <figure class='card-img'>
-                        <img src='{$row['main_img_path']}' alt='Chiots Whippets Disponibles' class='puppies_img'>
-                        <figcaption>
-                        <h4>{$row['name']}</h4>
-                        <p>
-                        {$row['description']}
-                        </p>
+                        if (getimagesize(__DIR__  . $row['main_img_path'])[0] > getimagesize(__DIR__  . $row['main_img_path'])[1]) {
+                            echo "
+                            <figure class='card-img'>
+                                <img src='{$row['main_img_path']}' alt='Chiots Whippets Disponibles' class='puppies_img xl'>
+                                <figcaption>
+                                <h4>{$row['name']}</h4>
+                                <p>
+                                {$row['description']}
+                                </p>
+        
+                                </figcaption>
+                            </figure>
+                            
+                            ";
+                        } else {
+                            echo "
+                            <figure class='card-img'>
+                                <img src='{$row['main_img_path']}' alt='Chiots Whippets Disponibles' class='puppies_img'>
+                                <figcaption>
+                                <h4>{$row['name']}</h4>
+                                <p>
+                                {$row['description']}
+                                </p>
+        
+                                </figcaption>
+                            </figure>
+                            
+                            ";
+                        }
 
-                        </figcaption>
-                    </figure>
-                    
-                    ";
                     endwhile;
                     ?>
 
