@@ -41,6 +41,21 @@ function replace_accent($str)
     return $result;
 }
 
+function replace_reunion_char($str)
+{
+    $result = $str;
+    if (strpos($result, '\'')) {
+        $result = str_replace('\'', '', $result);
+    }
+    if (strpos($result, ' ')) {
+        $result = str_replace(' ', '', $result);
+    }
+    if (strpos($result, '_')) {
+        $result = str_replace('_', '', $result);
+    }
+    return $result;
+}
+
 function check_session_start($session)
 {
     if (isset($session) && isset($session['username']) && isset($session['role']) && $session['role'] === 'Admin') {

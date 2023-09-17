@@ -44,8 +44,7 @@ if (isset($_GET['error'])) {
         echo "
     </select>
     <label for='description' class='m-2' >Description du bébé </label>
-    <textarea id='description' class='form-control' type='text' name='description'>{$puppy->description} </textarea>
-    
+    <textarea id='description' class='form-control' type='text' name='description'>{$puppy->description}</textarea>
     <label for='available' class='mt-2 mb-2' >Disponibilité : </label>
     <select class='form-control' for='available' id='available' name='available'>
     ";
@@ -86,12 +85,10 @@ if (isset($_GET['error'])) {
         <option value='male'>Mâle</option>
     </select>
     <label for='description' class='m-2'>Description du bébé </label>
-    <textarea id='description' class='form-control' name='description' placeholder="Entrez la description du chiot">
-        <?php if (isset($_GET['description'])) {
-            echo $_GET['description'];
-        }
-        ?>
-    </textarea>
+    <textarea id='description' class='form-control' name='description'
+        placeholder="Entrez la description du chiot"><?php if (isset($_GET['description'])) {
+                                                                                                                            echo $_GET['description'];
+                                                                                                                        } ?></textarea>
 
     <label for='available' class='mt-2 mb-2'>Choisir sa Disponibilité : </label>
     <select class='form-control mt-2 mb-2' for='available' id='available' name='available'>

@@ -73,7 +73,8 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             ?>
                     <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
                         <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Modifier</a>
-                        <button onClick="confirmDeletePuppy(<?php echo $row['id'] ?>,  '<?php echo $row['name'] ?>')"
+                        <button
+                            onClick="confirmDeletePuppy(<?php echo $row['id'] ?>,  '<?php echo replace_reunion_char($row['name']) ?>')"
                             class="btn btn-danger">Supprimer</button>
                     </div>
                 </div>

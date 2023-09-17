@@ -12,7 +12,6 @@ if (check_session_start($_SESSION)) {
     if (isset($_GET['id'])) {
         // Delete
         if (isset($_GET['delete']) && ($_GET['delete'] == true)) {
-
             $id = $_GET['id'];
             $imgDirectory = '../../puppies_img/';
             $arrayImg = scandir($imgDirectory);
@@ -65,7 +64,7 @@ if (check_session_start($_SESSION)) {
             }
 
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
-            $file_destination = '../../puppies_img/' . str_replace(' ', '', replace_accent($file_name)) . '.jpg';
+            $file_destination = '../../puppies_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             move_uploaded_file($file_tmp, $file_destination);
         }
         $stmt->bindValue(':main_img_path',  $file_destination);
@@ -94,11 +93,11 @@ if (check_session_start($_SESSION)) {
             $stmt_id->execute();
             $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
             $id_name = end($id_array)->id + 1;
-            $file_name = $id_name . '-' . $puppy['name'];
+            $file_name = $id_name . '-' . replace_reunion_char(replace_accent($puppy['name']));
 
 
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
-            $file_destination = '../../puppies_img/' . str_replace(' ', '', replace_accent($file_name)) . '.jpg';
+            $file_destination = '../../puppies_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             if (move_uploaded_file($file_tmp, $file_destination)) {
                 echo "L'image a été enregistrée avec succès.";
             }
