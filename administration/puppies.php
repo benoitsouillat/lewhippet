@@ -14,6 +14,8 @@ require_once(__DIR__ . '/sql/puppies_request.php');
     <link rel="stylesheet" href="/css/main.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src='../script/admin.js' type='text/javascript'></script>
+
 </head>
 
 <body>
@@ -71,8 +73,8 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             ?>
                     <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
                         <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Modifier</a>
-                        <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>&delete=true"
-                            class="btn btn-danger">Supprimer</a>
+                        <button onClick="confirmDeletePuppy(<?php echo $row['id'] ?>,  '<?php echo $row['name'] ?>')"
+                            class="btn btn-danger">Supprimer</button>
                     </div>
                 </div>
             </div>
@@ -87,7 +89,6 @@ require_once(__DIR__ . '/sql/puppies_request.php');
         ?>
 
     </main>
-
 </body>
 
 </html>

@@ -11,7 +11,7 @@ $table_puppies = "CREATE TABLE `damoiseaux_php`.`puppies` (`id` INT NOT NULL AUT
 
 /* Insertion des données de test */
 /* PUPPIES */
-/*
+
 function random_status()
 {
     $rand = rand(1, 3);
@@ -43,13 +43,9 @@ for ($i = 0; $i < 3; $i++) {
     $conn->exec($test_puppies);
 }
 
-$rand_status = random_status();
-$rand_sex = random_sex();
-
-*/
 
 /* USERS / ADMINISTRATORS */
 
 
 $test_administrator = "INSERT INTO `users` (email, password, img_profile_path, role) VALUES ('benoit.souillat@gmail.com', '', 'none', 'Admin')";
-$conn->exec($test_administrator);
+//$conn->exec($test_administrator);

@@ -1,5 +1,5 @@
-const alertDeletePuppy = () => {
-    e.preventDefault();
-    alert('Vous allez supprimer un chiot, en êtes-vous sûr ??');
-    // Action en fonction du clique d'alert()
+const confirmDeletePuppy = (id, name) => {
+    if (confirm(`Vous allez supprimer ${name}, en êtes-vous sûr ??`)) {
+        location.assign('../administration/puppies/crud.php?id=' + id + "&delete=true");
+    }
 }
