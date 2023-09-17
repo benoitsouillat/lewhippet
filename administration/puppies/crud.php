@@ -52,22 +52,27 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':available', $puppy['available']);
         $stmt->bindParam(':description', $puppy['description']);
         $file_name = $puppy['puppy_id'] . '-' . strtolower($puppy['name']);
-        $file_destination = '';
 
-        if (isset($_FILES['main_img_path'])) {
 
+        if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
             //Vérification d'une erreur suite à une image trop lourde
             if (isset($_FILES['main_img_path']['error']) && $_FILES['main_img_path']['error'] === 2) {
 
                 header('Location:./crud.php?error=2&id=' . $puppy['puppy_id']);
                 die();
             }
-
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
             $file_destination = '../../puppies_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             move_uploaded_file($file_tmp, $file_destination);
+            $stmt->bindValue(':main_img_path',  $file_destination);
+        } else {
+            $stateImg = $conn->prepare(getPuppyFromId());
+            $stateImg->bindParam(':id', $puppy['puppy_id']);
+            $stateImg->execute();
+            $puppyImgDb = $stateImg->fetch(PDO::FETCH_ASSOC);
+            $stmt->bindValue(':main_img_path', $puppyImgDb['main_img_path']);
         }
-        $stmt->bindValue(':main_img_path',  $file_destination);
+
 
         try {
             $stmt->execute();
