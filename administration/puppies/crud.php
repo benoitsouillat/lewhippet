@@ -12,11 +12,21 @@ if (check_session_start($_SESSION)) {
     if (isset($_GET['id'])) {
         // Delete
         if (isset($_GET['delete']) && ($_GET['delete'] == true)) {
+
             $id = $_GET['id'];
+            $imgDirectory = '../../puppies_img/';
+            $arrayImg = scandir($imgDirectory);
+            $regImg = '/^' . preg_quote($id, '/') . '-.*/';
+
             $stmt = $conn->prepare(deletePuppy($id));
             $stmt->bindValue(':id', $id);
             try {
                 $stmt->execute();
+                foreach ($arrayImg as $img) {
+                    if (preg_match($regImg, $img)) {
+                        unlink($imgDirectory . $img);
+                    }
+                }
                 header("Location:../puppies.php");
             } catch (PDOException $e) {
                 echo "Une erreur s'est produite : " . $e->getMessage();
