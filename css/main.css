@@ -432,7 +432,9 @@ address {
     margin: 0 auto;
   }
 }
-.section_litter h1, .section_litter h2, .section_litter h3 {
+.section_litter h1,
+.section_litter h2,
+.section_litter h3 {
   text-align: center;
   color: #8a4784;
   text-decoration: underline;
@@ -446,6 +448,13 @@ address {
   flex-wrap: wrap;
 }
 
+.puppies_container .gallery_php {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 .puppies_container figure {
   max-width: 400px;
   text-align: center;

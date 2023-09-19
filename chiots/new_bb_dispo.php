@@ -8,6 +8,8 @@
     <meta name="description"
         content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET LOF A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <?php
     require_once(__DIR__ . '../../php/component/head-links.php');
     ?>
@@ -59,14 +61,21 @@
                     </figure>
 
                     <?php
-
                     require_once('../secret/connexion.php');
                     require_once('../administration/sql/puppies_request.php');
 
                     $stmt = $conn->query(getAllPuppies());
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-                        if (getimagesize(__DIR__  . $row['main_img_path'])[0] > getimagesize(__DIR__  . $row['main_img_path'])[1]) {
-                            echo "
+                        /*
+
+                        $pathToDir = $_SERVER['DOCUMENT_ROOT'] . '/' . 'administration/' . $row['main_img_path'];
+                        var_dump($pathToDir);
+
+                        $width = getimagesize('./puppies_img/' . $pathToDir)[0];
+                        $height = getimagesize('./'  . $pathToDir)[1];
+
+                        if ($width > $height) {*/
+                        echo "
                             <figure class='card-img'>
                                 <img src='{$row['main_img_path']}' alt='Chiots Whippets Disponibles' class='puppies_img xl'>
                                 <figcaption>
@@ -79,7 +88,7 @@
                             </figure>
                             
                             ";
-                        } else {
+                    /* } else {
                             echo "
                             <figure class='card-img'>
                                 <img src='{$row['main_img_path']}' alt='Chiots Whippets Disponibles' class='puppies_img'>
@@ -94,11 +103,28 @@
                             
                             ";
                         }
-
+*/
                     endwhile;
                     ?>
+                    <section class="col-12 gallery_php">
+                        <div class="card col-12 col-md-6 col-lg-4 col-xl-3">
+                            <figure class="m-0 p-0">
+                                <img class="m-0 p-0 w-100" src="../puppies_img/default.jpg"
+                                    alt="Chiot Whippet Disponible et Test HTML" />
+                                <figcaption class="m-0 p-0">
+                                    <div class="d-flex flex-row justify-content-around pr-4 pl-4">
+                                        <h4><span class="badge bg-dark badge-pink">Male N°2</span></h4>
+                                        <p class="badge bg-warning">En option</p>
+                                    </div>
+                                    <p>Ceci est la description de ce chiot pour valider le template HTML.
 
+                                    </p>
+                                </figcaption>
+                            </figure>
 
+                        </div>
+
+                    </section>
 
                 </div>
 

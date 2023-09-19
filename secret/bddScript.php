@@ -2,12 +2,17 @@
 
 require_once(__DIR__ . "/connexion.php"); // PDO FILE returning an instance name $conn
 
+$database = "CREATE DATABASE IF NOT EXISTS `damoiseaux_php`";
+
 $table_users = "CREATE TABLE `damoiseaux_php`.`users` (`id` INT NOT NULL AUTO_INCREMENT, `email` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `img_profile_path` VARCHAR(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 $table_puppies = "CREATE TABLE `damoiseaux_php`.`puppies` (`id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(50) NOT NULL, `sex` VARCHAR(10) NOT NULL, `available` VARCHAR(20) NOT NULL, `description` VARCHAR(255), `main_img_path` VARCHAR(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 $table_users_add_roles = "ALTER TABLE `users` ADD `role` VARCHAR(15) NOT NULL DEFAULT 'User' AFTER `img_profile_path`;";
 
+$conn->exec($database);
 //$conn->exec($table_users);
 //$conn->exec($table_puppies);
+$conn->exec($table_users_add_roles);
+
 
 /* Insertion des données de test */
 /* PUPPIES */
