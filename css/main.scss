@@ -4,12 +4,14 @@
 @import "component/_contact";
 @import "component/_bb_dispo";
 @import "component/_mixins";
+@import "component/_admin";
 
 
 html {
   font-size: 14px;
 
 }
+
 body {
   background-color: lighten(#000, 10);
   font-family: Serif;
@@ -30,37 +32,50 @@ main {
 
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 1em auto;
   font-weight: bold;
   line-height: 1.3;
 }
+
 h1 {
   font-family: $title-font;
   font-size: 2rem;
   text-align: center;
   text-shadow: 5px 5px 8px black;
   white-space: nowrap;
+
   span {
     white-space: nowrap;
   }
+
   img {
     max-width: 48px;
     max-height: 48px;
     padding: 0;
   }
+
   @media all and (min-width: $sm) {
     font-size: 2rem;
   }
+
   @media all and (min-width: $md) {
     font-size: 2.3rem;
   }
+
   @media all and (min-width: $lg) {
     font-size: 2.4rem;
 
   }
+
   @media all and (min-width: $xl) {
     font-size: 3.2rem;
+
     img {
       max-width: 68px;
       max-height: 68px;
@@ -71,6 +86,7 @@ h1 {
 img {
   vertical-align: unset;
 }
+
 p {
   @media all and (max-width: $md) {
     margin: auto;
@@ -78,6 +94,7 @@ p {
     padding-right: 10px;
   }
 }
+
 .bandeau_title {
   background-color: $head-bg;
   color: #FFC;
@@ -94,26 +111,31 @@ p {
       text-align: center;
       width: 100%;
     }
+
     h1 {
       white-space: normal;
     }
 
   }
 
+
   .logo {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items : center;
+    align-items: center;
+
     @media all and (max-width: $md) {
       display: none;
     }
-      img {
-        border: none;
-        width: 154px;
-        height: 101px;
+
+    img {
+      border: none;
+      width: 154px;
+      height: 101px;
 
     }
+
     .slogan {
       font-style: italic;
       font-family: "Oswald", sans-serif;
@@ -123,13 +145,16 @@ p {
 
     }
   }
+
   section {
     padding-left: 15px;
     text-align: center;
+
     h2 {
       font-family: $title-font;
       text-shadow: $shadow-title black;
     }
+
     a {
       color: #FFC;
     }
