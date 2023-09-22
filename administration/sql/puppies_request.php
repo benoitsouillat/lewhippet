@@ -7,12 +7,12 @@ function getAllPuppies()
 
 function createPuppy()
 {
-    return "INSERT INTO `puppies` (name, sex, available, description, main_img_path) VALUES (:name, :sex, :available, :description, :main_img_path)";
+    return "INSERT INTO `puppies` (name, sex, available, description, main_img_path, mother_name, mother_adn, mother_champion) VALUES (:name, :sex, :available, :description, :main_img_path, :mother_name, :mother_adn, :mother_champion)";
 }
 
 function updatePuppy()
 {
-    return "UPDATE `puppies` SET name = :name, sex = :sex, available = :available, description = :description, main_img_path = :main_img_path WHERE id = :id";
+    return "UPDATE `puppies` SET name = :name, sex = :sex, available = :available, description = :description, main_img_path = :main_img_path, mother_name = :mother_name, mother_adn= :mother_adn, mother_champion = : mother_champion WHERE id = :id";
 }
 
 function deletePuppy()

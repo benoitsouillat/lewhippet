@@ -51,6 +51,9 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':sex', $puppy['sex']);
         $stmt->bindParam(':available', $puppy['available']);
         $stmt->bindParam(':description', $puppy['description']);
+        $stmt->bindParam(':mother_name', $puppy['mother_name']);
+        $stmt->bindParam(':mother_adn', $puppy['mother_adn']);
+        $stmt->bindParam(':mother_champion', $puppy['mother_champion']);
         $file_name = $puppy['puppy_id'] . '-' . strtolower($puppy['name']);
 
 
@@ -73,7 +76,6 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':main_img_path', $puppyImgDb['main_img_path']);
         }
 
-
         try {
             $stmt->execute();
             header('Location:../puppies.php');
@@ -90,6 +92,10 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':sex', $puppy['sex']);
         $stmt->bindParam(':available', $puppy['available']);
         $stmt->bindParam(':description', $puppy['description']);
+        $stmt->bindParam(':mother_name', $puppy['mother_name']);
+        $stmt->bindParam(':mother_adn', $puppy['mother_adn']);
+        $stmt->bindParam(':mother_champion', $puppy['mother_champion']);
+
 
         $file_destination = '../../puppies_img/default.jpg';
 
@@ -112,11 +118,9 @@ if (check_session_start($_SESSION)) {
 
         //Vérification d'une erreur suite à une image trop lourde
         if (isset($_FILES['main_img_path']['error']) && $_FILES['main_img_path']['error'] === 2) {
-
             header('Location:../templates/puppy_form.php?error=2&name=' . $_POST['name'] . '&description=' . $_POST['description']);
             die();
         }
-
         try {
             $stmt->execute();
             header('Location:../puppies.php');
