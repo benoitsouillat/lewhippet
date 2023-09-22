@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
+    <meta name="description"
+        content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET LOF A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
     <?php
     require_once(__DIR__ . '../../php/component/head-links.php');
@@ -51,22 +52,6 @@
                         <figcaption>Premier Repas pour nos bébés !! </figcaption>
                     </figure>
                     <section class="col-12 gallery_php">
-                        <div class="card col-10 col-md-5 col-xl-3">
-                            <figure class="m-0 p-0">
-                                <img class="m-0 p-0 w-100" src="../puppies_img/default.jpg" alt="Chiot Whippet Disponible et Test HTML" />
-                                <figcaption class="m-0 p-0">
-                                    <div class="d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3">
-                                        <h4 class=""><span class="badge bg-light badge-blue">Male N°2</span>
-                                        </h4>
-                                        <p> <span class="badge bg-warning">En Option</span></p>
-                                    </div>
-                                    <p class="description text-left">Issu de Chienne</p>
-                                    <p class="description">Ici est la version HTML écrite en brut</p>
-                                </figcaption>
-                            </figure>
-                        </div>
-
-
                         <?php
                         /*
 
@@ -98,9 +83,9 @@
                                     <h4 class=''><span class='text-center text-" . $sexColor . "'>{$row['name']}</span>
                                     </h4>
                                     <p class='alert alert-" . $availableColor . "'>{$row['available']}</p>
-                                </div>
-                                <p class='description text-left'>Issu de " . ucfirst($row['description']) . "</p>
-                                <p class='description'>{$row['description']}</p>
+                                </div>";
+                            //<p class='description text-left'>Issu de " . ucfirst($row['mother_name']) . "</p>
+                            echo "<p class='description'>{$row['description']}</p>
                             </figcaption>
                         </figure>
                     </div>
@@ -148,13 +133,23 @@
                         whippet</a>
                     <div class="puppies_articles_box">
                         <div class="puppies_articles_img">
-                            <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG" alt="whippet et accessoires">
-                            <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG" alt="whippet et accessoires">
-                            <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG" alt="whippet et accessoires">
+                            <img class="img_medium_vertical"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG"
+                                alt="whippet et accessoires">
+                            <img class="img_medium_vertical"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG"
+                                alt="whippet et accessoires">
+                            <img class="img_medium_vertical"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG"
+                                alt="whippet et accessoires">
                         </div>
                         <div class="puppies_articles_img">
-                            <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG" alt="whippet et accessoires">
-                            <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG" alt="whippet et accessoires"><br>
+                            <img class="img_medium_horizontal"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG"
+                                alt="whippet et accessoires">
+                            <img class="img_medium_horizontal"
+                                src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG"
+                                alt="whippet et accessoires"><br>
                         </div>
                         <p>
                             Jouets de 5 à 26 euros selon la référence, les
@@ -222,7 +217,8 @@
                 <article id="male_femelle">
                     <h2>Mâle ou Femelle : Que choisir ??</h2>
                     <div>
-                        <img src="/chiots_img/illus_fichier/chiotschapeau.jpg" alt="whippet calme et équilibré joue avec un chapeau">
+                        <img src="/chiots_img/illus_fichier/chiotschapeau.jpg"
+                            alt="whippet calme et équilibré joue avec un chapeau">
                         <p>Nos chiots whippets sont calmes et équilibrés, ils évoluent dans un environnement
                             sain qui leur permet de s'adapter facilement à leur nouvelle vie.</p>
                     </div>
@@ -284,8 +280,10 @@
         <?php require_once(__DIR__ . '../../php/component/footer.php'); ?>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 </body>
 
