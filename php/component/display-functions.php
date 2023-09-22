@@ -1,7 +1,7 @@
 <?php
 
 
-function getAvailable($value)
+function getAvailableColor($value)
 {
     if ($value === 'En option')
         return "warning";
@@ -13,7 +13,7 @@ function getAvailable($value)
         return 'error';
     }
 }
-function getSex($value)
+function getSexColor($value)
 {
     if ($value === 'male' || $value === 'Male' || $value === 'Mâle')
         return "blue";

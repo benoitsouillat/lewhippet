@@ -87,8 +87,8 @@
                         $stmt = $conn->query(getAllPuppies());
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
 
-                            $availableColor = getAvailable($row['available']);
-                            $sexColor = getSex($row['sex']);
+                            $availableColor = getAvailableColor($row['available']);
+                            $sexColor = getSexColor($row['sex']);
 
                             echo "
                         <div class='card col-10 col-md-5 col-xl-3'>
@@ -98,7 +98,7 @@
                             <figcaption class='m-0 p-0'>
                                 <div
                                     class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
-                                    <h4 class=''><span class='badge bg-light badge-" . $sexColor . "'>{$row['name']}</span>
+                                    <h4 class=''><span class='text-center text-" . $sexColor . "'>{$row['name']}</span>
                                     </h4>
                                     <p class='alert alert-" . $availableColor . "'>{$row['available']}</p>
                                 </div>

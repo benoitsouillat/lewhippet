@@ -517,6 +517,14 @@ address {
   background-color: #f5aeae !important;
   padding: 15px 30px;
 }
+.puppies_container .gallery_php .text-pink {
+  color: #f5aeae !important;
+  background-color: darkgrey;
+}
+.puppies_container .gallery_php .text-blue {
+  color: lightblue !important;
+  background-color: darkgrey;
+}
 .puppies_container figure {
   max-width: 400px;
   text-align: center;
