@@ -465,13 +465,20 @@ address {
   box-sizing: border-box;
   border: solid 1px #C69;
   margin: 2px;
-  min-width: 300px;
+  min-width: 310px;
 }
 .puppies_container .gallery_php .card img {
   max-width: 100%;
   box-sizing: border-box;
   position: relative;
   left: -2px;
+}
+.puppies_container .gallery_php .card figure {
+  background-color: #000;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: unset;
+  color: #c5c5c5;
 }
 .puppies_container .gallery_php .card figcaption h4 {
   margin: 0;
@@ -519,11 +526,9 @@ address {
 }
 .puppies_container .gallery_php .text-pink {
   color: #f5aeae !important;
-  background-color: darkgrey;
 }
 .puppies_container .gallery_php .text-blue {
   color: lightblue !important;
-  background-color: darkgrey;
 }
 .puppies_container figure {
   max-width: 400px;
