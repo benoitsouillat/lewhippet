@@ -70,6 +70,12 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             } else {
                                 echo ("<p class=\"alert alert-success\">Disponible</p>");;
                             }
+                            if ($row['mother_adn']) {
+                                echo '<p>Maman ADN</p>';
+                            }
+                            if ($row['mother_champion']) {
+                                echo '<p>Maman Championne</p>';
+                            }
                             ?>
                     <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
                         <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Modifier</a>

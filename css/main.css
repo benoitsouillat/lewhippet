@@ -465,16 +465,20 @@ address {
   box-sizing: border-box;
   border: solid 1px #C69;
   margin: 2px;
+  background-color: rgb(71, 71, 71);
   min-width: 310px;
+  min-height: 45vh;
 }
 .puppies_container .gallery_php .card img {
   max-width: 100%;
   box-sizing: border-box;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: relative;
   left: -2px;
+  height: 250px;
 }
 .puppies_container .gallery_php .card figure {
-  background-color: #000;
   box-sizing: border-box;
   width: 100%;
   max-width: unset;
@@ -488,7 +492,7 @@ address {
   margin: unset;
 }
 .puppies_container .gallery_php .card figcaption p.description {
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 }
 .puppies_container .gallery_php .card figcaption p.description.text-left {
   padding-left: 5px;
@@ -496,6 +500,7 @@ address {
 }
 .puppies_container .gallery_php .card figcaption .labels h4 {
   min-width: 40%;
+  max-width: 42%;
 }
 .puppies_container .gallery_php .card figcaption .labels h4 > span {
   width: 100%;
@@ -508,21 +513,19 @@ address {
           text-decoration: underline red;
   background-color: red;
 }
-.puppies_container .gallery_php .badge {
-  color: #000;
-  padding: 10px 30px;
-}
 .puppies_container .gallery_php .badge-blue {
   color: black;
   text-shadow: 2px 2px 6px black;
   background-color: lightblue !important;
-  padding: 15px 30px;
+  margin: 2px 0;
+  margin-right: 0.2rem;
 }
 .puppies_container .gallery_php .badge-pink {
   color: white;
   text-shadow: 2px 2px 5px black;
-  background-color: #f5aeae !important;
-  padding: 15px 30px;
+  background-color: #f39797 !important;
+  margin: 2px;
+  margin-right: 0.2rem;
 }
 .puppies_container .gallery_php .text-pink {
   color: #f5aeae !important;
