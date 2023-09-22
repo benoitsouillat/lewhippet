@@ -47,22 +47,47 @@ if (isset($_GET['error'])) {
     <textarea id='description' class='form-control' type='text' name='description'>{$puppy->description}</textarea>
     <fieldset class='border m-2'>
         <label for='mother_name'>La Maman</label>
-        <input class='form-control border-0' type=' text' name='mother_name' placeholder='Nom de la mère' />
-        <div class='form-control-sm '>
-            <p>Est-elle vérifiée en ADN ?</p>
-            <input type='radio' id='adn_yes' name='mother_adn' value='1' checked>
-            <label for='adn_yes'>Oui</label>
-            <input type='radio' id='adn_no' name='mother_adn' value='0'>
-            <label for='adn_no'>Non</label>
-        </div>
-        <div class='form-control-sm'>
+        <input class='form-control border-0' type=' text' name='mother_name' value='{$puppy->mother_name}' placeholder='Nom de la mère' />";
+
+
+        if ($puppy->mother_adn) {
+            echo "<div class='form-control-sm '>
+                    <p>Est-elle vérifiée en ADN ?</p>
+                    <input type='radio' id='adn_yes' name='mother_adn' value='1' checked>
+                    <label for='adn_yes'>Oui</label>
+                    <input type='radio' id='adn_no' name='mother_adn' value='0'>
+                    <label for='adn_no'>Non</label>
+                </div>";
+        } else {
+            echo "<div class='form-control-sm '>
+                    <p>Est-elle vérifiée en ADN ?</p>
+                    <input type='radio' id='adn_yes' name='mother_adn' value='1'>
+                    <label for='adn_yes'>Oui</label>
+                    <input type='radio' id='adn_no' name='mother_adn' value='0' checked>
+                    <label for='adn_no'>Non</label>
+                </div>";
+        }
+
+        if ($puppy->mother_champion) {
+
+            echo "<div class='form-control-sm'>
+                    <p>Est-elle Championne Internationale ?</p>
+                    <input type='radio' id='champion_yes' name='mother_champion' value='1' checked>
+                    <label for='champion_yes'>Oui</label>
+                    <input type='radio' id='champion_no' name='mother_champion' value='0'>
+                    <label for='champion_no'>Non</label>
+                </div>";
+        } else {
+            echo "<div class='form-control-sm'>
             <p>Est-elle Championne Internationale ?</p>
             <input type='radio' id='champion_yes' name='mother_champion' value='1'>
             <label for='champion_yes'>Oui</label>
-
             <input type='radio' id='champion_no' name='mother_champion' value='0' checked>
             <label for='champion_no'>Non</label>
-        </div>
+        </div>";
+        }
+
+        echo "
     </fieldset>
     <label for='available' class='mt-2 mb-2' >Disponibilité : </label>
     <select class='form-control' for='available' id='available' name='available'>
