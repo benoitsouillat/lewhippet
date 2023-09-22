@@ -239,34 +239,23 @@
                     </figure>
 
                     <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal2/calme.jpg" alt="whippets disponibles"
-                            class="puppies_img xl">
-                        <figcaption>Mâle disponible de Miss-monde </p>
-                        </figcaption>
-                    </figure>
-                    <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal2/choupi.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Mâle disponible de Miss-monde </p>
+                        <figcaption>Mâle Réservé de Miss-monde </p>
                         </figcaption>
                     </figure>
-                    <figure class="card-image">
-                        <img src="/chiots_img/2023/Miss/mal2/regard.jpg" alt="whippets disponibles"
-                            class="puppies_img xl">
-                        <figcaption>Mâle disponible de Miss-monde </p>
-                        </figcaption>
-                    </figure>
+
 
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal3/static.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Mâle disponible de Miss-monde<br> </p>
+                        <figcaption>Mâle en cours de réservation de Miss-monde<br> </p>
                         </figcaption>
                     </figure>
                     <figure class="card-image">
                         <img src="/chiots_img/2023/Miss/mal3/staticverso.jpg" alt="whippets disponibles"
                             class="puppies_img xl">
-                        <figcaption>Mâle disponible de Miss-monde </p>
+                        <figcaption>Mâle en cours de réservation de Miss-monde </p>
                         </figcaption>
                     </figure>
 
