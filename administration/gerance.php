@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['username'])) {
+    header('Location:./logout.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,19 +13,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration Le whippet.com</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
-    <header>
-        <h1>Bienvenue sur l'administation du site</h1>
-    </header>
-    <main>
-        <a href="#" class="btn btn-info">Créer un nouveau chien</a>
-        <a href="#" class="btn btn-warning">Créer un nouveau résultat d'exposition</a>
-        <a href="#" class="btn btn-success">Créer un nouveau chiot</a>
+<?php
+include_once(__DIR__ . '/templates/menu_admin.php');
 
-    </main>
-
-</body>
+?>
 
 </html>

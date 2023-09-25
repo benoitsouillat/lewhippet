@@ -432,7 +432,14 @@ address {
     margin: 0 auto;
   }
 }
-.section_litter h1, .section_litter h2, .section_litter h3 {
+@media all and (max-width: 576px) {
+  .section_litter {
+    padding: 1px;
+  }
+}
+.section_litter h1,
+.section_litter h2,
+.section_litter h3 {
   text-align: center;
   color: #8a4784;
   text-decoration: underline;
@@ -446,6 +453,116 @@ address {
   flex-wrap: wrap;
 }
 
+.puppies_container .gallery_php {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.puppies_container .gallery_php .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  box-sizing: border-box;
+  border: solid 1px #C69;
+  margin: 5px 0.8%;
+  padding-top: 5px;
+  background-color: rgb(71, 71, 71);
+  flex-basis: 330px;
+  min-width: 330px;
+  min-height: 45vh;
+  max-width: 98%;
+}
+@media all and (min-width: 576px) {
+  .puppies_container .gallery_php .card {
+    max-width: 65%;
+  }
+}
+@media all and (min-width: 992px) {
+  .puppies_container .gallery_php .card {
+    max-width: 45%;
+  }
+}
+@media all and (min-width: 1200px) {
+  .puppies_container .gallery_php .card {
+    max-width: 30%;
+  }
+}
+.puppies_container .gallery_php .card img {
+  max-width: 320px;
+  box-sizing: border-box;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  left: -1px;
+  height: 250px;
+  margin-top: 2px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.puppies_container .gallery_php .card figure {
+  box-sizing: border-box;
+  width: 100%;
+  height: 500px;
+  max-width: unset;
+  margin: auto 0;
+  color: #c5c5c5;
+}
+.puppies_container .gallery_php .card figcaption h4 {
+  white-space: nowrap;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.puppies_container .gallery_php .card figcaption p {
+  margin: unset;
+}
+.puppies_container .gallery_php .card figcaption p.description {
+  padding: 20px 5%;
+}
+.puppies_container .gallery_php .card figcaption p.description.text-left {
+  padding-left: 5px;
+  text-align: left;
+}
+.puppies_container .gallery_php .card figcaption .labels h4 {
+  min-width: 40%;
+  max-width: 42%;
+}
+.puppies_container .gallery_php .card figcaption .labels h4 > span {
+  width: 100%;
+}
+.puppies_container .gallery_php .card figcaption .labels p {
+  width: 40%;
+}
+.puppies_container .gallery_php .card figcaption .bg-error {
+  -webkit-text-decoration: underline red;
+          text-decoration: underline red;
+  background-color: red;
+}
+.puppies_container .gallery_php .badge-blue {
+  color: black;
+  text-shadow: 2px 2px 6px black;
+  background-color: lightblue !important;
+  margin: 2px 0;
+  margin-right: 0.2rem;
+}
+.puppies_container .gallery_php .badge-pink {
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  background-color: #f39797 !important;
+  margin: 2px;
+  margin-right: 0.2rem;
+}
+.puppies_container .gallery_php .text-pink {
+  color: #f5aeae !important;
+}
+.puppies_container .gallery_php .text-blue {
+  color: lightblue !important;
+}
 .puppies_container figure {
   max-width: 400px;
   text-align: center;
@@ -574,6 +691,23 @@ address {
 }
 
 /* Menu */
+.img-admin-list {
+  max-height: 25vh;
+  max-width: 98%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-sizing: border-box;
+}
+
+.puppies-admin-container > .card {
+  min-height: 40vh;
+  min-width: 270px;
+}
+
+.form-control {
+  background-color: #000;
+}
+
 html {
   font-size: 14px;
 }
@@ -696,7 +830,12 @@ main {
   background-color: #e6e6e6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 1em auto;
   font-weight: bold;
   line-height: 1.3;
@@ -807,6 +946,4 @@ img {
 }
 .bandeau_title section a {
   color: #FFC;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
