@@ -471,6 +471,7 @@ address {
   box-sizing: border-box;
   border: solid 1px #C69;
   margin: 5px 0.8%;
+  padding-top: 5px;
   background-color: rgb(71, 71, 71);
   flex-basis: 330px;
   min-width: 330px;
@@ -498,9 +499,11 @@ address {
   -o-object-fit: cover;
      object-fit: cover;
   position: relative;
-  left: -2px;
+  left: -1px;
   height: 250px;
   margin-top: 2px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .puppies_container .gallery_php .card figure {
   box-sizing: border-box;
@@ -519,8 +522,7 @@ address {
   margin: unset;
 }
 .puppies_container .gallery_php .card figcaption p.description {
-  max-width: 320px;
-  padding-bottom: 20px;
+  padding: 20px 5%;
 }
 .puppies_container .gallery_php .card figcaption p.description.text-left {
   padding-left: 5px;
