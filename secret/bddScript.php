@@ -8,6 +8,7 @@ $table_users = "CREATE TABLE `damoiseaux_php`.`users` (`id` INT NOT NULL AUTO_IN
 $table_puppies = "CREATE TABLE `damoiseaux_php`.`puppies` (`id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(50) NOT NULL, `sex` VARCHAR(10) NOT NULL, `available` VARCHAR(20) NOT NULL, `description` VARCHAR(255), `main_img_path` VARCHAR(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 $table_users_add_roles = "ALTER TABLE `users` ADD `role` VARCHAR(15) NOT NULL DEFAULT 'User' AFTER `img_profile_path`;";
 $table_puppies_add_mother = "ALTER TABLE `puppies` ADD `mother_name` VARCHAR(255) NOT NULL AFTER `main_img_path`, ADD `mother_adn` BOOLEAN NOT NULL DEFAULT TRUE AFTER `mother_name`, ADD `mother_champion` BOOLEAN NOT NULL DEFAULT FALSE AFTER `mother_adn`";
+$table_puppies_add_position = "ALTER TABLE `puppies` ADD `position` INT NOT NULL AFTER `mother_champion`;";
 
 $conn->exec($database);
 $conn->exec($table_users);
