@@ -11,14 +11,39 @@ $stmt = $conn->prepare(getPuppyFromId());
 $stmt->bindParam(':id', $puppyId);
 $stmt->execute();
 $puppyWillBeChange = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = $conn->prepare(updatePuppyPosition());
+$stmt->bindParam(':id', $puppyId);
 
-// Vérification que la position entrée ne dépasse pas l'id maximum
 
-
-if (isset($_GET['moveBefore'])) {
+if (isset($_GET['positionInputer']) && $_GET['positionInputer'] != $puppyWillBeChange['position']) {
+    $newPosition = $_GET['positionInputer'];
+    $stmt->bindParam(':position', $newPosition);
+    try {
+        $stmt->execute();
+        header('Location: ../puppies.php');
+    } catch (PDOException $e) {
+        echo "Une erreur s'est produite : " . $e->getMessage();
+    }
+} elseif (isset($_GET['moveBefore'])) {
+    $newPosition = $puppyWillBeChange['position'] - 1;
+    $stmt->bindParam(':position', $newPosition);
+    try {
+        $stmt->execute();
+        header('Location: ../puppies.php');
+    } catch (PDOException $e) {
+        echo "Une erreur s'est produite : " . $e->getMessage();
+    }
 } elseif (isset($_GET['moveAfter'])) {
-} elseif (isset($_GET['idInputer'])) {
-    $newId = $_GET['idInputer'];
+    $newPosition = $puppyWillBeChange['position'] + 1;
+    $stmt->bindParam(':position', $newPosition);
+    try {
+        $stmt->execute();
+        header('Location: ../puppies.php');
+    } catch (PDOException $e) {
+        echo "Une erreur s'est produite : " . $e->getMessage();
+    }
+} elseif (isset($_GET['positionInputer']) && $_GET['positionInputer'] == $puppyWillBeChange['position']) {
+    header('Location: ../puppies.php');
 } else {
     echo 'Une erreur s\'est produite';
     die();

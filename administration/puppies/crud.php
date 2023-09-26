@@ -95,9 +95,6 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':mother_name', $puppy['mother_name']);
         $stmt->bindParam(':mother_adn', $puppy['mother_adn']);
         $stmt->bindParam(':mother_champion', $puppy['mother_champion']);
-
-
-
         $file_destination = '../../puppies_img/default.jpg';
 
         $stmt_id = $conn->prepare("SELECT id from puppies");

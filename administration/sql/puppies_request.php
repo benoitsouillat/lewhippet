@@ -14,6 +14,10 @@ function updatePuppy()
 {
     return "UPDATE `puppies` SET name = :name, sex = :sex, available = :available, description = :description, main_img_path = :main_img_path, mother_name = :mother_name, mother_adn = :mother_adn, mother_champion = :mother_champion WHERE id = :id";
 }
+function updatePuppyPosition()
+{
+    return "UPDATE `puppies` SET position = :position WHERE id = :id";
+}
 
 function deletePuppy()
 {

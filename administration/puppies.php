@@ -49,8 +49,8 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                                         </svg>
                                     </button>
                                 </label>
-                                <label class="w-100 col-11" for="idInputer">Position :</label>
-                                <input name="idInputer" class="col-3" type="number" value="<?php echo $row['id'] ?>">
+                                <label class="w-100 col-11" for="positionInputer">Position :</label>
+                                <input name="positionInputer" class="col-3" type="number" value="<?php echo $row['position'] ?>">
                                 <button type="submit">Valider</button>
                                 <label for="moveAfter">
                                     <button class="btn" name="moveAfter" type="submit" placeholder="Suivant">
