@@ -35,26 +35,26 @@ require_once(__DIR__ . '/sql/puppies_request.php');
             </div>
             <div class="puppies-admin-container d-flex justify-content-around flex-wrap">
                 <?php
-                $stmt = $conn->query(getAllPuppies());
+                $stmt = $conn->query(getAllPuppiesByPosition());
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
                 ?>
                     <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1">
-                        <div class="m1 p2">
-                            <form class="form-control d-flex flex-row justify-content-between flex-wrap" action="./puppies/updater.php" method="get">
+                        <div class="m1 p2 text-center bg-dark text-light">
+                            <p class="w-100 col-12 text-center bg-dark text-light">Position : </p>
+                            <form class="form-control bg-dark d-flex flex-row justify-content-between flex-shrink-1 col-12" action="./puppies/updater.php" method="get">
                                 <input type='hidden' name='puppyId' value='<?php echo $row['id'] ?>'>
                                 <label for="moveBefore">
                                     <button class="btn" name="moveBefore" type="submit" placeholder="Précédent">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z" />
                                         </svg>
                                     </button>
                                 </label>
-                                <label class="w-100 col-11" for="positionInputer">Position :</label>
-                                <input name="positionInputer" class="col-3" type="number" value="<?php echo $row['position'] ?>">
-                                <button type="submit">Valider</button>
+                                <input name="positionInputer" type="number" class="col-3" value="<?php echo $row['position'] ?>">
+                                <button class="btn btn-light" type="submit">Valider</button>
                                 <label for="moveAfter">
                                     <button class="btn" name="moveAfter" type="submit" placeholder="Suivant">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8Zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5Z" />
                                         </svg>
                                     </button>
