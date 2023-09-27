@@ -5,6 +5,11 @@ function getAllPuppies()
     return "SELECT * FROM puppies";
 };
 
+function getAllPuppiesByPosition()
+{
+    return "SELECT * FROM puppies ORDER BY position";
+};
+
 function createPuppy()
 {
     return "INSERT INTO `puppies` (name, sex, available, description, main_img_path, mother_name, mother_adn, mother_champion, position) VALUES (:name, :sex, :available, :description, :main_img_path, :mother_name, :mother_adn, :mother_champion, :position)";
