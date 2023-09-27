@@ -45,7 +45,6 @@ if (isset($_GET['positionInputer']) && $_GET['positionInputer'] != $puppyWillBeC
 } elseif (isset($_GET['positionInputer']) && $_GET['positionInputer'] == $puppyWillBeChange['position']) {
     header('Location: ../puppies.php');
 } else {
-    echo 'Une erreur s\'est produite';
+    echo 'Une erreur s\'est produite - Contactez l\'administrateur du site';
     die();
 }
-die();
