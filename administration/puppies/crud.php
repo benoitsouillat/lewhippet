@@ -95,14 +95,14 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':mother_name', $puppy['mother_name']);
         $stmt->bindParam(':mother_adn', $puppy['mother_adn']);
         $stmt->bindParam(':mother_champion', $puppy['mother_champion']);
-
-
         $file_destination = '../../puppies_img/default.jpg';
 
+        $stmt_id = $conn->prepare("SELECT id from puppies");
+        $stmt_id->execute();
+        $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
+        $position = end($id_array)->id + 1;
+
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
-            $stmt_id = $conn->prepare("SELECT id from puppies");
-            $stmt_id->execute();
-            $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
             $id_name = end($id_array)->id + 1;
             $file_name = $id_name . '-' . replace_reunion_char(replace_accent($puppy['name']));
 
@@ -114,6 +114,7 @@ if (check_session_start($_SESSION)) {
             }
         }
         $stmt->bindValue(':main_img_path', $file_destination);
+        $stmt->bindParam(':position', $position);
 
 
         //Vérification d'une erreur suite à une image trop lourde
