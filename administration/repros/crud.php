@@ -16,6 +16,10 @@ if (check_session_start($_SESSION)) {
         } catch (PDOException $e) {
             echo 'Une erreur s\'est produite : ' . $e->getMessage();
         }
+    } elseif (isset($_GET['id'])) {
+        require_once('../templates/repro_form.php');
+    } elseif (isset($_POST) && isset($_POST['repro_name'])) {
+        var_dump($_POST);
     }
 } else {
     header('Location:../logout.php');
