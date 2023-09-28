@@ -26,7 +26,7 @@ function updateReproPosition()
 
 function deleteRepro()
 {
-    return "DELETE FROM repros WHERE `id` = :id";
+    return "DELETE FROM `repros` WHERE `id` = :id";
 }
 
 function getReproFromId()

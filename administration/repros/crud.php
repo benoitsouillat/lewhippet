@@ -17,4 +17,6 @@ if (check_session_start($_SESSION)) {
             echo 'Une erreur s\'est produite : ' . $e->getMessage();
         }
     }
-}
+} else {
+    header('Location:../logout.php');
+};
