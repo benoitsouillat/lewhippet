@@ -1,25 +1,20 @@
 <?php
 
 include_once('../gerance.php');
+require_once('../classes/Repro.php');
 $stmt = $conn->prepare(getAllRepros());
 $stmt->execute();
 $repros = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-if (isset($_GET['id'])) {
-    $stmt = $conn->prepare(getReproFromId());
-    $stmt->bindParam(':id', $_GET['id']);
-    $stmt->execute();
-    $repro = $stmt->fetch(PDO::FETCH_OBJ);
-}
+
 ?>
-<form action="../repros/crud.php" method="post" id='reproForm' class="form-control d-flex flex-column w-50 m-3"
-    enctype="multipart/form-data">
+<form action="../repros/crud.php" method="post" id='reproForm' class="form-control d-flex flex-column w-50 m-3" enctype="multipart/form-data">
     <?php
     if (isset($_GET['id'])) {
-        echo "<input type='hidden' name='repro_id' value='{$repro->id}'>";
+        echo "<input type='hidden' name='repro_id' value='{$_GET['id']}'>";
     } ?>
     <label for="repro_name">Nom du reproducteur :</label>
-    <input name="repro_name" id="repro_name" class="form-control-sm" type="text">
+    <input name="repro_name" id="repro_name" class="form-control-sm" type="text" value="<?php echo $repro->getName(); ?>">
     <label for="repro_sex">Sexe du reproducteur :</label>
     <select name="repro_sex" id="repro_sex" class="form-control-sm">
         <option value="femelle" selected>Femelle</option>
@@ -36,11 +31,10 @@ if (isset($_GET['id'])) {
         <option value="Beige">Beige</option>
     </select>
     <label for="repro_insert">Puce électronique :</label>
-    <input name="repro_insert" id="repro_insert" class="form-control-sm" type="text">
+    <input name="repro_insert" id="repro_insert" class="form-control-sm" type="text" value="<?php echo $repro->getInsert() ?>">
 
     <label for="repro_description">Description :</label>
-    <textarea name="repro_description" id="repro_description" class="form-control-sm"
-        placeholder="Descrivez le chien"></textarea>
+    <textarea name="repro_description" id="repro_description" class="form-control-sm" placeholder="Décrivez le chien"><?php echo $repro->getDescription() ?></textarea>
 
 
     <div id="repro_breeder">
@@ -51,10 +45,9 @@ if (isset($_GET['id'])) {
         <label for="breeder_no">Non</label>
     </div>
     <label for="repro_birthdate">Date de naissance :</label>
-    <input type="date" value="2000-01-01" name="repro_birthdate">
+    <input type="date" value="<?php echo $repro->getBirthdate() ?>" name="repro_birthdate">
     <label for="repro_lofselect">Lien Lof Select :</label>
-    <input name="repro_lofselect" id="repro_lofselect" class="form-control-sm" type="text"
-        value="https://www.centrale-canine.fr/lofselect/chien/imperiale-de-la-romance-des-damoiseaux-5912533">
+    <input name="repro_lofselect" id="repro_lofselect" class="form-control-sm" type="text" value="https://www.centrale-canine.fr/lofselect/chien/imperiale-de-la-romance-des-damoiseaux-5912533">
 
     <div class="reproRadios w-100 p-2">
         <p>Le reproducteur est-il testé ADN ?</p>
