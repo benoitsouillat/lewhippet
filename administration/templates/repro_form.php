@@ -12,7 +12,12 @@ if (isset($_GET['id'])) {
     $repro = $stmt->fetch(PDO::FETCH_OBJ);
 }
 ?>
-<form action="../repros/crud.php" method="post" id='reproForm' class="form-control d-flex flex-column w-50 m-3" enctype="multipart/form-data">
+<form action="../repros/crud.php" method="post" id='reproForm' class="form-control d-flex flex-column w-50 m-3"
+    enctype="multipart/form-data">
+    <?php
+    if (isset($_GET['id'])) {
+        echo "<input type='hidden' name='repro_id' value='{$repro->id}'>";
+    } ?>
     <label for="repro_name">Nom du reproducteur :</label>
     <input name="repro_name" id="repro_name" class="form-control-sm" type="text">
     <label for="repro_sex">Sexe du reproducteur :</label>
@@ -32,6 +37,12 @@ if (isset($_GET['id'])) {
     </select>
     <label for="repro_insert">Puce électronique :</label>
     <input name="repro_insert" id="repro_insert" class="form-control-sm" type="text">
+
+    <label for="repro_description">Description :</label>
+    <textarea name="repro_description" id="repro_description" class="form-control-sm"
+        placeholder="Descrivez le chien"></textarea>
+
+
     <div id="repro_breeder">
         <p>Issu de la Romance des Damoiseaux ? </p>
         <input type="radio" id="breeder_yes" name="repro_breeder" value="de la Romance des damoiseaux" checked>
@@ -40,9 +51,10 @@ if (isset($_GET['id'])) {
         <label for="breeder_no">Non</label>
     </div>
     <label for="repro_birthdate">Date de naissance :</label>
-    <input type="date">
+    <input type="date" value="2000-01-01" name="repro_birthdate">
     <label for="repro_lofselect">Lien Lof Select :</label>
-    <input name="repro_lofselect" id="repro_lofselect" class="form-control-sm" type="text">
+    <input name="repro_lofselect" id="repro_lofselect" class="form-control-sm" type="text"
+        value="https://www.centrale-canine.fr/lofselect/chien/imperiale-de-la-romance-des-damoiseaux-5912533">
 
     <div class="reproRadios w-100 p-2">
         <p>Le reproducteur est-il testé ADN ?</p>
