@@ -11,6 +11,7 @@ journal_damoiseaux/
 photos/
 poeme/
 puppies_img/*
+repros_img/*
 sommaire/
 Video/
 albums-galeries-whippet.htm
@@ -28,7 +29,8 @@ secret/*
 
 !.gitignore
 !guide-pratique/
-!puppies_img/default.jpg
+!puppies_img/default.jpg-
+!repros_img/default.jpg-
 !secret/bddScript.php
 !secret/bddDeleteSomeData.php
 
