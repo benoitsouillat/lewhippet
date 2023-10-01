@@ -691,6 +691,7 @@ address {
 }
 
 /* Menu */
+/* Menu */
 .img-admin-list {
   max-height: 25vh;
   max-width: 98%;
@@ -702,6 +703,37 @@ address {
 .puppies-admin-container > .card {
   min-height: 40vh;
   min-width: 270px;
+}
+
+.repros-admin-container > .bg-pink {
+  background-color: #f0d1e0;
+}
+
+.repros-admin-container > .bg-blue {
+  background-color: #c1e1ec;
+}
+
+.repros-admin-container > .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  border: solid 3px black;
+  padding: 2px;
+  margin: 1%;
+  max-height: 60vh;
+  min-width: 370px;
+}
+.repros-admin-container > .card img {
+  max-width: 80%;
+}
+.repros-admin-container > .card .btn-pink {
+  text-align: center;
+  color: white;
+  background-color: #bf4080;
+  border: 5%;
 }
 
 .form-control {
@@ -741,19 +773,23 @@ body header .menu {
     font-size: 0.9em;
   }
 }
-body header .menu .nav-link, body header .menu .social {
+body header .menu .nav-link,
+body header .menu .social {
   height: 58px;
   padding: 2px;
 }
-body header .menu .nav-link .bi, body header .menu .social .bi {
+body header .menu .nav-link .bi,
+body header .menu .social .bi {
   color: beige;
   font-size: xx-large;
 }
-body header .menu .nav-link .bi:hover, body header .menu .social .bi:hover {
+body header .menu .nav-link .bi:hover,
+body header .menu .social .bi:hover {
   color: goldenrod;
 }
 @media all and (max-width: 576px) {
-  body header .menu .nav-link .bi, body header .menu .social .bi {
+  body header .menu .nav-link .bi,
+  body header .menu .social .bi {
     font-size: x-large;
   }
 }

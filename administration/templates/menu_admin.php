@@ -10,7 +10,7 @@
                 <a href="#" class="btn btn-secondary mb-1">Modifier mon profil</a>
             <a href="#" class="btn btn-warning mb-1">Gérer les résultats d'exposition</a>
         -->
-            <a href="../../administration/repros.php" class="btn btn-info mb-1">Gérer les reproducteurs</a>
+            <a href="../../administration/repros.php" class="btn btn-primary mb-1">Gérer les reproducteurs</a>
             <a href="../../administration/logout.php" class='btn btn-danger mb-1'>Se
                 déconnecter</a>
 

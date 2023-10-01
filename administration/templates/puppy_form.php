@@ -1,6 +1,8 @@
 <?php
 
-$title = $puppy->name;
+if (isset($puppy)) {
+    $title = $puppy->name;
+}
 
 include_once(__DIR__ . '/../gerance.php');
 

@@ -1,0 +1,50 @@
+@import "variables";
+@import "mixins";
+
+.img-admin-list {
+    max-height: 25vh;
+    max-width: 98%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.puppies-admin-container>.card {
+    min-height: 40vh;
+    min-width: 270px;
+}
+
+.repros-admin-container>.bg-pink {
+    background-color: lighten($pink, 28);
+}
+
+.repros-admin-container>.bg-blue {
+    background-color: lighten(lightblue, 5);
+}
+
+.repros-admin-container>.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    border: solid 3px black;
+    padding: 2px;
+    margin: 1%;
+    max-height: 60vh;
+    min-width: 370px;
+
+    img {
+        max-width: 80%;
+    }
+
+    .btn-pink {
+        @include pink_button;
+    }
+
+
+}
+
+.form-control {
+    background-color: #000;
+}

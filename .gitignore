@@ -29,10 +29,11 @@ secret/*
 
 !.gitignore
 !guide-pratique/
-!puppies_img/default.jpg-
-!repros_img/default.jpg-
+!puppies_img/default.jpg
+!repros_img/default.jpg
 !secret/bddScript.php
 !secret/bddDeleteSomeData.php
+!_*.scss
 
 
 

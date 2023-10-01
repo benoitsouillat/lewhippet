@@ -93,15 +93,15 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             }
                             echo "<p class='d-flex flex-row justify-content-end flex-wrap m-2'>Maman : {$row['mother_name']}";
                             if ($row['mother_adn']) {
-                                echo "<span class='alert alert-info m-2 mt-0 p-1'>ADN</span>";
+                                echo "<span class='alert alert-adn m-2 mt-0 p-1'>ADN</span>";
                             }
                             if ($row['mother_champion']) {
-                                echo '<span class="alert alert-secondary m-2 mt-0 p-1">Championne</span></p>';
+                                echo '<span class="alert alert-success m-2 mt-0 p-1">Championne</span></p>';
                             }
                             ?>
                             <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
-                                <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-primary m-2 p-3">Modifier</a>
-                                <button onClick="confirmDeletePuppy(<?php echo $row['id'] ?>,  '<?php echo replace_reunion_char($row['name']) ?>')" class="btn btn-danger m-2">Supprimer</button>
+                                <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>" class="btn btn-success m-2 p-3">Modifier</a>
+                                <button onClick="confirmDeletePuppy(<?php echo $row['id'] ?>,  '<?php echo replace_reunion_char($row['name']) ?>')" class="btn btn-outline-danger m-2">Supprimer</button>
                             </div>
                         </div>
                     </div>
