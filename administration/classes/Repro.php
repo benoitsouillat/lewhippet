@@ -13,9 +13,9 @@ class Repro extends Dog
     protected $adn;
     protected $champion;
 
-    public function __construct(string $name, string $sex, String $color, String $insert, String $description, $breeder, $birthdate, $lofselect, $adn, $champion)
+    public function __construct(string $name, string $sex, String $color, string $mainImgPath, String $insert, String $description, $breeder, $birthdate, $lofselect, $adn, $champion)
     {
-        parent::__construct($name, $sex, $color);
+        parent::__construct($name, $sex, $color, $mainImgPath);
         $this->insert = $insert;
         $this->description = $description;
         $this->breeder = $breeder;

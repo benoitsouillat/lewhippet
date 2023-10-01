@@ -10,7 +10,6 @@ $repro = new Repro('', '', '', '', '', '', '', '', '', '', '');
 $repro->setBirthdate(date('Y-m-d'));
 $repro->setLofselect('https://www.centrale-canine.fr/lofselect/recherche-chien');
 if (check_session_start($_SESSION)) {
-
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
         $stmt = $conn->prepare(deleteRepro());
         $stmt->bindParam(':id', $_GET['id']);
@@ -30,6 +29,7 @@ if (check_session_start($_SESSION)) {
         include_once('../templates/repro_form.php');
     }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $file_destination = $repro->getMainImgPath();
         $repro->setName($_POST['repro_name']);
         $repro->setSex($_POST['repro_sex']);
         $repro->setColor($_POST['repro_color']);
@@ -40,6 +40,14 @@ if (check_session_start($_SESSION)) {
         $repro->setLofselect($_POST['repro_lofselect']);
         $repro->setIsAdn($_POST['repro_adn']);
         $repro->setIsChampion($_POST['repro_champion']);
+        if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] !== null) {
+            $file_name = $_POST['repro_id'] . '-' . $repro->getName();
+            $file_tmp = $_FILES['main_img_path']['tmp_name'];
+            $file_destination = '../../repros_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
+            move_uploaded_file($file_tmp, $file_destination);
+        }
+        $repro->setMainImgPath($file_destination);
+
         if (isset($_POST['repro_id'])) {
             $stmt = $conn->prepare(updateRepro());
             $stmt->bindValue(':id', $_POST['repro_id']);
@@ -57,7 +65,7 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':lofselect', $repro->getLofselect());
             $stmt->bindValue(':adn', $repro->getIsAdn());
             $stmt->bindValue(':champion', $repro->getIsChampion());
-            $stmt->bindValue(':main_img_path', 'default.jpg');
+            $stmt->bindValue(':main_img_path', $repro->getMainImgPath());
             $stmt->execute();
             header('Location:../repros.php');
         } catch (PDOException $e) {

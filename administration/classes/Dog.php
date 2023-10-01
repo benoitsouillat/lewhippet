@@ -5,12 +5,14 @@ class Dog
     protected $name;
     protected $sex;
     protected $color;
+    protected $mainImgPath;
 
-    public function __construct(String $name, String $sex, String $color)
+    public function __construct(String $name, String $sex, String $color, String $mainImgPath)
     {
         $this->name = $name;
         $this->sex = $sex;
         $this->color = $color;
+        $this->mainImgPath = $mainImgPath;
     }
 
 
@@ -40,5 +42,13 @@ class Dog
     public function setcolor($color)
     {
         $this->color = $color;
+    }
+    public function getMainImgPath()
+    {
+        return $this->mainImgPath;
+    }
+    public function setMainImgPath($mainImgPath)
+    {
+        $this->mainImgPath = $mainImgPath;
     }
 }

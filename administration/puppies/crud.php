@@ -60,7 +60,6 @@ if (check_session_start($_SESSION)) {
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
             //Vérification d'une erreur suite à une image trop lourde
             if (isset($_FILES['main_img_path']['error']) && $_FILES['main_img_path']['error'] === 2) {
-
                 header('Location:./crud.php?error=2&id=' . $puppy['puppy_id']);
                 die();
             }
