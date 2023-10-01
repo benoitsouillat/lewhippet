@@ -14,7 +14,7 @@ let breederReproNoButton = document.getElementById('breeder_no');
 let breederReproYesButton = document.getElementById('breeder_yes');
 let inputReproName = document.createElement('input');
 inputReproName.placeholder = "Entrez l'affixe du chien";
-inputReproName.className = 'form-control';
+inputReproName.className = 'form-control border border-3 border-primary bg-light';
 inputReproName.name = 'repro_breeder';
 
 if (breederReproNoButton) {

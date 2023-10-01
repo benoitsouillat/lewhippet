@@ -8,6 +8,7 @@ require_once('../classes/Repro.php');
 
 $repro = new Repro('', '', '', '', '', '', '', '', '', '', '');
 $repro->setBirthdate(date('Y-m-d'));
+$repro->setLofselect('https://www.centrale-canine.fr/lofselect/recherche-chien');
 if (check_session_start($_SESSION)) {
 
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
