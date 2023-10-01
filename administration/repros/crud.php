@@ -40,7 +40,6 @@ if (check_session_start($_SESSION)) {
         $repro->setLofselect($_POST['repro_lofselect']);
         $repro->setIsAdn($_POST['repro_adn']);
         $repro->setIsChampion($_POST['repro_champion']);
-
         if (isset($_POST['repro_id'])) {
             $stmt = $conn->prepare(updateRepro());
             $stmt->bindValue(':id', $_POST['repro_id']);

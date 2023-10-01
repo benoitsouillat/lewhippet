@@ -3,6 +3,7 @@ session_start();
 require_once(__DIR__ . '/../secret/connexion.php');
 require_once(__DIR__ . '/utilities/usefull_functions.php');
 require_once(__DIR__ . '/sql/repros_request.php');
+require_once(__DIR__ . '/classes/Repro.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,46 +41,50 @@ require_once(__DIR__ . '/sql/repros_request.php');
         <div class="puppies-admin-container d-flex justify-content-around flex-wrap">
             <?php
                 $stmt = $conn->query(getAllRepros());
-                while ($repro = $stmt->fetch(PDO::FETCH_OBJ)) :
+                while ($reproData = $stmt->fetch(PDO::FETCH_OBJ)) :
+                    $repro = new Repro('', '', '', '', '', '', '', '', '', '');
+                    $repro->fillFromStdClass($reproData);
                 ?>
             <div class="card col-12 d-flex flex-row justify-content-center align-items-center flex-wrap flex-grow-1">
                 <div class="repro_text col-6 d-flex flex-column justify-content-center">
                     <h6 class="col-12 text-center">
                         <?php
-                                if ($repro->sex == 'Femelle' || $repro->sex == 'femelle' || $repro->sex == 'female') {
-                                    echo " <i class='bi bi-gender-female'> </i> " . $repro->name . ' ' .  $repro->breeder;
+                                if ($repro->getSex() == 'Femelle' || $repro->getSex() == 'femelle' || $repro->getSex() == 'female') {
+                                    echo " <i class='bi bi-gender-female'> </i> " . $repro->getName() . ' ' .  $repro->getBreeder();
                                 } else {
-                                    echo " <i class='bi bi-gender-male'> </i> " . $repro->name . ' ' .  $repro->breeder;
+                                    echo " <i class='bi bi-gender-male'> </i> " . $repro->getName() . ' ' .  $repro->getBreeder();
                                 }
                                 ?>
                     </h6>
-                    <p>Numéro de puce : <?php echo $repro->insert ?></p>
-                    <p>Couleur : <?php echo $repro->color ?></p>
-                    <p class="text-center"><?php echo $repro->description ?></p>
-                    <p>Né le : <?php echo $repro->birth_date ?></p>
+                    <p>Numéro de puce : <?php echo $repro->getInsert() ?></p>
+                    <p>Couleur : <?php echo $repro->getColor() ?></p>
+                    <p class="text-center"><?php echo $repro->getDescription() ?></p>
+                    <p>Né le : <?php echo $repro->getBirthdate() ?></p>
                     <div class="d-flex flex-row justify-content-around align-items-center col-11 text-center">
                         <?php
-                                if ($repro->is_adn == true) {
+                                if ($repro->getIsAdn() == true) {
                                     echo "<p class='alert alert-info'>ADN Vérifié</p>";
                                 }
-                                if ($repro->is_champion == true) {
+                                if ($repro->getIsChampion() == true) {
                                     echo "<p class='alert alert-primary'>Champion</p>";
                                 }
                                 ?>
 
                     </div>
+                    <a href='<?php echo $repro->getLofselect() ?>' class="btn btn-secondary" target="_blank">Lof
+                        Select</a>
 
 
                     <div class="d-flex flex-row justify-content-evenly col-12">
-                        <a href="./repros/crud.php?id=<?php echo $repro->id ?>"
+                        <a href="./repros/crud.php?id=<?php echo $reproData->id ?>"
                             class="btn btn-primary m-2 p-3">Modifier</a>
                         <button
-                            onClick="confirmDeleteRepro(<?php echo $repro->id ?>,  '<?php echo replace_reunion_char($repro->name); ?>')"
+                            onClick="confirmDeleteRepro(<?php echo $reproData->id ?>,  '<?php echo replace_reunion_char($repro->getName()); ?>')"
                             class="btn btn-danger m-2">Supprimer</button>
                     </div>
                 </div>
                 <img class="col-4 p-2 m-2 border border-2 border-dark rounded"
-                    src="../repros_img/<?php echo $repro->main_img_path ?> " alt="Lévrier Whippet">
+                    src="../repros_img/<?php echo $reproData->main_img_path ?> " alt="Lévrier Whippet">
 
 
             </div>

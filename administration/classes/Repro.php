@@ -1,6 +1,6 @@
 <?php
 
-require_once('../classes/Dog.php');
+require_once(__DIR__ . '/Dog.php');
 
 class Repro extends Dog
 {
@@ -52,7 +52,7 @@ class Repro extends Dog
     }
     public function setDescription($description)
     {
-        $this->$description = $description;
+        $this->description = $description;
     }
     public function getBreeder()
     {
