@@ -7,7 +7,7 @@ class Dog
     protected $color;
     protected $mainImgPath;
 
-    public function __construct(String $name, String $sex, String $color, String $mainImgPath)
+    public function __construct(String $name = '', String $sex = '', String $color = '', String $mainImgPath = '/repros_img/default.jpg')
     {
         $this->name = $name;
         $this->sex = $sex;
