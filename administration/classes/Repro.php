@@ -5,13 +5,13 @@ require_once(__DIR__ . '/Dog.php');
 class Repro extends Dog
 {
 
-    protected $insert;
-    protected $description;
-    protected $breeder;
-    protected $birthdate;
-    protected $lofselect;
-    protected $adn;
-    protected $champion;
+    private $insert;
+    private $description;
+    private $breeder;
+    private $birthdate;
+    private $lofselect;
+    private $adn;
+    private $champion;
 
     public function __construct(string $name, string $sex, String $color, string $mainImgPath, String $insert, String $description, $breeder, $birthdate, $lofselect, $adn, $champion)
     {
