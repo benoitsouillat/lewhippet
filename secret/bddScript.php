@@ -36,13 +36,28 @@ $table_repros = "CREATE TABLE `damoiseaux_php`.`repros` (
     `main_img_path` VARCHAR(255) DEFAULT 'default.jpg',
     `description` VARCHAR(255),
     PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+$table_litters = "CREATE TABLE `damoiseaux_php`.`litters` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `birthdate` DATE NOT NULL DEFAULT '2023-01-01',
+    `mother_id` INT,
+    `father_id` INT,
+    `number_of_puppies` INT NOT NULL, 
+    `number_of_males` INT, 
+    `number_of_females` INT,
+    `litter_number` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`mother_id`) REFERENCES `repros`(`id`),
+    FOREIGN KEY (`father_id`) REFERENCES `repros`(`id`)) 
+    ENGINE = InnoDB;";
 
 $conn->exec($database);
 //$conn->exec($table_users);
 //$conn->exec($table_puppies);
 //$conn->exec($table_users_add_roles);
 //$conn->exec($table_puppies_add_mother);
-$conn->exec($table_repros);
+//$conn->exec($table_repros);
+$conn->exec($table_litters);
+
 
 
 /* Insertion des données de test */
