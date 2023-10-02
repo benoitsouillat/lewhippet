@@ -6,14 +6,14 @@ include_once('../classes/Repro.php');
 class Litter extends Repro
 {
     protected $birthdate;
-    protected Repro $mother;
-    protected Repro $father;
-    protected Int $numberPuppies;
-    protected Int $numberMales;
-    protected Int $numberFemales;
+    protected ?Repro $mother = null;
+    protected ?Repro $father = null;
+    protected Int $numberPuppies = 1;
+    protected Int $numberMales = 0;
+    protected Int $numberFemales = 0;
     protected String $litterNumberSCC;
 
-    function __construct($birthdate, Repro $mother, Repro $father, Int $numberPuppies, Int $numberMales, String $litterNumberSCC)
+    function __construct($birthdate, ?Repro $mother, ?Repro $father, Int $numberPuppies, Int $numberMales, String $litterNumberSCC)
     {
         $this->birthdate = $birthdate;
         $this->mother = $mother;

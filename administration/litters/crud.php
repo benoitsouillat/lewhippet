@@ -8,26 +8,31 @@ require_once('../sql/repros_request.php');
 require_once('../classes/Repro.php');
 require_once('../classes/Litter.php');
 
-$stmt = $conn->prepare(getAllMales());
-$stmt->execute();
-$reprosMales = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if (check_session_start($_SESSION)) {
+    $stmt = $conn->prepare(getAllMales());
+    $stmt->execute();
+    $reprosMales = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    $litter = new Litter(
+        null,
+        null,
+        null,
+        7,
+        3,
+        '2023-2023'
+    );
 
-$stmt = $conn->prepare(getReproFromId());
-$stmt->bindValue(':id', 3);
-$stmt->execute();
-$motherReproData = $stmt->fetch(PDO::FETCH_OBJ);
-$motherRepro = new Repro('', '', '', '', '', '', '', '', '', '', '');
-$motherRepro->fillFromStdClass($motherReproData);
+    if (isset($_GET['id']) && $_GET['id'] != 0) {
+        $stmt = $conn->prepare(getReproFromId());
+        $stmt->bindValue(':id', $_GET['id']);
+        $stmt->execute();
+        $motherReproData = $stmt->fetch(PDO::FETCH_OBJ);
+        $motherRepro = new Repro('', '', '', '', '', '', '', '', '', '', '');
+        $motherRepro->fillFromStdClass($motherReproData);
+        $litter->setMother($motherRepro);
+    }
 
-
-
-$litter = new Litter(
-    '2021-03-18',
-    $motherRepro,
-    $motherRepro,
-    7,
-    3,
-    '2023-2023'
-);
-include_once('../templates/litter_form.php');
+    include_once('../templates/litter_form.php');
+} else {
+    header('Location:../logout.php');
+}
