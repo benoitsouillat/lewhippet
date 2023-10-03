@@ -7,25 +7,26 @@ class Dog
     protected $color;
     protected $mainImgPath;
 
-    public function __construct(String $name = '', String $sex = '', String $color = '', String $mainImgPath = '/repros_img/default.jpg')
-    {
+    public function __construct(
+        String $name = '',
+        String $sex = '',
+        String $color = '',
+        String $mainImgPath = '/repros_img/default.jpg'
+    ) {
         $this->name = $name;
         $this->sex = $sex;
         $this->color = $color;
         $this->mainImgPath = $mainImgPath;
     }
 
-
     public function getName()
     {
         return $this->name;
     }
-
     public function setName($name)
     {
         $this->name = $name;
     }
-
     public function getSex()
     {
         return $this->sex;
@@ -34,7 +35,6 @@ class Dog
     {
         $this->sex = $sex;
     }
-
     public function getColor()
     {
         return $this->color;

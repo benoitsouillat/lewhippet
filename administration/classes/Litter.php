@@ -37,7 +37,7 @@ class Litter
         $this->setMother($mother);
         $father = new Repro();
         $father->fetchFromDatabase($data->father_id);
-        $this->setMother($father);
+        $this->setFather($father);
         $this->setNumberPuppies($data->number_of_puppies);
         $this->setNumberMales($data->number_of_males);
         $this->setNumberFemales($data->number_of_females);
