@@ -10,7 +10,7 @@ function getLitterFromId()
 }
 function createLitter()
 {
-    return "INSERT INTO `litters` (name, sex, color, `insert`, breeder, birth_date, lofselect_link, is_adn, is_champion, description, main_img_path) VALUES (:name, :sex, :color, :insert, :breeder, :birthdate, :lofselect, :adn, :champion, :description, :main_img_path)";
+    return "INSERT INTO `litters` (birthdate, mother_id, father_id, number_of_puppies, number_of_males, number_of_females, litter_number) VALUES (:birthdate, :mother_id, :father_id, :numberPuppies, :numberMales, :numberFemales, :litterNumberSCC)";
 }
 
 function updateLitter()
