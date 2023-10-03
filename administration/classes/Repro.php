@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/../../secret/connexion.php');
+require_once(__DIR__ . '/../sql/repros_request.php');
 require_once(__DIR__ . '/Dog.php');
 
 class Repro extends Dog
@@ -36,18 +38,33 @@ class Repro extends Dog
         $this->champion = $champion;
     }
 
+    public function fetchFromDatabase($id)
+    {
+
+        $stmt = $conn->prepare(getReproFromId());
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        if ($reproFetch = $stmt->fetch(PDO::FETCH_OBJ)) {
+            // Mettez à jour les propriétés de l'objet avec les données de la base de données
+            $this->setName($reproFetch->name);
+            $this->setSex($reproFetch->sex);
+            // Continuez avec les autres propriétés...
+        }
+    }
+
     public function fillFromStdClass(stdClass $data)
     {
-        $this->name = $data->name;
-        $this->sex = $data->sex;
-        $this->color = $data->color;
-        $this->insert = $data->insert;
-        $this->description = $data->description;
-        $this->breeder = $data->breeder;
-        $this->birthdate = $data->birth_date;
-        $this->lofselect = $data->lofselect_link;
-        $this->adn = $data->is_adn;
-        $this->champion = $data->is_champion;
+        $this->setName($data->name);
+        $this->setSex($data->sex);
+        $this->setColor($data->color);
+        $this->setInsert($data->insert);
+        $this->setDescription($data->description);
+        $this->setBreeder($data->breeder);
+        $this->setBirthdate($data->birth_date);
+        $this->setLofselect($data->lofselect_link);
+        $this->setIsAdn($data->is_adn);
+        $this->setIsChampion($data->is_champion);
     }
     public function getInsert()
     {

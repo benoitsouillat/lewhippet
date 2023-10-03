@@ -29,6 +29,15 @@ if (check_session_start($_SESSION)) {
         include_once('../templates/repro_form.php');
     }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_POST['repro_id']) {
+            $reproId = $_POST['repro_id'];
+        } else {
+            $stmt_id = $conn->prepare("SELECT id from repros");
+            $stmt_id->execute();
+            $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
+            $reproId = end($id_array)->id + 1;
+        }
+
         $file_destination = $repro->getMainImgPath();
         $repro->setName($_POST['repro_name']);
         $repro->setSex($_POST['repro_sex']);
@@ -41,7 +50,7 @@ if (check_session_start($_SESSION)) {
         $repro->setIsAdn($_POST['repro_adn']);
         $repro->setIsChampion($_POST['repro_champion']);
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] !== null) {
-            $file_name = $_POST['repro_id'] . '-' . $repro->getName();
+            $file_name = $reproId . '-' . $repro->getName();
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
             $file_destination = '../../repros_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             move_uploaded_file($file_tmp, $file_destination);

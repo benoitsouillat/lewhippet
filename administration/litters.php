@@ -29,7 +29,6 @@ require_once(__DIR__ . '/classes/Litter.php');
         <?php
         if (isset($_SESSION['username'])) {
         ?>
-
         <h1 class="text-center alert alert-info p-4 m-0">Retrouvez toutes les portées sur cette page</h1>
         <p class="w-50 text-right align-self-end alert alert-success p-1 m-0">Connecté en tant que :
             <?php echo $_SESSION['username'] ?></p>
@@ -45,8 +44,8 @@ require_once(__DIR__ . '/classes/Litter.php');
                 $stmt = $conn->query(getAllLitters());
                 while ($litterData = $stmt->fetch(PDO::FETCH_OBJ)) :
                     $litter = new Litter();
+                    var_dump($litterData);
                     $litter->fillFromStdClass($litterData);
-                    var_dump($litter);
                     die();
                 ?>
             <div class="card col-6 co   l-sm-4 col-lg-3 p-2 mt-1">

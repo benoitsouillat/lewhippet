@@ -3,7 +3,7 @@
 include_once(__DIR__ . '/Dog.php');
 include_once(__DIR__ . '/Repro.php');
 
-class Litter extends Repro
+class Litter
 {
     private $birthdate = '';
     private ?Repro $mother = null;
@@ -28,6 +28,16 @@ class Litter extends Repro
         $this->numberMales = $numberMales;
         $this->litterNumberSCC = $litterNumberSCC;
     }
+
+    public function fillFromStdClass(stdClass $data)
+    {
+        $this->setBirthdate($data->birthdate);
+        $this->setMother($data->mother_id);
+        $this->setFather($data->father_id);
+        $this->setNumberPuppies($data->number_of_puppies);
+        $this->setNumberMales($data->number_of_males);
+        $this->setNumberFemales($data->number_of_females);
+    }
     /**
      * Get the value of birthdate
      */
@@ -47,7 +57,6 @@ class Litter extends Repro
 
         return $this;
     }
-
     /**
      * Get the value of mother
      */
@@ -55,7 +64,6 @@ class Litter extends Repro
     {
         return $this->mother;
     }
-
     /**
      * Set the value of mother
      *
@@ -67,7 +75,6 @@ class Litter extends Repro
 
         return $this;
     }
-
     /**
      * Get the value of father
      */
@@ -75,7 +82,6 @@ class Litter extends Repro
     {
         return $this->father;
     }
-
     /**
      * Set the value of father
      *
@@ -87,7 +93,6 @@ class Litter extends Repro
 
         return $this;
     }
-
     /**
      * Get the value of numberPuppies
      */
@@ -95,7 +100,6 @@ class Litter extends Repro
     {
         return $this->numberPuppies;
     }
-
     /**
      * Set the value of numberPuppies
      *
@@ -141,9 +145,9 @@ class Litter extends Repro
      *
      * @return  self
      */
-    public function setNumberFemales($numberPuppies, $numberMales)
+    public function setNumberFemales($numberFemales)
     {
-        $this->numberFemales = $numberPuppies - $numberMales;
+        $this->numberFemales = $numberFemales;
         return $this;
     }
 
