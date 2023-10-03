@@ -44,21 +44,19 @@ require_once(__DIR__ . '/classes/Litter.php');
                 $stmt = $conn->query(getAllLitters());
                 while ($litterData = $stmt->fetch(PDO::FETCH_OBJ)) :
                     $litter = new Litter();
-                    var_dump($litterData);
                     $litter->fillFromStdClass($litterData);
-                    die();
                 ?>
             <div class="card col-6 co   l-sm-4 col-lg-3 p-2 mt-1">
                 <p>Portée de </p>
                 <?php echo ("
-                <a href=\"./puppies/crud.php?id={$litterData->id}\">
+                <a href=\"./litters/crud.php?id={$litterData->id}&repro_id={$litter->getMother()->getId()}\">
                 <img class='card-img-top img-admin-list' src='../{$litter->getMother()->getMainImgPath()}'
                 alt='Chiot Whippet disponible'></a>
                 "); ?>
                 <div class="card-body">
 
                     <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
-                        <a href="./litters/crud.php?repro_id=<?php echo $litterData->id ?>"
+                        <a href="./litters/crud.php?id=<?php echo $litterData->id ?>&repro_id=<?php echo $litter->getMother()->getId() ?>"
                             class="btn btn-success m-2 p-3">Modifier</a>
                         <button
                             onClick="confirmDeleteLitter(<?php echo $litterData->id ?>,  '<?php echo replace_reunion_char($row['name']) ?>')"

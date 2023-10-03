@@ -1,12 +1,13 @@
 <?php
 
-require_once(__DIR__ . '/../../secret/connexion.php');
+include_once(__DIR__ . '/../../secret/connexion.php');
 require_once(__DIR__ . '/../sql/repros_request.php');
 require_once(__DIR__ . '/Dog.php');
 
 class Repro extends Dog
 {
 
+    private $id;
     private $insert;
     private $description;
     private $breeder;
@@ -40,16 +41,15 @@ class Repro extends Dog
 
     public function fetchFromDatabase($id)
     {
-
+        $dsn = "mysql:host=localhost;port=3306;dbname=damoiseaux_php";
+        $conn = new PDO($dsn, 'root', '');
         $stmt = $conn->prepare(getReproFromId());
         $stmt->bindParam(':id', $id);
         $stmt->execute();
 
         if ($reproFetch = $stmt->fetch(PDO::FETCH_OBJ)) {
-            // Mettez à jour les propriétés de l'objet avec les données de la base de données
-            $this->setName($reproFetch->name);
-            $this->setSex($reproFetch->sex);
-            // Continuez avec les autres propriétés...
+            $this->id = $reproFetch->id;
+            $this->fillFromStdClass($reproFetch);
         }
     }
 
@@ -121,5 +121,25 @@ class Repro extends Dog
     public function setIsChampion($champion)
     {
         $this->champion = $champion;
+    }
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 };

@@ -54,8 +54,8 @@ if (check_session_start($_SESSION)) {
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
             $file_destination = '../../repros_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             move_uploaded_file($file_tmp, $file_destination);
+            $repro->setMainImgPath($file_destination);
         }
-        $repro->setMainImgPath($file_destination);
 
         if (isset($_POST['repro_id'])) {
             $stmt = $conn->prepare(updateRepro());

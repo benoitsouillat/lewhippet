@@ -32,8 +32,12 @@ class Litter
     public function fillFromStdClass(stdClass $data)
     {
         $this->setBirthdate($data->birthdate);
-        $this->setMother($data->mother_id);
-        $this->setFather($data->father_id);
+        $mother = new Repro();
+        $mother->fetchFromDatabase($data->mother_id);
+        $this->setMother($mother);
+        $father = new Repro();
+        $father->fetchFromDatabase($data->father_id);
+        $this->setMother($father);
         $this->setNumberPuppies($data->number_of_puppies);
         $this->setNumberMales($data->number_of_males);
         $this->setNumberFemales($data->number_of_females);
