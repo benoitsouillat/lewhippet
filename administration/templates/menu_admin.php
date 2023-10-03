@@ -1,4 +1,4 @@
-<body class="d-flex flex-wrap">
+<body>
     <header class="d-flex flex-column justify-content-center header_admin">
         <h1 class="alert alert-info text-center m-0">Bienvenue sur l'administation du site LeWhippet.com</h1>
         <p class="w-50 text-right align-self-end alert alert-success p-1 m-0">Connecté en tant que :

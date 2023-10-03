@@ -1,11 +1,8 @@
 <?php
-
 if (isset($litter)) {
     $title = $litter->getMother()->getName();
 }
-
 include_once(__DIR__ . '/../gerance.php');
-
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
         default:
@@ -18,6 +15,8 @@ if (isset($_GET['error'])) {
     enctype="multipart/form-data" method="post">
     <h3> <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder() ?></h3>
     <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId() ?>">
+    <input type="hidden" name="father_id" value="<?php echo $litter->getFather()->getId() ?>">
+
     <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
         <label for="birthdate">Date de naissance des bébés :</label>
         <input type="date" name="birthdate" value=<?php echo $litter->getBirthdate(); ?> name="birthdate"

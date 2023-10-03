@@ -30,7 +30,7 @@ function createLitter()
 
 function updateLitter()
 {
-    return "UPDATE `litters` SET name = :name, sex = :sex, color = :color, `insert` = :insert, description = :description, main_img_path = :main_img_path, breeder = :breeder, birth_date = :birthdate, lofselect_link = :lofselect, is_adn = :adn, is_champion = :champion WHERE id = :id";
+    return "UPDATE `litters` SET birthdate = :birthdate, mother_id = :mother_id, father_id = :father_id, number_of_puppies = :numberPuppies, number_of_males = :numberMales, number_of_females = :numberFemales, litterNumberSCC = :litterNumberSCC WHERE id = :id";
 }
 
 function deleteLitter()

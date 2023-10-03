@@ -9,10 +9,17 @@ require_once('../classes/Repro.php');
 require_once('../classes/Litter.php');
 
 if (check_session_start($_SESSION)) {
-    $stmt = $conn->prepare(getAllMales());
-    $stmt->execute();
-    $reprosMales = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    if (isset($_GET['delete']) && $_GET['delete'] == true) {
+        try {
+            $stmt = $conn->prepare(deleteLitter());
+            $stmt->bindParam(':id', $_GET['id']);
+            $stmt->execute();
+            header('Location:../litters.php');
+        } catch (PDOException $e) {
+            echo 'Une erreur s\'est produite ' . $e->getMessage();
+        }
+    }
     $litter = new Litter();
 
     if (isset($_GET['repro_id']) && $_GET['repro_id'] != 0) {
@@ -20,7 +27,23 @@ if (check_session_start($_SESSION)) {
         $motherRepro = new Repro();
         $motherRepro->fetchFromDatabase($getReproId);
         $litter->setMother($motherRepro);
+
+        $stmt = $conn->prepare(getAllMales());
+        $stmt->execute();
+        $reprosMales = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    if (isset($_GET['id'])) {
+        $stmt = $conn->prepare(getLitterFromId());
+        $stmt->bindParam(':id', $_GET['id']);
+        $stmt->execute();
+        $litterData = $stmt->fetch(PDO::FETCH_OBJ);
+        $litter->fillFromStdClass($litterData);
+        include_once('../templates/litter_modify_form.php');
+    } else {
+        include_once('../templates/litter_form.php');
+    }
+
     if (isset($_POST) && isset($_POST['mother_id'])) {
         $mother = new Repro();
         $mother->fetchFromDatabase($_POST['mother_id']);
@@ -43,14 +66,11 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':numberFemales', $litter->getNumberFemales());
             $stmt->bindValue(':litterNumberSCC', $litter->getLitterNumberSCC());
             $stmt->execute();
+            header('Location:../litters.php');
         } catch (PDOException $e) {
             echo "Une erreur s'est produite : " . $e->getMessage();
         }
-
-        header('Location:../litters.php');
     }
-
-    include_once('../templates/litter_form.php');
 } else {
     header('Location:../logout.php');
 }

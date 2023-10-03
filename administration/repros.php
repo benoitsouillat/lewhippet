@@ -65,10 +65,10 @@ require_once(__DIR__ . '/classes/Repro.php');
 
                     <div class="d-flex flex-column flex-sm-row justify-content-evenly col-12 col-md-8">
                         <a href='<?php echo $repro->getLofselect() ?>'
-                            class="btn btn-outline-primary m-2 p-2 text-nowrap" target="_blank">Lof
+                            class="btn btn-outline-primary border-2 m-2 p-2 text-nowrap" target="_blank">Lof
                             Select</a>
                         <a href="./repros/crud.php?id=<?php echo $reproData->id ?>"
-                            class="btn btn-success m-2 p-2">Modifier</a>
+                            class="btn btn-outline-success m-2 p-2">Modifier</a>
                         <button
                             onClick="confirmDeleteRepro(<?php echo $reproData->id ?>,  '<?php echo replace_reunion_char($repro->getName()); ?>')"
                             class="btn btn-outline-danger m-2">Supprimer</button>

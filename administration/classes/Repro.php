@@ -65,6 +65,7 @@ class Repro extends Dog
         $this->setLofselect($data->lofselect_link);
         $this->setIsAdn($data->is_adn);
         $this->setIsChampion($data->is_champion);
+        $this->setMainImgPath($data->main_img_path);
     }
     public function getInsert()
     {

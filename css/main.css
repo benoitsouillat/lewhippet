@@ -702,6 +702,9 @@ address {
 .header_admin {
   background-color: unset;
   position: unset;
+  width: unset;
+  max-width: unset;
+  min-width: unset;
 }
 
 .img-admin-list {

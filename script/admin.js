@@ -9,6 +9,12 @@ const confirmDeleteRepro = (id, name) => {
         location.assign('../administration/repros/crud.php?id=' + id + "&delete=true");
     }
 }
+
+const confirmDeleteLitter = (id, name) => {
+    if (confirm(`Vous allez supprimer la portée de ${name}, en êtes-vous sûr ??`)) {
+        location.assign('../administration/litters/crud.php?id=' + id + "&delete=true");
+    }
+}
 let reproDiv = document.getElementById('repro_breeder');
 let breederReproNoButton = document.getElementById('breeder_no');
 let breederReproYesButton = document.getElementById('breeder_yes');
