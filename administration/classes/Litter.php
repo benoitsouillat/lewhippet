@@ -1,20 +1,26 @@
 <?php
 
-include_once('../classes/Dog.php');
-include_once('../classes/Repro.php');
+include_once(__DIR__ . '/Dog.php');
+include_once(__DIR__ . '/Repro.php');
 
 class Litter extends Repro
 {
-    private $birthdate;
+    private $birthdate = '';
     private ?Repro $mother = null;
     private ?Repro $father = null;
     private Int $numberPuppies = 1;
     private Int $numberMales = 0;
     private Int $numberFemales = 0;
-    private String $litterNumberSCC;
+    private String $litterNumberSCC = '';
 
-    function __construct($birthdate, ?Repro $mother, ?Repro $father, Int $numberPuppies, Int $numberMales, String $litterNumberSCC)
-    {
+    function __construct(
+        $birthdate = '',
+        ?Repro $mother = null,
+        ?Repro $father = null,
+        Int $numberPuppies = 0,
+        Int $numberMales = 0,
+        String $litterNumberSCC = ''
+    ) {
         $this->birthdate = $birthdate;
         $this->mother = $mother;
         $this->father = $father;

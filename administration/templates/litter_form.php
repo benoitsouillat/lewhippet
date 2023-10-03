@@ -12,10 +12,10 @@ if (isset($_GET['error'])) {
             echo "<p class='mt-4 p-2 alert alert-danger text-center'>Une erreur s'est produite, contactez l'administrateur du site</p>";
     }
 }
-
 ?>
 
-<form class="d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php" enctype="multipart/form-data">
+<form class="d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php"
+    enctype="multipart/form-data">
     <h3> <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder() ?></h3>
     <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
         <label for="birthdate">Date de naissance des bébés :</label>
@@ -32,11 +32,12 @@ if (isset($_GET['error'])) {
         </select>
     </fieldset>
     <label for="numberPuppies">Nombre de chiots</label>
-    <input type="number" name="numberPuppies" id="numberPuppies">
+    <input type="number" name="numberPuppies" id="numberPuppies" <?php echo "value={$litter->getNumberPuppies()}" ?>>
     <label for="numberPuppies">Nombre de mâles</label>
-    <input type="number" name="numberPuppies" id="numberPuppies">
+    <input type="number" name="numberMales" id="numberMales" <?php echo "value={$litter->getNumberMales()}" ?>>
     <?php $litter->setNumberFemales($litter->getNumberPuppies(), $litter->getNumberMales()); ?>
     <p><?php echo $litter->getNumberFemales() . ' femelle(s)'; ?>
     </p>
     <button class="btn btn-success" type="submit">Créér la portée</button>
 </form>
+</main>

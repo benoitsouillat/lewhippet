@@ -138,8 +138,8 @@
 }
 
 @mixin pink_button {
-  text-align: center;
-  color: white;
-  background-color: darken($pink, 10);
+  text-align: center !important;
+  color: white !important;
+  background-color: darken($pink, 10) !important;
   border: 5%;
 }

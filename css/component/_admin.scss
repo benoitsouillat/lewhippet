@@ -1,6 +1,16 @@
 @import "variables";
 @import "mixins";
 
+
+.btn-pink {
+    @include pink_button;
+}
+
+.header_admin {
+    background-color: unset;
+    position: unset;
+}
+
 .img-admin-list {
     max-height: 25vh;
     max-width: 98%;
@@ -43,8 +53,4 @@
     }
 
 
-}
-
-.form-control {
-    background-color: #000;
 }

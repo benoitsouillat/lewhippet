@@ -692,6 +692,18 @@ address {
 
 /* Menu */
 /* Menu */
+.btn-pink {
+  text-align: center !important;
+  color: white !important;
+  background-color: #bf4080 !important;
+  border: 5%;
+}
+
+.header_admin {
+  background-color: unset;
+  position: unset;
+}
+
 .img-admin-list {
   max-height: 25vh;
   max-width: 98%;
@@ -730,14 +742,10 @@ address {
   max-width: 80%;
 }
 .repros-admin-container > .card .btn-pink {
-  text-align: center;
-  color: white;
-  background-color: #bf4080;
+  text-align: center !important;
+  color: white !important;
+  background-color: #bf4080 !important;
   border: 5%;
-}
-
-.form-control {
-  background-color: #000;
 }
 
 html {
