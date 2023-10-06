@@ -726,15 +726,14 @@ address {
 .slider-auto-container .slider-auto-horizontal .slider-element p {
   width: 100%;
   height: 100%;
-  position: relative;
-  bottom: 0;
-  border-right: solid 2px white;
-  border-left: solid 2px white;
+  border-right: solid 1px white;
+  border-left: solid 1px white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  margin: 0 auto;
 }
 
 @keyframes slider-auto {
