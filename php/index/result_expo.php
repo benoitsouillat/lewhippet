@@ -3,7 +3,38 @@
 
     <div id="pompadour" class="w-75 text-center">
         <h3>Pompadour, une spéciale de Lévrier</h3>
-        <img src="/expo_img/zazie_pompadour.jpg" alt="Zazie Championne des léviers" /><br>
+        <div class="slider-auto-container">
+            <div class="slider-auto-horizontal">
+                <div class="slider-element">
+                    <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg"
+                        alt="Zazie Championne des léviers" />
+                    <p class="bg-dark text-light">Zero to One of Gentle Mind<br> </p>
+                </div>
+                <div class="slider-element">
+                    <img class="slider-element" src="../../expo_img/zazie_pompadour_statique_23.jpg"
+                        alt="Zazie Championne des léviers" />
+                    <p class="bg-dark text-light">Zazie</p>
+                </div>
+                <div class="slider-element">
+                    <img class="slider-element" src="../../expo_img/yami_pompadour_23.jpg"
+                        alt="Zazie Championne des léviers" />
+                    <p class="bg-dark text-light">Yamamoto dit 'Yami' of Gentle Mind </p>
+                </div>
+                <div class="slider-element">
+                    <img class="slider-element" src="../../expo_img/zazie_yam_pompadour_23.jpg"
+                        alt="Zazie Championne des léviers" />
+                    <p class="bg-dark text-light">Zazie et Yami <br> Meilleur de Race et Meilleur Sexe Opposé</p>
+                </div>
+                <div class="slider-element">
+                    <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg"
+                        alt="Zazie Championne des léviers" />
+                    <p class="bg-dark text-light">Zero to One of Gentle Mind<br> </p>
+                </div>
+
+            </div>
+
+
+        </div>
 
         <p>
             Incroyable mais vrai !!! 525 entrées à la speciale de pompadour 2023 !!
