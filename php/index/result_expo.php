@@ -3,7 +3,7 @@
 
     <div id="pompadour" class="w-75 text-center">
         <h3>Pompadour, une spéciale de Lévrier</h3>
-        <div class="slider-auto-container">
+        <div class="slider-auto-container bg-dark">
             <div class="slider-auto-horizontal">
                 <div class="slider-element">
                     <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg"
