@@ -691,7 +691,6 @@ address {
 }
 
 .slider-auto-container {
-  overflow: hidden;
   margin: 3% auto;
   border: solid #8a4784 1px;
   box-shadow: 2px 2px 4px #8a4784;
@@ -754,6 +753,27 @@ address {
 .card .bi.bi-caret-right,
 .card .bi-caret-left {
   font-size: 30px;
+}
+.card .diapo-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.card .diapo {
+  display: flex;
+}
+.card .diapo img {
+  flex-shrink: 0;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 100%;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  left: unset !important;
 }
 
 @keyframes slider-auto {
