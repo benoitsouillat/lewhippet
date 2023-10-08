@@ -66,15 +66,31 @@
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
                             $availableColor = getAvailableColor($row['available']);
                             $sexColor = getSexColor($row['sex']);
-                            echo "
-                                    <div class='card '> 
-                                        <figure class='m-0 p-0'>
+
+                            echo "<div class='card'>
+                            <figure class='m-0 p-0'>
+                                <div class='diapo-container' data-speed='3500'>
+                                    <div class='diapo'>
+                                    <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
+                                    alt='Chiot Whippet Disponible' />
+                                        <img src='../chiots_img/2023/Jouvence/fem1-3.jpg' alt='chiot' class='m-0 p-0 w-100'>
+                                        <img src='../chiots_img/2023/Nefertiti/nefer_dispo.jpg' alt='chiot'
+                                            class='m-0 p-0 w-100'>
                                             <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
-                                                alt='Chiot Whippet Disponible' />
-                                            <figcaption class='m-0 p-0'>
-                                                <div
-                                        class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
-                                        <h4 class=''>";
+                                            alt='Chiot Whippet Disponible' />
+                                    </div>
+                                </div>
+                                <div class='arrow-div'>
+                                    <button class='left-arrow bg-transparent border-0'>
+                                        <span class='bi bi-caret-left text-light'></span>
+                                    </button>
+                                    <button class='right-arrow bg-transparent border-0'>
+                                        <span class='bi bi-caret-right text-light'></span>
+                                    </button>
+                                </div>
+                                <figcaption class='m-0 p-0'>
+                                    <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
+                                        <h4>";
 
                             echo "<span class='text-center'>{$row['name']} </span>";
                             if ($row['sex'] === 'Male' || $row['sex'] === 'male') {
@@ -88,7 +104,6 @@
                             if ($row['mother_name'] != null) {
                                 echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
                                 <p class='description text-left w-75'> Issu de " . ucfirst($row['mother_name']) . "</p>";
-
                                 if ($row['mother_adn'] || $row['mother_champion']) {
                                     echo "<div class='d-flex flex-row justify-content-end flex-wrap w-25 mb-3'>";
                                     if ($row['mother_adn']) {
@@ -102,9 +117,9 @@
                                 echo "</div>";
                             }
                             echo "<p class='description'>{$row['description']}</p>
-                                    </figcaption>
-                                </figure>
-                            </div>";
+                                </figcaption>
+                            </figure>
+                        </div>";
                         endwhile;
                         ?>
                 </div>

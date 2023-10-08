@@ -25,3 +25,4 @@ document.write('<link type="text/css"  rel="stylesheet" href="/script/style.css?
 
         <!-- fontAwesome Icon -->
         <script src="https://kit.fontawesome.com/5944b63bf2.js" crossorigin="anonymous"></script>
+        <script src="../script/slider.js" defer></script>
