@@ -19,14 +19,14 @@ $table_images = "CREATE TABLE `damoiseaux_php`.`images` (
         `dog_id` INT NOT NULL ,
         `path` VARCHAR(255) NOT NULL DEFAULT 'default.jpg',
         PRIMARY KEY (`id`),
-        FOREIGN KEY (`dog_id`) REFERENCES `repros`(`id`)) ENGINE = InnoDB;";
+        FOREIGN KEY (`dog_id`) REFERENCES `puppies`(`id`)) ENGINE = InnoDB;";
 
 $conn->exec($database);
 // $conn->exec($table_users);
 // $conn->exec($table_puppies);
 // $conn->exec($table_users_add_roles);
 // $conn->exec($table_puppies_add_mother);
-// $conn->exec($table_images);
+$conn->exec($table_images);
 
 
 /* Insertion des données de test */

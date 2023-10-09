@@ -114,7 +114,11 @@ if (isset($_GET['error'])) {
         echo "</select>
         <label for='main_img_path' class='m-2' >Son image principale :</label>
         <img class='col-8 col-md-6 col-lg-4' src='../{$puppy->main_img_path}' />
-        <input class='m-2' type='file' name='main_img_path' value='{$puppy->main_img_path}'/>";
+        <input class='m-2' type='file' name='main_img_path' value='{$puppy->main_img_path}'/>
+        <br/>
+        <label for='images[]' class='m-2'>Ajoutez des images pour son diaporama </label>
+        <input class='m-2' type='file' name='images[]' multiple/>
+        ";
     } else {
     ?>
     <label for="name" class='m-2'>Nom du chiot</label>

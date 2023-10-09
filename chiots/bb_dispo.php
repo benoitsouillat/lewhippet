@@ -67,16 +67,22 @@
                             $availableColor = getAvailableColor($row['available']);
                             $sexColor = getSexColor($row['sex']);
 
+                            $stmtForPuppyImages = $conn->prepare(getPuppyImages());
+                            $stmtForPuppyImages->bindParam(':dogId', $row['id']);
+                            $stmtForPuppyImages->execute();
+                            $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
+
                             echo "<div class='card'>
                             <figure class='m-0 p-0'>
                                 <div class='diapo-container' data-speed='3500' data-dog-id={$row['id']}>
                                     <div class='diapo diapo-{$row['id']}'>
                                     <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
                                     alt='Chiot Whippet Disponible' />
-                                        <img src='../chiots_img/2023/Jouvence/fem1-3.jpg' alt='chiot' class='m-0 p-0 w-100'>
-                                        <img src='../chiots_img/2023/Nefertiti/nefer_dispo.jpg' alt='chiot'
-                                            class='m-0 p-0 w-100'>
-                                            <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
+                                    ";
+                            foreach ($puppyImages as $image) {
+                                echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100'>";
+                            }
+                            echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
                                             alt='Chiot Whippet Disponible' />
                                     </div>
                                 </div>
