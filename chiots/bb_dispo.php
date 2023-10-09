@@ -71,11 +71,11 @@
                                     alt='Chiot Whippet Disponible' />
                                     ";
                             foreach ($puppyImages as $image) {
-                                echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100'>";
+                                echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100' loading='lazy'>";
                             }
                             if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
                                 echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
-                                            alt='Chiot Whippet Disponible' />
+                                            alt='Chiot Whippet Disponible' loading='lazy'/>
                                     </div>
                                 </div>
                                 <div class='arrow-div'>
