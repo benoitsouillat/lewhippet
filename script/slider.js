@@ -2,12 +2,8 @@
 window.onload = () => {
     const diapos = document.querySelectorAll('.diapo-container');
     diapos.forEach((diapo) => {
-        let compteur = 0;
-        let dogId = 0;
-        let elements, slides, timer, speed;
+        let compteur = 0, dogId = 0, elements, slides, timer, speed;
         dogId = diapo.dataset.dogId;
-        console.log(dogId);
-
         elements = document.querySelector('.diapo-' + dogId);
         slides = Array.from(elements.children);
 
@@ -19,10 +15,7 @@ window.onload = () => {
         //timer = setInterval(slideNext, speed);
         // diapo.addEventListener('mouseover', autoSlideStop);
         // diapo.addEventListener('mouseout', autoSlideStart);
-
-
         function slideNext() {
-            console.info('ca clic clic clic')
             compteur++;
             let decal = -100 * compteur;
             elements.style.transition = '1s ease-in-out';
