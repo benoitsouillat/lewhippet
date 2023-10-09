@@ -65,7 +65,7 @@
 
                             echo "<div class='card'>
                             <figure class='m-0 p-0'>
-                                <div class='diapo-container' data-speed='3500' data-dog-id={$row['id']}>
+                                <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$row['id']}>
                                     <div class='diapo diapo-{$row['id']}'>
                                     <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
                                     alt='Chiot Whippet Disponible' />
@@ -73,12 +73,11 @@
                             foreach ($puppyImages as $image) {
                                 echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100'>";
                             }
-                            echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
+                            if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
+                                echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
                                             alt='Chiot Whippet Disponible' />
                                     </div>
-                                </div>";
-                            if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
-                                echo "
+                                </div>
                                 <div class='arrow-div'>
                                 <button class='left-arrow bg-transparent border-0'>
                                 <span class='bi bi-caret-left bi-caret-left-{$row['id']} text-light'></span>
@@ -86,6 +85,9 @@
                                 <button class='right-arrow bg-transparent border-0'>
                                 <span class='bi bi-caret-right bi-caret-right-{$row['id']} text-light'></span>
                                 </button>
+                                </div>";
+                            } else {
+                                echo "</div>
                                 </div>";
                             }
                             echo "
