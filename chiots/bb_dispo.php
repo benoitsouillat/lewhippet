@@ -48,15 +48,6 @@
                     </figure>
                     <section class="col-12 gallery_php">
                         <?php
-                        /*
-
-                        $pathToDir = $_SERVER['DOCUMENT_ROOT'] . '/' . 'administration/' . $row['main_img_path'];
-                        var_dump($pathToDir);
-
-                        $width = getimagesize('./puppies_img/' . $pathToDir)[0];
-                        $height = getimagesize('./'  . $pathToDir)[1];
-
-                        if ($width > $height) {*/
                         require_once('../secret/connexion.php');
                         require_once('../administration/sql/puppies_request.php');
                         require_once('../php/component/display-functions.php');
@@ -85,15 +76,19 @@
                             echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
                                             alt='Chiot Whippet Disponible' />
                                     </div>
-                                </div>
+                                </div>";
+                            if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
+                                echo "
                                 <div class='arrow-div'>
-                                    <button class='left-arrow bg-transparent border-0'>
-                                        <span class='bi bi-caret-left bi-caret-left-{$row['id']} text-light'></span>
-                                    </button>
-                                    <button class='right-arrow bg-transparent border-0'>
-                                        <span class='bi bi-caret-right bi-caret-right-{$row['id']} text-light'></span>
-                                    </button>
-                                </div>
+                                <button class='left-arrow bg-transparent border-0'>
+                                <span class='bi bi-caret-left bi-caret-left-{$row['id']} text-light'></span>
+                                </button>
+                                <button class='right-arrow bg-transparent border-0'>
+                                <span class='bi bi-caret-right bi-caret-right-{$row['id']} text-light'></span>
+                                </button>
+                                </div>";
+                            }
+                            echo "
                                 <figcaption class='m-0 p-0'>
                                     <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
                                         <h4>";
