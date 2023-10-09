@@ -48,15 +48,6 @@
                     </figure>
                     <section class="col-12 gallery_php">
                         <?php
-                        /*
-
-                        $pathToDir = $_SERVER['DOCUMENT_ROOT'] . '/' . 'administration/' . $row['main_img_path'];
-                        var_dump($pathToDir);
-
-                        $width = getimagesize('./puppies_img/' . $pathToDir)[0];
-                        $height = getimagesize('./'  . $pathToDir)[1];
-
-                        if ($width > $height) {*/
                         require_once('../secret/connexion.php');
                         require_once('../administration/sql/puppies_request.php');
                         require_once('../php/component/display-functions.php');
@@ -66,15 +57,43 @@
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
                             $availableColor = getAvailableColor($row['available']);
                             $sexColor = getSexColor($row['sex']);
+
+                            $stmtForPuppyImages = $conn->prepare(getPuppyImages());
+                            $stmtForPuppyImages->bindParam(':dogId', $row['id']);
+                            $stmtForPuppyImages->execute();
+                            $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
+
+                            echo "<div class='card'>
+                            <figure class='m-0 p-0'>
+                                <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$row['id']}>
+                                    <div class='diapo diapo-{$row['id']}'>
+                                    <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
+                                    alt='Chiot Whippet Disponible' />
+                                    ";
+                            foreach ($puppyImages as $image) {
+                                echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100'>";
+                            }
+                            if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
+                                echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
+                                            alt='Chiot Whippet Disponible' />
+                                    </div>
+                                </div>
+                                <div class='arrow-div'>
+                                <button class='left-arrow bg-transparent border-0'>
+                                <span class='bi bi-caret-left bi-caret-left-{$row['id']} text-light'></span>
+                                </button>
+                                <button class='right-arrow bg-transparent border-0'>
+                                <span class='bi bi-caret-right bi-caret-right-{$row['id']} text-light'></span>
+                                </button>
+                                </div>";
+                            } else {
+                                echo "</div>
+                                </div>";
+                            }
                             echo "
-                                    <div class='card '> 
-                                        <figure class='m-0 p-0'>
-                                            <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
-                                                alt='Chiot Whippet Disponible' />
-                                            <figcaption class='m-0 p-0'>
-                                                <div
-                                        class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
-                                        <h4 class=''>";
+                                <figcaption class='m-0 p-0'>
+                                    <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
+                                        <h4>";
 
                             echo "<span class='text-center'>{$row['name']} </span>";
                             if ($row['sex'] === 'Male' || $row['sex'] === 'male') {
@@ -88,7 +107,6 @@
                             if ($row['mother_name'] != null) {
                                 echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
                                 <p class='description text-left w-75'> Issu de " . ucfirst($row['mother_name']) . "</p>";
-
                                 if ($row['mother_adn'] || $row['mother_champion']) {
                                     echo "<div class='d-flex flex-row justify-content-end flex-wrap w-25 mb-3'>";
                                     if ($row['mother_adn']) {
@@ -102,9 +120,9 @@
                                 echo "</div>";
                             }
                             echo "<p class='description'>{$row['description']}</p>
-                                    </figcaption>
-                                </figure>
-                            </div>";
+                                </figcaption>
+                            </figure>
+                        </div>";
                         endwhile;
                         ?>
                 </div>
