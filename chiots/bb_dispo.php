@@ -69,8 +69,8 @@
 
                             echo "<div class='card'>
                             <figure class='m-0 p-0'>
-                                <div class='diapo-container' data-speed='3500'>
-                                    <div class='diapo'>
+                                <div class='diapo-container' data-speed='3500' data-dog-id={$row['id']}>
+                                    <div class='diapo diapo-{$row['id']}'>
                                     <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
                                     alt='Chiot Whippet Disponible' />
                                         <img src='../chiots_img/2023/Jouvence/fem1-3.jpg' alt='chiot' class='m-0 p-0 w-100'>
@@ -82,10 +82,10 @@
                                 </div>
                                 <div class='arrow-div'>
                                     <button class='left-arrow bg-transparent border-0'>
-                                        <span class='bi bi-caret-left text-light'></span>
+                                        <span class='bi bi-caret-left bi-caret-left-{$row['id']} text-light'></span>
                                     </button>
                                     <button class='right-arrow bg-transparent border-0'>
-                                        <span class='bi bi-caret-right text-light'></span>
+                                        <span class='bi bi-caret-right bi-caret-right-{$row['id']} text-light'></span>
                                     </button>
                                 </div>
                                 <figcaption class='m-0 p-0'>
