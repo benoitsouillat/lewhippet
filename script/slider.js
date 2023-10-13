@@ -9,8 +9,10 @@ window.onload = () => {
 
         let next = document.querySelector('.bi-caret-right-' + dogId);
         let before = document.querySelector('.bi-caret-left-' + dogId);
-        next.addEventListener('click', slideNext);
-        before.addEventListener('click', slideBefore);
+        if (next) {
+            next.addEventListener('click', slideNext);
+            before.addEventListener('click', slideBefore);
+        }
         // speed = diapo.dataset.speed;
         //timer = setInterval(slideNext, speed);
         // diapo.addEventListener('mouseover', autoSlideStop);
