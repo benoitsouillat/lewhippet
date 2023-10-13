@@ -45,6 +45,26 @@ if (check_session_start($_SESSION)) {
     } elseif (isset($_POST['name']) && $_POST['name'] != null && isset($_POST['puppy_id'])) {
         $puppy = $_POST;
 
+        if (isset($_FILES['images']) && $_FILES['images']['name'][0] != null) {
+            if (isset($_FILES['images']['error']) && $_FILES['images']['error'] === 2) {
+                header('Location:./crud.php?error=2&id=' . $puppy['puppy_id']);
+                die();
+            }
+            $imagesUploadedTmp = $_FILES['images']['tmp_name'];
+
+            foreach ($imagesUploadedTmp as $imageTmpName) {
+                $prefix = substr($imageTmpName, -8, -4);
+                $destination = '../../puppies_img/' . $puppy['puppy_id'] . '-' . $prefix . '.jpg';
+                move_uploaded_file($imageTmpName, $destination);
+                $stmt = $conn->prepare(savePuppyImages());
+                $stmt->bindParam(':dogId', $puppy['puppy_id']);
+                $stmt->bindParam(':path', $destination);
+                $stmt->execute();
+
+                // Retourner un message de réussite
+            }
+        }
+
         $stmt = $conn->prepare(updatePuppy());
         $stmt->bindParam(':id', $puppy['puppy_id']);
         $stmt->bindParam(':name', $puppy['name']);
@@ -56,11 +76,9 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':mother_champion', $puppy['mother_champion']);
         $file_name = $puppy['puppy_id'] . '-' . strtolower($puppy['name']);
 
-
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
             //Vérification d'une erreur suite à une image trop lourde
             if (isset($_FILES['main_img_path']['error']) && $_FILES['main_img_path']['error'] === 2) {
-
                 header('Location:./crud.php?error=2&id=' . $puppy['puppy_id']);
                 die();
             }
@@ -101,12 +119,10 @@ if (check_session_start($_SESSION)) {
         $stmt_id->execute();
         $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
         $position = end($id_array)->id + 1;
+        $idNumber = end($id_array)->id + 1;
 
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
-            $id_name = end($id_array)->id + 1;
-            $file_name = $id_name . '-' . replace_reunion_char(replace_accent($puppy['name']));
-
-
+            $file_name = $idNumber . '-' . replace_reunion_char(replace_accent($puppy['name']));
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
             $file_destination = '../../puppies_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             if (move_uploaded_file($file_tmp, $file_destination)) {
@@ -121,6 +137,25 @@ if (check_session_start($_SESSION)) {
         if (isset($_FILES['main_img_path']['error']) && $_FILES['main_img_path']['error'] === 2) {
             header('Location:../templates/puppy_form.php?error=2&name=' . $_POST['name'] . '&description=' . $_POST['description']);
             die();
+        }
+        if (isset($_FILES['images']) && $_FILES['images']['name'][0] != null) {
+            if (isset($_FILES['images']['error']) && $_FILES['images']['error'] === 2) {
+                header('Location:./crud.php?error=2&id=' . $idNumber);
+                die();
+            }
+            $imagesUploadedTmp = $_FILES['images']['tmp_name'];
+
+            foreach ($imagesUploadedTmp as $imageTmpName) {
+                $prefix = substr($imageTmpName, -8, -4);
+                $destination = '../../puppies_img/' . $idNumber . '-' . $prefix . '.jpg';
+                move_uploaded_file($imageTmpName, $destination);
+                $stmt = $conn->prepare(savePuppyImages());
+                $stmt->bindParam(':dogId', $idNumber);
+                $stmt->bindParam(':path', $destination);
+                $stmt->execute();
+
+                // Retourner un message de réussite
+            }
         }
         try {
             $stmt->execute();
