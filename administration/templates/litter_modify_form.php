@@ -14,24 +14,25 @@ if (isset($_GET['error'])) {
 }
 ?>
 
-<form class="d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php" enctype="multipart/form-data" method="post">
-    <h3> <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder() ?></h3>
+<form class="col-10 d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php" enctype="multipart/form-data" method="post">
+    <h3> <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder() . ' et ' . $litter->getFather()->getName() . ' ' . $litter->getFather()->getBreeder(); ?>
+    </h3>
     <input type="hidden" name="litter_id" value="<?php echo $_GET['id'] ?>">
     <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId() ?>">
     <input type="hidden" name="father_id" value="<?php echo $litter->getFather()->getId() ?>">
     <input type="hidden" name="numberFemales" value="<?php echo $litter->getNumberFemales() ?>">
     <input type="hidden" name="numberMales" value="<?php echo $litter->getNumberMales() ?>">
-    <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
-        <label for="birthdate">Date de naissance des bébés :</label>
-        <input type="date" name="birthdate" value=<?php echo $litter->getBirthdate(); ?> name="birthdate" id="birthdate">
+    <fieldset class="d-flex flex-row justify-content-start align-items-center flex-wrap col-8 col-sm-6 col-md-4 col-lg-3">
+        <label class="text-center col-12" for="birthdate">Date de naissance des bébés : </label>
+        <input type="date" name="birthdate" class="form-control" id="birthdate" value=<?php echo $litter->getBirthdate(); ?>>
     </fieldset>
-
-    <h4>Le Papa : <?php echo $litter->getFather()->getName(); ?></h4>
-
-    <p>Il y'a <?php echo $litter->getNumberPuppies() . ' bébé(s)'; ?>
+    <p>Il y'a
+        <?php echo $litter->getNumberPuppies() . ' bébé(s) - (' . $litter->getNumberFemales() . ' femelles et ' . $litter->getNumberMales() . ' mâles).'; ?>
     </p>
-    <label for="sccNumber">Numéro de Portée</label>
-    <input name="sccNumber" id="sccNumber" type="text" placeholder="Entrez le numéro de portée" value="<?php echo $litter->getLitterNumberSCC() ?>" required>
+    <fieldset class="d-flex flex-row justify-content-start align-items-center flex-wrap col-10 col-sm-6 col-md-4 col-lg-3">
+        <label class="text-center col-12" for="sccNumber">Numéro de Portée</label>
+        <input class="form-control" name="sccNumber" id="sccNumber" type="text" placeholder="Entrez le numéro de portée" value="<?php echo $litter->getLitterNumberSCC() ?>" required>
+    </fieldset>
     <button class="btn btn-success" type="submit">Enregistrer la portée</button>
 </form>
 </main>

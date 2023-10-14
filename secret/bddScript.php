@@ -57,7 +57,11 @@ $table_litters = "CREATE TABLE `damoiseaux_php`.`litters` (
     FOREIGN KEY (`father_id`) REFERENCES `repros`(`id`)) 
     ENGINE = InnoDB;";
 
-$conn->exec($database);
+
+// Permet de supprimer une portée en cas de suppression d'un reproducteur -- RESTRICT est mieux pour protéger des erreurs
+$table_litter_foreign_key = "ALTER TABLE `litters` DROP FOREIGN KEY `litters_ibfk_1`; ALTER TABLE `litters` ADD CONSTRAINT `litters_ibfk_1` FOREIGN KEY (`mother_id`) REFERENCES `repros`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT; ALTER TABLE `litters` DROP FOREIGN KEY `litters_ibfk_2`; ALTER TABLE `litters` ADD CONSTRAINT `litters_ibfk_2` FOREIGN KEY (`father_id`) REFERENCES `repros`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;";
+
+//$conn->exec($database);
 // //$conn->exec($table_users);
 // //$conn->exec($table_puppies);
 // //$conn->exec($table_users_add_roles);
