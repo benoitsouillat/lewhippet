@@ -44,6 +44,16 @@ if (isset($_GET['positionInputer']) && $_GET['positionInputer'] != $puppyWillBeC
     }
 } elseif (isset($_GET['positionInputer']) && $_GET['positionInputer'] == $puppyWillBeChange['position']) {
     header('Location: ../puppies.php');
+} elseif (isset($_GET['enable'])) {
+    $stmtToggler = $conn->prepare(togglePuppy());
+    $stmtToggler->bindParam(':id', $puppyId);
+    $stmtToggler->bindParam(':enable', $_GET['enable']);
+    try {
+        $stmtToggler->execute();
+        header('Location:../puppies.php');
+    } catch (PDOException $e) {
+        echo 'Une erreur : ' . $e;
+    }
 } else {
     echo 'Une erreur s\'est produite - Contactez l\'administrateur du site';
     die();

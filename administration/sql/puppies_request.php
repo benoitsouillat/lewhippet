@@ -47,3 +47,7 @@ function getPuppyImages()
 {
     return "SELECT * FROM images WHERE `dog_id` = :dogId";
 }
+function togglePuppy()
+{
+    return "UPDATE `puppies` SET `enable` = :enable WHERE id = :id";
+}
