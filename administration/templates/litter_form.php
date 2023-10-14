@@ -13,9 +13,30 @@ if (isset($_GET['error'])) {
 
 <form class="d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php"
     enctype="multipart/form-data" method="post">
-    <h3> <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder() ?></h3>
-    <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId() ?>">
-    <input type="hidden" name="father_id" value="<?php echo $litter->getFather()->getId() ?>">
+    <div class="d-flex flex-row justify-content-around align-items-center">
+        <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId(); ?>">
+        <input type="hidden" name="father_id"
+            value="<?php echo ($litter->getFather() !== null) ? $litter->getFather()->getId() : "1"; ?>">
+        <h3 class="col-12 w-100"> Mariage : </h3>
+        <p class="text-center"><?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder(); ?>
+            et
+        </p>
+        <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
+            <select name="father" class="form-control">
+                <?php
+                for ($i = 0, $size = count($reprosMales); $i < $size; $i++) {
+                    echo "<option value='{$reprosMales[$i]['id']}'>" . ucfirst($reprosMales[$i]['name']) . ' ' . $reprosMales[$i]['breeder'] . "</option>";
+                }
+                ?>
+            </select>
+        </fieldset>
+
+    </div>
+    <h3> Mariage de <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder();
+                    ?></h3>
+    <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId(); ?>">
+    <input type="hidden" name="father_id"
+        value="<?php echo ($litter->getFather() !== null) ? $litter->getFather()->getId() : "1"; ?>">
 
     <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
         <label for="birthdate">Date de naissance des bébés :</label>
