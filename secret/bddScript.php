@@ -20,13 +20,15 @@ $table_images = "CREATE TABLE `damoiseaux_php`.`images` (
         `path` VARCHAR(255) NOT NULL DEFAULT 'default.jpg',
         PRIMARY KEY (`id`),
         FOREIGN KEY (`dog_id`) REFERENCES `puppies`(`id`)) ENGINE = InnoDB;";
+$table_puppy_add_enable = "ALTER TABLE `puppies` ADD `enable` BOOLEAN NOT NULL DEFAULT TRUE AFTER `position` ";
 
 $conn->exec($database);
 // $conn->exec($table_users);
 // $conn->exec($table_puppies);
 // $conn->exec($table_users_add_roles);
 // $conn->exec($table_puppies_add_mother);
-$conn->exec($table_images);
+// $conn->exec($table_images);
+$conn->exec($table_puppy_add_enable);
 
 
 /* Insertion des données de test */
