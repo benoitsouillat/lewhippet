@@ -4,6 +4,13 @@ const confirmDeletePuppy = (id, name) => {
     }
 }
 
+const toggleActivePuppy = (id, state) => {
+    state ?
+        location.assign('../administration/puppies/updater.php?puppyId=' + id + '&enable=0')
+        :
+        location.assign('../administration/puppies/updater.php?puppyId=' + id + '&enable=1')
+}
+
 const confirmDeleteRepro = (id, name) => {
     if (confirm(`Vous allez supprimer le reproducteur ${name}, en êtes-vous sûr ??`)) {
         location.assign('../administration/repros/crud.php?id=' + id + "&delete=true");

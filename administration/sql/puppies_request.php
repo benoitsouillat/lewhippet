@@ -33,3 +33,21 @@ function getPuppyFromId()
 {
     return "SELECT * FROM puppies WHERE `id` = :id";
 }
+
+function savePuppyImages()
+{
+    return "INSERT INTO images (dog_id, path) VALUES (:dogId, :path)";
+}
+function getAllPuppyImages()
+{
+    return "SELECT * FROM `images`";
+}
+
+function getPuppyImages()
+{
+    return "SELECT * FROM images WHERE `dog_id` = :dogId";
+}
+function togglePuppy()
+{
+    return "UPDATE `puppies` SET `enable` = :enable WHERE id = :id";
+}

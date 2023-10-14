@@ -21,6 +21,13 @@ $table_puppies = "CREATE TABLE `damoiseaux_php`.`puppies` (
 $table_users_add_roles = "ALTER TABLE `users` ADD `role` VARCHAR(15) NOT NULL DEFAULT 'User' AFTER `img_profile_path`;";
 $table_puppies_add_mother = "ALTER TABLE `puppies` ADD `mother_name` VARCHAR(255) NOT NULL AFTER `main_img_path`, ADD `mother_adn` BOOLEAN NOT NULL DEFAULT TRUE AFTER `mother_name`, ADD `mother_champion` BOOLEAN NOT NULL DEFAULT FALSE AFTER `mother_adn`";
 $table_puppies_add_position = "ALTER TABLE `puppies` ADD `position` INT NOT NULL AFTER `mother_champion`;";
+$table_images = "CREATE TABLE `damoiseaux_php`.`images` (
+        `id` INT NOT NULL AUTO_INCREMENT,
+        `dog_id` INT NOT NULL ,
+        `path` VARCHAR(255) NOT NULL DEFAULT 'default.jpg',
+        PRIMARY KEY (`id`),
+        FOREIGN KEY (`dog_id`) REFERENCES `puppies`(`id`)) ENGINE = InnoDB;";
+$table_puppy_add_enable = "ALTER TABLE `puppies` ADD `enable` BOOLEAN NOT NULL DEFAULT TRUE AFTER `position` ";
 $table_repros = "CREATE TABLE `damoiseaux_php`.`repros` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
@@ -51,10 +58,12 @@ $table_litters = "CREATE TABLE `damoiseaux_php`.`litters` (
     ENGINE = InnoDB;";
 
 $conn->exec($database);
-//$conn->exec($table_users);
-//$conn->exec($table_puppies);
-//$conn->exec($table_users_add_roles);
-//$conn->exec($table_puppies_add_mother);
+// //$conn->exec($table_users);
+// //$conn->exec($table_puppies);
+// //$conn->exec($table_users_add_roles);
+// //$conn->exec($table_puppies_add_mother);
+// $conn->exec($table_images);
+$conn->exec($table_puppy_add_enable);
 //$conn->exec($table_repros);
 $conn->exec($table_litters);
 
