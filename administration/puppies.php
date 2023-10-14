@@ -33,13 +33,14 @@ require_once(__DIR__ . '/sql/puppies_request.php');
             <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
 
         </div>
-        <div class="puppies-admin-container d-flex justify-content-around flex-wrap">
+        <div class="puppies-admin-container d-flex justify-content-evenly flex-wrap">
             <?php
                 $stmt = $conn->query(getAllPuppiesByPosition());
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
                 ?>
-            <div
-                class="card col-6 col-sm-4 col-lg-3 p-2 mt-1 <?php if ($row['enable'] == 0) {echo 'disable-filter';}?>">
+            <div class="card justify-content-between col-10 col-sm-6 col-lg-4 col-xl-3 p-2 mt-1 <?php if ($row['enable'] == 0) {
+                                                                                                            echo 'disable-filter';
+                                                                                                        } ?>">
                 <div class="m1 p2 text-center bg-dark text-light">
                     <p class="w-100 col-12 text-center bg-dark text-light">Position : </p>
                     <form class="form-control bg-dark d-flex flex-row justify-content-between flex-shrink-1 col-12"
@@ -73,52 +74,55 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                 <img class='card-img-top img-admin-list' src='../{$row['main_img_path']}'
                 alt='Chiot Whippet disponible'></a>
                 "); ?>
-                <div class="card-body">
-                    <?php
-                            if ($row['sex'] === "femelle") {
-                                echo "
-                            <a  class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
-                            <h3 class=\"card-title text-danger text-center\">" . ucfirst(htmlspecialchars($row['name'])) . "</h3></a>";
-                            } else {
-                                echo "
-                            <a class=\"text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
-                            <h3 class=\"card-title text-primary text-center\">" . htmlspecialchars($row['name']) . "</h3></a>";
-                            }
-                            ?> <p class="card-text">
-                        <?php echo htmlspecialchars($row['description']); ?></p>
-                    <?php
-                            if ($row['available'] === "En option") {
-                                echo ("<p class=\"alert alert-warning\">En Option</p>");;
-                            } else if ($row['available'] === "Réservé" || $row['available'] === 'réservé') {
+                <div class="card-body d-flex flex-column justify-content-between align-items-center">
+                    <div class="d-flex flex-row justify-content-center align-items-center col-12">
+                        <?php
                                 if ($row['sex'] === "femelle") {
-                                    echo ("<p class=\"alert alert-danger\">Réservée</p>");
+                                    echo "
+                            <a  class=\"w-50 text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
+                            <h3 class=\"card-title text-danger text-center\">" . ucfirst(htmlspecialchars($row['name'])) . "</h3></a>";
                                 } else {
-                                    echo ("<p class=\"alert alert-danger\">Réservé</p>");
+                                    echo "
+                            <a class=\"w-50 text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
+                            <h3 class=\"card-title text-primary text-center\">" . htmlspecialchars($row['name']) . "</h3></a>";
                                 }
-                            } else {
-                                echo ("<p class=\"alert alert-success\">Disponible</p>");;
-                            }
-                            echo "<p class='d-flex flex-row justify-content-end flex-wrap m-2'>Maman : {$row['mother_name']}";
-                            if ($row['mother_adn']) {
-                                echo "<span class='alert alert-info m-2 mt-0 p-1'>ADN</span>";
-                            }
+                                if ($row['available'] === "En option") {
+                                    echo ("<p class=\"align-self-end w-50 text-center alert alert-warning\">En Option</p>");;
+                                } else if ($row['available'] === "Réservé" || $row['available'] === 'réservé') {
+                                    if ($row['sex'] === "femelle") {
+                                        echo ("<p class=\"w-50 text-center alert alert-danger\">Réservée</p>");
+                                    } else {
+                                        echo ("<p class=\"w-50 text-center alert alert-danger\">Réservé</p>");
+                                    }
+                                } else {
+                                    echo ("<p class=\"w-50 text-center alert alert-success\">Disponible</p>");
+                                }
+                                ?>
+                    </div>
+                    <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                    <?php
+                            echo "<p class='d-flex flex-row justify-content-evenly align-items-center flex-wrap m-2'>
+                            <span class='alert alert-primary m-2 mt-0 p-2'>Maman : {$row['mother_name']}</span>";
                             if ($row['mother_champion']) {
-                                echo '<span class="alert alert-secondary m-2 mt-0 p-1">Championne</span></p>';
+                                echo '<span class="alert alert-secondary m-2 mt-0 p-2">Championne</span>';
+                            }
+                            if ($row['mother_adn']) {
+                                echo "<span class='alert alert-info m-2 mt-0 p-2'>ADN</span></p>";
                             }
                             ?>
-                    <div class="btn-container d-flex flex-row justify-content-around flex-wrap">
+                    <div class="btn-container w-100 d-flex flex-row justify-content-between">
                         <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>"
-                            class="btn btn-primary m-2 p-3">Modifier</a>
+                            class="btn btn-primary m-1 p-3">Modifier</a>
                         <button
                             onClick="confirmDeletePuppy(<?php echo $row['id'] ?>,  '<?php echo replace_reunion_char($row['name']) ?>')"
-                            class="btn btn-danger m-2">Supprimer</button>
+                            class="btn btn-danger m-1">Supprimer</button>
                         <?php
                                 echo $row['enable'] ?
-                                    "<button onClick='toggleActivePuppy({$row['id']}, {$row['enable']})' class='toggler'
+                                    "<button onClick='toggleActivePuppy({$row['id']}, {$row['enable']})' class='m-1 p-3 btn btn-warning toggler'
                                     id='toggler{$row['id']} '>Désactiver
                                     </button>"
                                     :
-                                    "<button onClick='toggleActivePuppy({$row['id']}, {$row['enable']})' class='toggler'
+                                    "<button onClick='toggleActivePuppy({$row['id']}, {$row['enable']})' class=' m-1 p-3 btn btn-success toggler'
                                     id='toggler{$row['id']} '>Activer
                                     </button>"
                                 ?>

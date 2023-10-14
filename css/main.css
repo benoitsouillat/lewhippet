@@ -781,6 +781,7 @@ address {
 .puppies-admin-container > .card {
   min-height: 40vh;
   min-width: 270px;
+  overflow: hidden;
 }
 
 .puppies-admin-container > .disable-filter {
