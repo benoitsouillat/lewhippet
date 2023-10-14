@@ -9,7 +9,6 @@ require_once('../classes/Repro.php');
 require_once('../classes/Litter.php');
 
 if (check_session_start($_SESSION)) {
-
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
         try {
             $stmt = $conn->prepare(deleteLitter());
@@ -20,6 +19,7 @@ if (check_session_start($_SESSION)) {
             echo 'Une erreur s\'est produite ' . $e->getMessage();
         }
     }
+
     $litter = new Litter();
 
     if (isset($_GET['repro_id']) && $_GET['repro_id'] != 0) {
@@ -32,32 +32,35 @@ if (check_session_start($_SESSION)) {
         $stmt->execute();
         $reprosMales = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
     if (isset($_GET['id'])) {
         $stmt = $conn->prepare(getLitterFromId());
         $stmt->bindParam(':id', $_GET['id']);
         $stmt->execute();
         $litterData = $stmt->fetch(PDO::FETCH_OBJ);
         $litter->fillFromStdClass($litterData);
+        $litter->setLitterNumberSCC($litterData->litter_number);
         include_once('../templates/litter_modify_form.php');
-    } else {
-        include_once('../templates/litter_form.php');
-    }
-
-    if (isset($_POST) && isset($_POST['mother_id'])) {
+    } elseif (isset($_POST) && isset($_POST['mother_id'])) {
         $mother = new Repro();
         $mother->fetchFromDatabase($_POST['mother_id']);
         $litter->setMother($mother);
         $father = new Repro();
-        $father->fetchFromDatabase(intval($_POST['father']));
+        $father->fetchFromDatabase(intval($_POST['father_id']));
         $litter->setFather($father);
         $litter->setBirthdate($_POST['birthdate']);
-        $litter->setNumberPuppies($_POST['numberPuppies']);
-        $litter->setNumberMales($_POST['numberMales']);
-        $litter->setNumberFemales($litter->getNumberPuppies() - $litter->getNumberMales());
+        if (isset($_POST['numberFemales'])) {
+            $litter->setNumberFemales($_POST['numberFemales']);
+            $litter->setNumberMales($_POST['numberMales']);
+        }
+        $litter->setNumberPuppies($litter->getNumberFemales() + $litter->getNumberMales());
         $litter->setLitterNumberSCC($_POST['sccNumber']);
-        try {
+        if (isset($_POST['litter_id'])) {
+            $stmt = $conn->prepare(updateLitter());
+            $stmt->bindValue(':id', $_POST['litter_id']);
+        } else {
             $stmt = $conn->prepare(createLitter());
+        }
+        try {
             $stmt->bindValue(':birthdate', $litter->getBirthdate());
             $stmt->bindValue(':mother_id', $litter->getMother()->getId());
             $stmt->bindValue(':father_id', $litter->getFather()->getId());
@@ -70,6 +73,8 @@ if (check_session_start($_SESSION)) {
         } catch (PDOException $e) {
             echo "Une erreur s'est produite : " . $e->getMessage();
         }
+    } else {
+        include_once('../templates/litter_form.php');
     }
 } else {
     header('Location:../logout.php');

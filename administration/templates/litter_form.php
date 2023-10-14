@@ -1,5 +1,5 @@
 <?php
-if (isset($litter)) {
+if (isset($litter) && $litter->getMother() !== null) {
     $title = $litter->getMother()->getName();
 }
 include_once(__DIR__ . '/../gerance.php');
@@ -11,18 +11,14 @@ if (isset($_GET['error'])) {
 }
 ?>
 
-<form class="d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php"
+<form class="col-10 d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php"
     enctype="multipart/form-data" method="post">
-    <div class="d-flex flex-row justify-content-around align-items-center">
+    <div class="col-12 d-flex flex-row justify-content-around align-items-center flex-nowrap mb-2">
         <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId(); ?>">
-        <input type="hidden" name="father_id"
-            value="<?php echo ($litter->getFather() !== null) ? $litter->getFather()->getId() : "1"; ?>">
-        <h3 class="col-12 w-100"> Mariage : </h3>
-        <p class="text-center"><?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder(); ?>
-            et
-        </p>
-        <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
-            <select name="father" class="form-control">
+        <h3 class="col-8 text-center"> Mariage de
+            <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder() . ' et '; ?></h3>
+        <fieldset class="font-weight-bold col-4">
+            <select name="father" class="font-weight-bold form-control-lg">
                 <?php
                 for ($i = 0, $size = count($reprosMales); $i < $size; $i++) {
                     echo "<option value='{$reprosMales[$i]['id']}'>" . ucfirst($reprosMales[$i]['name']) . ' ' . $reprosMales[$i]['breeder'] . "</option>";
@@ -30,36 +26,25 @@ if (isset($_GET['error'])) {
                 ?>
             </select>
         </fieldset>
-
     </div>
-    <h3> Mariage de <?php echo $litter->getMother()->getName() . ' ' . $litter->getMother()->getBreeder();
-                    ?></h3>
-    <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId(); ?>">
-    <input type="hidden" name="father_id"
-        value="<?php echo ($litter->getFather() !== null) ? $litter->getFather()->getId() : "1"; ?>">
+    <div class="col-8 d-flex justify-content-between">
+        <fieldset class="d-flex flex-row justify-content-start align-items-center col-5">
+            <label class="text-center" for="birthdate">Date de naissance des bébés : </label>
+            <input type="date" name="birthdate" class="form-control" id="birthdate"
+                value=<?php echo $litter->getBirthdate(); ?>>
+        </fieldset>
+        <fieldset class="d-flex flex-column justify-content-between align-items-center col-5">
 
-    <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
-        <label for="birthdate">Date de naissance des bébés :</label>
-        <input type="date" name="birthdate" value=<?php echo $litter->getBirthdate(); ?> name="birthdate"
-            id="birthdate">
-    </fieldset>
-    <fieldset class="d-flex flex-row justify-content-around align-items-center col-12">
-        <legend>Le Papa : </legend>
-        <select name="father" class="form-control">
-            <?php
-            for ($i = 0, $size = count($reprosMales); $i < $size; $i++) {
-                echo "<option value='{$reprosMales[$i]['id']}'>" . ucfirst($reprosMales[$i]['name']) . "</option>";
-            }
-            ?>
-        </select>
-    </fieldset>
-    <label for="numberPuppies">Nombre de chiots</label>
-    <input type="number" name="numberPuppies" id="numberPuppies" <?php echo "value={$litter->getNumberPuppies()}" ?>>
-    <label for="numberPuppies">Nombre de mâles</label>
-    <input type="number" name="numberMales" id="numberMales" <?php echo "value={$litter->getNumberMales()}" ?>>
-    <?php $litter->setNumberFemales($litter->getNumberPuppies() - $litter->getNumberMales()); ?>
-    <p><?php echo $litter->getNumberFemales() . ' femelle(s)'; ?>
-    </p>
+            <label for="numberPuppies">Nombre de femelle(s)</label>
+            <input class="form-control" type="number" name="numberFemales" id="numberFemales"
+                <?php echo "value={$litter->getNumberFemales()}" ?>>
+            <label for="numberPuppies">Nombre de mâle(s)</label>
+            <input class="form-control" type="number" name="numberMales" id="numberMales"
+                <?php echo "value={$litter->getNumberMales()}" ?>>
+            <?php $litter->setNumberPuppies($litter->getNumberFemales() + $litter->getNumberMales()); ?>
+            <p><?php echo $litter->getNumberPuppies() . ' chiot(s)'; ?></p>
+        </fieldset>
+    </div>
     <label for="sccNumber">Numéro de Portée</label>
     <input name="sccNumber" id="sccNumber" type="text" placeholder="Entrez le numéro de portée" required>
     <button class="btn btn-success" type="submit">Créér la portée</button>
