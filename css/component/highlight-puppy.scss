@@ -1,0 +1,70 @@
+@import "variables";
+
+.highlight-puppy-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  box-sizing: content-box;
+
+  @media all and (max-width: $md) {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: lighten($head-color, 20) solid 1px;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+}
+.highlight-puppy-img {
+  width: 60%;
+
+  @media all and (max-width: $sm ){
+    width: 90%;
+  }
+  @media all and (max-width: $xs) {
+    width: 99%;
+  }
+
+  img {
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px darkgrey;
+  }
+
+
+}
+
+.dir-reverse {
+  flex-direction: row-reverse;
+  .carousel-item {
+    transition-delay: 1.2s;
+  }
+  @media all and (max-width: $md) {
+    flex-direction: column;
+  }
+}
+
+.highlight-puppy-description {
+  min-width: 70%;
+  margin: 15px;
+  h4 {
+    color: darken($head-color, 22);
+    font-style: italic;
+    text-shadow: darken($head-color, 30) 1px 1px 2px;
+  }
+  @media all and (max-width: $md) {
+    min-width: 70%;
+  }
+  @media all and (min-width: $md) and (max-width: $xl) {
+    min-width: 50%;
+    max-width: 55%;
+  }
+
+}
+
+.carousel-item {
+  transition-duration: .9s;
+}
