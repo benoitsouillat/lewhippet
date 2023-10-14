@@ -37,7 +37,12 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                 $stmt = $conn->query(getAllPuppiesByPosition());
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
                 ?>
-                    <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1">
+                    <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1 
+                    <?php
+                    if ($row['enable'] == 0) {
+                        echo 'disable-filter';
+                    }
+                    ?>">
                         <div class="m1 p2 text-center bg-dark text-light">
                             <p class="w-100 col-12 text-center bg-dark text-light">Position : </p>
                             <form class="form-control bg-dark d-flex flex-row justify-content-between flex-shrink-1 col-12" action="./puppies/updater.php" method="get">
