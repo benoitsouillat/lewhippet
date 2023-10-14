@@ -46,9 +46,10 @@ require_once(__DIR__ . '/classes/Litter.php');
                 while ($litterData = $stmt->fetch(PDO::FETCH_OBJ)) :
                     $litter = new Litter();
                     $litter->fillFromStdClass($litterData);
+                    $litter->setLitterNumberSCC($litterData->litter_number)
                 ?>
             <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1">
-                <h4 class="text-center">Portée de
+                <h4 class="text-center">Portée de <br>
                     <?php echo $litter->getMother()->getName() . ' et de ' . $litter->getFather()->getName() ?>
                 </h4>
                 <?php
@@ -61,10 +62,10 @@ require_once(__DIR__ . '/classes/Litter.php');
                 </a>"); ?>
                 <div class="card-body">
                     <p class="text-center">
-                        <?php echo $litter->getNumberMales() . ' mâle(s) et ' . $litter->getNumberFemales() . ' femelle(s).' ?>
+                        <?php echo 'Portée N° : ' . $litter->getLitterNumberSCC() ?>
                     </p>
                     <p class="text-center">
-                        <?php echo 'Portée N° : ' . $litter->getLitterNumberSCC() ?>
+                        <?php echo 'Né(s) le ' . trad_month(date('d F Y', strtotime($litter->getBirthdate()))) . '<br>' . $litter->getNumberMales() . ' mâle(s) et ' . $litter->getNumberFemales() . ' femelle(s).' ?>
                     </p>
 
                     <div class="btn-container d-flex flex-row justify-content-around flex-wrap">

@@ -64,3 +64,35 @@ function check_session_start($session)
         return false;
     }
 };
+
+function trad_month($date)
+{
+    if (strpos($date, 'January')) {
+        $date = str_replace('January', 'Janvier', $date);
+    }
+    if (strpos($date, 'February')) {
+        $date = str_replace('February', 'Février', $date);
+    }
+    if (strpos($date, 'March')) {
+        $date = str_replace('March', 'Mars', $date);
+    }
+    if (strpos($date, 'April')) {
+        $date = str_replace('April', 'Avril', $date);
+    }
+    if (strpos($date, 'May')) {
+        $date = str_replace('May', 'Mai', $date);
+    }
+    if (strpos($date, 'June')) {
+        $date = str_replace('June', 'Juin', $date);
+    }
+    if (strpos($date, 'July')) {
+        $date = str_replace('July', 'Juillet', $date);
+    }
+    if (strpos($date, 'August')) {
+        $date = str_replace('August', 'Août', $date);
+    }
+    if (strpos($date, 'ber')) {
+        $date = str_replace('ber', 'bre', $date);
+    }
+    return $date;
+}
