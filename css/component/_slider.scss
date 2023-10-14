@@ -1,6 +1,137 @@
 @import 'variables';
 
 .slider-auto-container {
+    // overflow: hidden;
+    margin: 3% auto;
+    border: solid $violet 1px;
+    box-shadow: 2px 2px 4px $violet;
+    max-width: 80%;
+
+    .slider-auto-horizontal {
+        display: flex;
+        animation: slider-auto 18s infinite ease-in-out;
+        max-height: 300px;
+
+        .slider-element {
+            flex-shrink: 0;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            background-color: transparent;
+
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        img.slider-element,
+        .slider-element img {
+            object-fit: cover;
+            width: 100%;
+            min-width: 100%;
+            max-height: 80%;
+            margin: auto;
+            border-top: solid 2px black;
+            border-bottom: solid 5px black;
+        }
+
+        .slider-element p {
+            width: 100%;
+            height: 100%;
+            max-height: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+        }
+    }
+}
+
+.card {
+    .arrow-div {
+        width: 100%;
+        position: absolute;
+        top: 20%;
+    }
+
+    .left-arrow,
+    .right-arrow {
+        position: absolute;
+        left: 2%;
+        height: 30%;
+    }
+
+    .right-arrow {
+        left: unset;
+        right: 2%;
+    }
+
+    .bi.bi-caret-right,
+    .bi-caret-left {
+        font-size: 30px;
+    }
+
+    .diapo-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        max-width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .diapo {
+        display: flex;
+        // transform: translateX(-100%);
+
+        img {
+            flex-shrink: 0;
+            margin: 0 auto;
+            width: 100%;
+            min-width: 100%;
+            padding: 0;
+            text-align: center;
+            background-color: transparent;
+            left: unset !important;
+        }
+    }
+
+}
+
+@keyframes slider-auto {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    25%,
+    45% {
+        transform: translateX(-100%);
+    }
+
+    50%,
+    70% {
+        transform: translateX(-200%);
+    }
+
+    75%,
+    95% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(-400%);
+    }
+
+}
+
+@import 'variables';
+
+.slider-auto-container {
     overflow: hidden;
     margin: 3% auto;
     border: solid $violet 1px;

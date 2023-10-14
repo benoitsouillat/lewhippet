@@ -25,8 +25,8 @@ if (isset($_GET['error'])) {
             id="birthdate">
     </fieldset>
 
-    <p>Le Papa : <?php echo $litter->getFather()->getName();
-                    ?></p>
+    <h4>Le Papa : <?php echo $litter->getFather()->getName();
+                    ?></h4>
 
     <p>Il y'a <?php echo $litter->getNumberPuppies() . ' bébé(s)'; ?>
     </p>
