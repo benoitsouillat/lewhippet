@@ -2,36 +2,36 @@
 
 function getAllPuppies()
 {
-    return "SELECT * FROM puppies";
+    return "SELECT * FROM puppy_class";
 };
 
 function getAllPuppiesByPosition()
 {
-    return "SELECT * FROM puppies ORDER BY position";
+    return "SELECT * FROM puppy_class ORDER BY position";
 };
 
 function createPuppy()
 {
-    return "INSERT INTO `puppies` (name, sex, available, description, main_img_path, mother_name, mother_adn, mother_champion, position) VALUES (:name, :sex, :available, :description, :main_img_path, :mother_name, :mother_adn, :mother_champion, :position)";
+    return "INSERT INTO `puppy_class` (name, sex, available, description, main_img_path, mother_name, mother_adn, mother_champion, position) VALUES (:name, :sex, :available, :description, :main_img_path, :mother_name, :mother_adn, :mother_champion, :position)";
 }
 
 function updatePuppy()
 {
-    return "UPDATE `puppies` SET name = :name, sex = :sex, available = :available, description = :description, main_img_path = :main_img_path, mother_name = :mother_name, mother_adn = :mother_adn, mother_champion = :mother_champion WHERE id = :id";
+    return "UPDATE `puppy_class` SET name = :name, sex = :sex, available = :available, description = :description, main_img_path = :main_img_path, mother_name = :mother_name, mother_adn = :mother_adn, mother_champion = :mother_champion WHERE id = :id";
 }
 function updatePuppyPosition()
 {
-    return "UPDATE `puppies` SET position = :position WHERE id = :id";
+    return "UPDATE `puppy_class` SET position = :position WHERE id = :id";
 }
 
 function deletePuppy()
 {
-    return "DELETE FROM `puppies` WHERE `id` = :id";
+    return "DELETE FROM `puppy_class` WHERE `id` = :id";
 }
 
 function getPuppyFromId()
 {
-    return "SELECT * FROM puppies WHERE `id` = :id";
+    return "SELECT * FROM puppy_class WHERE `id` = :id";
 }
 
 function savePuppyImages()
@@ -49,5 +49,5 @@ function getPuppyImages()
 }
 function togglePuppy()
 {
-    return "UPDATE `puppies` SET `enable` = :enable WHERE id = :id";
+    return "UPDATE `puppy_class` SET `enable` = :enable WHERE id = :id";
 }
