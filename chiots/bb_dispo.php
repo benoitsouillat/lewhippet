@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
+    <meta name="description"
+        content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET LOF A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
     <?php
     require_once(__DIR__ . '../../php/component/head-links.php');
@@ -50,40 +51,43 @@
                         require_once('../secret/connexion.php');
                         require_once('../administration/sql/puppies_request.php');
                         require_once('../php/component/display-functions.php');
+                        require_once('../administration/classes/Puppy.php');
 
                         $stmt = $conn->query(getAllPuppiesByPosition());
 
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-                            $availableColor = getAvailableColor($row['available']);
-                            $sexColor = getSexColor($row['sex']);
+                        while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
+                            $puppy = new Puppy;
+                            $puppy->fillFromStdClass($puppyData);
+                            $availableColor = getAvailableColor($puppy->getAvailable());
+                            $sexColor = getSexColor($puppy->getSex());
 
                             $stmtForPuppyImages = $conn->prepare(getPuppyImages());
-                            $stmtForPuppyImages->bindParam(':dogId', $row['id']);
+                            $stmtForPuppyImages->bindParam(':dogId', $puppyData->id);
                             $stmtForPuppyImages->execute();
                             $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
 
-                            if ($row['enable'] == true) {
+                            if ($puppy->getEnable() == true) {
                                 echo "<div class='card'>
                             <figure class='m-0 p-0'>
-                                <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$row['id']}>
-                                    <div class='diapo diapo-{$row['id']}'>
-                                    <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
+                                <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$puppyData->id}>
+                                    <div class='diapo diapo-{$puppyData->id}'>
+                                    <img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
                                     alt='Chiot Whippet Disponible' />
                                     ";
                                 foreach ($puppyImages as $image) {
                                     echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100' loading='lazy'>";
                                 }
                                 if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
-                                    echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
+                                    echo "<img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
                                             alt='Chiot Whippet Disponible' loading='lazy'/>
                                     </div>
                                 </div>
                                 <div class='arrow-div'>
                                 <button class='left-arrow bg-transparent border-0'>
-                                <span class='bi bi-caret-left bi-caret-left-{$row['id']} text-light'></span>
+                                <span class='bi bi-caret-left bi-caret-left-{$puppyData['id']} text-light'></span>
                                 </button>
                                 <button class='right-arrow bg-transparent border-0'>
-                                <span class='bi bi-caret-right bi-caret-right-{$row['id']} text-light'></span>
+                                <span class='bi bi-caret-right bi-caret-right-{$puppyData['id']} text-light'></span>
                                 </button>
                                 </div>";
                                 } else {
@@ -95,31 +99,31 @@
                                     <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
                                         <h4>";
 
-                                echo "<span class='text-center'>{$row['name']} </span>";
-                                if ($row['sex'] === 'Male' || $row['sex'] === 'male') {
+                                echo "<span class='text-center'>{$puppy->getName()} </span>";
+                                if ($puppy->getSex() === 'Male' || $puppy->getSex() === 'male') {
                                     echo " <i class='bi bi-gender-male'> </i> ";
                                 } else {
                                     echo " <i class='bi bi-gender-female'> </i>";
                                 }
                                 echo "</h4>
-                                    <p class='alert alert-" . $availableColor . "'> {$row['available']}</p>
+                                    <p class='alert alert-" . $availableColor . "'> {$puppy->getAvailable()}</p>
                                 </div>";
-                                if ($row['mother_name'] != null) {
+                                if ($puppy->getLitter()->getMother()->getName() != null) {
                                     echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
-                                <p class='description text-left w-75'> Issu de " . ucfirst($row['mother_name']) . "</p>";
-                                    if ($row['mother_adn'] || $row['mother_champion']) {
+                                <p class='description text-left w-75'> Issu de " . ucfirst($puppy->getLitter()->getMother()->getName()) . " et de " . ucfirst($puppy->getLitter()->getFather()->getName()) . "</p>";
+                                    if ($puppy->getLitter()->getMother()->getIsAdn() || $puppy->getLitter()->getMother()->getIsChampion()) {
                                         echo "<div class='d-flex flex-row justify-content-end flex-wrap w-25 mb-3'>";
-                                        if ($row['mother_adn']) {
+                                        if ($puppy->getLitter()->getMother()->getIsAdn()) {
                                             echo "<span class='badge badge-pink'>ADN Vérifiée</span>";
                                         }
-                                        if ($row['mother_champion']) {
+                                        if ($puppy->getLitter()->getMother()->getIsChampion()) {
                                             echo "<span class='badge badge-blue'>Championne</span>";
                                         }
                                         echo "</div>";
                                     }
                                     echo "</div>";
                                 }
-                                echo "<p class='description'>{$row['description']}</p>
+                                echo "<p class='description'>{$puppy->getDescription()}</p>
                                 </figcaption>
                             </figure>
                             }
@@ -167,13 +171,23 @@
                 whippet</a>
             <div class="puppies_articles_box">
                 <div class="puppies_articles_img">
-                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG" alt="whippet et accessoires">
-                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG" alt="whippet et accessoires">
-                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG" alt="whippet et accessoires">
+                    <img class="img_medium_vertical"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG"
+                        alt="whippet et accessoires">
+                    <img class="img_medium_vertical"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG"
+                        alt="whippet et accessoires">
+                    <img class="img_medium_vertical"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG"
+                        alt="whippet et accessoires">
                 </div>
                 <div class="puppies_articles_img">
-                    <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG" alt="whippet et accessoires">
-                    <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG" alt="whippet et accessoires"><br>
+                    <img class="img_medium_horizontal"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG"
+                        alt="whippet et accessoires">
+                    <img class="img_medium_horizontal"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG"
+                        alt="whippet et accessoires"><br>
                 </div>
                 <p>
                     Jouets de 5 à 26 euros selon la référence, les
@@ -241,7 +255,8 @@
         <article id="male_femelle">
             <h2>Mâle ou Femelle : Que choisir ??</h2>
             <div>
-                <img src="/chiots_img/illus_fichier/chiotschapeau.jpg" alt="whippet calme et équilibré joue avec un chapeau">
+                <img src="/chiots_img/illus_fichier/chiotschapeau.jpg"
+                    alt="whippet calme et équilibré joue avec un chapeau">
                 <p>Nos chiots whippets sont calmes et équilibrés, ils évoluent dans un environnement
                     sain qui leur permet de s'adapter facilement à leur nouvelle vie.</p>
             </div>
@@ -303,8 +318,10 @@
         <?php require_once(__DIR__ . '../../php/component/footer.php'); ?>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 </body>
 

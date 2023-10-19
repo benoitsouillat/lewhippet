@@ -2,6 +2,7 @@
 
 include_once(__DIR__ . '/Dog.php');
 include_once(__DIR__ . '/Repro.php');
+include_once(__DIR__ . '/../sql/litters_request.php');
 
 class Litter
 {
@@ -41,6 +42,18 @@ class Litter
         $this->setNumberPuppies($data->number_of_puppies);
         $this->setNumberMales($data->number_of_males);
         $this->setNumberFemales($data->number_of_females);
+    }
+    public function fetchFromDatabase($id)
+    {
+        $dsn = "mysql:host=localhost;port=3306;dbname=damoiseaux_php";
+        $conn = new PDO($dsn, 'root', '');
+        $stmt = $conn->prepare(getLitterFromId());
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        if ($litterFetch = $stmt->fetch(PDO::FETCH_OBJ)) {
+            $this->fillFromStdClass($litterFetch);
+        }
     }
     /**
      * Get the value of birthdate

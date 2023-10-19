@@ -2,6 +2,7 @@
 
 include_once(__DIR__ . '/Dog.php');
 include_once(__DIR__ . '/Litter.php');
+include_once(__DIR__ . '/../sql/puppies_request.php');
 
 class Puppy extends Dog
 {
@@ -45,7 +46,9 @@ class Puppy extends Dog
         $this->setAvailable($data->available);
         $this->setDescription($data->description);
         $this->setPosition($data->position);
-        $this->setLitter($data->litter);
+        $litter = new Litter;
+        $litter->fetchFromDatabase($data->Litter);
+        $this->setLitter($litter);
         $this->setEnable($data->enable);
     }
 
