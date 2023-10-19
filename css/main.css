@@ -921,6 +921,28 @@ address {
   opacity: 0.5;
 }
 
+.dog-parents {
+  overflow: hidden;
+}
+.dog-parents .dog-parents-img {
+  overflow: hidden;
+}
+.dog-parents .mother-img {
+  max-height: 10vh;
+  border: solid 1px #C69;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.dog-parents .father-img {
+  max-height: 10vh;
+  border: solid 1px lightblue;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.dog-parents .litter-number {
+  font-size: 0.9em;
+}
+
 html {
   font-size: 14px;
 }

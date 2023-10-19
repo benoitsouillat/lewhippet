@@ -42,6 +42,7 @@ class Litter
         $this->setNumberPuppies($data->number_of_puppies);
         $this->setNumberMales($data->number_of_males);
         $this->setNumberFemales($data->number_of_females);
+        $this->setLitterNumberSCC($data->litter_number);
     }
     public function fetchFromDatabase($id)
     {

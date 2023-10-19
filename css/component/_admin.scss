@@ -61,3 +61,27 @@
 .disable-filter {
     opacity: .5;
 }
+
+.dog-parents {
+    overflow: hidden;
+
+    .dog-parents-img {
+        overflow: hidden;
+    }
+
+    .mother-img {
+        max-height: 10vh;
+        border: solid 1px $pink;
+        object-fit: cover;
+    }
+
+    .father-img {
+        max-height: 10vh;
+        border: solid 1px lightblue;
+        object-fit: cover;
+    }
+
+    .litter-number {
+        font-size: .9em;
+    }
+}
