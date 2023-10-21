@@ -33,7 +33,7 @@ if (check_session_start($_SESSION)) {
         }
         // Modify
         $id = $_GET['id'];
-        $stmt = $conn->prepare(getPuppyFromId($id));
+        $stmt = $conn->prepare(getPuppyFromId());
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         try {

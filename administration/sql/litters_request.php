@@ -4,6 +4,10 @@ function getAllLitters()
 {
     return "SELECT * FROM `litters`";
 }
+function getAllLittersIds()
+{
+    return "SELECT id FROM `litters`";
+}
 function getLitterFromId()
 {
     return "SELECT * FROM litters WHERE `id` = :id";

@@ -37,7 +37,7 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':id', $_GET['id']);
         $stmt->execute();
         $litterData = $stmt->fetch(PDO::FETCH_OBJ);
-        $litter->fillFromStdClass($litterData);
+        $litter->fillFromStdClass($litterData, $conn);
         $litter->setLitterNumberSCC($litterData->litter_number);
         include_once('../templates/litter_modify_form.php');
     } elseif (isset($_POST) && isset($_POST['mother_id'])) {
@@ -56,9 +56,10 @@ if (check_session_start($_SESSION)) {
         $litter->setLitterNumberSCC($_POST['sccNumber']);
         if (isset($_POST['litter_id'])) {
             $stmt = $conn->prepare(updateLitter());
-            $stmt->bindValue(':id', $_POST['litter_id']);
+            $stmt->bindValue(':id', $_POST['litter_id']); //Use GetId() ?
         } else {
             $stmt = $conn->prepare(createLitter());
+            //create puppy from $litter->getNumberMales() et $litter->getNumberFemales()
         }
         try {
             $stmt->bindValue(':birthdate', $litter->getBirthdate());
@@ -69,6 +70,10 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':numberFemales', $litter->getNumberFemales());
             $stmt->bindValue(':litterNumberSCC', $litter->getLitterNumberSCC());
             $stmt->execute();
+            if (!isset($_POST['litter_id'])) {
+                $litter->generatePuppiesMales($conn);
+                $litter->generatePuppiesFemales();
+            }
             header('Location:../litters.php');
         } catch (PDOException $e) {
             echo "Une erreur s'est produite : " . $e->getMessage();

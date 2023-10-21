@@ -6,6 +6,7 @@ include_once(__DIR__ . '/../sql/puppies_request.php');
 
 class Puppy extends Dog
 {
+
     private $id;
     private ?Litter $litter = null;
     private $breeder = ' de la Romance des Damoiseaux ';
@@ -37,8 +38,9 @@ class Puppy extends Dog
         $this->breeder = ' de la Romance des Damoiseaux ';
     }
 
-    public function fillFromStdClass(stdClass $data)
+    public function fillFromStdClass(stdClass $data, $conn)
     {
+        $this->setId($data->id);
         $this->setName($data->name);
         $this->setSex($data->sex);
         $this->setColor($data->color);
@@ -47,7 +49,7 @@ class Puppy extends Dog
         $this->setDescription($data->description);
         $this->setPosition($data->position);
         $litter = new Litter;
-        $litter->fetchFromDatabase($data->Litter);
+        $litter->fetchFromDatabase($data->Litter, $conn);
         $this->setLitter($litter);
         $this->setEnable($data->enable);
     }
@@ -178,6 +180,17 @@ class Puppy extends Dog
     public function getId()
     {
         return $this->id;
+    }
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    private function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**

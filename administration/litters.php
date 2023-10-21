@@ -45,7 +45,7 @@ require_once(__DIR__ . '/classes/Litter.php');
                 $stmt->execute();
                 while ($litterData = $stmt->fetch(PDO::FETCH_OBJ)) :
                     $litter = new Litter();
-                    $litter->fillFromStdClass($litterData);
+                    $litter->fillFromStdClass($litterData, $conn);
                     $litter->setLitterNumberSCC($litterData->litter_number)
                 ?>
             <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1">
