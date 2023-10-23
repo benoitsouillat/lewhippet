@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description"
-        content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
+    <meta name="description" content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET LOF A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
     <?php
     require_once(__DIR__ . '../../php/component/head-links.php');
@@ -57,7 +56,7 @@
 
                         while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
                             $puppy = new Puppy;
-                            $puppy->fillFromStdClass($puppyData);
+                            $puppy->fillFromStdClass($puppyData, $conn);
                             $availableColor = getAvailableColor($puppy->getAvailable());
                             $sexColor = getSexColor($puppy->getSex());
 
@@ -84,10 +83,10 @@
                                 </div>
                                 <div class='arrow-div'>
                                 <button class='left-arrow bg-transparent border-0'>
-                                <span class='bi bi-caret-left bi-caret-left-{$puppyData['id']} text-light'></span>
+                                <span class='bi bi-caret-left bi-caret-left-{$puppy->getId()} text-light'></span>
                                 </button>
                                 <button class='right-arrow bg-transparent border-0'>
-                                <span class='bi bi-caret-right bi-caret-right-{$puppyData['id']} text-light'></span>
+                                <span class='bi bi-caret-right bi-caret-right-{$puppy->getId()} text-light'></span>
                                 </button>
                                 </div>";
                                 } else {
@@ -177,23 +176,13 @@
                 whippet</a>
             <div class="puppies_articles_box">
                 <div class="puppies_articles_img">
-                    <img class="img_medium_vertical"
-                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG"
-                        alt="whippet et accessoires">
-                    <img class="img_medium_vertical"
-                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG"
-                        alt="whippet et accessoires">
-                    <img class="img_medium_vertical"
-                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG"
-                        alt="whippet et accessoires">
+                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG" alt="whippet et accessoires">
+                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG" alt="whippet et accessoires">
+                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG" alt="whippet et accessoires">
                 </div>
                 <div class="puppies_articles_img">
-                    <img class="img_medium_horizontal"
-                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG"
-                        alt="whippet et accessoires">
-                    <img class="img_medium_horizontal"
-                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG"
-                        alt="whippet et accessoires"><br>
+                    <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG" alt="whippet et accessoires">
+                    <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG" alt="whippet et accessoires"><br>
                 </div>
                 <p>
                     Jouets de 5 à 26 euros selon la référence, les
@@ -261,8 +250,7 @@
         <article id="male_femelle">
             <h2>Mâle ou Femelle : Que choisir ??</h2>
             <div>
-                <img src="/chiots_img/illus_fichier/chiotschapeau.jpg"
-                    alt="whippet calme et équilibré joue avec un chapeau">
+                <img src="/chiots_img/illus_fichier/chiotschapeau.jpg" alt="whippet calme et équilibré joue avec un chapeau">
                 <p>Nos chiots whippets sont calmes et équilibrés, ils évoluent dans un environnement
                     sain qui leur permet de s'adapter facilement à leur nouvelle vie.</p>
             </div>
@@ -324,10 +312,8 @@
         <?php require_once(__DIR__ . '../../php/component/footer.php'); ?>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 </body>
 
