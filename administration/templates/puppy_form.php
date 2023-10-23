@@ -1,7 +1,7 @@
 <?php
 
 if (isset($puppy)) {
-    $title = $puppy->name;
+    $title = $puppy->getName();
 }
 
 include_once(__DIR__ . '/../gerance.php');
@@ -26,15 +26,13 @@ if (isset($_GET['error'])) {
     <?php
     if (isset($_GET['id'])) {
         echo "
-    <input type='hidden' name='puppy_id' value='{$puppy->id}'>
-
+    <input type='hidden' name='puppy_id' value='{$puppy->getId()}'>
     <label for='name' class='m-2'>Nom du chiot</label>
-    <input class='form-control' name='name' id='name' type='text' value='{$puppy->name}' />
-    
+    <input class='form-control' name='name' id='name' type='text' value='{$puppy->getName()}' />
     <label for='sex' class='m-2' >Mâle ou Femelle</label>
     <select class='form-control' for='sex' name='sex'>
         ";
-        if ($puppy->sex === 'femelle') {
+        if ($puppy->getSex() === 'femelle') {
             echo "
         <option value='femelle' selected>Femelle</option>
         <option value='male'>Mâle</option>
@@ -47,62 +45,29 @@ if (isset($_GET['error'])) {
         }
         echo "
     </select>
+    <label for='color'>Couleur : </label>
+    <input type='text' name='color' id='color' class='form-control' value='{$puppy->getColor()}'>
     <label for='description' class='m-2' >Description du bébé </label>
-    <textarea id='description' class='form-control' type='text' name='description'>{$puppy->description}</textarea>
-    <fieldset class='border m-2'>
-        <label for='mother_name'>La Maman</label>
-        <input class='form-control border-0' type=' text' name='mother_name' value='{$puppy->mother_name}' placeholder='Nom de la mère' />";
-
-
-        if ($puppy->mother_adn) {
-            echo "<div class='form-control-sm '>
-                    <p>Est-elle vérifiée en ADN ?</p>
-                    <input type='radio' id='adn_yes' name='mother_adn' value='1' checked>
-                    <label for='adn_yes'>Oui</label>
-                    <input type='radio' id='adn_no' name='mother_adn' value='0'>
-                    <label for='adn_no'>Non</label>
-                </div>";
-        } else {
-            echo "<div class='form-control-sm '>
-                    <p>Est-elle vérifiée en ADN ?</p>
-                    <input type='radio' id='adn_yes' name='mother_adn' value='1'>
-                    <label for='adn_yes'>Oui</label>
-                    <input type='radio' id='adn_no' name='mother_adn' value='0' checked>
-                    <label for='adn_no'>Non</label>
-                </div>";
+    <textarea id='description' class='form-control' type='text' name='description'>{$puppy->getDescription()}</textarea>
+          <div class='m-4'><p>La Maman : {$puppy->getLitter()->getMother()->getName()} ";
+        if ($puppy->getLitter()->getMother()->getIsAdn()) {
+            echo "<span class='m-2 alert alert-info'> ADN </span>";
         }
+        if ($puppy->getLitter()->getMother()->getIsChampion()) {
 
-        if ($puppy->mother_champion) {
-
-            echo "<div class='form-control-sm'>
-                    <p>Est-elle Championne Internationale ?</p>
-                    <input type='radio' id='champion_yes' name='mother_champion' value='1' checked>
-                    <label for='champion_yes'>Oui</label>
-                    <input type='radio' id='champion_no' name='mother_champion' value='0'>
-                    <label for='champion_no'>Non</label>
-                </div>";
-        } else {
-            echo "<div class='form-control-sm'>
-            <p>Est-elle Championne Internationale ?</p>
-            <input type='radio' id='champion_yes' name='mother_champion' value='1'>
-            <label for='champion_yes'>Oui</label>
-            <input type='radio' id='champion_no' name='mother_champion' value='0' checked>
-            <label for='champion_no'>Non</label>
-        </div>";
+            echo "<span class='alert alert-info'> Championne </span>";
         }
-
-        echo "
-    </fieldset>
+        echo "</p></div>
     <label for='available' class='mt-2 mb-2' >Disponibilité : </label>
     <select class='form-control' for='available' id='available' name='available'>
     ";
-        if ($puppy->available === 'Réservé') {
+        if ($puppy->getAvailable() === 'Réservé') {
             echo "
         <option value='Disponible'>Disponible</option>
         <option value='En option'>En Option</option>
         <option value='Réservé' selected>Réservé</option>
         ";
-        } elseif ($puppy->available === 'En option') {
+        } elseif ($puppy->getAvailable() === 'En option') {
             echo "
         <option value='Disponible'>Disponible</option>
         <option value='En option' selected>En Option</option>
@@ -117,8 +82,8 @@ if (isset($_GET['error'])) {
         }
         echo "</select>
         <label for='main_img_path' class='m-2' >Son image principale :</label>
-        <img class='col-8 col-md-6 col-lg-4' src='../{$puppy->main_img_path}' />
-        <input class='m-2' type='file' name='main_img_path' value='{$puppy->main_img_path}'/>
+        <img class='col-8 col-md-6 col-lg-4' src='{$puppy->getMainImgPath()}' />
+        <input class='m-2' type='file' name='main_img_path' value='{$puppy->getMainImgPath()}'/>
         <br/>
         <label for='images[]' class='m-2'>Ajoutez des images pour son diaporama </label>
         <input class='m-2' type='file' name='images[]' multiple/>
@@ -136,6 +101,8 @@ if (isset($_GET['error'])) {
         <option value='femelle'>Femelle</option>
         <option value='male'>Mâle</option>
     </select>
+    <label for='color'>Couleur : </label>
+    <input type='text' name='color' id='color' class='form-control' placeholder="Couleur du chiot">
     <label for='description' class='m-2'>Description du bébé </label>
     <textarea id='description' class='form-control' name='description'
         placeholder="Entrez la description du chiot"><?php if (isset($_GET['description'])) {

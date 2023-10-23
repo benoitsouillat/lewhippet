@@ -2,37 +2,37 @@
 
 function getAllPuppies()
 {
-    return "SELECT * FROM puppy_class";
+    return "SELECT * FROM puppies";
 };
 
 function getAllPuppiesByPosition()
 {
-    return "SELECT * FROM puppy_class ORDER BY position";
+    return "SELECT * FROM puppies ORDER BY position";
 };
 
 function createPuppy()
 {
-    return "INSERT INTO `puppy_class` (name, sex, color, description, available, enable, Litter, main_img_path, position) 
+    return "INSERT INTO `puppies` (name, sex, color, description, available, enable, Litter, main_img_path, position) 
     VALUES (:name, :sex, :color, :description, :available, :enable, :litter_id, :main_img_path, :position)";
 }
 
 function updatePuppy()
 {
-    return "UPDATE `puppy_class` SET name = :name, sex = :sex, available = :available, description = :description, main_img_path = :main_img_path, mother_name = :mother_name, mother_adn = :mother_adn, mother_champion = :mother_champion WHERE id = :id";
+    return "UPDATE `puppies` SET name = :name, sex = :sex, color = :color, available = :available, description = :description, main_img_path = :main_img_path WHERE id = :id";
 }
 function updatePuppyPosition()
 {
-    return "UPDATE `puppy_class` SET position = :position WHERE id = :id";
+    return "UPDATE `puppies` SET position = :position WHERE id = :id";
 }
 
 function deletePuppy()
 {
-    return "DELETE FROM `puppy_class` WHERE `id` = :id";
+    return "DELETE FROM `puppies` WHERE `id` = :id";
 }
 
 function getPuppyFromId()
 {
-    return "SELECT * FROM puppy_class WHERE `id` = :id";
+    return "SELECT * FROM puppies WHERE `id` = :id";
 }
 
 function savePuppyImages()
@@ -50,5 +50,5 @@ function getPuppyImages()
 }
 function togglePuppy()
 {
-    return "UPDATE `puppy_class` SET `enable` = :enable WHERE id = :id";
+    return "UPDATE `puppies` SET `enable` = :enable WHERE id = :id";
 }

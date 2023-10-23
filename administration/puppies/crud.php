@@ -3,6 +3,7 @@ session_start();
 require_once('../sql/puppies_request.php');
 require_once('../utilities/usefull_functions.php');
 require_once('../../secret/connexion.php');
+require_once(__DIR__ . '/../classes/Puppy.php');
 
 //Mettre le logo de la Romance des Damoiseaux
 define('DEFAULT_PUPPY_PATH_IMG', '../../puppies_img/default.jpg');
@@ -37,27 +38,27 @@ if (check_session_start($_SESSION)) {
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         try {
-            $puppy = $stmt->fetch(PDO::FETCH_OBJ);
+            $puppyData = $stmt->fetch(PDO::FETCH_OBJ);
+            $puppy = new Puppy();
+            $puppy->fillFromStdClass($puppyData, $conn);
             include(__DIR__ . '/../templates/puppy_form.php');
         } catch (PDOException $e) {
             echo "Une erreur s'est produite : " . $e->getMessage();
         }
     } elseif (isset($_POST['name']) && $_POST['name'] != null && isset($_POST['puppy_id'])) {
-        $puppy = $_POST;
-
         if (isset($_FILES['images']) && $_FILES['images']['name'][0] != null) {
             if (isset($_FILES['images']['error']) && $_FILES['images']['error'] === 2) {
-                header('Location:./crud.php?error=2&id=' . $puppy['puppy_id']);
+                header('Location:./crud.php?error=2&id=' . $_POST['puppy_id']);
                 die();
             }
             $imagesUploadedTmp = $_FILES['images']['tmp_name'];
 
             foreach ($imagesUploadedTmp as $imageTmpName) {
                 $prefix = substr($imageTmpName, -8, -4);
-                $destination = '../../puppies_img/' . $puppy['puppy_id'] . '-' . $prefix . '.jpg';
+                $destination = '../../puppies_img/' . $_POST['puppy_id'] . '-' . $prefix . '.jpg';
                 move_uploaded_file($imageTmpName, $destination);
                 $stmt = $conn->prepare(savePuppyImages());
-                $stmt->bindParam(':dogId', $puppy['puppy_id']);
+                $stmt->bindParam(':dogId', $_POST['puppy_id']);
                 $stmt->bindParam(':path', $destination);
                 $stmt->execute();
 
@@ -66,20 +67,18 @@ if (check_session_start($_SESSION)) {
         }
 
         $stmt = $conn->prepare(updatePuppy());
-        $stmt->bindParam(':id', $puppy['puppy_id']);
-        $stmt->bindParam(':name', $puppy['name']);
-        $stmt->bindParam(':sex', $puppy['sex']);
-        $stmt->bindParam(':available', $puppy['available']);
-        $stmt->bindParam(':description', $puppy['description']);
-        $stmt->bindParam(':mother_name', $puppy['mother_name']);
-        $stmt->bindParam(':mother_adn', $puppy['mother_adn']);
-        $stmt->bindParam(':mother_champion', $puppy['mother_champion']);
-        $file_name = $puppy['puppy_id'] . '-' . strtolower($puppy['name']);
+        $stmt->bindParam(':id', $_POST['puppy_id']);
+        $stmt->bindParam(':name', $_POST['name']);
+        $stmt->bindParam(':sex', $_POST['sex']);
+        $stmt->bindParam(':color', $_POST['color']);
+        $stmt->bindParam(':available', $_POST['available']);
+        $stmt->bindParam(':description', $_POST['description']);
+        $file_name = $_POST['puppy_id'] . '-' . strtolower($_POST['name']);
 
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
             //Vérification d'une erreur suite à une image trop lourde
             if (isset($_FILES['main_img_path']['error']) && $_FILES['main_img_path']['error'] === 2) {
-                header('Location:./crud.php?error=2&id=' . $puppy['puppy_id']);
+                header('Location:./crud.php?error=2&id=' . $_POST['puppy_id']);
                 die();
             }
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
@@ -88,7 +87,7 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':main_img_path',  $file_destination);
         } else {
             $stateImg = $conn->prepare(getPuppyFromId());
-            $stateImg->bindParam(':id', $puppy['puppy_id']);
+            $stateImg->bindParam(':id', $_POST['puppy_id']);
             $stateImg->execute();
             $puppyImgDb = $stateImg->fetch(PDO::FETCH_ASSOC);
             $stmt->bindValue(':main_img_path', $puppyImgDb['main_img_path']);
@@ -104,16 +103,21 @@ if (check_session_start($_SESSION)) {
     // Create
     elseif (isset($_POST['name'])) {
 
-        $puppy = $_POST;
+        $enable = 1;
+        $LitterNull = 7;
+
         $stmt = $conn->prepare(createPuppy());
-        $stmt->bindParam(':name', $puppy['name']);
-        $stmt->bindParam(':sex', $puppy['sex']);
-        $stmt->bindParam(':available', $puppy['available']);
-        $stmt->bindParam(':description', $puppy['description']);
-        $stmt->bindParam(':mother_name', $puppy['mother_name']);
-        $stmt->bindParam(':mother_adn', $puppy['mother_adn']);
-        $stmt->bindParam(':mother_champion', $puppy['mother_champion']);
+        $stmt->bindParam(':name', $_POST['name']);
+        $stmt->bindParam(':sex', $_POST['sex']);
+        $stmt->bindParam(':color', $_POST['color']);
+        $stmt->bindParam(':available', $_POST['available']);
+        $stmt->bindParam(':description', $_POST['description']);
+        $stmt->bindParam(':enable', $enable);
+        $stmt->bindParam(':litter_id', $LitterNull);
         $file_destination = '../../puppies_img/default.jpg';
+        // $stmt->bindParam(':mother_name', $_POST['mother_name']);
+        // $stmt->bindParam(':mother_adn', $_POST['mother_adn']);
+        // $stmt->bindParam(':mother_champion', $_POST['mother_champion']);
 
         $stmt_id = $conn->prepare("SELECT id from puppies");
         $stmt_id->execute();
@@ -158,6 +162,7 @@ if (check_session_start($_SESSION)) {
             }
         }
         try {
+            var_dump($stmt);
             $stmt->execute();
             header('Location:../puppies.php');
         } catch (PDOException $e) {
