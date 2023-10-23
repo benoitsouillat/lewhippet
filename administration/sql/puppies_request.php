@@ -12,9 +12,8 @@ function getAllPuppiesByPosition()
 
 function createPuppy()
 {
-    return "INSERT INTO 
-    `puppy_class` (name, sex, color, description, available, position, enable, litter_id, main_img_path) 
-    VALUES (:name, :sex, :color, :description, :available, :position, :enable, :litter_id, :main_img_path)";
+    return "INSERT INTO `puppy_class` (name, sex, color, description, available, enable, Litter, main_img_path, position) 
+    VALUES (:name, :sex, :color, :description, :available, :enable, :litter_id, :main_img_path, :position)";
 }
 
 function updatePuppy()

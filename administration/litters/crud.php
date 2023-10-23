@@ -72,7 +72,7 @@ if (check_session_start($_SESSION)) {
             $stmt->execute();
             if (!isset($_POST['litter_id'])) {
                 $litter->generatePuppiesMales($conn);
-                $litter->generatePuppiesFemales();
+                $litter->generatePuppiesFemales($conn);
             }
             header('Location:../litters.php');
         } catch (PDOException $e) {
