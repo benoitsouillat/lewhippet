@@ -108,30 +108,35 @@
                                     <p class='alert alert-" . $availableColor . "'> {$puppy->getAvailable()}</p>
                                 </div>";
                                 if ($puppy->getLitter()->getMother()->getName() != null) {
-                                    echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
-                                    <div class='dog-parents col-7'>
-                                <p class='description text-left w-100'> Issu de " . ucfirst($puppy->getLitter()->getMother()->getName()) . " et de " . ucfirst($puppy->getLitter()->getFather()->getName()) . "</p>
-                                <div class='dog-parents-img d-flex flex-row justify-content-around flex-shrink-1'>
-                                <img class='mother-img' src='" . $puppy->getLitter()->getMother()->getMainImgPath() . "'>
-                                <img class='father-img' src='" . $puppy->getLitter()->getFather()->getMainImgPath() . "'></div>
-                                <p class='litter-number'>Portée N° " .  $puppy->getLitter()->getLitterNumberSCC() . "
-                                </div>";
                                     if ($puppy->getLitter()->getMother()->getIsAdn() || $puppy->getLitter()->getMother()->getIsChampion()) {
-                                        echo "<div class='d-flex flex-row justify-content-end flex-wrap w-25 mb-3'>";
+                                        echo "<div class='d-flex flex-row justify-content-around'>
+                                        <div class='col-5'></div>";
+
+                                        echo "<div class='d-flex flex-row justify-content-end mb-3'>";
                                         if ($puppy->getLitter()->getMother()->getIsAdn()) {
                                             echo "<span class='badge badge-pink'>ADN Vérifiée</span>";
                                         }
                                         if ($puppy->getLitter()->getMother()->getIsChampion()) {
                                             echo "<span class='badge badge-blue'>Championne</span>";
                                         }
-                                        echo "</div>";
+                                        echo "</div></div>";
+                                        echo "
+                                        <p class='description text-left'> Issu de " . ucfirst($puppy->getLitter()->getMother()->getName()) . " et de " . ucfirst($puppy->getLitter()->getFather()->getName()) . "</p>";
                                     }
+
+                                    echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
+                            <div class='dog-parents col-12'>
+                                <div class='dog-parents-img d-flex flex-row justify-content-around flex-shrink-1'>
+                                    <img class='mother-img' src='" . $puppy->getLitter()->getMother()->getMainImgPath() . "'>
+                                    <img class='father-img' src='" . $puppy->getLitter()->getFather()->getMainImgPath() . "'>
+                                </div>
+                                <p class='litter-number mt-2 description text-left '>Portée N° " .  $puppy->getLitter()->getLitterNumberSCC() . "
+                            </div>";
                                     echo "</div>";
                                 }
                                 echo "<p class='description'>{$puppy->getDescription()}</p>
                                 </figcaption>
                             </figure>
-                            }
                         </div>";
                             }
                         endwhile;
