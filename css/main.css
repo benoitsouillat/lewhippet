@@ -85,12 +85,101 @@
     white-space: nowrap;
   }
 }
-.index_content h2, .index_content h3 {
+.index_content h2,
+.index_content h3 {
   text-align: center;
   color: #572d54;
 }
-.index_content h2 a, .index_content h3 a {
+.index_content h2 a,
+.index_content h3 a {
   color: #572d54;
+}
+
+.sommaire_content h2 {
+  text-decoration: underline;
+}
+@media all and (min-width: 380px) {
+  .sommaire_content h2 {
+    white-space: nowrap;
+  }
+}
+.sommaire_content h2,
+.sommaire_content h3 {
+  text-align: center;
+  color: #572d54;
+}
+.sommaire_content h2 a,
+.sommaire_content h3 a {
+  color: #572d54;
+}
+.sommaire_content .sommaire_bb_dispo {
+  margin-top: 0;
+  padding-bottom: 20px;
+}
+.sommaire_content .sommaire_bb_dispo .sommaire_img_bb {
+  max-width: 992px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@media all and (max-width: 576px) {
+  .sommaire_content .sommaire_bb_dispo .sommaire_img_bb {
+    flex-wrap: wrap;
+  }
+}
+.sommaire_content .sommaire_bb_dispo .sommaire_img_bb img {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 2px 4px 12px #73264d;
+}
+.sommaire_content .sommaire_bb_dispo .sommaire_img_bb p {
+  font-size: 1.1rem;
+  max-width: 45%;
+  padding: 15px;
+  margin-left: 20px;
+}
+@media all and (max-width: 576px) {
+  .sommaire_content .sommaire_bb_dispo .sommaire_img_bb p {
+    padding-top: 20px;
+    max-width: 100%;
+  }
+}
+.sommaire_content .sommaire_informations {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.sommaire_content .sommaire_informations aside {
+  flex-grow: 1;
+  padding: 5%;
+  padding-top: 5px;
+  border: solid 2px #683664;
+  max-width: 49%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+@media all and (max-width: 768px) {
+  .sommaire_content .sommaire_informations aside {
+    max-width: 100%;
+    min-width: 70%;
+    border-bottom: unset;
+  }
+}
+.sommaire_content .sommaire_informations aside p {
+  padding-top: 25px;
+  font-size: 1.1rem;
+}
+.sommaire_content .sommaire_informations aside img {
+  max-width: 80%;
+  width: 450px;
+  box-shadow: 4px 4px 16px #816213;
 }
 
 #index_bb {
@@ -151,11 +240,11 @@
   padding: 10px;
   padding-bottom: 50px;
   /* Propriété à developper pour afficher des images larges mais pas trop hautes - Design Review
-    div {
-      max-height: 220px;
-      border: solid 2px red;
-      overflow: hidden;
-    } */
+  div {
+    max-height: 220px;
+    border: solid 2px red;
+    overflow: hidden;
+  } */
 }
 .index__expo__result img {
   max-width: 75%;
