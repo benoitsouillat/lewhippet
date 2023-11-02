@@ -1,0 +1,145 @@
+@import "_variables";
+
+
+/* Menu */
+@mixin menu {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    .menu {
+      margin-top: 0;
+      padding-top: 2px;
+      width: 100%;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: nowrap;
+      font-weight: bold;
+      font-family: 'Trebuchet MS', Helvetica, sans-serif;
+
+      @media all and (max-width: $md) {
+        font-size: 0.9em;
+      }
+
+      .nav-link,
+      .social {
+        height: $nav-height;
+        padding: 2px;
+
+        .bi {
+          color: $title-primary-color;
+          font-size: xx-large;
+
+          &:hover {
+            color: goldenrod;
+          }
+
+          @media all and (max-width: $sm) {
+            font-size: x-large;
+          }
+        }
+      }
+
+      .nav-link {
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+
+      .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      span {
+        font-size: large;
+
+        @media all and (max-width: $md) {
+          display: none;
+        }
+      }
+
+      .menu_link {
+        color: darken($pink, 30);
+        list-style-type: none;
+        text-decoration: none;
+        transition: all 0.3s ease-in;
+        padding-right: 5px;
+        padding-left: 5px;
+
+        @media all and (max-width: 325px) {
+          padding: 2px;
+        }
+
+        @media all and (max-width: 300px) {
+          padding: 1px;
+        }
+
+        @media all and (min-width: $lg) {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        &:hover {
+          font-weight: bold;
+          text-decoration: underline;
+          transform: scale(1.1) translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+@mixin white_menu {
+  @include menu;
+
+  header {
+    background-color: #fff;
+    color: goldenrod;
+
+    .menu {
+      color: goldenrod;
+
+      .menu_link {
+        color: goldenrod;
+      }
+    }
+  }
+}
+
+@mixin dark_menu {
+  @include menu;
+
+  header {
+    background-color: #000;
+    color: beige;
+
+    .menu {
+      color: beige;
+
+      .menu_link {
+        color: beige;
+
+        &:hover {
+          color: goldenrod;
+        }
+      }
+    }
+  }
+}
+
+@mixin pink_button {
+  text-align: center !important;
+  color: white !important;
+  background-color: darken($pink, 10) !important;
+  border: 5%;
+}
