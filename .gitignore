@@ -32,6 +32,7 @@ secret/*
 !repros_img/default.jpg
 !secret/bddScript.php
 !secret/bddDeleteSomeData.php
+!css/component/_*
 !_*.scss
 
 
