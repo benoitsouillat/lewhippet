@@ -115,7 +115,8 @@
       margin: 5px 0.8%;
       padding-top: 5px;
       //background-color: rgb(71, 71, 71);
-      background-image: url("../../images/bg_card_blue.jpeg");
+      //background-image: url("../../images/bande_ciolet.avif");
+      background: linear-gradient(135deg, rgb(12, 12, 12) 3%, darken($violet, 5));
       background-repeat: no-repeat;
       background-size: cover;
       background-position: top;
@@ -124,6 +125,14 @@
       min-width: 330px;
       min-height: 55vh;
       max-width: 98%;
+
+      // min-height: 27vh;
+      // max-height: 27vh;
+      // overflow: hidden;
+
+      // &:hover {
+      //   min-height: 70vh;
+      // }
 
       @media all and (min-width: $sm) {
         max-width: 65%

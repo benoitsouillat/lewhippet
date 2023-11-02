@@ -53,25 +53,24 @@
 .card {
     .arrow-div {
         width: 100%;
-        position: absolute;
-        top: 20%;
+        position: relative;
+        top: -140px;
     }
 
     .left-arrow,
     .right-arrow {
-        position: absolute;
-        left: 2%;
-        height: 30%;
+        position: relative;
+        right: 30%;
     }
 
     .right-arrow {
-        left: unset;
-        right: 2%;
+        left: 30%;
     }
 
     .bi.bi-caret-right,
     .bi-caret-left {
         font-size: 30px;
+        z-index: 1000;
     }
 
     .diapo-container {
