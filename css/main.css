@@ -482,7 +482,7 @@ address {
   border: solid 1px #C69;
   margin: 5px 0.8%;
   padding-top: 5px;
-  background: linear-gradient(135deg, rgb(12, 12, 12) 3%, #793e74);
+  background: linear-gradient(170deg, #572d54 50%, rgb(12, 12, 12));
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
