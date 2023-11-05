@@ -534,7 +534,10 @@ address {
   border: solid 1px #C69;
   margin: 5px 0.8%;
   padding-top: 5px;
-  background-color: rgb(71, 71, 71);
+  background: linear-gradient(170deg, #572d54 50%, rgb(12, 12, 12));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
   flex-basis: 330px;
   min-width: 330px;
   min-height: 55vh;
