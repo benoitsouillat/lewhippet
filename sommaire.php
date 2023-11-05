@@ -25,7 +25,7 @@
         ?>
         <div class="sommaire_content">
             <section class="sommaire_bb_dispo container-fluid bg-light ">
-                <div class="w-100 col-12 text-center d-flex flex-column justify-content-center flex-wrap">
+                <div class="d-flex flex-column justify-content-center flex-wrap">
                     <h2 class="col-12">Retrouvez le carnet rose de nos chiots whippets</h2>
                     <div class="sommaire_img_bb">
                         <a href="/chiots/bb_dispo.php"> <img src="/chiots_img/illus_fichier/10032014_119.jpg" alt="Levrier Whippet Disponible"> </a>
