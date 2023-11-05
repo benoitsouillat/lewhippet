@@ -453,6 +453,16 @@ address {
   flex-wrap: wrap;
 }
 
+.litters-container {
+  min-width: 85%;
+}
+.litters-container .parents {
+  width: 100%;
+}
+.litters-container img {
+  max-height: 250px;
+}
+
 .puppies_container .gallery_php {
   display: flex;
   flex-direction: row;
@@ -479,7 +489,6 @@ address {
   opacity: 0.9;
   flex-basis: 330px;
   min-width: 330px;
-  min-height: 55vh;
   max-width: 98%;
 }
 @media all and (min-width: 576px) {
@@ -512,7 +521,7 @@ address {
 .puppies_container .gallery_php .card figure {
   box-sizing: border-box;
   width: 100%;
-  height: 700px;
+  height: 500px;
   max-width: unset;
   margin: auto 0;
   color: #c5c5c5;

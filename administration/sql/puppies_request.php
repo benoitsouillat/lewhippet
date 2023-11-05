@@ -9,6 +9,10 @@ function getAllPuppiesByPosition()
 {
     return "SELECT * FROM puppies ORDER BY position";
 };
+function getAllPuppiesByPositionAndLitter()
+{
+    return "SELECT * FROM puppies WHERE Litter = :litter_id ORDER BY position";
+};
 
 function createPuppy()
 {

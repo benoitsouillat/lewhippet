@@ -50,97 +50,186 @@
                         <?php
                         require_once('../secret/connexion.php');
                         require_once('../administration/sql/puppies_request.php');
+                        require_once('../administration/utilities/usefull_functions.php');
                         require_once('../php/component/display-functions.php');
                         require_once('../administration/classes/Puppy.php');
+                        require_once('../administration/classes/Litter.php');
 
-                        $stmt = $conn->query(getAllPuppiesByPosition());
 
-                        while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
-                            $puppy = new Puppy;
-                            $puppy->fillFromStdClass($puppyData, $conn);
-                            $availableColor = getAvailableColor($puppy->getAvailable());
-                            $sexColor = getSexColor($puppy->getSex());
+                        $stmtLitter = $conn->query(getAllLitters());
+                        while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
+                            $litter = new Litter;
+                            $litter->fillFromStdClass($litterData, $conn);
 
-                            $stmtForPuppyImages = $conn->prepare(getPuppyImages());
-                            $stmtForPuppyImages->bindParam(':dogId', $puppyData->id);
-                            $stmtForPuppyImages->execute();
-                            $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
-
-                            if ($puppy->getEnable() == true) {
-                                echo "<div class='card'>
-                            <figure class='m-0 p-0'>
-                                <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$puppyData->id}>
-                                    <div class='diapo diapo-{$puppyData->id}'>
-                                    <img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
-                                    alt='Chiot Whippet Disponible' />
-                                    ";
-                                foreach ($puppyImages as $image) {
-                                    echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100' loading='lazy'>";
-                                }
-                                if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
-                                    echo "<img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
-                                            alt='Chiot Whippet Disponible' loading='lazy'/>
+                            echo "<div class='border-3 border-dark litters-container'>
+                            <h2>Naissance des bébés de {$litter->getMother()->getName()} et de {$litter->getFather()->getName()} </h2>
+                                <div class='text-center parents d-flex flex-row justify-content-around'>
+                                    <div class='mother w-50'>
+                                        <img class='m-0 p-0' loading='lazy' src='{$litter->getMother()->getMainImgPath()}' alt='{$litter->getMother()->getName()}'>
+                                        <p><b>{$litter->getMother()->getName()}</b></p>
+                                    </div>
+                                    <div class='father w-50'>
+                                        <img class='m-0 p-0' loading='lazy' src='{$litter->getFather()->getMainImgPath()}' alt='{$litter->getFather()->getName()}'>
+                                        <p><b>{$litter->getFather()->getName()}</b></p>
                                     </div>
                                 </div>
-                                <div class='arrow-div'>
-                                    <button class='left-arrow bg-transparent border-0'>
-                                        <span class='bi bi-caret-left bi-caret-left-{$puppy->getId()} text-light'></span>
-                                    </button>
-                                    <button class='right-arrow bg-transparent border-0'>
-                                        <span class='bi bi-caret-right bi-caret-right-{$puppy->getId()} text-light'></span>
-                                    </button>
+                                <p class='col-12 text-center'>{$litter->getNumberPuppies()} bébés sont nés ce " .
+                                trad_month(date('d F Y', strtotime($litter->getBirthdate()))) . ", {$litter->getNumberFemales()} femelle(s) et {$litter->getNumberMales()} mâle(s).</p>
                                 </div>";
-                                } else {
-                                    echo "</div>
-                                </div>";
-                                }
-                                echo "
-                                <figcaption class='m-0 p-0'>
-                                    <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
-                                        <h4>";
 
-                                echo "<span class='text-center'>{$puppy->getName()} </span>";
-                                if ($puppy->getSex() === 'Male' || $puppy->getSex() === 'male') {
-                                    echo " <i class='bi bi-gender-male'> </i> ";
-                                } else {
-                                    echo " <i class='bi bi-gender-female'> </i>";
-                                }
-                                echo "</h4>
-                                    <p class='alert alert-" . $availableColor . "'> {$puppy->getAvailable()}</p>
-                                </div>";
-                                if ($puppy->getLitter()->getMother()->getName() != null) {
-                                    if ($puppy->getLitter()->getMother()->getIsAdn() || $puppy->getLitter()->getMother()->getIsChampion()) {
-                                        echo "<div class='d-flex flex-row justify-content-around'>
-                                        <div class='col-5'></div>";
 
-                                        echo "<div class='d-flex flex-row justify-content-end mb-3'>";
-                                        if ($puppy->getLitter()->getMother()->getIsAdn()) {
-                                            echo "<span class='badge badge-pink'>ADN Vérifiée</span>";
-                                        }
-                                        if ($puppy->getLitter()->getMother()->getIsChampion()) {
-                                            echo "<span class='badge badge-blue'>Championne</span>";
-                                        }
-                                        echo "</div></div>";
-                                        echo "
-                                        <p class='description text-left'> Issu de " . ucfirst($puppy->getLitter()->getMother()->getName()) . " et de " . ucfirst($puppy->getLitter()->getFather()->getName()) . "</p>";
+                            $stmtPuppy = $conn->prepare(getAllPuppiesByPositionAndLitter());
+                            $stmtPuppy->bindValue(':litter_id', $litter->getId());
+                            $stmtPuppy->execute();
+
+                            while ($puppyData = $stmtPuppy->fetch(PDO::FETCH_OBJ)) :
+
+                                $puppy = new Puppy;
+                                $puppy->fillFromStdClass($puppyData, $conn);
+                                $availableColor = getAvailableColor($puppy->getAvailable());
+                                $sexColor = getSexColor($puppy->getSex());
+
+                                $stmtForPuppyImages = $conn->prepare(getPuppyImages());
+                                $stmtForPuppyImages->bindParam(':dogId', $puppyData->id);
+                                $stmtForPuppyImages->execute();
+                                $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
+
+
+                                if ($puppy->getEnable() == true) {
+                                    echo "<div class='card'>
+                                <figure class='m-0 p-0'>
+                                    <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$puppyData->id}>
+                                        <div class='diapo diapo-{$puppyData->id}'>
+                                        <img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
+                                        alt='Chiot Whippet Disponible' />
+                                        ";
+                                    foreach ($puppyImages as $image) {
+                                        echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100' loading='lazy'>";
                                     }
+                                    if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
+                                        echo "<img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
+                                                alt='Chiot Whippet Disponible' loading='lazy'/>
+                                        </div>
+                                    </div>
+                                    <div class='arrow-div'>
+                                        <button class='left-arrow bg-transparent border-0'>
+                                            <span class='bi bi-caret-left bi-caret-left-{$puppy->getId()} text-light'></span>
+                                        </button>
+                                        <button class='right-arrow bg-transparent border-0'>
+                                            <span class='bi bi-caret-right bi-caret-right-{$puppy->getId()} text-light'></span>
+                                        </button>
+                                    </div>";
+                                    } else {
+                                        echo "</div>
+                                    </div>";
+                                    }
+                                    echo "
+                                    <figcaption class='m-0 p-0'>
+                                        <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
+                                            <h4>";
 
-                                    echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
-                            <div class='dog-parents col-12'>
-                                <div class='dog-parents-img d-flex flex-row justify-content-around flex-shrink-1'>
-                                    <img class='mother-img' src='" . $puppy->getLitter()->getMother()->getMainImgPath() . "'>
-                                    <img class='father-img' src='" . $puppy->getLitter()->getFather()->getMainImgPath() . "'>
-                                </div>
-                                <p class='litter-number mt-2 description text-left '>Portée N° " .  $puppy->getLitter()->getLitterNumberSCC() . "
-                            </div>";
-                                    echo "</div>";
+                                    echo "<span class='text-center'>{$puppy->getName()} </span>";
+                                    if ($puppy->getSex() === 'Male' || $puppy->getSex() === 'male') {
+                                        echo " <i class='bi bi-gender-male'> </i> ";
+                                    } else {
+                                        echo " <i class='bi bi-gender-female'> </i>";
+                                    }
+                                    echo "</h4>
+                                        <p class='alert alert-" . $availableColor . "'> {$puppy->getAvailable()}</p>
+                                    </div><p class='description'>{$puppy->getDescription()}</p>
+                                    </figcation>
+                                    </figure></div>";
                                 }
-                                echo "<p class='description'>{$puppy->getDescription()}</p>
-                                </figcaption>
-                            </figure>
-                        </div>";
-                            }
+                            endwhile;
                         endwhile;
+
+                        // $stmt = $conn->query(getAllPuppiesByPosition());
+                        // while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
+                        //     $puppy = new Puppy;
+                        //     $puppy->fillFromStdClass($puppyData, $conn);
+                        //     $availableColor = getAvailableColor($puppy->getAvailable());
+                        //     $sexColor = getSexColor($puppy->getSex());
+
+                        //     $stmtForPuppyImages = $conn->prepare(getPuppyImages());
+                        //     $stmtForPuppyImages->bindParam(':dogId', $puppyData->id);
+                        //     $stmtForPuppyImages->execute();
+                        //     $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
+
+                        //     if ($puppy->getEnable() == true) {
+                        //         echo "<div class='card'>
+                        //     <figure class='m-0 p-0'>
+                        //         <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$puppyData->id}>
+                        //             <div class='diapo diapo-{$puppyData->id}'>
+                        //             <img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
+                        //             alt='Chiot Whippet Disponible' />
+                        //             ";
+                        //         foreach ($puppyImages as $image) {
+                        //             echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100' loading='lazy'>";
+                        //         }
+                        //         if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
+                        //             echo "<img class='m-0 p-0 w-100' src='{$puppy->getMainImgPath()}'
+                        //                     alt='Chiot Whippet Disponible' loading='lazy'/>
+                        //             </div>
+                        //         </div>
+                        //         <div class='arrow-div'>
+                        //             <button class='left-arrow bg-transparent border-0'>
+                        //                 <span class='bi bi-caret-left bi-caret-left-{$puppy->getId()} text-light'></span>
+                        //             </button>
+                        //             <button class='right-arrow bg-transparent border-0'>
+                        //                 <span class='bi bi-caret-right bi-caret-right-{$puppy->getId()} text-light'></span>
+                        //             </button>
+                        //         </div>";
+                        //         } else {
+                        //             echo "</div>
+                        //         </div>";
+                        //         }
+                        //         echo "
+                        //         <figcaption class='m-0 p-0'>
+                        //             <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
+                        //                 <h4>";
+
+                        //         echo "<span class='text-center'>{$puppy->getName()} </span>";
+                        //         if ($puppy->getSex() === 'Male' || $puppy->getSex() === 'male') {
+                        //             echo " <i class='bi bi-gender-male'> </i> ";
+                        //         } else {
+                        //             echo " <i class='bi bi-gender-female'> </i>";
+                        //         }
+                        //         echo "</h4>
+                        //             <p class='alert alert-" . $availableColor . "'> {$puppy->getAvailable()}</p>
+                        //         </div>";
+                        //         if ($puppy->getLitter()->getMother()->getName() != null) {
+                        //             if ($puppy->getLitter()->getMother()->getIsAdn() || $puppy->getLitter()->getMother()->getIsChampion()) {
+                        //                 echo "<div class='d-flex flex-row justify-content-around'>
+                        //                 <div class='col-5'></div>";
+
+                        //                 echo "<div class='d-flex flex-row justify-content-end mb-3'>";
+                        //                 if ($puppy->getLitter()->getMother()->getIsAdn()) {
+                        //                     echo "<span class='badge badge-pink'>ADN Vérifiée</span>";
+                        //                 }
+                        //                 if ($puppy->getLitter()->getMother()->getIsChampion()) {
+                        //                     echo "<span class='badge badge-blue'>Championne</span>";
+                        //                 }
+                        //                 echo "</div></div>";
+                        //                 echo "
+                        //                 <p class='description text-left'> Issu de " . ucfirst($puppy->getLitter()->getMother()->getName()) . " et de " . ucfirst($puppy->getLitter()->getFather()->getName()) . "</p>";
+                        //             }
+
+                        //             echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
+                        //     <div class='dog-parents col-12'>
+                        //         <div class='dog-parents-img d-flex flex-row justify-content-around flex-shrink-1'>
+                        //             <img class='mother-img' src='" . $puppy->getLitter()->getMother()->getMainImgPath() . "'>
+                        //             <img class='father-img' src='" . $puppy->getLitter()->getFather()->getMainImgPath() . "'>
+                        //         </div>
+                        //         <p class='litter-number mt-2 description text-left '>Portée N° " .  $puppy->getLitter()->getLitterNumberSCC() . "
+                        //     </div>";
+                        //             echo "</div>";
+                        //         }
+                        //         echo "<p class='description'>{$puppy->getDescription()}</p>
+                        //         </figcaption>
+                        //     </figure>
+                        // </div>";
+                        //     }
+                        // endwhile;
                         ?>
                 </div>
             </section>
