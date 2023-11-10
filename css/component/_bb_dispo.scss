@@ -54,9 +54,9 @@
 }
 
 .section_litter {
-  width: 90%;
+  width: 100%;
   margin: 10px auto;
-  padding: 15px;
+  padding: 0;
   border: $title-second-color 2px solid;
   box-shadow: $title-second-color $shadow-title;
   border-radius: 15px;
@@ -93,7 +93,22 @@
 }
 
 .litters-container {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   min-width: 85%;
+  width: 100%;
+  // background: linear-gradient(90deg, lightcoral, lightblue);
+  background: linear-gradient(180deg, lighten($violet, 30) 50%, #cfcfcf);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .card {
+    align-self: flex-start;
+  }
 
   .parents {
     width: 100%;
@@ -126,8 +141,6 @@
       border: solid 1px $pink;
       margin: 5px 0.8%;
       padding-top: 5px;
-      //background-color: rgb(71, 71, 71);
-      //background-image: url("../../images/bande_ciolet.avif");
       background: linear-gradient(170deg, darken($violet, 15) 50%, rgb(12, 12, 12));
       background-repeat: no-repeat;
       background-size: cover;
@@ -135,7 +148,7 @@
       opacity: 0.9;
       flex-basis: 330px;
       min-width: 330px;
-      max-width: 98%;
+      max-width: 350px;
 
       // min-height: 27vh;
       // max-height: 27vh;
@@ -145,17 +158,17 @@
       //   min-height: 70vh;
       // }
 
-      @media all and (min-width: $sm) {
-        max-width: 65%
-      }
+      // @media all and (min-width: $sm) {
+      //   max-width: 65%
+      // }
 
-      @media all and (min-width: $lg) {
-        max-width: 45%;
-      }
+      // @media all and (min-width: $lg) {
+      //   max-width: 45%;
+      // }
 
-      @media all and (min-width: $xl) {
-        max-width: 30%;
-      }
+      // @media all and (min-width: $xl) {
+      //   max-width: 30%;
+      // }
 
       img {
         max-width: 320px;
@@ -183,7 +196,6 @@
 
 
         h4 {
-          white-space: nowrap;
           margin: 0;
           margin-bottom: 5px;
         }
@@ -382,13 +394,5 @@
         font-size: 1em;
       }
     }
-  }
-}
-
-.xl {
-  max-width: 380px;
-
-  @media all and (max-width: $sm) {
-    max-width: 280px;
   }
 }

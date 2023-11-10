@@ -415,9 +415,9 @@ address {
 }
 
 .section_litter {
-  width: 90%;
+  width: 100%;
   margin: 10px auto;
-  padding: 15px;
+  padding: 0;
   border: #8a4784 2px solid;
   box-shadow: #8a4784 5px 5px 5px;
   border-radius: 15px;
@@ -454,7 +454,19 @@ address {
 }
 
 .litters-container {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   min-width: 85%;
+  width: 100%;
+  background: linear-gradient(180deg, #cd9dc8 50%, #cfcfcf);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.litters-container .card {
+  align-self: flex-start;
 }
 .litters-container .parents {
   width: 100%;
@@ -489,22 +501,7 @@ address {
   opacity: 0.9;
   flex-basis: 330px;
   min-width: 330px;
-  max-width: 98%;
-}
-@media all and (min-width: 576px) {
-  .puppies_container .gallery_php .card {
-    max-width: 65%;
-  }
-}
-@media all and (min-width: 992px) {
-  .puppies_container .gallery_php .card {
-    max-width: 45%;
-  }
-}
-@media all and (min-width: 1200px) {
-  .puppies_container .gallery_php .card {
-    max-width: 30%;
-  }
+  max-width: 350px;
 }
 .puppies_container .gallery_php .card img {
   max-width: 320px;
@@ -527,7 +524,6 @@ address {
   color: #c5c5c5;
 }
 .puppies_container .gallery_php .card figcaption h4 {
-  white-space: nowrap;
   margin: 0;
   margin-bottom: 5px;
 }
@@ -691,15 +687,6 @@ address {
   }
   .div_rose address a {
     font-size: 1em;
-  }
-}
-
-.xl {
-  max-width: 380px;
-}
-@media all and (max-width: 576px) {
-  .xl {
-    max-width: 280px;
   }
 }
 

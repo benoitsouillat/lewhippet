@@ -61,7 +61,7 @@
                             $litter = new Litter;
                             $litter->fillFromStdClass($litterData, $conn);
 
-                            echo "<div class='border-3 border-dark litters-container'>
+                            echo "<div class='litters-container'>
                             <h2>Naissance des bébés de {$litter->getMother()->getName()} et de {$litter->getFather()->getName()} </h2>
                                 <div class='text-center parents d-flex flex-row justify-content-around'>
                                     <div class='mother w-50'>
@@ -75,7 +75,7 @@
                                 </div>
                                 <p class='col-12 text-center'>{$litter->getNumberPuppies()} bébés sont nés ce " .
                                 trad_month(date('d F Y', strtotime($litter->getBirthdate()))) . ", {$litter->getNumberFemales()} femelle(s) et {$litter->getNumberMales()} mâle(s).</p>
-                                </div>";
+                                ";
 
 
                             $stmtPuppy = $conn->prepare(getAllPuppiesByPositionAndLitter());
@@ -141,6 +141,7 @@
                                     </figure></div>";
                                 }
                             endwhile;
+                            echo "</div>";
                         endwhile;
 
                         // $stmt = $conn->query(getAllPuppiesByPosition());
