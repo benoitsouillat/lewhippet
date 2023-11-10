@@ -465,6 +465,16 @@ address {
   align-items: center;
   flex-wrap: wrap;
 }
+.litters-container h2 {
+  color: #f2f2f2;
+  text-shadow: 2px 2px 5px grey;
+  text-wrap: nowrap;
+}
+@media all and (max-width: 768px) {
+  .litters-container h2 {
+    text-wrap: balance;
+  }
+}
 .litters-container .card {
   align-self: flex-start;
 }
@@ -526,6 +536,7 @@ address {
 .puppies_container .gallery_php .card figcaption h4 {
   margin: 0;
   margin-bottom: 5px;
+  text-wrap: balance;
 }
 .puppies_container .gallery_php .card figcaption p {
   margin: unset;
