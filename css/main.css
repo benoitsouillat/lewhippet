@@ -461,9 +461,11 @@ address {
   background: linear-gradient(180deg, #cd9dc8 50%, #cfcfcf);
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 12px;
+  overflow: hidden;
 }
 .litters-container h2 {
   color: #f2f2f2;
@@ -501,17 +503,20 @@ address {
   flex-wrap: nowrap;
   flex-grow: 1;
   box-sizing: border-box;
-  border: solid 1px #C69;
-  margin: 5px 0.8%;
+  border-radius: unset;
+  margin: 7px 10px;
   padding-top: 5px;
-  background: linear-gradient(170deg, #572d54 50%, rgb(12, 12, 12));
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  opacity: 0.9;
+  background: transparent;
   flex-basis: 330px;
   min-width: 330px;
   max-width: 350px;
+  border: solid 1px grey;
+  transition: border, box-shadow 0.5s ease;
+}
+.puppies_container .gallery_php .card:hover {
+  border-left: solid 3px grey;
+  border-right: solid 3px grey;
+  box-shadow: grey 2px 2px 50px;
 }
 .puppies_container .gallery_php .card img {
   max-width: 320px;
@@ -531,12 +536,13 @@ address {
   height: 500px;
   max-width: unset;
   margin: auto 0;
-  color: #c5c5c5;
+  color: black;
 }
 .puppies_container .gallery_php .card figcaption h4 {
   margin: 0;
   margin-bottom: 5px;
   text-wrap: balance;
+  flex-grow: 1;
 }
 .puppies_container .gallery_php .card figcaption p {
   margin: unset;
