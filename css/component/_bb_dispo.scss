@@ -158,15 +158,16 @@
       background: transparent;
       flex-basis: 330px;
       min-width: 330px;
-      max-width: 350px;
-      border: solid 1px grey;
+      max-width: 370px;
+      border-radius: 10px;
+      border: solid 1px darken(white, 20);
 
 
-      transition: border, box-shadow .5s ease;
+      transition: border .8s ease, box-shadow .8s ease, border-radius .8s ease;
 
       &:hover {
-        border-left: solid 3px grey;
-        border-right: solid 3px grey;
+        border-radius: unset;
+        border: solid 1px black;
         box-shadow: grey 2px 2px 50px;
 
       }
@@ -179,8 +180,7 @@
         left: -1px;
         height: 250px;
         margin-top: 2px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+
       }
 
       figure {
