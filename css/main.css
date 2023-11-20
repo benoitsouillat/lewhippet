@@ -1228,10 +1228,14 @@ img {
     display: none;
   }
 }
+@media all and (max-width: 801px) {
+  .bandeau_title .logo {
+    display: none;
+  }
+}
 .bandeau_title .logo img {
   border: none;
-  width: 154px;
-  height: 101px;
+  height: 220px;
 }
 .bandeau_title .logo .slogan {
   font-style: italic;
