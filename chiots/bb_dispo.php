@@ -37,15 +37,6 @@
                 <h3>Nos chiots Whippet disponibles</h3>
                 <hr>
                 <div class="gallery">
-                    <figure>
-                        <video autoplay controls muted class="puppies_img xl">
-                            <source src="/chiots_img/2022/repas.mp4" type="video/mp4">
-                            Pour voir la vidéo, mettez à jour votre navigateur ou installez Google Chrome
-                        </video>
-                        <br>
-                        <br>
-                        <figcaption>Premier Repas pour nos bébés !! </figcaption>
-                    </figure>
                     <section class="col-12 gallery_php">
                         <?php
                         require_once('../secret/connexion.php');
@@ -63,15 +54,50 @@
 
                             echo "<div class='litters-container'>
                             <h2>Naissance des bébés de {$litter->getMother()->getName()} et de {$litter->getFather()->getName()} </h2>
-                                <div class='text-center parents d-flex flex-row justify-content-around'>
-                                    <div class='mother w-50'>
-                                        <img class='m-0 p-0' loading='lazy' src='{$litter->getMother()->getMainImgPath()}' alt='{$litter->getMother()->getName()}'>
-                                        <p><b>{$litter->getMother()->getName()}</b></p>
-                                    </div>
+                                <div class='parents'>
+                                    <div class='mother w-50'><section>
+                                        <img loading='lazy' src='{$litter->getMother()->getMainImgPath()}' alt='{$litter->getMother()->getName()}'>
+                                        <p><b>{$litter->getMother()->getName()}</b><br> {$litter->getMother()->getBreeder()}</p>
+                                        <p>Couleur : {$litter->getMother()->getColor()}</p>
+                                        <p>Puce : {$litter->getMother()->getInsert()}</p>
+                                        <p>{$litter->getMother()->getDescription()}</p>
+                                        <button class='btn btn-pink lof-select-link'><a href='{$litter->getMother()->getLofselect()}' target='_blank'>Pedigree Lof Select</a></button>";
+
+                            if ($litter->getMother()->getIsAdn() || $litter->getMother()->getIsChampion()) {
+                                echo "<div class='pills'>";
+                                if ($litter->getMother()->getIsAdn()) {
+                                    echo "<span class='adn-pill'> ADN Validée </span>";
+                                }
+                                if ($litter->getMother()->getIsChampion()) {
+                                    echo "<span class='champion-pill'> Championnat Obtenu </span>";
+                                }
+                                echo "</div>";
+                            }
+
+                            echo "
+                                    </section></div>
                                     <div class='father w-50'>
-                                        <img class='m-0 p-0' loading='lazy' src='{$litter->getFather()->getMainImgPath()}' alt='{$litter->getFather()->getName()}'>
-                                        <p><b>{$litter->getFather()->getName()}</b></p>
-                                    </div>
+                                    <section>
+                                        <img loading='lazy' src='{$litter->getFather()->getMainImgPath()}' alt='{$litter->getFather()->getName()}'>
+                                        <p><b>{$litter->getFather()->getName()}</b><br> {$litter->getFather()->getBreeder()}</p>
+                                        <p>Couleur : {$litter->getFather()->getColor()}</p>
+                                        <p>Puce : {$litter->getFather()->getInsert()}</p>
+                                        
+                                        <p>{$litter->getFather()->getDescription()}</p>
+                                        <button class='btn btn-pink lof-select-link'><a href='{$litter->getFather()->getLofselect()}' target='_blank'>Pedigree Lof Select</a></button>";
+
+                            if ($litter->getFather()->getIsAdn() || $litter->getFather()->getIsChampion()) {
+                                echo "<div class='pills'>";
+                                if ($litter->getFather()->getIsAdn()) {
+                                    echo "<span class='adn-pill'> ADN Validée </span>";
+                                }
+                                if ($litter->getFather()->getIsChampion()) {
+                                    echo "<span class='champion-pill'> Championnat Obtenu </span>";
+                                }
+                                echo "</div>";
+                            }
+
+                            echo " </section></div>
                                 </div>
                                 <p class='col-12 text-center'>{$litter->getNumberPuppies()} bébés sont nés ce " .
                                 trad_month(date('d F Y', strtotime($litter->getBirthdate()))) . ", {$litter->getNumberFemales()} femelle(s) et {$litter->getNumberMales()} mâle(s).</p>
@@ -198,7 +224,7 @@
                         //         echo "</h4>
                         //             <p class='alert alert-" . $availableColor . "'> {$puppy->getAvailable()}</p>
                         //         </div>";
-                        //         if ($puppy->getLitter()->getMother()->getName() != null) {
+                        //         if ($puppy->getLitter()->getFather()->getName() != null) {
                         //             if ($puppy->getLitter()->getMother()->getIsAdn() || $puppy->getLitter()->getMother()->getIsChampion()) {
                         //                 echo "<div class='d-flex flex-row justify-content-around'>
                         //                 <div class='col-5'></div>";
