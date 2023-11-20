@@ -132,15 +132,12 @@
     align-items: flex-end;
     width: 100%;
 
-    img {
-      max-width: 90%;
-      margin: 10px;
-      box-shadow: 2px 2px 3px grey;
-      align-self: center;
-    }
-
     .mother {
       border-right: solid 1px black;
+
+      @media all and (min-width: $md) {
+        border-right: none;
+      }
     }
 
     .mother,
@@ -148,7 +145,14 @@
       box-sizing: border-box;
       margin-top: 0;
       margin-bottom: 20px;
+      max-width: 50%;
 
+      img {
+        max-width: 95%;
+        margin: 10px;
+        box-shadow: 2px 2px 3px grey;
+        align-self: center;
+      }
 
       section {
         max-width: 400px;
@@ -164,13 +168,18 @@
       }
 
       p {
-        width: 80%;
-        padding-left: 20px;
+        width: 100%;
+        padding-left: 5px;
 
-        @media all and (max-width: $sm) {
-          width: 100%;
-          padding-left: 5px;
+        @media all and (min-width: $sm) {
+          width: 80%;
+          padding-left: 20px;
         }
+      }
+
+      .dog_name_breeder {
+        text-align: center;
+        width: 100%;
       }
 
       a,
