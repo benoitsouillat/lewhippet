@@ -1,6 +1,6 @@
 <div class="bandeau_title">
     <div class="logo">
-        <img src="/chiots_img/logo_sabine_%20animation.gif" alt="Amour whippet">
+        <img src="/assets/logo/Blanc.png" alt="Amour whippet">
         <p class="slogan">Le Whippet un jour .. le whippet pour toujours.</p>
     </div>
     <section>

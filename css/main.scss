@@ -130,10 +130,13 @@ p {
       display: none;
     }
 
+    @media all and (max-width: 801px) {
+      display: none;
+    }
+
     img {
       border: none;
-      width: 154px;
-      height: 101px;
+      height: 220px;
 
     }
 
