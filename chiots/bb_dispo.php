@@ -24,17 +24,10 @@
         ?>
         <div class="journal_puppy">
             <h3>Bienvenue dans le journal des bébés de la Romance des damoiseaux</h3>
-            <h4>Voici nos chiots Whippet Disponibles</h4>
-        </div>
-
-        <div class="puppy_dispo">
-            <h5>Chiots Whippet Mâles et Femelles disponibles <span>(Photos et Vidéos à la demande)</span></h5>
-            <p>Nos dernières naissances des bébés whippet</p>
         </div>
         <div class="puppies_container">
             <section id="disponible" class="section_litter">
                 <h3>Nos chiots Whippet disponibles</h3>
-                <hr>
                 <div class="gallery">
                     <section class="col-12 gallery_php">
                         <?php include_once('../php/component/bb_dispo_controller.php'); ?>

@@ -467,13 +467,16 @@ address {
   padding-bottom: 12px;
   overflow: hidden;
 }
-.litters-container h2 {
+.litters-container h4 {
   color: #f2f2f2;
   text-shadow: 2px 2px 5px grey;
   text-wrap: nowrap;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
+  text-align: center;
 }
 @media all and (max-width: 768px) {
-  .litters-container h2 {
+  .litters-container h4 {
     text-wrap: balance;
   }
 }
@@ -538,11 +541,14 @@ address {
 }
 .litters-container .parents .mother .lof-select-link,
 .litters-container .parents .father .lof-select-link {
-  max-width: 90%;
-  align-self: flex-start;
+  max-width: 60%;
   overflow: hidden;
   text-align: center;
-  margin: auto;
+  text-wrap: nowrap;
+  margin: 0;
+  text-shadow: 2px 2px 2px grey;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
 }
 @media all and (max-width: 576px) {
   .litters-container .parents .mother .lof-select-link,
@@ -550,12 +556,6 @@ address {
     padding-left: 2px;
     padding-right: 2px;
   }
-}
-.litters-container .parents .mother .lof-select-link a,
-.litters-container .parents .father .lof-select-link a {
-  display: block;
-  margin: auto;
-  width: 100%;
 }
 .litters-container .parents .pills {
   display: flex;
@@ -572,18 +572,17 @@ address {
   padding: 5px;
   margin: 2px;
   font-weight: bold;
-  text-shadow: 2px 2px 2px black;
   text-wrap: nowrap;
 }
 .litters-container .parents .adn-pill {
-  background-color: rgb(76, 155, 181);
-  color: white;
-  border: solid 2px #356d80;
+  color: rgb(76, 155, 181);
+  -webkit-text-decoration: underline rgb(76, 155, 181);
+          text-decoration: underline rgb(76, 155, 181);
 }
 .litters-container .parents .champion-pill {
-  background-color: rgb(48, 139, 48);
-  color: white;
-  border: solid 2px #1c521c;
+  color: rgb(48, 139, 48);
+  -webkit-text-decoration: underline rgb(48, 139, 48);
+          text-decoration: underline rgb(48, 139, 48);
 }
 .litters-container img {
   max-height: 250px;

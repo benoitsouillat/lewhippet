@@ -13,18 +13,17 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
     $litter->fillFromStdClass($litterData, $conn);
 
     echo "<div class='litters-container'>
-                            <h2>Naissance des bébés de {$litter->getMother()->getName()} et de {$litter->getFather()->getName()} </h2>
+                            <h4>Naissance des bébés de {$litter->getMother()->getName()} et de {$litter->getFather()->getName()} </h4>
                                 <div class='parents'>
                                     <div class='mother w-50'><section>
                                         <img loading='lazy' src='{$litter->getMother()->getMainImgPath()}' alt='{$litter->getMother()->getName()}'>
                                         <p><b>{$litter->getMother()->getName()}</b><br> {$litter->getMother()->getBreeder()}</p>
                                         <p>Couleur : {$litter->getMother()->getColor()}</p>
                                         <p>Puce : {$litter->getMother()->getInsert()}</p>
-                                        <p>{$litter->getMother()->getDescription()}</p>
-                                        <button class='btn btn-pink lof-select-link'><a href='{$litter->getMother()->getLofselect()}' target='_blank'>Pedigree Lof Select</a></button>";
+                                        <p>{$litter->getMother()->getDescription()}</p>";
 
+    echo "<div class='pills'><a class='lof-select-link' href='{$litter->getMother()->getLofselect()}' target='_blank'>Pedigree Lof Select</a>";
     if ($litter->getMother()->getIsAdn() || $litter->getMother()->getIsChampion()) {
-        echo "<div class='pills'>";
         if ($litter->getMother()->getIsAdn()) {
             echo "<span class='adn-pill'> ADN Validée </span>";
         }
@@ -34,20 +33,19 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
         echo "</div>";
     }
 
-    echo "
-                                    </section></div>
-                                    <div class='father w-50'>
-                                    <section>
-                                        <img loading='lazy' src='{$litter->getFather()->getMainImgPath()}' alt='{$litter->getFather()->getName()}'>
-                                        <p><b>{$litter->getFather()->getName()}</b><br> {$litter->getFather()->getBreeder()}</p>
-                                        <p>Couleur : {$litter->getFather()->getColor()}</p>
-                                        <p>Puce : {$litter->getFather()->getInsert()}</p>
-                                        
-                                        <p>{$litter->getFather()->getDescription()}</p>
-                                        <button class='btn btn-pink lof-select-link'><a href='{$litter->getFather()->getLofselect()}' target='_blank'>Pedigree Lof Select</a></button>";
+    echo " </section></div>
+   <div class='father w-50'>
+     <section>
+     <img loading='lazy' src='{$litter->getFather()->getMainImgPath()}' alt='{$litter->getFather()->getName()}'>
+        <p><b>{$litter->getFather()->getName()}</b><br> {$litter->getFather()->getBreeder()}</p>
+        <p>Couleur : {$litter->getFather()->getColor()}</p>
+        <p>Puce : {$litter->getFather()->getInsert()}</p>
+        <p>{$litter->getFather()->getDescription()}</p> ";
 
+
+    echo "<div class='pills'>
+        <a class='lof-select-link' href='{$litter->getFather()->getLofselect()}' target='_blank'>Pedigree Lof Select</a>";
     if ($litter->getFather()->getIsAdn() || $litter->getFather()->getIsChampion()) {
-        echo "<div class='pills'>";
         if ($litter->getFather()->getIsAdn()) {
             echo "<span class='adn-pill'> ADN Validée </span>";
         }
@@ -56,7 +54,6 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
         }
         echo "</div>";
     }
-
     echo " </section></div>
                                 </div>
                                 <p class='col-12 text-center'>{$litter->getNumberPuppies()} bébés sont nés ce " .

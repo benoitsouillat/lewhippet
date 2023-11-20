@@ -109,10 +109,12 @@
   padding-bottom: 12px;
   overflow: hidden;
 
-  h2 {
+  h4 {
     color: darken(white, 5);
     text-shadow: 2px 2px 5px $grey;
     text-wrap: nowrap;
+    text-decoration: underline white;
+    text-align: center;
 
     @media all and (max-width: $md) {
       text-wrap: balance;
@@ -180,23 +182,21 @@
       }
 
       .lof-select-link {
-        max-width: 90%;
-        align-self: flex-start;
+        max-width: 60%;
         overflow: hidden;
         text-align: center;
-        margin: auto;
+        text-wrap: nowrap;
+        margin: 0;
+
+        text-shadow: 2px 2px 2px grey;
+        text-decoration: underline white;
+
 
         @media all and (max-width: $sm) {
           padding-left: 2px;
           padding-right: 2px;
         }
 
-        a {
-          display: block;
-          margin: auto;
-          width: 100%;
-
-        }
       }
     }
 
@@ -209,7 +209,6 @@
       flex-wrap: wrap;
       flex-grow: 1;
       flex-shrink: 1;
-      // width: 60%;
     }
 
     .adn-pill,
@@ -217,20 +216,17 @@
       padding: 5px;
       margin: 2px;
       font-weight: bold;
-      text-shadow: 2px 2px 2px black;
       text-wrap: nowrap;
     }
 
     .adn-pill {
-      background-color: $adn-color;
-      color: white;
-      border: solid 2px darken($adn-color, 15);
+      color: $adn-color;
+      text-decoration: underline $adn-color;
     }
 
     .champion-pill {
-      background-color: $champion-color;
-      color: white;
-      border: solid 2px darken($champion-color, 15);
+      color: $champion-color;
+      text-decoration: underline $champion-color;
     }
   }
 
