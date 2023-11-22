@@ -7,7 +7,7 @@ require_once('../administration/classes/Puppy.php');
 require_once('../administration/classes/Litter.php');
 
 
-$stmtLitter = $conn->query(getAllLitters());
+$stmtLitter = $conn->query(getAllLittersActive());
 while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
     $litter = new Litter;
     $litter->fillFromStdClass($litterData, $conn);

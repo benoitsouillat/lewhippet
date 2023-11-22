@@ -8,6 +8,10 @@ function getAllLittersIds()
 {
     return "SELECT id FROM `litters`";
 }
+function getAllLittersActive()
+{
+    return "SELECT * FROM `litters` WHERE `enable` = true";
+}
 function getLitterFromId()
 {
     return "SELECT * FROM litters WHERE `id` = :id";
