@@ -100,13 +100,9 @@
   border-top: 1px solid black;
   min-width: 85%;
   width: 100%;
-  // background: linear-gradient(90deg, lightcoral, lightblue);
   background: linear-gradient(180deg, lighten($violet, 30) 50%, #cfcfcf);
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  @include flex_row_around;
   flex-wrap: wrap;
 
   padding-bottom: 12px;
@@ -255,6 +251,7 @@
       margin: 2px;
       font-weight: bold;
       text-wrap: nowrap;
+      text-shadow: 1px 1px 2px lighten(#000, 10);
     }
 
     .adn-pill {

@@ -900,16 +900,17 @@ address {
   margin: 2px;
   font-weight: bold;
   text-wrap: nowrap;
+  text-shadow: 1px 1px 2px #1a1a1a;
 }
 .litters-container .parents .adn-pill {
-  color: rgb(76, 155, 181);
-  -webkit-text-decoration: underline rgb(76, 155, 181);
-          text-decoration: underline rgb(76, 155, 181);
+  color: rgb(107, 193, 222);
+  -webkit-text-decoration: underline rgb(107, 193, 222);
+          text-decoration: underline rgb(107, 193, 222);
 }
 .litters-container .parents .champion-pill {
-  color: rgb(179, 160, 73);
-  -webkit-text-decoration: underline rgb(179, 160, 73);
-          text-decoration: underline rgb(179, 160, 73);
+  color: rgb(238, 214, 108);
+  -webkit-text-decoration: underline rgb(238, 214, 108);
+          text-decoration: underline rgb(238, 214, 108);
 }
 .litters-container img {
   max-height: 250px;
@@ -1832,11 +1833,18 @@ img {
   }
 }
 .bandeau_title .logo {
+  animation: loading-logo 0.9s ease-in-out 0.1s;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  animation: loading-logo 0.9s ease-in-out 0.1s;
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.7s;
+  transition-delay: 0.3s;
+}
+.bandeau_title .logo:hover {
+  transform: scale(1.1);
 }
 @media all and (max-width: 768px) {
   .bandeau_title .logo {
