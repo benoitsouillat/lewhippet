@@ -16,13 +16,16 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
         <h4>Naissance des bébés de {$litter->getMother()->getName()} et de {$litter->getFather()->getName()} </h4>
         <div class='parents'>
         <div class='mother'><section>
+        <div class='parent-img-div'>
             <img loading='lazy' src='{$litter->getMother()->getMainImgPath()}' alt='{$litter->getMother()->getName()}'>
+        </div>
             <p class='dog_name_breeder'><b>{$litter->getMother()->getName()}</b><br> {$litter->getMother()->getBreeder()}</p>
             <p class='dog_color'>Couleur : {$litter->getMother()->getColor()}</p>
             <p class='dog_insert'>Puce : {$litter->getMother()->getInsert()}</p>
             <p class='dog_description'>{$litter->getMother()->getDescription()}</p>";
 
-    echo "<div class='pills'><a class='lof-select-link' href='{$litter->getMother()->getLofselect()}' target='_blank'>Pedigree Lof Select</a>";
+    echo "<div class='pills'>
+    <a class='lof-select-link' href='{$litter->getMother()->getLofselect()}' target='_blank'>Pedigree Lof Select</a>";
     if ($litter->getMother()->getIsAdn() || $litter->getMother()->getIsChampion()) {
         if ($litter->getMother()->getIsAdn())
             echo "<span class='adn-pill'> ADN Validée </span>";
@@ -33,7 +36,9 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
 
     echo " </section></div>
     <div class='father'><section>
+    <div class='parent-img-div'>
         <img loading='lazy' src='{$litter->getFather()->getMainImgPath()}' alt='{$litter->getFather()->getName()}'>
+    </div>
         <p class='dog_name_breeder'><b>{$litter->getFather()->getName()}</b><br> {$litter->getFather()->getBreeder()}</p>
         <p class='dog_color'>Couleur : {$litter->getFather()->getColor()}</p>
         <p class='dog_insert'>Puce : {$litter->getFather()->getInsert()}</p>

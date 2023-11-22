@@ -126,6 +126,8 @@ p {
     justify-content: space-around;
     align-items: center;
 
+    @include logo_load_turning();
+
     @media all and (max-width: $md) {
       display: none;
     }

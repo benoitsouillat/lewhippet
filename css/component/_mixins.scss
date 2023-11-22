@@ -137,9 +137,80 @@
   }
 }
 
+/* Button */
+
 @mixin pink_button {
   text-align: center !important;
   color: white !important;
   background-color: darken($pink, 10) !important;
   border: 5%;
+}
+
+/* FlexBox */
+
+@mixin flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex_row {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex_col_around {
+  @include flex_col();
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex_row_around {
+  @include flex_row();
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex_col_center {
+  @include flex_col();
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex_row_center {
+  @include flex_row();
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation */
+
+@mixin main_animation($duration : $main-duration, $delay : $main-delay) {
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: $duration;
+  transition-delay: $delay;
+}
+
+@mixin special_animation ($transition : all) {
+  transition: $transition;
+  transition-duration: $main-duration;
+  transition-delay: $main-delay;
+}
+
+/* Loading keyframes */
+
+@mixin img_load_left($duration: $main-duration, $delay: .5s) {
+  animation: load-from-left $duration ease-out $delay ;
+}
+
+@mixin img_load_right($duration: $main-duration, $delay: .5s) {
+  animation: load-from-right $duration ease-out $delay ;
+}
+
+@mixin img_load_top($duration: $main-duration, $delay: .5s) {
+  animation: load-from-top $duration ease-out $delay ;
+}
+
+@mixin logo_load_turning() {
+  animation: loading-logo .9s ease-in-out .1s;
 }

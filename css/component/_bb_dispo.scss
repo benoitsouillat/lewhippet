@@ -1,3 +1,6 @@
+@import "_variables";
+@import "_mixins";
+
 .puppy_dispo {
   text-align: center;
   margin-bottom: 10px;
@@ -129,7 +132,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: stretch;
     width: 100%;
 
     .mother {
@@ -147,16 +150,46 @@
       margin-bottom: 20px;
       max-width: 50%;
 
-      img {
-        max-width: 95%;
-        margin: 10px;
-        box-shadow: 2px 2px 3px grey;
-        align-self: center;
+      .parent-img-div {
+        max-height: 80px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+
+        @media all and (min-width: $sm) {
+          max-height: 130px;
+        }
+
+        @media all and (min-width: $md) {
+          max-height: 155px;
+        }
+
+        @media all and (min-width: $lg) {
+          max-height: 180px;
+        }
+
+        img {
+          object-fit: contain;
+          width: 95%;
+          // max-width: 280px;
+
+          margin: 10px;
+          align-self: center;
+          @include img_load_top($duration: 1.8s);
+          @include main_animation($delay: 0);
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
       }
 
       section {
         max-width: 400px;
         width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -210,6 +243,9 @@
     }
 
     .pills {
+      // Revoir le flex en mobile first column qui passe en row à partir de $md 
+      position: relative;
+      bottom: 0;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
