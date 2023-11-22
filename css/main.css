@@ -27,10 +27,10 @@
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -72,10 +72,10 @@
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -181,10 +181,10 @@
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -358,10 +358,10 @@
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -572,10 +572,10 @@ address {
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -617,10 +617,10 @@ address {
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -729,10 +729,10 @@ address {
 }
 
 .litters-container {
+  width: 100%;
+  min-width: 85%;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
-  min-width: 85%;
-  width: 100%;
   background: linear-gradient(180deg, #cd9dc8 50%, #cfcfcf);
   display: flex;
   flex-direction: row;
@@ -741,14 +741,16 @@ address {
   flex-wrap: wrap;
   padding-bottom: 12px;
   overflow: hidden;
+  font-family: monospace, sans-serif;
 }
 .litters-container h4 {
-  color: #f2f2f2;
+  color: #ebebeb;
   text-shadow: 2px 2px 5px grey;
   text-wrap: nowrap;
   -webkit-text-decoration: underline white;
           text-decoration: underline white;
   text-align: center;
+  font-family: Serif;
 }
 @media all and (max-width: 768px) {
   .litters-container h4 {
@@ -818,7 +820,7 @@ address {
   transition: all;
   transition-timing-function: ease-in-out;
   transition-duration: 0.7s;
-  transition-delay: 0;
+  transition-delay: 0s;
 }
 .litters-container .parents .mother .parent-img-div img:hover,
 .litters-container .parents .father .parent-img-div img:hover {
@@ -826,7 +828,7 @@ address {
 }
 .litters-container .parents .mother section,
 .litters-container .parents .father section {
-  max-width: 400px;
+  max-width: 410px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -852,8 +854,19 @@ address {
 }
 .litters-container .parents .mother .dog_name_breeder,
 .litters-container .parents .father .dog_name_breeder {
-  text-align: center;
   width: 100%;
+  text-align: center;
+  font-style: italic;
+}
+.litters-container .parents .mother .dog_name_breeder .dog_name,
+.litters-container .parents .father .dog_name_breeder .dog_name {
+  font-style: normal;
+}
+.litters-container .parents .mother .dog_description,
+.litters-container .parents .father .dog_description {
+  width: 100%;
+  padding: auto;
+  margin: 0;
 }
 .litters-container .parents .mother a,
 .litters-container .parents .mother button,
@@ -874,6 +887,14 @@ address {
   text-shadow: 2px 2px 2px grey;
   -webkit-text-decoration: underline white;
           text-decoration: underline white;
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+.litters-container .parents .mother .lof-select-link:hover,
+.litters-container .parents .father .lof-select-link:hover {
+  transform: scale(1.03);
 }
 @media all and (max-width: 576px) {
   .litters-container .parents .mother .lof-select-link,
@@ -891,13 +912,12 @@ address {
   align-items: center;
   align-self: stretch;
   flex-wrap: wrap;
-  flex-grow: 1;
   flex-shrink: 1;
 }
 .litters-container .parents .adn-pill,
 .litters-container .parents .champion-pill {
   padding: 5px;
-  margin: 2px;
+  margin: 3px;
   font-weight: bold;
   text-wrap: nowrap;
   text-shadow: 1px 1px 2px #1a1a1a;
@@ -1165,10 +1185,10 @@ address {
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -1313,10 +1333,10 @@ address {
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -1421,10 +1441,10 @@ address {
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -1471,10 +1491,10 @@ address {
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -1516,10 +1536,10 @@ address {
     transform: translateY(-100%);
   }
   50% {
-    transform: translateY(-45%);
+    transform: translateY(-48%);
   }
   65% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1) translateY(0);
@@ -1595,6 +1615,13 @@ address {
   color: white !important;
   background-color: #bf4080 !important;
   border: 5%;
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  transition-delay: 0.05s;
+}
+.repros-admin-container > .card .btn-pink:hover {
+  transform: scale(1.1) translateY(-4px);
 }
 
 .disable-filter {

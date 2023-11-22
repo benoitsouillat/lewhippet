@@ -53,6 +53,11 @@
 
     .btn-pink {
         @include pink_button;
+        @include main_animation(0.5s, 0.05s);
+
+        &:hover {
+            transform: scale(1.1) translateY(-4px);
+        }
     }
 
 

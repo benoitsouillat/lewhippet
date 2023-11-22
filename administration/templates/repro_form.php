@@ -24,7 +24,8 @@ include_once('../gerance.php');
         <option value="male" <?php echo ($repro->getSex() === 'male') ? 'selected' : NULL ?>>Mâle</option>
     </select>
     <label for="repro_color">Couleur de robe :</label>
-    <input type="text" name="repro_color" id="repro_color" class="form-control-sm">
+    <input type="text" name="repro_color" id="repro_color" class="form-control-sm"
+        value="<?php echo $repro->getColor(); ?>">
     <label for="repro_insert">Puce électronique :</label>
     <input name="repro_insert" id="repro_insert" class="form-control-sm" placeholder="Numéro de Puce" type="text"
         value="<?php echo $repro->getInsert() ?>">

@@ -19,7 +19,7 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
         <div class='parent-img-div'>
             <img loading='lazy' src='{$litter->getMother()->getMainImgPath()}' alt='{$litter->getMother()->getName()}'>
         </div>
-            <p class='dog_name_breeder'><b>{$litter->getMother()->getName()}</b><br> {$litter->getMother()->getBreeder()}</p>
+            <p class='dog_name_breeder'><b class='dog_name'>{$litter->getMother()->getName()}</b><br> {$litter->getMother()->getBreeder()}</p>
             <p class='dog_color'>Couleur : {$litter->getMother()->getColor()}</p>
             <p class='dog_insert'>Puce : {$litter->getMother()->getInsert()}</p>
             <p class='dog_description'>{$litter->getMother()->getDescription()}</p>";
@@ -39,7 +39,7 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
     <div class='parent-img-div'>
         <img loading='lazy' src='{$litter->getFather()->getMainImgPath()}' alt='{$litter->getFather()->getName()}'>
     </div>
-        <p class='dog_name_breeder'><b>{$litter->getFather()->getName()}</b><br> {$litter->getFather()->getBreeder()}</p>
+        <p class='dog_name_breeder'><b class='dog_name'>{$litter->getFather()->getName()}</b><br> {$litter->getFather()->getBreeder()}</p>
         <p class='dog_color'>Couleur : {$litter->getFather()->getColor()}</p>
         <p class='dog_insert'>Puce : {$litter->getFather()->getInsert()}</p>
         <p class='dog_description'>{$litter->getFather()->getDescription()}</p> ";
