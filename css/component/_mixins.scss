@@ -155,7 +155,7 @@
 
 @mixin flex_row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 @mixin flex_col_around {

@@ -171,13 +171,11 @@
         }
 
         img {
+          @include img_load_top($duration: 1.8s, $delay: 0s);
           object-fit: contain;
           width: 95%;
-          // max-width: 280px;
-
           margin: 10px;
           align-self: center;
-          @include img_load_top($duration: 1.8s);
           @include main_animation($delay: 0);
 
           &:hover {
@@ -190,8 +188,7 @@
         max-width: 400px;
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
+        @include flex_col;
         justify-content: flex-start;
         align-items: flex-start;
         flex-wrap: nowrap;
@@ -243,14 +240,10 @@
     }
 
     .pills {
-      // Revoir le flex en mobile first column qui passe en row à partir de $md 
       position: relative;
       bottom: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      @include flex_row_around;
       align-self: stretch;
-      align-items: center;
       flex-wrap: wrap;
       flex-grow: 1;
       flex-shrink: 1;
@@ -283,17 +276,14 @@
 .puppies_container {
 
   .gallery_php {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    @include flex_row_around;
     align-items: flex-start;
     flex-wrap: wrap;
     box-sizing: border-box;
 
 
     .card {
-      display: flex;
-      flex-direction: column;
+      @include flex_col;
       justify-content: flex-start;
       align-items: center;
       flex-wrap: nowrap;
@@ -485,9 +475,7 @@
 
 .puppy_infos {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include flex_col_center;
 }
 
 #next_naissance {
