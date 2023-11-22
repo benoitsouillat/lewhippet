@@ -17,6 +17,7 @@ class Litter
     private Int $numberMales = 0;
     private Int $numberFemales = 0;
     private String $litterNumberSCC = '';
+    private bool $enable = false;
 
     function __construct(
         $birthdate = '',
@@ -24,7 +25,8 @@ class Litter
         ?Repro $father = null,
         Int $numberPuppies = 0,
         Int $numberMales = 0,
-        String $litterNumberSCC = ''
+        String $litterNumberSCC = '',
+        Bool $enable = false
     ) {
         $this->birthdate = $birthdate;
         $this->mother = $mother;
@@ -32,6 +34,7 @@ class Litter
         $this->numberPuppies = $numberPuppies;
         $this->numberMales = $numberMales;
         $this->litterNumberSCC = $litterNumberSCC;
+        $this->enable = $enable;
     }
 
     public function fillFromStdClass(stdClass $data, $conn)
@@ -48,6 +51,7 @@ class Litter
         $this->setNumberMales($data->number_of_males);
         $this->setNumberFemales($data->number_of_females);
         $this->setLitterNumberSCC($data->litter_number);
+        $this->setEnable($data->enable);
     }
     public function fetchFromDatabase($id, $conn)
     {
@@ -318,6 +322,26 @@ class Litter
     private function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of enable
+     */
+    public function getEnable()
+    {
+        return $this->enable;
+    }
+
+    /**
+     * Set the value of enable
+     *
+     * @return  self
+     */
+    public function setEnable($enable)
+    {
+        $this->enable = $enable;
 
         return $this;
     }

@@ -36,6 +36,10 @@ function updateLitter()
 {
     return "UPDATE `litters` SET birthdate = :birthdate, mother_id = :mother_id, father_id = :father_id, number_of_puppies = :numberPuppies, number_of_males = :numberMales, number_of_females = :numberFemales, litter_Number = :litterNumberSCC WHERE id = :id";
 }
+function toggleLitter()
+{
+    return "UPDATE `litters` SET `enable` = :enable WHERE id = :id";
+}
 
 function deleteLitter()
 {

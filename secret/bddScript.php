@@ -52,6 +52,7 @@ $table_litters = "CREATE TABLE `damoiseaux_php`.`litters` (
     `number_of_males` INT, 
     `number_of_females` INT,
     `litter_number` VARCHAR(255) NOT NULL,
+    `enable` BOOLEAN NOT NULL DEFAULT FALSE,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`mother_id`) REFERENCES `repros`(`id`),
     FOREIGN KEY (`father_id`) REFERENCES `repros`(`id`)) 
