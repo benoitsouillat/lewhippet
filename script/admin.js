@@ -30,7 +30,7 @@ const confirmDeleteLitter = (id, name) => {
     }
 }
 
-const errorDisplay = () => {
+const errorReproDisplay = () => {
     errorContainer = document.getElementById('errorContainer');
     errorArray.forEach(error => {
         errorDiv = document.createElement('div');
@@ -45,7 +45,22 @@ const errorDisplay = () => {
         errorDiv.appendChild(errorText);
         errorContainer.appendChild(errorDiv);
     });
-
+}
+const errorLitterDisplay = () => {
+    errorContainer = document.getElementById('errorContainer');
+    errorArray.forEach(error => {
+        errorDiv = document.createElement('div');
+        errorDiv.className = "error_php alert alert-danger text-center";
+        errorText = document.createElement('p');
+        if (error == 10000)
+            errorText.innerText = 'Une erreur de test';
+        else if (error == 23000)
+            errorText.innerText = "Vous ne pouvez pas supprimer une portée qui possède encore des chiots.";
+        else
+            errorText.innerText = 'Ca marche pas !';
+        errorDiv.appendChild(errorText);
+        errorContainer.appendChild(errorDiv);
+    });
 }
 
 let reproDiv = document.getElementById('repro_breeder');

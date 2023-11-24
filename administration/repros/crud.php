@@ -12,9 +12,9 @@ $repro->setLofselect('https://www.centrale-canine.fr/lofselect/recherche-chien')
 if (check_session_start($_SESSION)) {
     $_SESSION['error'] = [];
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
-        $stmt = $conn->prepare(deleteRepro());
-        $stmt->bindParam(':id', $_GET['id']);
         try {
+            $stmt = $conn->prepare(deleteRepro());
+            $stmt->bindParam(':id', $_GET['id']);
             $stmt->execute();
             header('Location:../repros.php');
         } catch (PDOException $e) {

@@ -9,6 +9,7 @@ require_once('../classes/Repro.php');
 require_once('../classes/Litter.php');
 
 if (check_session_start($_SESSION)) {
+    $_SESSION['error'] = [];
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
         try {
             $stmt = $conn->prepare(deleteLitter());
@@ -16,7 +17,12 @@ if (check_session_start($_SESSION)) {
             $stmt->execute();
             header('Location:../litters.php');
         } catch (PDOException $e) {
-            echo 'Une erreur s\'est produite ' . $e->getMessage();
+            $_SESSION['error'][] = intval($e->getCode(), 10);
+            if ($e->getCode() == 23000) {
+                header('Location:../litters.php');
+            } else {
+                echo 'Une erreur s\'est produite : ' . $e->getMessage();
+            }
         }
     }
 
