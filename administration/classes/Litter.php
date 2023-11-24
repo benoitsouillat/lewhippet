@@ -70,7 +70,6 @@ class Litter
     {
         return $this->birthdate;
     }
-
     /**
      * Set the value of birthdate
      *

@@ -214,3 +214,7 @@
 @mixin logo_load_turning() {
   animation: loading-logo .9s ease-in-out .1s;
 }
+
+@mixin php_error_pop($duration: 10s, $delay: 0s) {
+  animation: php_error $duration ease $delay;
+}

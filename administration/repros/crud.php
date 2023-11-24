@@ -10,6 +10,7 @@ $repro = new Repro('', '', '', '', '', '', '', '', '', '', '');
 $repro->setBirthdate(date('Y-m-d'));
 $repro->setLofselect('https://www.centrale-canine.fr/lofselect/recherche-chien');
 if (check_session_start($_SESSION)) {
+    $_SESSION['error'] = [];
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
         $stmt = $conn->prepare(deleteRepro());
         $stmt->bindParam(':id', $_GET['id']);
@@ -17,9 +18,15 @@ if (check_session_start($_SESSION)) {
             $stmt->execute();
             header('Location:../repros.php');
         } catch (PDOException $e) {
-            echo 'Une erreur s\'est produite : ' . $e->getMessage();
+            $_SESSION['error'][] = intval($e->getCode(), 10);
+            if ($e->getCode() == 23000) {
+                header('Location:../repros.php');
+            } else {
+                echo 'Une erreur s\'est produite : ' . $e->getMessage();
+            }
         }
     }
+
     if (isset($_GET['id'])) {
         $stmt = $conn->prepare(getReproFromId());
         $stmt->bindParam(':id', $_GET['id']);

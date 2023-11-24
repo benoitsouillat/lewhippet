@@ -44,6 +44,24 @@
     transform: rotateY(1turn);
   }
 }
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
 /* Keyframes */
 @keyframes load-from-left {
   from {
@@ -87,6 +105,24 @@
   }
   100% {
     transform: rotateY(1turn);
+  }
+}
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
   }
 }
 .highlight-puppy-container {
@@ -196,6 +232,24 @@
   }
   100% {
     transform: rotateY(1turn);
+  }
+}
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
   }
 }
 .index_content {
@@ -373,6 +427,24 @@
   }
   100% {
     transform: rotateY(1turn);
+  }
+}
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
   }
 }
 address {
@@ -589,6 +661,24 @@ address {
     transform: rotateY(1turn);
   }
 }
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
 /* Keyframes */
 @keyframes load-from-left {
   from {
@@ -632,6 +722,24 @@ address {
   }
   100% {
     transform: rotateY(1turn);
+  }
+}
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
   }
 }
 /* Menu */
@@ -1202,6 +1310,24 @@ address {
     transform: rotateY(1turn);
   }
 }
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
 .slider-auto-container {
   margin: 3% auto;
   border: solid #8a4784 1px;
@@ -1350,6 +1476,24 @@ address {
     transform: rotateY(1turn);
   }
 }
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
 .slider-auto-container {
   overflow: hidden;
   margin: 3% auto;
@@ -1458,6 +1602,24 @@ address {
     transform: rotateY(1turn);
   }
 }
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
 /* Menu */
 /* Button */
 /* FlexBox */
@@ -1508,6 +1670,24 @@ address {
     transform: rotateY(1turn);
   }
 }
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
 /* Keyframes */
 @keyframes load-from-left {
   from {
@@ -1553,11 +1733,34 @@ address {
     transform: rotateY(1turn);
   }
 }
+@keyframes php_error {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+  10% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
 /* Menu */
 /* Button */
 /* FlexBox */
 /* Animation */
 /* Loading keyframes */
+.php_error {
+  animation: php_error 10s ease 0s;
+  visibility: hidden;
+}
+
 .btn-pink {
   text-align: center !important;
   color: white !important;

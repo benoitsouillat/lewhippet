@@ -29,6 +29,25 @@ const confirmDeleteLitter = (id, name) => {
         location.assign('../administration/litters/crud.php?id=' + id + "&delete=true");
     }
 }
+
+const errorDisplay = () => {
+    errorContainer = document.getElementById('errorContainer');
+    errorArray.forEach(error => {
+        errorDiv = document.createElement('div');
+        errorDiv.className = "error_php alert alert-danger text-center";
+        errorText = document.createElement('p');
+        if (error == 10000)
+            errorText.innerText = 'Une erreur de test';
+        else if (error == 23000)
+            errorText.innerText = "Vous ne pouvez pas supprimer un reproducteur qui possède une portée.";
+        else
+            errorText.innerText = 'Ca marche pas !';
+        errorDiv.appendChild(errorText);
+        errorContainer.appendChild(errorDiv);
+    });
+
+}
+
 let reproDiv = document.getElementById('repro_breeder');
 let breederReproNoButton = document.getElementById('breeder_no');
 let breederReproYesButton = document.getElementById('breeder_yes');

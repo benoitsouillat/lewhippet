@@ -44,7 +44,6 @@ function toggleLitter()
 {
     return "UPDATE `litters` SET `enable` = :enable WHERE id = :id";
 }
-
 function deleteLitter()
 {
     return "DELETE FROM `litters` WHERE `id` = :id";

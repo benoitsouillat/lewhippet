@@ -1,6 +1,10 @@
 @import "variables";
 @import "mixins";
 
+.php_error {
+    @include php_error_pop;
+    visibility: hidden;
+}
 
 .btn-pink {
     @include pink_button;
@@ -66,6 +70,8 @@
 .disable-filter {
     opacity: .5;
 }
+
+
 
 .dog-parents {
     overflow: hidden;

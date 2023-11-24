@@ -84,3 +84,25 @@ $main-delay: 0.3s;
         transform: rotateY(1turn);
     }
 }
+
+@keyframes php_error {
+    0% {
+        visibility: visible;
+        transform: translateY(-100%);
+    }
+
+    10% {
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    90% {
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+        visibility: hidden;
+    }
+}
