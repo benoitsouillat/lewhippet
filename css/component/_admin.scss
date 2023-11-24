@@ -1,9 +1,13 @@
 @import "variables";
 @import "mixins";
 
-.php_error {
+.error-container {
+    width: 100%;
+    z-index: 99;
+    position: fixed;
+    top: 35px;
+    left: 0;
     @include php_error_pop;
-    visibility: hidden;
 }
 
 .btn-pink {

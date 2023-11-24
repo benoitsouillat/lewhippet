@@ -32,7 +32,7 @@ require_once(__DIR__ . '/classes/Litter.php');
                 $errorArray = [];
                 $sessionErrors = $_SESSION['error'];
 
-                echo "<div id='errorContainer' class='w-100' style='position:fixed; top:0; left:0; z-index: 99;'>";
+                echo "<div id='errorContainer' class='error-container'>";
                 echo "<script type='text/javascript'>";
                 echo "var errorArray = " . json_encode($sessionErrors) . ";";
                 echo "</script>";
@@ -46,7 +46,7 @@ require_once(__DIR__ . '/classes/Litter.php');
             <?php echo $_SESSION['username'] ?></p>
 
         <div class="d-flex flex-row justify-content-center m-2 p-2">
-            <a href="./repros.php" class="btn btn-primary m-1">Gérer les reproducteurs</a>
+            <a href="./repros.php" class="btn btn-primary m-1">Voir les reproducteurs</a>
             <a href="./puppies.php" class="btn btn-success m-1">Gérer les chiots</a>
             <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>
             <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
@@ -61,7 +61,8 @@ require_once(__DIR__ . '/classes/Litter.php');
                     $litter->fillFromStdClass($litterData, $conn);
                     $litter->setLitterNumberSCC($litterData->litter_number)
                 ?>
-            <div class="card col-6 col-sm-4 col-lg-3 p-2 mt-1">
+            <div
+                class="card col-6 col-sm-4 col-lg-3 p-2 mt-1  <?php if($litter->getEnable() == false) { echo "disable-filter"; } ?>">
                 <h4 class="text-center">Portée de <br>
                     <?php echo $litter->getMother()->getName() . ' et de ' . $litter->getFather()->getName() ?>
                 </h4>

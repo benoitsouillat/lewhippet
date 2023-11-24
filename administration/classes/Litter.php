@@ -225,7 +225,7 @@ class Litter
             $puppyAvailable = 'Disponible';
             $puppyEnable = 0;
             $puppyLitterId = $puppyMale->getLitter()->getId();
-            $puppyMainImg = '../../default.jpg';
+            $puppyMainImg = '../../puppies_img/default.jpg';
             $puppyPosition = $puppyMale->getPosition();
 
             $stmt = $conn->prepare(createPuppy());
@@ -282,7 +282,7 @@ class Litter
             $puppyAvailable = 'Disponible';
             $puppyEnable = 0;
             $puppyLitterId = $puppyFemale->getLitter()->getId();
-            $puppyMainImg = '../../default.jpg';
+            $puppyMainImg = '../../puppies_img/default.jpg';
             $puppyPosition = $puppyFemale->getPosition();
 
             $stmt = $conn->prepare(createPuppy());

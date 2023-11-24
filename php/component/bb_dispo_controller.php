@@ -53,16 +53,16 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
             echo "<span class='champion-pill'> Championnat Obtenu </span>";
         echo "</div>";
     }
-    echo " </section></div>
-                                </div>
-                                <p class='col-12 text-center'>{$litter->getNumberPuppies()} bébés sont nés ce " .
-        trad_month(date('d F Y', strtotime($litter->getBirthdate()))) . ", {$litter->getNumberFemales()} femelle(s) et {$litter->getNumberMales()} mâle(s).</p>
+    echo " </section></div></div>
+<p class='col-12 text-center'>{$litter->getNumberPuppies()} bébés sont nés ce " .
+        trad_month(date('d F Y', strtotime($litter->getBirthdate()))) . ", {$litter->getNumberFemales()} femelle(s) et {$litter->getNumberMales()} mâle(s). (Portée N° {$litter->getLitterNumberSCC()}).</p>
                                 ";
 
 
     $stmtPuppy = $conn->prepare(getAllPuppiesByPositionAndLitter());
     $stmtPuppy->bindValue(':litter_id', $litter->getId());
     $stmtPuppy->execute();
+
 
     while ($puppyData = $stmtPuppy->fetch(PDO::FETCH_OBJ)) :
 
@@ -75,7 +75,6 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
         $stmtForPuppyImages->bindParam(':dogId', $puppyData->id);
         $stmtForPuppyImages->execute();
         $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
-
 
         if ($puppy->getEnable() == true) {
             echo "<div class='card'>

@@ -65,7 +65,6 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':id', $_POST['litter_id']); //Use GetId() ?
         } else {
             $stmt = $conn->prepare(createLitter());
-            //create puppy from $litter->getNumberMales() et $litter->getNumberFemales()
         }
         try {
             $stmt->bindValue(':birthdate', $litter->getBirthdate());

@@ -87,22 +87,14 @@ $main-delay: 0.3s;
 
 @keyframes php_error {
     0% {
-        visibility: visible;
         transform: translateY(-100%);
     }
 
-    10% {
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    90% {
-        visibility: visible;
+    15% {
         transform: translateY(0);
     }
 
     100% {
-        transform: translateY(-100%);
-        visibility: hidden;
+        transform: translateY(0);
     }
 }
