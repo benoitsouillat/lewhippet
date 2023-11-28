@@ -38,9 +38,7 @@ if (check_session_start($_SESSION)) {
 
         if ($_FILES['repro_multi_images'] && $_FILES['repro_multi_images']['name'][0] !== NULL) {
             var_dump($_FILES['repro_multi_images']['tmp_name']);
-
             $imagesUploadedTmp = $_FILES['repro_multi_images']['tmp_name'];
-
             foreach ($imagesUploadedTmp as $imageTmpName) {
                 $prefix = substr($imageTmpName, -8, -4);
                 $destination = '../../repros_img/' . $_POST['repro_id'] . '-' . $prefix . '.jpg';
@@ -51,7 +49,6 @@ if (check_session_start($_SESSION)) {
                 $stmt->execute();
             }
         }
-
         if ($_POST['repro_id']) {
             $reproId = $_POST['repro_id'];
         } else {
@@ -60,8 +57,6 @@ if (check_session_start($_SESSION)) {
             $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
             $reproId = end($id_array)->id + 1;
         }
-
-
         $file_destination = $repro->getMainImgPath();
         $repro->setName($_POST['repro_name']);
         $repro->setSex($_POST['repro_sex']);

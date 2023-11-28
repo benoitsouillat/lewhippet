@@ -1696,6 +1696,12 @@ address {
   border: 5%;
 }
 
+.alert-mother {
+  color: #c44f8a !important;
+  background-color: #f2d9e6 !important;
+  border-color: #df9fbf !important;
+}
+
 .header_admin {
   background-color: unset;
   position: unset;

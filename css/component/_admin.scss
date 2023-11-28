@@ -14,6 +14,12 @@
     @include pink_button;
 }
 
+.alert-mother {
+    color: darken($pink, 6) !important;
+    background-color: lighten($pink, 30) !important;
+    border-color: lighten($pink, 15) !important;
+}
+
 .header_admin {
     background-color: unset;
     position: unset;
