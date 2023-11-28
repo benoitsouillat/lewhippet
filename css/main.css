@@ -1712,7 +1712,6 @@ address {
 
 .img-admin-list {
   max-height: 25vh;
-  max-width: 98%;
   -o-object-fit: cover;
      object-fit: cover;
   box-sizing: border-box;
@@ -1721,7 +1720,7 @@ address {
 .puppies-admin-container > .card {
   min-height: 40vh;
   min-width: 270px;
-  padding-bottom: 0 !important;
+  padding: 0 2px !important;
 }
 .puppies-admin-container > .card .card-body {
   padding-bottom: 2px !important;
@@ -1804,6 +1803,15 @@ address {
   transform: scale(1.03);
   color: black;
   background-color: #ccc;
+}
+
+.litter-number-info {
+  width: 100%;
+  font-size: 1em;
+  max-height: 1.4em;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .dog-parents {

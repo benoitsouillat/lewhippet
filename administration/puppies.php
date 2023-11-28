@@ -72,6 +72,9 @@ require_once(__DIR__ . '/classes/Puppy.php');
             <?php if ($puppy->getEnable() == 0) {
                         echo 'disable-filter';
                     }; ?>">
+                <div class='litter-number-info bg-info'>
+                    <p class='text-center'>Portée <?php echo $puppy->getLitter()->getLitterNumberSCC() ?></p>
+                </div>
                 <div class="m1 p2 text-center bg-dark text-light">
                     <p class="w-100 col-12 text-center bg-dark text-light">Position : </p>
                     <form class="form-control bg-dark d-flex flex-row justify-content-between flex-shrink-1 col-12"
