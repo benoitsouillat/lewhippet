@@ -124,19 +124,19 @@ require_once(__DIR__ . '/classes/Puppy.php');
                                 echo "<span class='alert alert-info m-2 mt-0 p-2'>ADN</span></p>";
                             }
                             ?>
-                    <div class="btn-container w-100 d-flex flex-row justify-content-between">
+                    <div class="btn-container">
                         <a href="./puppies/crud.php?id=<?php echo $puppy->getId() ?>"
-                            class="btn btn-primary m-1 p-3">Modifier</a>
+                            class="btn btn-primary">Modifier</a>
                         <button
                             onClick="confirmDeletePuppy(<?php echo $puppy->getId() ?>,  '<?php echo replace_reunion_char($puppy->getName()) ?>')"
-                            class="btn btn-danger m-1">Supprimer</button>
+                            class="btn btn-danger">Supprimer</button>
                         <?php
                                 echo $puppy->getEnable() ?
-                                    "<button onClick='toggleActivePuppy({$puppy->getId()}, {$puppy->getEnable()})' class='m-1 p-3 btn btn-warning toggler'
+                                    "<button onClick='toggleActivePuppy({$puppy->getId()}, {$puppy->getEnable()})' class='btn btn-warning toggler'
                                     id='toggler{$puppy->getId()} '>Désactiver
                                     </button>"
                                     :
-                                    "<button onClick='toggleActivePuppy({$puppy->getId()}, {$puppy->getEnable()})' class='m-1 p-3 btn btn-success toggler'
+                                    "<button onClick='toggleActivePuppy({$puppy->getId()}, {$puppy->getEnable()})' class='btn btn-success toggler'
                                     id='toggler{$puppy->getId()}'>Activer
                                     </button>"
                                 ?>
