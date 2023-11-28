@@ -45,7 +45,7 @@ require_once(__DIR__ . '/classes/Litter.php');
         <p class="w-50 text-right align-self-end alert alert-success p-1 m-0">Connecté en tant que :
             <?php echo $_SESSION['username'] ?></p>
 
-        <div class="d-flex flex-row justify-content-center m-2 p-2">
+        <div class="admin-menu">
             <a href="./repros.php" class="btn btn-primary m-1">Voir les reproducteurs</a>
             <a href="./puppies.php" class="btn btn-success m-1">Gérer les chiots</a>
             <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>

@@ -1,6 +1,24 @@
 @import "variables";
 @import "mixins";
 
+.admin-menu {
+    @include flex_row_center;
+    margin: 2px;
+
+    @media all and (max-width: $sm) {
+        flex-wrap: wrap;
+
+        button,
+        a {
+            width: 45%;
+
+            @media all and (max-width: $xs) {
+                height: 54px;
+            }
+        }
+    }
+}
+
 .error-container {
     width: 100%;
     z-index: 99;

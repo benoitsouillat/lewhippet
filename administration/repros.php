@@ -45,7 +45,7 @@ require_once(__DIR__ . '/classes/Repro.php');
             <?php echo $_SESSION['username'] ?></p>
 
 
-        <div class="d-flex flex-row justify-content-center m-2 p-2">
+        <div class="admin-menu">
             <a href="repros/crud.php" class="btn btn-primary m-1">Créer un nouveau reproducteurs</a>
             <a href="./puppies.php" class="btn btn-success m-1">Gérer les chiots</a>
             <a href="./litters.php" class="btn btn-pink m-1">Gérer les portées</a>

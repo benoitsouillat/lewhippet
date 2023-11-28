@@ -28,7 +28,7 @@ require_once(__DIR__ . '/classes/Puppy.php');
         <p class="w-50 text-right align-self-end alert alert-success p-1 m-0">Connecté en tant que :
             <?php echo $_SESSION['username'] ?></p>
 
-        <div class="d-flex flex-row justify-content-center m-2 p-2">
+        <div class="admin-menu">
             <a href="./repros.php" class="btn btn-primary m-1">Gérer les reproducteurs</a>
             <a href="./litters.php" class="btn btn-pink m-1">Gérer les portées</a>
             <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>

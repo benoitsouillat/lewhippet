@@ -1680,6 +1680,29 @@ address {
 /* FlexBox */
 /* Animation */
 /* Loading keyframes */
+.admin-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+}
+@media all and (max-width: 576px) {
+  .admin-menu {
+    flex-wrap: wrap;
+  }
+  .admin-menu button,
+  .admin-menu a {
+    width: 45%;
+  }
+}
+@media all and (max-width: 576px) and (max-width: 380px) {
+  .admin-menu button,
+  .admin-menu a {
+    height: 54px;
+  }
+}
+
 .error-container {
   width: 100%;
   z-index: 99;
