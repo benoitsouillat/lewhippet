@@ -138,12 +138,30 @@
 }
 
 /* Button */
+@mixin button {
+  border: solid 1px black;
+  box-shadow: 2px 2px 2px black;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: unset;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center !important;
+
+}
+
+@mixin gold_button {
+  @include button();
+  color: #000 !important;
+  background-color: goldenrod !important;
+}
 
 @mixin pink_button {
-  text-align: center !important;
+  @include button();
   color: white !important;
   background-color: darken($pink, 10) !important;
-  border: 5%;
 }
 
 /* FlexBox */

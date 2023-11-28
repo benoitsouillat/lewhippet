@@ -42,6 +42,10 @@
     @include pink_button;
 }
 
+.btn-gold {
+    @include gold_button;
+}
+
 .alert-mother {
     color: darken($pink, 6) !important;
     background-color: lighten($pink, 30) !important;
