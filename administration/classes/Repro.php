@@ -39,10 +39,10 @@ class Repro extends Dog
         $this->champion = $champion;
     }
 
-    public function fetchFromDatabase($id)
+    public function fetchFromDatabase($id, $conn)
     {
-        $dsn = "mysql:host=localhost;port=3306;dbname=damoiseaux_php";
-        $conn = new PDO($dsn, 'root', '');
+        // $dsn = "mysql:host=localhost;port=3306;dbname=damoiseaux_php";
+        // $conn = new PDO($dsn, 'root', '');
         $stmt = $conn->prepare(getReproFromId());
         $stmt->bindParam(':id', $id);
         $stmt->execute();

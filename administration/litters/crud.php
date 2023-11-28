@@ -31,7 +31,7 @@ if (check_session_start($_SESSION)) {
     if (isset($_GET['repro_id']) && $_GET['repro_id'] != 0) {
         $getReproId = $_GET['repro_id'];
         $motherRepro = new Repro();
-        $motherRepro->fetchFromDatabase($getReproId);
+        $motherRepro->fetchFromDatabase($getReproId, $conn);
         $litter->setMother($motherRepro);
 
         $stmt = $conn->prepare(getAllMales());
@@ -48,10 +48,10 @@ if (check_session_start($_SESSION)) {
         include_once('../templates/litter_modify_form.php');
     } elseif (isset($_POST) && isset($_POST['mother_id'])) {
         $mother = new Repro();
-        $mother->fetchFromDatabase($_POST['mother_id']);
+        $mother->fetchFromDatabase($_POST['mother_id'], $conn);
         $litter->setMother($mother);
         $father = new Repro();
-        $father->fetchFromDatabase(intval($_POST['father_id']));
+        $father->fetchFromDatabase(intval($_POST['father_id']), $conn);
         $litter->setFather($father);
         $litter->setBirthdate($_POST['birthdate']);
         if (isset($_POST['numberFemales'])) {
