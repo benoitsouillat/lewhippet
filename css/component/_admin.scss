@@ -5,8 +5,18 @@
     @include flex_row_center;
     margin: 2px;
 
+    .tri-para {
+        text-align: center;
+        padding-top: 1rem;
+        padding-right: 2rem;
+    }
+
     @media all and (max-width: $sm) {
         flex-wrap: wrap;
+
+        .tri-para {
+            width: 100%;
+        }
 
         button,
         a {

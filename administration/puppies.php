@@ -35,7 +35,8 @@ require_once(__DIR__ . '/classes/Puppy.php');
             <!-- <a href="puppies/crud.php" class="btn btn-success m-1">Créer une vente isolée</a> -->
             <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
         </div>
-        <div class="query-filter-container">
+        <div class="query-filter-container admin-menu">
+            <p class="tri-para">Options de Tri : </p>
             <a href="?query=default" class="btn btn-dark">Par default</a>
             <a href="?query=litter" class="btn btn-dark">Trier par portée</a>
             <a href="?query=litterreverse" class="btn btn-dark">Trier par dernières portées</a>

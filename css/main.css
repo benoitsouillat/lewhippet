@@ -1687,9 +1687,17 @@ address {
   align-items: center;
   margin: 2px;
 }
+.admin-menu .tri-para {
+  text-align: center;
+  padding-top: 1rem;
+  padding-right: 2rem;
+}
 @media all and (max-width: 576px) {
   .admin-menu {
     flex-wrap: wrap;
+  }
+  .admin-menu .tri-para {
+    width: 100%;
   }
   .admin-menu button,
   .admin-menu a {
