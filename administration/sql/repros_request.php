@@ -29,3 +29,12 @@ function deleteRepro()
 {
     return "DELETE FROM `repros` WHERE `id` = :id";
 }
+function saveReproImages()
+{
+    return "INSERT INTO images (repro_id, path) VALUES (:reproId, :path)";
+}
+
+function getReproImages()
+{
+    return "SELECT * FROM images WHERE `repro_id` = :reproId";
+}

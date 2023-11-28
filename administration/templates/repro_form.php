@@ -68,6 +68,8 @@ include_once('../gerance.php');
     </div>
     <label for="main_img_path">Choisir une image d'illustration</label>
     <input type="file" name="main_img_path" id="main_img_path">
+    <!-- <label for='repro_multi_images[]'>Ajoutez plusieurs photos pour ce reproducteur</label>
+    <input type="file" name="repro_multi_images[]" id="multi_images" multiple> -->
 
     <button type="submit" class="btn btn-success">Soumettre</button>
 </form>

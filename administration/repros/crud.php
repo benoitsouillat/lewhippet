@@ -35,6 +35,23 @@ if (check_session_start($_SESSION)) {
         include_once('../templates/repro_form.php');
     }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if ($_FILES['repro_multi_images'] && $_FILES['repro_multi_images']['name'][0] !== NULL) {
+            var_dump($_FILES['repro_multi_images']['tmp_name']);
+
+            $imagesUploadedTmp = $_FILES['repro_multi_images']['tmp_name'];
+
+            foreach ($imagesUploadedTmp as $imageTmpName) {
+                $prefix = substr($imageTmpName, -8, -4);
+                $destination = '../../repros_img/' . $_POST['repro_id'] . '-' . $prefix . '.jpg';
+                move_uploaded_file($imageTmpName, $destination);
+                $stmt = $conn->prepare(saveReproImages());
+                $stmt->bindParam(':reproId', $_POST['repro_id']);
+                $stmt->bindParam(':path', $destination);
+                $stmt->execute();
+            }
+        }
+
         if ($_POST['repro_id']) {
             $reproId = $_POST['repro_id'];
         } else {
@@ -44,7 +61,6 @@ if (check_session_start($_SESSION)) {
             $reproId = end($id_array)->id + 1;
         }
 
-        // On va créé une foreign key vers images puis on va permettre d'ajouter des images à un Repro dans le formulaire
 
         $file_destination = $repro->getMainImgPath();
         $repro->setName($_POST['repro_name']);
