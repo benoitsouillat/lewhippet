@@ -26,7 +26,6 @@ if (check_session_start($_SESSION)) {
             }
         }
     }
-
     if (isset($_GET['id'])) {
         $stmt = $conn->prepare(getReproFromId());
         $stmt->bindParam(':id', $_GET['id']);
@@ -44,6 +43,8 @@ if (check_session_start($_SESSION)) {
             $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
             $reproId = end($id_array)->id + 1;
         }
+
+        // On va créé une foreign key vers images puis on va permettre d'ajouter des images à un Repro dans le formulaire
 
         $file_destination = $repro->getMainImgPath();
         $repro->setName($_POST['repro_name']);
