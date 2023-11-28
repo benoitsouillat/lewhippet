@@ -7,27 +7,27 @@
             <div class="slider-auto-horizontal">
                 <div class="slider-element">
                     <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg"
-                        alt="Zazie Championne des léviers" />
+                        alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zero to One of Gentle Mind<br> </p>
                 </div>
                 <div class="slider-element">
                     <img class="slider-element" src="../../expo_img/zazie_pompadour_statique_23.jpg"
-                        alt="Zazie Championne des léviers" />
+                        alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zazie</p>
                 </div>
                 <div class="slider-element">
                     <img class="slider-element" src="../../expo_img/yami_pompadour_23.jpg"
-                        alt="Zazie Championne des léviers" />
+                        alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Yamamoto dit 'Yami' of Gentle Mind </p>
                 </div>
                 <div class="slider-element">
                     <img class="slider-element" src="../../expo_img/zazie_yam_pompadour_23.jpg"
-                        alt="Zazie Championne des léviers" />
+                        alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zazie et Yami <br> Meilleur de Race et Meilleur Sexe Opposé</p>
                 </div>
                 <div class="slider-element">
                     <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg"
-                        alt="Zazie Championne des léviers" />
+                        alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zero to One of Gentle Mind<br> </p>
                 </div>
 
@@ -50,7 +50,7 @@
 
     <div id="prodige" class="w-75 text-center">
         <h3>Prodige, un prénom bien choisi</h3>
-        <img src="/expo_img/prodige.jpg" alt="Prodige et ses chiots disponibles" /><br>
+        <img src="/expo_img/prodige.jpg" alt="Prodige et ses chiots disponibles"><br>
 
         <p>Dans un tourbillon de succès et de bonheur, prodige, a brillamment remporté le Championnat de France 2023
             de
@@ -118,16 +118,4 @@
         <p>Journée géniale en compagnie du soutien de La Romance des Damoiseaux, merci encore à tous.</p>
         <img src="/expo_img/zazie_bis_montlucon23.jpg" alt="Exposition Canine La Romance des Damoiseaux à Montlucon">
     </div>
-
-    <!-- <div class="w-75">
-        <h3>Nantes 2022</h3>
-        <p>Une exposition pleine de succès à l'exposition intrnationale de Nantes 2022</p>
-        <p>Voici nos résultats :
-            <br> Zero to One dite Zazie est classée meilleur whippet de l'exposition et a obtenu le CACIB,
-            <br> Yamamoto dit Yam : Meilleur de race en Baby
-        </p>
-        <p>50 whippets étaient inscrits et jugés par Mme Kleyn</p>
-        <br>
-        <img src="/expo_img/Zazie_Nantes_2023.jpg" alt="Zazie whippet en exposition">
-    </div>-->
 </section>

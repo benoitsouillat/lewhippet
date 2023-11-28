@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="Contacter la Romance des Damoiseaux - Elevage de Whippet LOF">
     <title>La Romance des Damoiseaux - Contactez-nous</title>
-    <link media="all" type="text/css" rel="stylesheet" href="../script/style.css" />
+    <link media="all" type="text/css" rel="stylesheet" href="../script/style.css">
 
     <?php
     require_once(__DIR__ . '../../php/component/head-links.php');
@@ -76,7 +76,7 @@
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11179.077149975514!2d1.607177!3d45.5348481!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc843af4f7d44121!2sLa%20Romance%20des%20Damoiseaux!5e0!3m2!1sfr!2sfr!4v1642944738871!5m2!1sfr!2sfr"
                             allowfullscreen="" loading="lazy"></iframe>
-                        <br />
+                        <br>
                         <p>4 Route du conseiller 19510 LAMONGERIE <br>( Corrèze - 19 )</p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                 <address>
                     <h4>Sabine Bourget</h4>
                     <p>La Romance des Damoiseaux</p>
-                    <p>4 Route du conseiller<br /> 19510 Lamongerie </p>
+                    <p>4 Route du conseiller<br> 19510 Lamongerie </p>
                     <p>06 09 26 01 30</p>
                     <p>laromancedesdamoiseaux@gmail.com</p>
                 </address>
@@ -98,7 +98,7 @@
         include_once(__DIR__ . '../../php/component/footer.php')
         ?>
     </footer>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
