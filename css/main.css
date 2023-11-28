@@ -253,11 +253,13 @@
     white-space: nowrap;
   }
 }
-.index_content h2, .index_content h3 {
+.index_content h2,
+.index_content h3 {
   text-align: center;
   color: #572d54;
 }
-.index_content h2 a, .index_content h3 a {
+.index_content h2 a,
+.index_content h3 a {
   color: #572d54;
 }
 
@@ -319,11 +321,11 @@
   padding: 10px;
   padding-bottom: 50px;
   /* Propriété à developper pour afficher des images larges mais pas trop hautes - Design Review
-    div {
-      max-height: 220px;
-      border: solid 2px red;
-      overflow: hidden;
-    } */
+  div {
+    max-height: 220px;
+    border: solid 2px red;
+    overflow: hidden;
+  } */
 }
 .index__expo__result img {
   max-width: 75%;
@@ -361,6 +363,65 @@
 
 .annonce_bb_nés {
   font-size: 1.2em;
+}
+
+.sommaire_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: auto;
+}
+.sommaire_content img {
+  max-width: 90%;
+}
+.sommaire_content .sommaire_bb_dispo {
+  width: 100%;
+  text-align: center;
+}
+.sommaire_content .sommaire_bb_dispo .sommaire_img_bb {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: auto;
+}
+.sommaire_content .sommaire_bb_dispo .sommaire_img_bb img {
+  max-width: 90%;
+}
+@media all and (min-width: 768px) {
+  .sommaire_content .sommaire_bb_dispo .sommaire_img_bb {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .sommaire_content .sommaire_bb_dispo .sommaire_img_bb img {
+    max-width: 70%;
+  }
+  .sommaire_content .sommaire_bb_dispo .sommaire_img_bb p {
+    max-width: 390px;
+    padding: 10px;
+  }
+}
+.sommaire_content .sommaire_informations {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+@media all and (min-width: 576px) {
+  .sommaire_content .sommaire_informations {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 }
 
 /* Keyframes */
