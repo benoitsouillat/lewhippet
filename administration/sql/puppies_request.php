@@ -7,8 +7,20 @@ function getAllPuppies()
 
 function getAllPuppiesByPosition()
 {
-    return "SELECT * FROM puppies ORDER BY position";
+    return "SELECT * FROM puppies ORDER BY position, Litter ASC";
 };
+function getAllPuppiesByEnable()
+{
+    return "SELECT puppies.* FROM puppies JOIN litters ON puppies.Litter = litters.id WHERE litters.enable = TRUE ORDER BY puppies.enable DESC";
+}
+function getAllPuppiesByLitter()
+{
+    return "SELECT * FROM puppies ORDER BY Litter ASC, position ASC";
+}
+function getAllPuppiesByLastLitter()
+{
+    return "SELECT * FROM puppies ORDER BY Litter DESC, position ASC";
+}
 function getAllPuppiesByPositionAndLitter()
 {
     return "SELECT * FROM puppies WHERE Litter = :litter_id ORDER BY position";

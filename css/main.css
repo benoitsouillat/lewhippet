@@ -1787,6 +1787,25 @@ address {
   margin: 0, 25rem;
 }
 
+.query-filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.query-filter-container a {
+  margin: 2px;
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.7s;
+  transition-delay: 0;
+}
+.query-filter-container a:hover {
+  transform: scale(1.03);
+  color: black;
+  background-color: #ccc;
+}
+
 .dog-parents {
   overflow: hidden;
 }

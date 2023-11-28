@@ -102,6 +102,21 @@
     }
 }
 
+.query-filter-container {
+    @include flex_row_center;
+
+    a {
+        margin: 2px;
+        @include main_animation($delay: 0);
+
+        &:hover {
+            transform: scale(1.03);
+            color: black;
+            background-color: #ccc;
+        }
+    }
+}
+
 .dog-parents {
     overflow: hidden;
 

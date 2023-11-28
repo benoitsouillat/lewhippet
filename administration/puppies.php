@@ -34,11 +34,36 @@ require_once(__DIR__ . '/classes/Puppy.php');
             <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>
             <!-- <a href="puppies/crud.php" class="btn btn-success m-1">Créer une vente isolée</a> -->
             <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
-
+        </div>
+        <div class="query-filter-container">
+            <a href="?query=default" class="btn btn-dark">Par default</a>
+            <a href="?query=litter" class="btn btn-dark">Trier par portée</a>
+            <a href="?query=litterreverse" class="btn btn-dark">Trier par dernières portées</a>
+            <a href="?query=active" class="btn btn-dark">Trier par chiots actifs</a>
         </div>
         <div class="puppies-admin-container d-flex justify-content-evenly flex-wrap">
             <?php
-                $stmt = $conn->query(getAllPuppiesByPosition());
+                if (isset($_GET['query']) && $_GET['query'] !== NULL) {
+                    $query = $_GET['query'];
+                    switch ($query) {
+                        case 'litter':
+                            $stmt = $conn->query(getAllPuppiesByLitter());
+                            break;
+                        case 'litterreverse':
+                            $stmt = $conn->query(getAllPuppiesByLastLitter());
+                            break;
+                        case 'active':
+                            $stmt = $conn->query(getAllPuppiesByEnable());
+                            break;
+                        case 'default';
+                            $stmt = $conn->query(getAllPuppiesByPosition());
+                            break;
+                        default:
+                            $stmt = $conn->query(getAllPuppies());
+                    }
+                } else {
+                    $stmt = $conn->query(getAllPuppiesByPosition());
+                }
                 while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
                     $puppy = new Puppy();
                     $puppy->fillFromStdClass($puppyData, $conn);
