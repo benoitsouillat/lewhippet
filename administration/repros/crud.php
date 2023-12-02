@@ -6,7 +6,7 @@ require_once('../utilities/usefull_functions.php');
 require_once('../../secret/connexion.php');
 require_once('../classes/Repro.php');
 
-$repro = new Repro('', '', '', '', '', '', '', '', '', '', '');
+$repro = new Repro();
 $repro->setBirthdate(date('Y-m-d'));
 $repro->setLofselect('https://www.centrale-canine.fr/lofselect/recherche-chien');
 if (check_session_start($_SESSION)) {
@@ -35,8 +35,8 @@ if (check_session_start($_SESSION)) {
         include_once('../templates/repro_form.php');
     }
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        if ($_FILES['repro_multi_images'] && $_FILES['repro_multi_images']['name'][0] !== NULL) {
+        // Système pour enregistrer des images dans la table Images pour créer un diaporama pour les reproducteurs
+        if (isset($_FILES['repro_multi_images']) && $_FILES['repro_multi_images']['name'][0] !== NULL) {
             var_dump($_FILES['repro_multi_images']['tmp_name']);
             $imagesUploadedTmp = $_FILES['repro_multi_images']['tmp_name'];
             foreach ($imagesUploadedTmp as $imageTmpName) {
@@ -49,14 +49,17 @@ if (check_session_start($_SESSION)) {
                 $stmt->execute();
             }
         }
+        // Récupération de l'id s'il est envoyé ou création d'un ID +1 depuis la table Repros
         if ($_POST['repro_id']) {
             $reproId = $_POST['repro_id'];
+            $repro->setMainImgPath($_POST['repro_img']);
         } else {
             $stmt_id = $conn->prepare("SELECT id from repros");
             $stmt_id->execute();
             $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
             $reproId = end($id_array)->id + 1;
         }
+
         $file_destination = $repro->getMainImgPath();
         $repro->setName($_POST['repro_name']);
         $repro->setSex($_POST['repro_sex']);
@@ -68,7 +71,9 @@ if (check_session_start($_SESSION)) {
         $repro->setLofselect($_POST['repro_lofselect']);
         $repro->setIsAdn($_POST['repro_adn']);
         $repro->setIsChampion($_POST['repro_champion']);
-        if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] !== null) {
+
+        // Condition : Si un fichier Main_Img_Path est envoyé via le formulaire
+        if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] !== null && $_FILES['main_img_path']['size'] > 0) {
             $file_name = $reproId . '-' . $repro->getName();
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
             $file_destination = '../../repros_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
@@ -76,12 +81,14 @@ if (check_session_start($_SESSION)) {
             $repro->setMainImgPath($file_destination);
         }
 
+        // Modification du reproducteur si son ID est transmis, ou création d'un nouveau
         if (isset($_POST['repro_id'])) {
             $stmt = $conn->prepare(updateRepro());
             $stmt->bindValue(':id', $_POST['repro_id']);
         } else {
             $stmt = $conn->prepare(createRepro());
         }
+        // Bind Value avant Fetch sur la base de donnée depuis l'entité Class::Repro via les méthodes de l'objet
         try {
             $stmt->bindValue(':name', $repro->getName());
             $stmt->bindValue(':sex', $repro->getSex());

@@ -6,6 +6,8 @@ $stmt->execute();
 $repros = $stmt->fetchAll(PDO::FETCH_OBJ);
 $title = $repro->getName();
 
+
+
 include_once('../gerance.php');
 ?>
 <form action="../repros/crud.php" method="post" id='reproForm' class="form-control d-flex flex-column w-50 m-3"
@@ -13,6 +15,7 @@ include_once('../gerance.php');
     <?php
     if (isset($_GET['id'])) {
         echo "<input type='hidden' name='repro_id' value='{$_GET['id']}'>";
+        echo "<input type='hidden' name='repro_img' value='{$repro->getMainImgPath()}'>";
     } ?>
     <label for="repro_name">Nom du reproducteur :</label>
     <input name="repro_name" id="repro_name" class="form-control-sm" type="text" placeholder="Nom du chien"
@@ -67,7 +70,7 @@ include_once('../gerance.php');
         <label for="champion_no">Non</label>
     </div>
     <label for="main_img_path">Choisir une image d'illustration</label>
-    <input type="file" name="main_img_path" id="main_img_path">
+    <input type="file" name="main_img_path" id="main_img_path" value="<?php echo $repro->getMainImgPath() ?>">
     <!-- <label for='repro_multi_images[]'>Ajoutez plusieurs photos pour ce reproducteur</label>
     <input type="file" name="repro_multi_images[]" id="multi_images" multiple> -->
 
