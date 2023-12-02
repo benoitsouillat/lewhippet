@@ -101,16 +101,14 @@ require_once(__DIR__ . '/classes/Repro.php');
                                 } ?>
                             </div>
                         </div>
-
-
                     </div>
-                <?php
-                endwhile;
-                ?>
-
             <?php
-        }
+                endwhile;
+            } else {
+                echo "<div class='text-center alert alert-danger'><p>Vous n'êtes pas connecté !!! </p><br><a class='btn btn-success' href='./login.php'>Se connecter</a></div>";
+            }
             ?>
+
 </body>
 
 </html>

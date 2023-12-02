@@ -1086,7 +1086,7 @@ address {
   text-wrap: nowrap;
   margin: 3px;
   padding: 5px;
-  text-shadow: 2px 2px 2px grey;
+  text-shadow: 1px 1px 3px black;
   -webkit-text-decoration: underline white;
           text-decoration: underline white;
   transition: all;
@@ -1123,17 +1123,18 @@ address {
   margin: 3px;
   font-weight: bold;
   text-wrap: nowrap;
-  text-shadow: 1px 1px 2px #1a1a1a;
+  text-shadow: 1px 1px 3px black;
+  letter-spacing: 0.15rem;
 }
 .litters-container .parents .adn-pill {
-  color: rgb(107, 193, 222);
-  -webkit-text-decoration: underline rgb(107, 193, 222);
-          text-decoration: underline rgb(107, 193, 222);
+  color: rgb(130, 216, 244);
+  -webkit-text-decoration: underline rgb(130, 216, 244);
+          text-decoration: underline rgb(130, 216, 244);
 }
 .litters-container .parents .champion-pill {
-  color: rgb(238, 214, 108);
-  -webkit-text-decoration: underline rgb(238, 214, 108);
-          text-decoration: underline rgb(238, 214, 108);
+  color: rgb(244, 223, 128);
+  -webkit-text-decoration: underline rgb(244, 223, 128);
+          text-decoration: underline rgb(244, 223, 128);
 }
 .litters-container img {
   max-height: 250px;
@@ -1856,6 +1857,19 @@ address {
   animation: php_error 10s ease 0s;
 }
 
+.btn {
+  border: solid 1px black;
+  box-shadow: 2px 2px 2px black;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: unset;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center !important;
+}
+
 .btn-pink {
   border: solid 1px black;
   box-shadow: 2px 2px 2px black;
@@ -1932,13 +1946,14 @@ address {
   flex-wrap: wrap;
   flex-grow: 1;
   border: solid 3px black;
-  padding: 2px;
+  padding: 8px;
   margin: 1%;
   max-height: 60vh;
   min-width: 370px;
 }
 .repros-admin-container > .card img {
   max-width: 80%;
+  max-height: 300px;
 }
 .repros-admin-container > .card .btn-pink {
   border: solid 1px black;

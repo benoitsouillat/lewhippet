@@ -38,6 +38,10 @@
     @include php_error_pop;
 }
 
+.btn {
+    @include button;
+}
+
 .btn-pink {
     @include pink_button;
 }
@@ -92,13 +96,14 @@
     flex-wrap: wrap;
     flex-grow: 1;
     border: solid 3px black;
-    padding: 2px;
+    padding: 8px;
     margin: 1%;
     max-height: 60vh;
     min-width: 370px;
 
     img {
         max-width: 80%;
+        max-height: 300px;
     }
 
     .btn-pink {

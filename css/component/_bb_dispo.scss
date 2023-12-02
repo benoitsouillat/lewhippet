@@ -236,7 +236,7 @@
         margin: 3px;
         padding: 5px;
 
-        text-shadow: 2px 2px 2px grey;
+        text-shadow: 1px 1px 3px black;
         text-decoration: underline white;
         @include main_animation($duration : .5s, $delay :0s);
 
@@ -268,7 +268,8 @@
       margin: 3px;
       font-weight: bold;
       text-wrap: nowrap;
-      text-shadow: 1px 1px 2px lighten(#000, 10);
+      text-shadow: 1px 1px 3px black;
+      letter-spacing: .15rem;
     }
 
     .adn-pill {

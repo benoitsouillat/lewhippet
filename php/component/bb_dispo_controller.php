@@ -30,7 +30,7 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
         if ($litter->getMother()->getIsAdn())
             echo "<span class='adn-pill'> ADN Validée </span>";
         if ($litter->getMother()->getIsChampion())
-            echo "<span class='champion-pill'> Championnat Obtenu </span>";
+            echo "<span class='champion-pill'> Championnat Homologué </span>";
         echo "</div>";
     }
 
@@ -50,7 +50,7 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
         if ($litter->getFather()->getIsAdn())
             echo "<span class='adn-pill'> ADN Validée </span>";
         if ($litter->getFather()->getIsChampion())
-            echo "<span class='champion-pill'> Championnat Obtenu </span>";
+            echo "<span class='champion-pill'> Championnat Homologué </span>";
         echo "</div>";
     }
     echo " </section></div></div>
