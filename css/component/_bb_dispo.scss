@@ -100,7 +100,7 @@
   min-width: 85%;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
-  background: linear-gradient(180deg, lighten($violet, 30) 50%, #cfcfcf);
+  background: linear-gradient(180deg, lighten($violet, 20) 30%, #cfcfcf);
 
   @include flex_row_around;
   flex-wrap: wrap;

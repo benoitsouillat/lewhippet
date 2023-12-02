@@ -935,7 +935,7 @@ address {
   min-width: 85%;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
-  background: linear-gradient(180deg, #cd9dc8 50%, #cfcfcf);
+  background: linear-gradient(180deg, #bb7cb6 30%, #cfcfcf);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
