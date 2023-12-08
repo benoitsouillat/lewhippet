@@ -86,3 +86,10 @@ if (breederReproNoButton) {
         }
     })
 }
+
+
+const confirmDeleteImage = (idImage, idPuppy) => {
+    if (confirm(`Voulez-vous supprimer cette image ? `)) {
+        location.assign('../images/delete.php?id=' + idImage + '&puppy_id=' + idPuppy);
+    }
+}

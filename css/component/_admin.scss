@@ -186,3 +186,34 @@
         font-size: .9em;
     }
 }
+
+.diapo_crud_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media all and (max-width: $md) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .diapo_crud {
+
+        button,
+        a {
+            position: relative;
+            top: 0;
+            right: 0;
+
+            >img {
+                width: 5%;
+                border-radius: 100%;
+
+            }
+        }
+    }
+
+    img {
+        max-width: 250px;
+        width: 45%;
+        margin: 4px;
+    }
+}

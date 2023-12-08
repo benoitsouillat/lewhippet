@@ -64,6 +64,11 @@ function getPuppyImages()
 {
     return "SELECT * FROM images WHERE `dog_id` = :dogId";
 }
+function deletePuppyImage()
+{
+    return "DELETE FROM `images` WHERE `id` = :imageId";
+}
+
 function togglePuppy()
 {
     return "UPDATE `puppies` SET `enable` = :enable WHERE id = :id";
