@@ -121,10 +121,16 @@ p {
 
 
   .logo {
+    @include logo_load_turning();
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    @include main_animation();
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     @media all and (max-width: $md) {
       display: none;

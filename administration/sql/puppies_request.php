@@ -7,17 +7,34 @@ function getAllPuppies()
 
 function getAllPuppiesByPosition()
 {
-    return "SELECT * FROM puppies ORDER BY position";
+    return "SELECT * FROM puppies ORDER BY position, Litter ASC";
+};
+function getAllPuppiesByEnable()
+{
+    return "SELECT puppies.* FROM puppies JOIN litters ON puppies.Litter = litters.id WHERE litters.enable = TRUE ORDER BY puppies.enable DESC";
+}
+function getAllPuppiesByLitter()
+{
+    return "SELECT * FROM puppies ORDER BY Litter ASC, position ASC";
+}
+function getAllPuppiesByLastLitter()
+{
+    return "SELECT * FROM puppies ORDER BY Litter DESC, position ASC";
+}
+function getAllPuppiesByPositionAndLitter()
+{
+    return "SELECT * FROM puppies WHERE Litter = :litter_id ORDER BY position";
 };
 
 function createPuppy()
 {
-    return "INSERT INTO `puppies` (name, sex, available, description, main_img_path, mother_name, mother_adn, mother_champion, position) VALUES (:name, :sex, :available, :description, :main_img_path, :mother_name, :mother_adn, :mother_champion, :position)";
+    return "INSERT INTO `puppies` (name, sex, color, description, available, enable, Litter, main_img_path, position) 
+    VALUES (:name, :sex, :color, :description, :available, :enable, :litter_id, :main_img_path, :position)";
 }
 
 function updatePuppy()
 {
-    return "UPDATE `puppies` SET name = :name, sex = :sex, available = :available, description = :description, main_img_path = :main_img_path, mother_name = :mother_name, mother_adn = :mother_adn, mother_champion = :mother_champion WHERE id = :id";
+    return "UPDATE `puppies` SET name = :name, sex = :sex, color = :color, available = :available, description = :description, main_img_path = :main_img_path WHERE id = :id";
 }
 function updatePuppyPosition()
 {
@@ -47,6 +64,11 @@ function getPuppyImages()
 {
     return "SELECT * FROM images WHERE `dog_id` = :dogId";
 }
+function deletePuppyImage()
+{
+    return "DELETE FROM `images` WHERE `id` = :imageId";
+}
+
 function togglePuppy()
 {
     return "UPDATE `puppies` SET `enable` = :enable WHERE id = :id";

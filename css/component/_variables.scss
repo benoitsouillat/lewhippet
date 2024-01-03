@@ -21,3 +21,103 @@ $lg : 992px;
 $xl : 1200px;
 
 $nav-height: 58px;
+$violet : #8a4784;
+$pink : #C69;
+$beige : beige;
+$grey : grey;
+$adn-color : rgb(130, 216, 244);
+$champion-color : rgb(244, 223, 128);
+
+$title-primary-color : beige;
+$title-second-color : $violet;
+$head-color : $title-second-color;
+$head-bg : $title-second-color;
+$text-color : #000;
+
+$font: 'times new roman', 'Arial', sans-serif;
+$title-font: 'Playfair Display', 'Oswald', sans-serif;
+
+$shadow-title : 5px 5px 5px;
+
+$xs : 380px;
+$sm : 576px;
+$md : 768px;
+$lg : 992px;
+$xl : 1200px;
+
+$nav-height: 58px;
+$main-duration: 0.7s;
+$main-delay: 0.3s;
+
+/* Keyframes */
+
+@keyframes load-from-left {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes load-from-right {
+    0% {
+        transform: translateX(100%);
+    }
+
+    50% {
+        transform: translateX(50%);
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: translateX(0) scale(1);
+    }
+
+}
+
+@keyframes load-from-top {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(-48%);
+    }
+
+    65% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes loading-logo {
+    0% {
+        transform: rotateY('0deg');
+    }
+
+    100% {
+        transform: rotateY(1turn);
+    }
+}
+
+@keyframes php_error {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    15% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

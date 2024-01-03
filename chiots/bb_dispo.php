@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
+    <meta name="description"
+        content="Chiots Whippet LOF à vendre - Découvrez les chiots whippet de la romance des damoiseaux">
     <title>CHIOTS WHIPPET LOF A VENDRE | Découvrez les chiots de la romance des damoiseaux</title>
     <?php
     require_once(__DIR__ . '../../php/component/head-links.php');
@@ -24,109 +25,14 @@
         ?>
         <div class="journal_puppy">
             <h3>Bienvenue dans le journal des bébés de la Romance des damoiseaux</h3>
-            <h4>Voici nos chiots Whippet Disponibles</h4>
-        </div>
-
-        <div class="puppy_dispo">
-            <h5>Chiots Whippet Mâles et Femelles disponibles <span>(Photos et Vidéos à la demande)</span></h5>
-            <p>Nos dernières naissances des bébés whippet</p>
         </div>
         <div class="puppies_container">
             <section id="disponible" class="section_litter">
                 <h3>Nos chiots Whippet disponibles</h3>
-                <hr>
                 <div class="gallery">
-                    <figure>
-                        <video autoplay controls muted class="puppies_img xl">
-                            <source src="/chiots_img/2022/repas.mp4" type="video/mp4">
-                            Pour voir la vidéo, mettez à jour votre navigateur ou installez Google Chrome
-                        </video>
-                        <br>
-                        <br>
-                        <figcaption>Premier Repas pour nos bébés !! </figcaption>
-                    </figure>
                     <section class="col-12 gallery_php">
-                        <?php
-                        require_once('../secret/connexion.php');
-                        require_once('../administration/sql/puppies_request.php');
-                        require_once('../php/component/display-functions.php');
-
-                        $stmt = $conn->query(getAllPuppiesByPosition());
-
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
-                            $availableColor = getAvailableColor($row['available']);
-                            $sexColor = getSexColor($row['sex']);
-
-                            $stmtForPuppyImages = $conn->prepare(getPuppyImages());
-                            $stmtForPuppyImages->bindParam(':dogId', $row['id']);
-                            $stmtForPuppyImages->execute();
-                            $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);
-
-                            if ($row['enable'] == true) {
-                                echo "<div class='card'>
-                            <figure class='m-0 p-0'>
-                                <div class='diapo-container justify-content-center' data-speed='3500' data-dog-id={$row['id']}>
-                                    <div class='diapo diapo-{$row['id']}'>
-                                    <img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
-                                    alt='Chiot Whippet Disponible' />
-                                    ";
-                                foreach ($puppyImages as $image) {
-                                    echo "<img src='{$image['path']}' alt='chiot disponible' class='m-0 p-0 w-100' loading='lazy'>";
-                                }
-                                if (isset($puppyImages[0]) && $puppyImages[0]['path'] != null) {
-                                    echo "<img class='m-0 p-0 w-100' src='{$row['main_img_path']}'
-                                            alt='Chiot Whippet Disponible' loading='lazy'/>
-                                    </div>
-                                </div>
-                                <div class='arrow-div'>
-                                <button class='left-arrow bg-transparent border-0'>
-                                <span class='bi bi-caret-left bi-caret-left-{$row['id']} text-light'></span>
-                                </button>
-                                <button class='right-arrow bg-transparent border-0'>
-                                <span class='bi bi-caret-right bi-caret-right-{$row['id']} text-light'></span>
-                                </button>
-                                </div>";
-                                } else {
-                                    echo "</div>
-                                </div>";
-                                }
-                                echo "
-                                <figcaption class='m-0 p-0'>
-                                    <div class='d-flex flex-row justify-content-around align-items-center pr-4 pl-4 mt-3 mb-3 labels'>
-                                        <h4>";
-
-                                echo "<span class='text-center'>{$row['name']} </span>";
-                                if ($row['sex'] === 'Male' || $row['sex'] === 'male') {
-                                    echo " <i class='bi bi-gender-male'> </i> ";
-                                } else {
-                                    echo " <i class='bi bi-gender-female'> </i>";
-                                }
-                                echo "</h4>
-                                    <p class='alert alert-" . $availableColor . "'> {$row['available']}</p>
-                                </div>";
-                                if ($row['mother_name'] != null) {
-                                    echo "<div class='d-flex flex-row justify-content-between align-items-start flex-wrap'>
-                                <p class='description text-left w-75'> Issu de " . ucfirst($row['mother_name']) . "</p>";
-                                    if ($row['mother_adn'] || $row['mother_champion']) {
-                                        echo "<div class='d-flex flex-row justify-content-end flex-wrap w-25 mb-3'>";
-                                        if ($row['mother_adn']) {
-                                            echo "<span class='badge badge-pink'>ADN Vérifiée</span>";
-                                        }
-                                        if ($row['mother_champion']) {
-                                            echo "<span class='badge badge-blue'>Championne</span>";
-                                        }
-                                        echo "</div>";
-                                    }
-                                    echo "</div>";
-                                }
-                                echo "<p class='description'>{$row['description']}</p>
-                                </figcaption>
-                            </figure>
-                            }
-                        </div>";
-                            }
-                        endwhile;
-                        ?>
+                        <?php include_once('../php/component/bb_dispo_controller.php'); ?>
+                    </section>
                 </div>
             </section>
 
@@ -167,13 +73,23 @@
                 whippet</a>
             <div class="puppies_articles_box">
                 <div class="puppies_articles_img">
-                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG" alt="whippet et accessoires">
-                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG" alt="whippet et accessoires">
-                    <img class="img_medium_vertical" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG" alt="whippet et accessoires">
+                    <img class="img_medium_vertical"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2374.JPG"
+                        alt="whippet et accessoires">
+                    <img class="img_medium_vertical"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2250.JPG"
+                        alt="whippet et accessoires">
+                    <img class="img_medium_vertical"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_2212.JPG"
+                        alt="whippet et accessoires">
                 </div>
                 <div class="puppies_articles_img">
-                    <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG" alt="whippet et accessoires">
-                    <img class="img_medium_horizontal" src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG" alt="whippet et accessoires"><br>
+                    <img class="img_medium_horizontal"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3080.JPG"
+                        alt="whippet et accessoires">
+                    <img class="img_medium_horizontal"
+                        src="/accessoires-chiens/images/nouvelle%20collection%20accessoires%20whippet/IMG_3007.JPG"
+                        alt="whippet et accessoires"><br>
                 </div>
                 <p>
                     Jouets de 5 à 26 euros selon la référence, les
@@ -241,7 +157,8 @@
         <article id="male_femelle">
             <h2>Mâle ou Femelle : Que choisir ??</h2>
             <div>
-                <img src="/chiots_img/illus_fichier/chiotschapeau.jpg" alt="whippet calme et équilibré joue avec un chapeau">
+                <img src="/chiots_img/illus_fichier/chiotschapeau.jpg"
+                    alt="whippet calme et équilibré joue avec un chapeau">
                 <p>Nos chiots whippets sont calmes et équilibrés, ils évoluent dans un environnement
                     sain qui leur permet de s'adapter facilement à leur nouvelle vie.</p>
             </div>
@@ -291,7 +208,7 @@
         </article>
         <div class="div_rose">
             <address>
-                <h4>La Romance des Damoiseaux</h4>
+                <P>La Romance des Damoiseaux</p>
                 <p>LA FAYE <br> 19510 LAMONGERIE</p>
                 <p>Elevage passion de Whippet, pour tout savoir sur le whippet</p>
                 <a href="tel:+33609260130">06.09.26.01.30</a> <br>
@@ -302,9 +219,11 @@
     <footer>
         <?php require_once(__DIR__ . '../../php/component/footer.php'); ?>
     </footer>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 </body>
 

@@ -3,6 +3,7 @@ session_start();
 require_once(__DIR__ . '/../secret/connexion.php');
 require_once(__DIR__ . '/utilities/usefull_functions.php');
 require_once(__DIR__ . '/sql/puppies_request.php');
+require_once(__DIR__ . '/classes/Puppy.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,25 +28,59 @@ require_once(__DIR__ . '/sql/puppies_request.php');
         <p class="w-50 text-right align-self-end alert alert-success p-1 m-0">Connecté en tant que :
             <?php echo $_SESSION['username'] ?></p>
 
-        <div class="d-flex flex-row justify-content-center m-2 p-2">
-            <a href="puppies/crud.php" class="btn btn-success m-1">Créer un nouveau chiot</a>
+        <div class="admin-menu">
+            <a href="./repros.php" class="btn btn-primary m-1">Gérer les reproducteurs</a>
+            <a href="./litters.php" class="btn btn-pink m-1">Gérer les portées</a>
             <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>
+            <!-- <a href="puppies/crud.php" class="btn btn-success m-1">Créer une vente isolée</a> -->
             <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
-
+        </div>
+        <div class="query-filter-container admin-menu">
+            <p class="tri-para">Options de Tri : </p>
+            <a href="?query=default" class="btn btn-dark">Par default</a>
+            <a href="?query=litter" class="btn btn-dark">Trier par portée</a>
+            <a href="?query=litterreverse" class="btn btn-dark">Trier par dernières portées</a>
+            <a href="?query=active" class="btn btn-dark">Trier par chiots actifs</a>
         </div>
         <div class="puppies-admin-container d-flex justify-content-evenly flex-wrap">
             <?php
-                $stmt = $conn->query(getAllPuppiesByPosition());
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+                if (isset($_GET['query']) && $_GET['query'] !== NULL) {
+                    $query = $_GET['query'];
+                    switch ($query) {
+                        case 'litter':
+                            $stmt = $conn->query(getAllPuppiesByLitter());
+                            break;
+                        case 'litterreverse':
+                            $stmt = $conn->query(getAllPuppiesByLastLitter());
+                            break;
+                        case 'active':
+                            $stmt = $conn->query(getAllPuppiesByEnable());
+                            break;
+                        case 'default';
+                            $stmt = $conn->query(getAllPuppiesByPosition());
+                            break;
+                        default:
+                            $stmt = $conn->query(getAllPuppies());
+                    }
+                } else {
+                    $stmt = $conn->query(getAllPuppiesByPosition());
+                }
+                while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
+                    $puppy = new Puppy();
+                    $puppy->fillFromStdClass($puppyData, $conn);
                 ?>
-            <div class="card justify-content-between col-10 col-sm-6 col-lg-4 col-xl-3 p-2 mt-1 <?php if ($row['enable'] == 0) {
-                                                                                                            echo 'disable-filter';
-                                                                                                        } ?>">
+            <div class="card justify-content-between col-10 col-sm-6 col-lg-4 col-xl-3 p-2 mt-1 
+            <?php if ($puppy->getEnable() == 0) {
+                        echo 'disable-filter';
+                    }; ?>">
+                <div class='litter-number-info bg-info'>
+                    <p class='text-center'>Portée <?php echo $puppy->getLitter()->getLitterNumberSCC() ?></p>
+                </div>
                 <div class="m1 p2 text-center bg-dark text-light">
                     <p class="w-100 col-12 text-center bg-dark text-light">Position : </p>
                     <form class="form-control bg-dark d-flex flex-row justify-content-between flex-shrink-1 col-12"
                         action="./puppies/updater.php" method="get">
-                        <input type='hidden' name='puppyId' value='<?php echo $row['id'] ?>'>
+                        <input type='hidden' name='puppyId' value='<?php echo $puppy->getId() ?>'>
                         <label for="moveBefore">
                             <button class="btn" name="moveBefore" type="submit" placeholder="Précédent">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
@@ -56,7 +91,7 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                             </button>
                         </label>
                         <input name="positionInputer" type="number" class="col-3"
-                            value="<?php echo $row['position'] ?>">
+                            value="<?php echo $puppy->getPosition() ?>">
                         <button class="btn btn-light" type="submit">Valider</button>
                         <label for="moveAfter">
                             <button class="btn" name="moveAfter" type="submit" placeholder="Suivant">
@@ -70,26 +105,26 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                     </form>
                 </div>
                 <?php echo ("
-                <a href=\"./puppies/crud.php?id={$row['id']}\">
-                <img class='card-img-top img-admin-list' src='../{$row['main_img_path']}'
+                <a href=\"./puppies/crud.php?id={$puppy->getId()}\">
+                <img class='card-img-top img-admin-list' src='../{$puppy->getMainImgPath()}'
                 alt='Chiot Whippet disponible'></a>
                 "); ?>
                 <div class="card-body d-flex flex-column justify-content-between align-items-center">
                     <div class="d-flex flex-row justify-content-center align-items-center col-12">
                         <?php
-                                if ($row['sex'] === "femelle") {
+                                if ($puppy->getSex() === "femelle") {
                                     echo "
-                            <a  class=\"w-50 text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
-                            <h3 class=\"card-title text-danger text-center\">" . ucfirst(htmlspecialchars($row['name'])) . "</h3></a>";
+                            <a  class=\"w-50 text-decoration-none\" href=\"./puppies/crud.php?id={$puppy->getId()}\">
+                            <h3 class=\"card-title text-danger text-center\">" . ucfirst(htmlspecialchars($puppy->getName())) . "</h3></a>";
                                 } else {
                                     echo "
-                            <a class=\"w-50 text-decoration-none\" href=\"./puppies/crud.php?id={$row['id']}\">
-                            <h3 class=\"card-title text-primary text-center\">" . htmlspecialchars($row['name']) . "</h3></a>";
+                            <a class=\"w-50 text-decoration-none\" href=\"./puppies/crud.php?id={$puppy->getId()}\">
+                            <h3 class=\"card-title text-primary text-center\">" . htmlspecialchars($puppy->getName()) . "</h3></a>";
                                 }
-                                if ($row['available'] === "En option") {
+                                if ($puppy->getAvailable() === "En option") {
                                     echo ("<p class=\"align-self-end w-50 text-center alert alert-warning\">En Option</p>");;
-                                } else if ($row['available'] === "Réservé" || $row['available'] === 'réservé') {
-                                    if ($row['sex'] === "femelle") {
+                                } else if ($puppy->getAvailable() === "Réservé" || $puppy->getAvailable() === 'réservé') {
+                                    if ($puppy->getSex() === "femelle") {
                                         echo ("<p class=\"w-50 text-center alert alert-danger\">Réservée</p>");
                                     } else {
                                         echo ("<p class=\"w-50 text-center alert alert-danger\">Réservé</p>");
@@ -99,31 +134,39 @@ require_once(__DIR__ . '/sql/puppies_request.php');
                                 }
                                 ?>
                     </div>
-                    <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                    <p class="card-text"><?php echo htmlspecialchars($puppy->getDescription()); ?></p>
                     <?php
                             echo "<p class='d-flex flex-row justify-content-evenly align-items-center flex-wrap m-2'>
-                            <span class='alert alert-primary m-2 mt-0 p-2'>Maman : {$row['mother_name']}</span>";
-                            if ($row['mother_champion']) {
+                            <span class='alert alert-mother m-2 mt-0 p-2'>Maman : {$puppy->getLitter()->getMother()->getName()}</span>";
+                            if ($puppy->getLitter()->getMother()->getIsChampion()) {
                                 echo '<span class="alert alert-secondary m-2 mt-0 p-2">Championne</span>';
                             }
-                            if ($row['mother_adn']) {
+                            if ($puppy->getLitter()->getMother()->getIsAdn()) {
+                                echo "<span class='alert alert-info m-2 mt-0 p-2'>ADN</span></p>";
+                            }
+                            echo "<p class='d-flex flex-row justify-content-evenly align-items-center flex-wrap m-2'>
+                            <span class='alert alert-primary m-2 mt-0 p-2'>Papa : {$puppy->getLitter()->getFather()->getName()}</span>";
+                            if ($puppy->getLitter()->getFather()->getIsChampion()) {
+                                echo '<span class="alert alert-secondary m-2 mt-0 p-2">Champion</span>';
+                            }
+                            if ($puppy->getLitter()->getFather()->getIsAdn()) {
                                 echo "<span class='alert alert-info m-2 mt-0 p-2'>ADN</span></p>";
                             }
                             ?>
-                    <div class="btn-container w-100 d-flex flex-row justify-content-between">
-                        <a href="./puppies/crud.php?id=<?php echo $row['id'] ?>"
-                            class="btn btn-primary m-1 p-3">Modifier</a>
+                    <div class="btn-container">
+                        <a href="./puppies/crud.php?id=<?php echo $puppy->getId() ?>"
+                            class="btn btn-primary">Modifier</a>
                         <button
-                            onClick="confirmDeletePuppy(<?php echo $row['id'] ?>,  '<?php echo replace_reunion_char($row['name']) ?>')"
-                            class="btn btn-danger m-1">Supprimer</button>
+                            onClick="confirmDeletePuppy(<?php echo $puppy->getId() ?>,  '<?php echo replace_reunion_char($puppy->getName()) ?>')"
+                            class="btn btn-danger">Supprimer</button>
                         <?php
-                                echo $row['enable'] ?
-                                    "<button onClick='toggleActivePuppy({$row['id']}, {$row['enable']})' class='m-1 p-3 btn btn-warning toggler'
-                                    id='toggler{$row['id']} '>Désactiver
+                                echo $puppy->getEnable() ?
+                                    "<button onClick='toggleActivePuppy({$puppy->getId()}, {$puppy->getEnable()})' class='btn btn-warning toggler'
+                                    id='toggler{$puppy->getId()} '>Désactiver
                                     </button>"
                                     :
-                                    "<button onClick='toggleActivePuppy({$row['id']}, {$row['enable']})' class=' m-1 p-3 btn btn-success toggler'
-                                    id='toggler{$row['id']} '>Activer
+                                    "<button onClick='toggleActivePuppy({$puppy->getId()}, {$puppy->getEnable()})' class='btn btn-success toggler'
+                                    id='toggler{$puppy->getId()}'>Activer
                                     </button>"
                                 ?>
                     </div>

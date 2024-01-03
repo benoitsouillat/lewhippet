@@ -1,3 +1,6 @@
+@import "_variables";
+@import "_mixins";
+
 .puppy_dispo {
   text-align: center;
   margin-bottom: 10px;
@@ -54,9 +57,9 @@
 }
 
 .section_litter {
-  width: 90%;
+  width: 100%;
   margin: 10px auto;
-  padding: 15px;
+  padding: 0;
   border: $title-second-color 2px solid;
   box-shadow: $title-second-color $shadow-title;
   border-radius: 15px;
@@ -92,49 +95,234 @@
   }
 }
 
-.puppies_container {
+.litters-container {
+  width: 100%;
+  min-width: 85%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  background: linear-gradient(180deg, lighten($violet, 20) 30%, #cfcfcf);
 
-  .gallery_php {
+  @include flex_row_around;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  overflow: hidden;
+  font-family: monospace, sans-serif;
+
+  h4 {
+    color: darken(white, 8);
+    text-shadow: 2px 2px 5px $grey;
+    text-wrap: nowrap;
+    text-decoration: underline white;
+    text-align: center;
+    font-family: Serif;
+
+    @media all and (max-width: $md) {
+      text-wrap: balance;
+    }
+  }
+
+  .card {
+    align-self: flex-start;
+  }
+
+  .parents {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+
+    .mother {
+      border-right: solid 1px black;
+
+      @media all and (min-width: $md) {
+        border-right: none;
+      }
+    }
+
+    .mother,
+    .father {
+      box-sizing: border-box;
+      margin-top: 0;
+      margin-bottom: 20px;
+      max-width: 50%;
+
+      .parent-img-div {
+        max-height: 80px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+
+
+        @media all and (min-width: $xs) {
+          max-height: 140px;
+        }
+
+        @media all and (min-width: $md) {
+          max-height: 165px;
+        }
+
+        @media all and (min-width: $lg) {
+          max-height: 200px;
+        }
+
+        img {
+          @include img_load_top($duration: 1.8s, $delay: 0s);
+          object-fit: contain;
+          width: 95%;
+          margin: 10px;
+          align-self: center;
+          @include main_animation($delay: 0s);
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      section {
+        max-width: 410px;
+        width: 100%;
+        height: 100%;
+        @include flex_col;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      p {
+        width: 100%;
+        padding-left: 5px;
+
+        @media all and (min-width: $sm) {
+          width: 80%;
+          padding-left: 20px;
+        }
+      }
+
+      .dog_name_breeder {
+        width: 100%;
+        text-align: center;
+        font-style: italic;
+
+        .dog_name {
+          font-style: normal;
+        }
+      }
+
+      .dog_description {
+        width: 100%;
+        padding: auto;
+        margin: 0;
+      }
+
+      a,
+      button {
+        color: white;
+        font-weight: bold;
+        border-radius: unset;
+        text-decoration: none;
+      }
+
+      .lof-select-link {
+        max-width: 60%;
+        overflow: hidden;
+        text-align: center;
+        text-wrap: nowrap;
+        margin: 3px;
+        padding: 5px;
+
+        text-shadow: 1px 1px 3px black;
+        text-decoration: underline white;
+        @include main_animation($duration : .5s, $delay :0s);
+
+        &:hover {
+          transform: scale(1.03);
+        }
+
+        @media all and (max-width: $sm) {
+          padding-left: 2px;
+          padding-right: 2px;
+        }
+
+      }
+    }
+
+    .pills {
+      position: relative;
+      bottom: 0;
+      @include flex_row_around;
+      align-self: stretch;
+      flex-wrap: wrap;
+      flex-grow: auto;
+      flex-shrink: 1;
+    }
+
+    .adn-pill,
+    .champion-pill {
+      padding: 5px;
+      margin: 3px;
+      font-weight: bold;
+      text-wrap: nowrap;
+      text-shadow: 1px 1px 3px black;
+      letter-spacing: .15rem;
+    }
+
+    .adn-pill {
+      color: $adn-color;
+      text-decoration: underline $adn-color;
+    }
+
+    .champion-pill {
+      color: $champion-color;
+      text-decoration: underline $champion-color;
+    }
+  }
+
+  img {
+    max-height: 250px;
+  }
+}
+
+.puppies_container {
+
+  .gallery_php {
+    @include flex_row_around;
     align-items: flex-start;
     flex-wrap: wrap;
     box-sizing: border-box;
 
 
     .card {
-      display: flex;
-      flex-direction: column;
+      @include flex_col;
       justify-content: flex-start;
       align-items: center;
       flex-wrap: nowrap;
       flex-grow: 1;
       box-sizing: border-box;
-      border: solid 1px $pink;
-      margin: 5px 0.8%;
+
+      border-radius: unset;
+      margin: 7px 10px;
       padding-top: 5px;
-      //background-color: rgb(71, 71, 71);
-      background: linear-gradient(170deg, darken($violet, 15) 50%, rgb(12, 12, 12));
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: top;
+      background: transparent;
       flex-basis: 330px;
       min-width: 330px;
-      min-height: 55vh;
-      max-width: 98%;
+      max-width: 370px;
+      border-radius: 10px;
+      border: solid 1px darken(white, 20);
 
 
-      @media all and (min-width: $sm) {
-        max-width: 65%
-      }
+      transition: border .8s ease, box-shadow .8s ease, border-radius .8s ease;
 
-      @media all and (min-width: $lg) {
-        max-width: 45%;
-      }
+      &:hover {
+        border-radius: unset;
+        border: solid 1px black;
+        box-shadow: grey 2px 2px 50px;
 
-      @media all and (min-width: $xl) {
-        max-width: 30%;
       }
 
       img {
@@ -145,17 +333,15 @@
         left: -1px;
         height: 250px;
         margin-top: 2px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
       }
 
       figure {
         box-sizing: border-box;
         width: 100%;
-        height: 570px;
+        height: 500px;
         max-width: unset;
         margin: auto 0;
-        color: #c5c5c5;
+        color: black;
 
       }
 
@@ -163,9 +349,10 @@
 
 
         h4 {
-          white-space: nowrap;
           margin: 0;
           margin-bottom: 5px;
+          text-wrap: balance;
+          flex-grow: 1;
         }
 
         p {
@@ -302,9 +489,7 @@
 
 .puppy_infos {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include flex_col_center;
 }
 
 #next_naissance {
@@ -362,13 +547,5 @@
         font-size: 1em;
       }
     }
-  }
-}
-
-.xl {
-  max-width: 380px;
-
-  @media all and (max-width: $sm) {
-    max-width: 280px;
   }
 }
