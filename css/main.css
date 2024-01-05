@@ -936,7 +936,7 @@ address {
   min-width: 85%;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
-  background: linear-gradient(180deg, #bb7cb6 30%, #cfcfcf);
+  background: linear-gradient(180deg, #cb8dc6 2%, #cfcfcf);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -1064,11 +1064,31 @@ address {
 .litters-container .parents .father .dog_name_breeder .dog_name {
   font-style: normal;
 }
+.litters-container .parents .mother .dog_color,
+.litters-container .parents .mother .dog_insert,
+.litters-container .parents .father .dog_color,
+.litters-container .parents .father .dog_insert {
+  margin-left: 0;
+}
 .litters-container .parents .mother .dog_description,
 .litters-container .parents .father .dog_description {
   width: 100%;
-  padding: auto;
-  margin: 0;
+  padding-left: 20px;
+  font-weight: bold;
+}
+@media all and (max-width: 576px) {
+  .litters-container .parents .mother .dog_description,
+  .litters-container .parents .father .dog_description {
+    padding-left: 5px;
+  }
+}
+.litters-container .parents .mother .dog_color,
+.litters-container .parents .mother .dog_insert,
+.litters-container .parents .mother .dog_description,
+.litters-container .parents .father .dog_color,
+.litters-container .parents .father .dog_insert,
+.litters-container .parents .father .dog_description {
+  font-family: Serif;
 }
 .litters-container .parents .mother a,
 .litters-container .parents .mother button,
@@ -1087,6 +1107,7 @@ address {
   text-wrap: nowrap;
   margin: 3px;
   padding: 5px;
+  flex-grow: 1;
   text-shadow: 1px 1px 3px black;
   -webkit-text-decoration: underline white;
           text-decoration: underline white;
@@ -1104,6 +1125,8 @@ address {
   .litters-container .parents .father .lof-select-link {
     padding-left: 2px;
     padding-right: 2px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 .litters-container .parents .pills {
@@ -1116,7 +1139,6 @@ address {
   align-items: center;
   align-self: stretch;
   flex-wrap: wrap;
-  flex-grow: auto;
   flex-shrink: 1;
 }
 .litters-container .parents .adn-pill,
@@ -1126,7 +1148,8 @@ address {
   font-weight: bold;
   text-wrap: nowrap;
   text-shadow: 1px 1px 3px black;
-  letter-spacing: 0.15rem;
+  flex-grow: 1;
+  text-align: center;
 }
 .litters-container .parents .adn-pill {
   color: rgb(130, 216, 244);
@@ -1137,6 +1160,7 @@ address {
   color: rgb(244, 223, 128);
   -webkit-text-decoration: underline rgb(244, 223, 128);
           text-decoration: underline rgb(244, 223, 128);
+  text-wrap: balance;
 }
 .litters-container img {
   max-height: 250px;
@@ -1255,6 +1279,7 @@ address {
 }
 .puppies_container .gallery_php .puppy-solo .card {
   max-width: 390px;
+  background: linear-gradient(180deg, #8a4784 1%, #d473cc 20%, #cfcfcf 80%);
 }
 @media all and (max-width: 380px) {
   .puppies_container .gallery_php .puppy-solo .card {
