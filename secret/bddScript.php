@@ -47,6 +47,7 @@ $table_puppies = "CREATE TABLE  IF NOT EXISTS `damoiseaux_php`.`puppies` (
     `id` INT NOT NULL AUTO_INCREMENT, 
     `name` VARCHAR(50) NOT NULL, 
     `sex` VARCHAR(10) NOT NULL, 
+    `color` VARCHAR(50) NOT NULL DEFAULT 'Gris',
     `available` VARCHAR(20) NOT NULL, 
     `description` VARCHAR(255), 
     `main_img_path` VARCHAR(255) NOT NULL, 

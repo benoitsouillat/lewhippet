@@ -7,6 +7,8 @@ require_once('../administration/classes/Puppy.php');
 require_once('../administration/classes/Litter.php');
 
 
+include_once(__DIR__ . '/bb_dispo_in_top.php');
+
 $stmtLitter = $conn->query(getAllLittersActive());
 while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
     $litter = new Litter;

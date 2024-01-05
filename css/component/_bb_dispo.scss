@@ -253,6 +253,7 @@
     }
 
     .pills {
+      font-family: sans-serif;
       position: relative;
       bottom: 0;
       @include flex_row_around;
@@ -392,7 +393,7 @@
 
     .badge-blue {
       color: black;
-      text-shadow: 2px 2px 6px black;
+      text-shadow: 2px 2px 60px black;
       background-color: lightblue !important;
       margin: 2px 0;
       margin-right: 0.2rem;
@@ -413,6 +414,121 @@
 
     .text-blue {
       color: lightblue !important;
+    }
+
+    .puppy-solo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+
+      .card {
+        max-width: 390px;
+
+        @media all and (max-width: $xs) {
+          margin-left: 0;
+          margin-right: 0;
+          max-width: 370px;
+        }
+
+
+        figure {
+          margin: 0;
+          padding: 0;
+          height: 600px;
+
+          .diapo {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+          }
+
+          .arrow-div {
+            button {
+              border: none;
+              background-color: transparent;
+
+              .bi {
+                color: rgb(248, 249, 250);
+              }
+            }
+          }
+
+          figcaption {
+            margin: 0;
+            padding: 0;
+            height: 330px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            .header-caption-container {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+              padding: 4px 15px;
+              margin: 10px auto;
+            }
+
+            .mother-description-container {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: flex-start;
+              flex-wrap: wrap;
+
+              @media all and (max-width: 330px) {
+                width: 95%;
+              }
+
+
+              .mother-description {
+                flex-grow: 1;
+                text-align: left;
+                padding-left: 20px;
+              }
+            }
+
+            .puppy-description-container {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: flex-start;
+              flex-wrap: wrap;
+              flex-grow: 2;
+
+              @media all and (max-width: 330px) {
+                width: 95%;
+              }
+
+
+              .puppy-description {
+                width: 100%;
+                padding: 20px;
+                text-align: left;
+                flex-grow: 2;
+
+              }
+
+              .puppy-price {
+                width: 100%;
+                padding: 0 20px;
+                font-size: 1.2em;
+                text-align: right;
+                font-style: italic;
+              }
+            }
+          }
+        }
+      }
+
     }
 
   }

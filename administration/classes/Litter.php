@@ -205,7 +205,11 @@ class Litter
             //Récupération de la Portée qui vient d'être enregistrée
             $litterStmt = $conn->prepare(getLitterFromId());
             $litterStmt->bindParam(':id', $lastId);
-            $litterStmt->execute();
+            try {
+                $litterStmt->execute();
+            } catch (PDOException $e) {
+                echo "Une erreur s'est produite lors de la récupération de l'id de la portée";
+            }
             $litterData = $litterStmt->fetch(PDO::FETCH_OBJ);
             $litter = new Litter();
             $litter->fillFromStdClass($litterData, $conn);
@@ -242,7 +246,7 @@ class Litter
             try {
                 $stmt->execute();
             } catch (PDOException $e) {
-                echo 'Erreur suivante : ' . $e;
+                echo 'Erreur lors de la création d\'un mâle : ' . $e;
             }
         }
     }

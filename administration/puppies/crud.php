@@ -118,6 +118,7 @@ if (check_session_start($_SESSION)) {
         // $stmt->bindParam(':mother_name', $_POST['mother_name']);
         // $stmt->bindParam(':mother_adn', $_POST['mother_adn']);
         // $stmt->bindParam(':mother_champion', $_POST['mother_champion']);
+        // $stmt->bindValue(':litter_id', 0);
 
         $stmt_id = $conn->prepare("SELECT id from puppies");
         $stmt_id->execute();
@@ -126,7 +127,7 @@ if (check_session_start($_SESSION)) {
         $idNumber = end($id_array)->id + 1;
 
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
-            $file_name = $idNumber . '-' . replace_reunion_char(replace_accent($puppy['name']));
+            $file_name = $idNumber . '-' . replace_reunion_char(replace_accent($_POST['name']));
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
             $file_destination = '../../puppies_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             if (move_uploaded_file($file_tmp, $file_destination)) {
