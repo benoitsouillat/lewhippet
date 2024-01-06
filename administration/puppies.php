@@ -31,7 +31,7 @@ require_once(__DIR__ . '/classes/Puppy.php');
                 <a href="./repros.php" class="btn btn-primary m-1">Gérer les reproducteurs</a>
                 <a href="./litters.php" class="btn btn-pink m-1">Gérer les portées</a>
                 <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>
-                <a href="puppies/crud.php" class="btn btn-success m-1">Créer une vente isolée</a>
+                <!-- <a href="puppies/crud.php" class="btn btn-success m-1">Créer une vente isolée</a> -->
                 <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
             </div>
             <div class="query-filter-container admin-menu">
@@ -72,8 +72,8 @@ require_once(__DIR__ . '/classes/Puppy.php');
             <?php if ($puppy->getEnable() == 0) {
                         echo 'disable-filter';
                     }; ?>">
-                        <div class='litter-number-info bg-info'>
-                            <p class='text-center'>Portée <?php echo $puppy->getLitter()->getLitterNumberSCC() ?></p>
+                        <div class='litter-number-info bg-primary text-light'>
+                            <p class='text-center'>Portée <?php echo $puppy->getLitter()->getLitterNumberSCC() . ' - (' . $puppy->getLitter()->getMother()->getName() . ' x ' . $puppy->getLitter()->getFather()->getName() . ')' ?></p>
                         </div>
                         <div class="m1 p2 text-center bg-dark text-light">
                             <p class="w-100 col-12 text-center bg-dark text-light">Position : </p>
