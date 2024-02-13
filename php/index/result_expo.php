@@ -1,33 +1,37 @@
 <section class="index__expo__result col-12 text-center d-flex flex-column justify-content-start align-items-center">
     <h2>Nos dernières actualités</h2>
+    <div id="prodige" class="w-75 text-center">
+        <h3>Précieuse nous offre de magnifiques bébés</h3>
+        <img src="/images/naissance_tetee_precieuse.jpg" alt="Bébé de Précieuse"><br>
+
+        <p> Précieuse et Poopy sont fiers de vous annoncer la naissance de leurs petits . Tout se passe bien, la maman
+            se repose et le papa veille</p>
+
+        <a href="/chiots/bb_dispo.php" class="btn btn-pink">Voir ses bébés</a>
+    </div>
 
     <div id="pompadour" class="w-75 text-center">
         <h3>Pompadour, une spéciale de Lévrier</h3>
         <div class="slider-auto-container bg-dark">
             <div class="slider-auto-horizontal">
                 <div class="slider-element">
-                    <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg"
-                        alt="Zazie Championne des léviers">
+                    <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg" alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zero to One of Gentle Mind<br> </p>
                 </div>
                 <div class="slider-element">
-                    <img class="slider-element" src="../../expo_img/zazie_pompadour_statique_23.jpg"
-                        alt="Zazie Championne des léviers">
+                    <img class="slider-element" src="../../expo_img/zazie_pompadour_statique_23.jpg" alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zazie</p>
                 </div>
                 <div class="slider-element">
-                    <img class="slider-element" src="../../expo_img/yami_pompadour_23.jpg"
-                        alt="Zazie Championne des léviers">
+                    <img class="slider-element" src="../../expo_img/yami_pompadour_23.jpg" alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Yamamoto dit 'Yami' of Gentle Mind </p>
                 </div>
                 <div class="slider-element">
-                    <img class="slider-element" src="../../expo_img/zazie_yam_pompadour_23.jpg"
-                        alt="Zazie Championne des léviers">
+                    <img class="slider-element" src="../../expo_img/zazie_yam_pompadour_23.jpg" alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zazie et Yami <br> Meilleur de Race et Meilleur Sexe Opposé</p>
                 </div>
                 <div class="slider-element">
-                    <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg"
-                        alt="Zazie Championne des léviers">
+                    <img class="slider-element" src="../../expo_img/zazie_allure_pompadour23.jpg" alt="Zazie Championne des léviers">
                     <p class="bg-dark text-light">Zero to One of Gentle Mind<br> </p>
                 </div>
 
@@ -48,7 +52,7 @@
         </p>
     </div>
 
-    <div id="prodige" class="w-75 text-center">
+    <!-- <div id="prodige" class="w-75 text-center">
         <h3>Prodige, un prénom bien choisi</h3>
         <img src="/expo_img/prodige.jpg" alt="Prodige et ses chiots disponibles"><br>
 
@@ -90,7 +94,7 @@
             des Damoiseaux, ont écrit ensemble un chapitre inoubliable dans l’histoire de la race Whippet.
         </p>
         <a href="/chiots/bb_dispo.php#prodige" class="btn btn-pink">Voir ses bébés</a>
-    </div>
+    </div> -->
 
     <div class="w-75">
         <h3>Carcassonne CACIB 2023</h3>
