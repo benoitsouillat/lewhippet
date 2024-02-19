@@ -67,6 +67,8 @@ $josette = new Repro(
 $father->fetchToDatabase();
 $mother->fetchToDatabase();
 $josette->fetchToDatabase();
+$father->setId(2);
+$mother->setId(1);
 $litter = new Litter(
     '2025-09-08',
     $father,
@@ -76,4 +78,7 @@ $litter = new Litter(
     '2525-69-998565',
     true
 );
+
 $litter->fetchToDatabase();
+$litter->generatePuppiesMales();
+$litter->generatePuppiesFemales();

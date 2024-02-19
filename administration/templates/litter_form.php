@@ -11,8 +11,7 @@ if (isset($_GET['error'])) {
 }
 ?>
 
-<form class="col-10 d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php"
-    enctype="multipart/form-data" method="post">
+<form class="col-10 d-flex flex-column justify-content-around align-items-center" action="../litters/crud.php" enctype="multipart/form-data" method="post">
     <div class="col-12 d-flex flex-row justify-content-around align-items-center flex-nowrap mb-2">
         <input type="hidden" name="mother_id" value="<?php echo $litter->getMother()->getId(); ?>">
         <h3 class="col-8 text-center"> Mariage de
@@ -30,17 +29,14 @@ if (isset($_GET['error'])) {
     <div class="col-8 d-flex justify-content-between">
         <fieldset class="d-flex flex-row justify-content-start align-items-center col-5">
             <label class="text-center" for="birthdate">Date de naissance des bébés : </label>
-            <input type="date" name="birthdate" class="form-control" id="birthdate"
-                value=<?php echo $litter->getBirthdate(); ?>>
+            <input type="date" name="birthdate" class="form-control" id="birthdate" value=<?php echo $litter->getBirthdate(); ?> required>
         </fieldset>
         <fieldset class="d-flex flex-column justify-content-between align-items-center col-5">
 
             <label for="numberPuppies">Nombre de femelle(s)</label>
-            <input class="form-control" type="number" name="numberFemales" id="numberFemales"
-                <?php echo "value={$litter->getNumberFemales()}" ?>>
+            <input class="form-control" type="number" name="numberFemales" id="numberFemales" <?php echo "value={$litter->getNumberFemales()}" ?>>
             <label for="numberPuppies">Nombre de mâle(s)</label>
-            <input class="form-control" type="number" name="numberMales" id="numberMales"
-                <?php echo "value={$litter->getNumberMales()}" ?>>
+            <input class="form-control" type="number" name="numberMales" id="numberMales" <?php echo "value={$litter->getNumberMales()}" ?>>
             <?php $litter->setNumberPuppies($litter->getNumberFemales() + $litter->getNumberMales()); ?>
             <p><?php echo $litter->getNumberPuppies() . ' chiot(s)'; ?></p>
         </fieldset>

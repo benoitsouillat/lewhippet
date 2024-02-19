@@ -22,7 +22,7 @@ class Litter
     private ?RequestPDO $pdo = null;
 
     function __construct(
-        $birthdate = '',
+        $birthdate = '2020-01-01',
         ?Repro $mother = null,
         ?Repro $father = null,
         Int $numberPuppies = 0,
@@ -35,6 +35,7 @@ class Litter
         $this->father = $father;
         $this->numberPuppies = $numberPuppies;
         $this->numberMales = $numberMales;
+        $this->numberFemales = $numberPuppies - $numberMales;
         $this->litterNumberSCC = $litterNumberSCC;
         $this->enable = $enable;
         $this->pdo = new RequestPDO;
@@ -83,6 +84,133 @@ class Litter
             echo "Erreur lors de l'enregistrement de la portée" . $e;
         }
     }
+    public function generatePuppiesMales()
+    {
+        $stmt = $this->pdo->connect()->prepare(getAllLitters());
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $lastId = end($result)['id'];
+
+        for ($i = 0; $i < $this->getNumberMales(); $i++) {
+            //Création d'un nouveau chiot Mâle
+            $puppyMale = new Puppy();
+            $puppyMale->setName('Mâle N°' . $i + 1);
+
+            //Récupération de la Portée qui vient d'être enregistrée
+            $litterStmt = $this->pdo->connect()->prepare(getLitterFromId());
+            $litterStmt->bindParam(':id', $lastId);
+            try {
+                $litterStmt->execute();
+            } catch (PDOException $e) {
+                echo "Une erreur s'est produite lors de la récupération de l'id de la portée";
+            }
+            $litterData = $litterStmt->fetch(PDO::FETCH_OBJ);
+            $litter = new Litter();
+            $litter->fillFromStdClass($litterData);
+            $puppyMale->setLitter($litter);
+
+            //Récupèration de la position
+            $stmt_id = $this->pdo->connect()->prepare("SELECT id FROM puppies");
+            $stmt_id->execute();
+            $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
+            if (empty($id_array)) {
+                $position = 1;
+            } else {
+                $position = end($id_array)->id + 1 + $i;
+            }
+            $puppyMale->setPosition($position);
+
+            $puppyName = $puppyMale->getName();
+            $puppySex = 'male';
+            $puppyColor = "Grise";
+            $puppyDescription = '';
+            $puppyAvailable = 'Disponible';
+            $puppyEnable = 0;
+            $puppyLitterId = $puppyMale->getLitter()->getId();
+            $puppyMainImg = '../../puppies_img/default.jpg';
+            $puppyPosition = $puppyMale->getPosition();
+
+            $stmt = $this->pdo->connect()->prepare(createPuppy());
+            $stmt->bindParam(':name', $puppyName);
+            $stmt->bindParam(':sex', $puppySex);
+            $stmt->bindParam(':color', $puppyColor);
+            $stmt->bindParam(':description', $puppyDescription);
+            $stmt->bindParam(':available', $puppyAvailable);
+            $stmt->bindParam(':enable', $puppyEnable);
+            $stmt->bindParam(':litter_id', $puppyLitterId);
+            $stmt->bindParam(':main_img_path', $puppyMainImg);
+            $stmt->bindParam(':position', $puppyPosition);
+
+            try {
+                $stmt->execute();
+            } catch (PDOException $e) {
+                echo 'Erreur lors de la création d\'un mâle : ' . $e;
+            }
+        }
+    }
+    public function generatePuppiesFemales()
+    {
+        $stmt = $this->pdo->connect()->prepare(getAllLitters());
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $lastId = end($result)['id'];
+
+        for ($i = 0; $i < $this->getNumberFemales(); $i++) {
+            //Création d'un nouveau chiot Femelle
+            $puppyFemale = new Puppy();
+            $puppyFemale->setName('Femelle N°' . $i + 1);
+
+            //Récupération de la Portée qui vient d'être enregistrée
+            $litterStmt = $this->pdo->connect()->prepare(getLitterFromId());
+            $litterStmt->bindParam(':id', $lastId);
+            $litterStmt->execute();
+            $litterData = $litterStmt->fetch(PDO::FETCH_OBJ);
+            $litter = new Litter();
+            $litter->fillFromStdClass($litterData);
+            $puppyFemale->setLitter($litter);
+
+            //Récupèration de la position
+            $stmt_id = $this->pdo->connect()->prepare("SELECT id from puppies");
+            $stmt_id->execute();
+            $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
+            if (empty($id_array)) {
+                $position = 1;
+            } else {
+                $position = end($id_array)->id + 1 + $i + $this->getNumberMales();
+            }
+            $puppyFemale->setPosition($position);
+
+            $puppyName = $puppyFemale->getName();
+            $puppySex = 'femelle';
+            $puppyColor = "Grise";
+            $puppyDescription = '';
+            $puppyAvailable = 'Disponible';
+            $puppyEnable = 0;
+            $puppyLitterId = $puppyFemale->getLitter()->getId();
+            $puppyMainImg = '../../puppies_img/default.jpg';
+            $puppyPosition = $puppyFemale->getPosition();
+
+            $stmt = $this->pdo->connect()->prepare(createPuppy());
+            $stmt->bindParam(':name', $puppyName);
+            $stmt->bindParam(':sex', $puppySex);
+            $stmt->bindParam(':color', $puppyColor);
+            $stmt->bindParam(':description', $puppyDescription);
+            $stmt->bindParam(':available', $puppyAvailable);
+            $stmt->bindParam(':enable', $puppyEnable);
+            $stmt->bindParam(':litter_id', $puppyLitterId);
+            $stmt->bindParam(':main_img_path', $puppyMainImg);
+            $stmt->bindParam(':position', $puppyPosition);
+
+            try {
+                $stmt->execute();
+            } catch (PDOException $e) {
+                echo 'Erreur suivante : ' . $e;
+            }
+        }
+    }
+
     /**
      * Get the value of birthdate
      */
@@ -208,124 +336,6 @@ class Litter
         $this->litterNumberSCC = $litterNumberSCC;
 
         return $this;
-    }
-    public function generatePuppiesMales($conn)
-    {
-        $stmt = $conn->prepare(getAllLitters());
-        $stmt->execute();
-
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $lastId = end($result)['id'];
-
-        for ($i = 0; $i < $this->getNumberMales(); $i++) {
-            //Création d'un nouveau chiot Mâle
-            $puppyMale = new Puppy();
-            $puppyMale->setName('Mâle N°' . $i + 1);
-
-            //Récupération de la Portée qui vient d'être enregistrée
-            $litterStmt = $conn->prepare(getLitterFromId());
-            $litterStmt->bindParam(':id', $lastId);
-            try {
-                $litterStmt->execute();
-            } catch (PDOException $e) {
-                echo "Une erreur s'est produite lors de la récupération de l'id de la portée";
-            }
-            $litterData = $litterStmt->fetch(PDO::FETCH_OBJ);
-            $litter = new Litter();
-            $litter->fillFromStdClass($litterData, $conn);
-            $puppyMale->setLitter($litter);
-
-            //Récupèration de la position
-            $stmt_id = $conn->prepare("SELECT id from puppies");
-            $stmt_id->execute();
-            $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
-            $position = end($id_array)->id + 1 + $i;
-            $puppyMale->setPosition($position);
-
-            $puppyName = $puppyMale->getName();
-            $puppySex = 'male';
-            $puppyColor = "Grise";
-            $puppyDescription = '';
-            $puppyAvailable = 'Disponible';
-            $puppyEnable = 0;
-            $puppyLitterId = $puppyMale->getLitter()->getId();
-            $puppyMainImg = '../../puppies_img/default.jpg';
-            $puppyPosition = $puppyMale->getPosition();
-
-            $stmt = $conn->prepare(createPuppy());
-            $stmt->bindParam(':name', $puppyName);
-            $stmt->bindParam(':sex', $puppySex);
-            $stmt->bindParam(':color', $puppyColor);
-            $stmt->bindParam(':description', $puppyDescription);
-            $stmt->bindParam(':available', $puppyAvailable);
-            $stmt->bindParam(':enable', $puppyEnable);
-            $stmt->bindParam(':litter_id', $puppyLitterId);
-            $stmt->bindParam(':main_img_path', $puppyMainImg);
-            $stmt->bindParam(':position', $puppyPosition);
-
-            try {
-                $stmt->execute();
-            } catch (PDOException $e) {
-                echo 'Erreur lors de la création d\'un mâle : ' . $e;
-            }
-        }
-    }
-    public function generatePuppiesFemales($conn)
-    {
-        $stmt = $conn->prepare(getAllLitters());
-        $stmt->execute();
-
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $lastId = end($result)['id'];
-
-        for ($i = 0; $i < $this->getNumberFemales(); $i++) {
-            //Création d'un nouveau chiot Femelle
-            $puppyFemale = new Puppy();
-            $puppyFemale->setName('Femelle N°' . $i + 1);
-
-            //Récupération de la Portée qui vient d'être enregistrée
-            $litterStmt = $conn->prepare(getLitterFromId());
-            $litterStmt->bindParam(':id', $lastId);
-            $litterStmt->execute();
-            $litterData = $litterStmt->fetch(PDO::FETCH_OBJ);
-            $litter = new Litter();
-            $litter->fillFromStdClass($litterData, $conn);
-            $puppyFemale->setLitter($litter);
-
-            //Récupèration de la position
-            $stmt_id = $conn->prepare("SELECT id from puppies");
-            $stmt_id->execute();
-            $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
-            $position = end($id_array)->id + 1 + $i + $this->getNumberMales();
-            $puppyFemale->setPosition($position);
-
-            $puppyName = $puppyFemale->getName();
-            $puppySex = 'femelle';
-            $puppyColor = "Grise";
-            $puppyDescription = '';
-            $puppyAvailable = 'Disponible';
-            $puppyEnable = 0;
-            $puppyLitterId = $puppyFemale->getLitter()->getId();
-            $puppyMainImg = '../../puppies_img/default.jpg';
-            $puppyPosition = $puppyFemale->getPosition();
-
-            $stmt = $conn->prepare(createPuppy());
-            $stmt->bindParam(':name', $puppyName);
-            $stmt->bindParam(':sex', $puppySex);
-            $stmt->bindParam(':color', $puppyColor);
-            $stmt->bindParam(':description', $puppyDescription);
-            $stmt->bindParam(':available', $puppyAvailable);
-            $stmt->bindParam(':enable', $puppyEnable);
-            $stmt->bindParam(':litter_id', $puppyLitterId);
-            $stmt->bindParam(':main_img_path', $puppyMainImg);
-            $stmt->bindParam(':position', $puppyPosition);
-
-            try {
-                $stmt->execute();
-            } catch (PDOException $e) {
-                echo 'Erreur suivante : ' . $e;
-            }
-        }
     }
 
 
