@@ -14,3 +14,8 @@ function getUser($email)
 {
     return "SELECT * FROM users WHERE email=$email";
 }
+
+function setUserRole()
+{
+    return "UPDATE users SET role = :role WHERE `id` = :id";
+}

@@ -3,6 +3,7 @@
 include_once(__DIR__ . '/../../secret/connexion.php');
 require_once(__DIR__ . '/../sql/repros_request.php');
 require_once(__DIR__ . '/Dog.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
 
 class Repro extends Dog
 {
@@ -39,17 +40,38 @@ class Repro extends Dog
         $this->champion = $champion;
     }
 
-    public function fetchFromDatabase($id, $conn)
+    public function fetchFromDatabase($id)
     {
-        // $dsn = "mysql:host=localhost;port=3306;dbname=damoiseaux_php";
-        // $conn = new PDO($dsn, 'root', '');
-        $stmt = $conn->prepare(getReproFromId());
+        $pdo = new RequestPDO();
+        $stmt = $pdo->connect()->prepare(getReproFromId());
         $stmt->bindParam(':id', $id);
         $stmt->execute();
 
         if ($reproFetch = $stmt->fetch(PDO::FETCH_OBJ)) {
             $this->id = $reproFetch->id;
             $this->fillFromStdClass($reproFetch);
+        }
+    }
+
+    public function fetchToDatabase()
+    {
+        $pdo = new RequestPDO();
+        $stmt = $pdo->connect()->prepare(createRepro());
+        $stmt->bindValue(':name', $this->getName());
+        $stmt->bindValue(':sex', $this->getSex());
+        $stmt->bindValue(':color', $this->getColor());
+        $stmt->bindValue(':insert', $this->getInsert());
+        $stmt->bindValue(':breeder', $this->getBreeder());
+        $stmt->bindValue(':birthdate', $this->getBirthdate());
+        $stmt->bindValue(':lofselect', $this->getLofselect());
+        $stmt->bindValue(':adn', $this->getIsAdn());
+        $stmt->bindValue(':champion', $this->getIsChampion());
+        $stmt->bindValue(':description', $this->getDescription());
+        $stmt->bindValue(':main_img_path', $this->getMainImgPath());
+        try {
+            $stmt->execute();
+        } catch (ErrorException $e) {
+            echo "Une erreur s'est produite durant l'enregistrement du reproducteur - " . $e;
         }
     }
 

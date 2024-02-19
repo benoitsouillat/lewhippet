@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:latest
+    container_name: php_damoiseaux_mysql
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/damoiseaux
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_DATABASE: damoiseaux
+      MYSQL_USER: venture
+      MYSQL_PASSWORD: password
+    ports:
+      - 3309:3306
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_damoiseaux_php
+    ports:
+      - "8888:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: php_damoiseaux_pma
+    ports:
+      - "8989:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ''
+    depends_on:
+      - db
