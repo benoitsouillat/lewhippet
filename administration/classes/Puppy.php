@@ -3,6 +3,7 @@
 include_once(__DIR__ . '/Dog.php');
 include_once(__DIR__ . '/Litter.php');
 include_once(__DIR__ . '/../sql/puppies_request.php');
+// require_once(__DIR__ . '/../../database/requestPDO.php');
 
 class Puppy extends Dog
 {
@@ -14,6 +15,7 @@ class Puppy extends Dog
     private $available = '';
     private $position = 0;
     private $enable = false;
+    // private ?RequestPDO $pdo = null;
 
     public function __construct(
         string $name = '',
@@ -36,6 +38,7 @@ class Puppy extends Dog
         $this->enable = $enable;
         $this->litter = $litter;
         $this->breeder = ' de la Romance des Damoiseaux ';
+        // $this->pdo = new RequestPDO();
     }
 
     public function fillFromStdClass(stdClass $data, $conn)
@@ -49,7 +52,7 @@ class Puppy extends Dog
         $this->setDescription($data->description);
         $this->setPosition($data->position);
         $litter = new Litter;
-        $litter->fetchFromDatabase($data->Litter, $conn);
+        $litter->fetchFromDatabase($data->Litter);
         $this->setLitter($litter);
         $this->setEnable($data->enable);
     }

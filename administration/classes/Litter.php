@@ -6,6 +6,7 @@ include_once(__DIR__ . '/Puppy.php');
 include_once(__DIR__ . '/../sql/litters_request.php');
 require_once(__DIR__ . '/../sql/puppies_request.php');
 require_once(__DIR__ . '/../../secret/connexion.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
 
 class Litter
 {
@@ -18,6 +19,7 @@ class Litter
     private Int $numberFemales = 0;
     private String $litterNumberSCC = '';
     private bool $enable = false;
+    private ?RequestPDO $pdo = null;
 
     function __construct(
         $birthdate = '',
@@ -26,7 +28,7 @@ class Litter
         Int $numberPuppies = 0,
         Int $numberMales = 0,
         String $litterNumberSCC = '',
-        Bool $enable = false
+        Bool $enable = false,
     ) {
         $this->birthdate = $birthdate;
         $this->mother = $mother;
@@ -35,17 +37,18 @@ class Litter
         $this->numberMales = $numberMales;
         $this->litterNumberSCC = $litterNumberSCC;
         $this->enable = $enable;
+        $this->pdo = new RequestPDO;
     }
 
-    public function fillFromStdClass(stdClass $data, $conn)
+    public function fillFromStdClass(stdClass $data)
     {
         $this->setId($data->id);
         $this->setBirthdate($data->birthdate);
         $mother = new Repro();
-        $mother->fetchFromDatabase($data->mother_id, $conn);
+        $mother->fetchFromDatabase($data->mother_id);
         $this->setMother($mother);
         $father = new Repro();
-        $father->fetchFromDatabase($data->father_id, $conn);
+        $father->fetchFromDatabase($data->father_id);
         $this->setFather($father);
         $this->setNumberPuppies($data->number_of_puppies);
         $this->setNumberMales($data->number_of_males);
@@ -53,14 +56,31 @@ class Litter
         $this->setLitterNumberSCC($data->litter_number);
         $this->setEnable($data->enable);
     }
-    public function fetchFromDatabase($id, $conn)
+    public function fetchFromDatabase($id)
     {
-        $stmt = $conn->prepare(getLitterFromId());
+        $stmt = $this->pdo->connect()->prepare(getLitterFromId());
         $stmt->bindParam(':id', $id);
         $stmt->execute();
 
         if ($litterFetch = $stmt->fetch(PDO::FETCH_OBJ)) {
-            $this->fillFromStdClass($litterFetch, $conn);
+            $this->fillFromStdClass($litterFetch);
+        }
+    }
+
+    public function fetchToDatabase()
+    {
+        $stmt = $this->pdo->connect()->prepare(createLitter());
+        $stmt->bindValue(':birthdate', $this->getBirthdate());
+        $stmt->bindValue(':mother_id', $this->getMother()->getId());
+        $stmt->bindValue(':father_id', $this->getFather()->getId());
+        $stmt->bindValue(':numberPuppies', $this->getNumberPuppies());
+        $stmt->bindValue(':numberMales', $this->getNumberMales());
+        $stmt->bindValue(':numberFemales', $this->getNumberFemales());
+        $stmt->bindValue(':litterNumberSCC', $this->getLitterNumberSCC());
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Erreur lors de l'enregistrement de la portée" . $e;
         }
     }
     /**

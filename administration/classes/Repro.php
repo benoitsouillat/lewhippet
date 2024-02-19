@@ -16,6 +16,7 @@ class Repro extends Dog
     private $lofselect;
     private $adn;
     private $champion;
+    private ?RequestPDO $pdo = null;
 
     public function __construct(
         string $name = '',
@@ -38,12 +39,12 @@ class Repro extends Dog
         $this->lofselect = $lofselect;
         $this->adn = $adn;
         $this->champion = $champion;
+        $this->pdo = new RequestPDO();
     }
 
     public function fetchFromDatabase($id)
     {
-        $pdo = new RequestPDO();
-        $stmt = $pdo->connect()->prepare(getReproFromId());
+        $stmt = $this->pdo->connect()->prepare(getReproFromId());
         $stmt->bindParam(':id', $id);
         $stmt->execute();
 
@@ -55,8 +56,7 @@ class Repro extends Dog
 
     public function fetchToDatabase()
     {
-        $pdo = new RequestPDO();
-        $stmt = $pdo->connect()->prepare(createRepro());
+        $stmt = $this->pdo->connect()->prepare(createRepro());
         $stmt->bindValue(':name', $this->getName());
         $stmt->bindValue(':sex', $this->getSex());
         $stmt->bindValue(':color', $this->getColor());
