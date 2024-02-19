@@ -1,15 +1,17 @@
 <?php
-require_once(__DIR__ . '/../../secret/connexion.php');
+// require_once(__DIR__ . '/../../secret/connexion.php');
 require_once(__DIR__ . '/../utilities/usefull_functions.php');
 require_once(__DIR__ . '/../sql/users_request.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
 
+$pdo = new RequestPDO();
 
 if (isset($_POST['username'], $_POST['password'])) {
 
     $email = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email=:email");
+    $stmt = $pdo->connect()->prepare("SELECT * FROM users WHERE email=:email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $bddUser = $stmt->fetch(PDO::FETCH_ASSOC);

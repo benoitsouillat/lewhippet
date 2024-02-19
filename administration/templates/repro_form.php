@@ -1,7 +1,9 @@
 <?php
 
 require_once('../classes/Repro.php');
-$stmt = $conn->prepare(getAllRepros());
+require_once('../../database/requestPDO.php');
+$pdo = new RequestPDO();
+$stmt = $pdo->connect()->prepare(getAllRepros());
 $stmt->execute();
 $repros = $stmt->fetchAll(PDO::FETCH_OBJ);
 $title = $repro->getName();

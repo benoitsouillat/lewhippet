@@ -5,7 +5,7 @@ include_once(__DIR__ . '/Repro.php');
 include_once(__DIR__ . '/Puppy.php');
 include_once(__DIR__ . '/../sql/litters_request.php');
 require_once(__DIR__ . '/../sql/puppies_request.php');
-require_once(__DIR__ . '/../../secret/connexion.php');
+// require_once(__DIR__ . '/../../secret/connexion.php');
 require_once(__DIR__ . '/../../database/requestPDO.php');
 
 class Litter

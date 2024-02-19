@@ -1,18 +1,19 @@
 <?php
-require_once('../secret/connexion.php');
+// require_once('../secret/connexion.php');
 require_once('../administration/sql/puppies_request.php');
 require_once('../administration/utilities/usefull_functions.php');
 require_once('../php/component/display-functions.php');
 require_once('../administration/classes/Puppy.php');
 require_once('../administration/classes/Litter.php');
-
-
+require_once(__DIR__ . '/../../database/requestPDO.php');
 include_once(__DIR__ . '/bb_dispo_in_top.php');
 
-$stmtLitter = $conn->query(getAllLittersActive());
+$pdo = new RequestPDO();
+
+$stmtLitter = $pdo->connect()->query(getAllLittersActive());
 while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
     $litter = new Litter;
-    $litter->fillFromStdClass($litterData, $conn);
+    $litter->fillFromStdClass($litterData, $pdo->connect());
 
     echo "<div class='litters-container'>
         <h4>Naissance des bébés de {$litter->getMother()->getName()} et de {$litter->getFather()->getName()} </h4>
@@ -61,7 +62,7 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
                                 ";
 
 
-    $stmtPuppy = $conn->prepare(getAllPuppiesByPositionAndLitter());
+    $stmtPuppy = $pdo->connect()->prepare(getAllPuppiesByPositionAndLitter());
     $stmtPuppy->bindValue(':litter_id', $litter->getId());
     $stmtPuppy->execute();
 
@@ -69,11 +70,11 @@ while ($litterData = $stmtLitter->fetch(PDO::FETCH_OBJ)) :
     while ($puppyData = $stmtPuppy->fetch(PDO::FETCH_OBJ)) :
 
         $puppy = new Puppy;
-        $puppy->fillFromStdClass($puppyData, $conn);
+        $puppy->fillFromStdClass($puppyData, $pdo->connect());
         $availableColor = getAvailableColor($puppy->getAvailable());
         $sexColor = getSexColor($puppy->getSex());
 
-        $stmtForPuppyImages = $conn->prepare(getPuppyImages());
+        $stmtForPuppyImages = $pdo->connect()->prepare(getPuppyImages());
         $stmtForPuppyImages->bindParam(':dogId', $puppyData->id);
         $stmtForPuppyImages->execute();
         $puppyImages = $stmtForPuppyImages->fetchAll(PDO::FETCH_ASSOC);

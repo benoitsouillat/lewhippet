@@ -1,6 +1,6 @@
 <?php
 
-include_once(__DIR__ . '/../../secret/connexion.php');
+// include_once(__DIR__ . '/../../secret/connexion.php');
 require_once(__DIR__ . '/../sql/repros_request.php');
 require_once(__DIR__ . '/Dog.php');
 require_once(__DIR__ . '/../../database/requestPDO.php');

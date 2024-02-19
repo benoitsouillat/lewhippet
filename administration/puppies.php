@@ -1,9 +1,11 @@
 <?php
 session_start();
-require_once(__DIR__ . '/../secret/connexion.php');
+// require_once(__DIR__ . '/../secret/connexion.php');
 require_once(__DIR__ . '/utilities/usefull_functions.php');
 require_once(__DIR__ . '/sql/puppies_request.php');
 require_once(__DIR__ . '/classes/Puppy.php');
+require_once(__DIR__ . '/../database/requestPDO.php');
+$pdo = new RequestPDO();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,33 +49,35 @@ require_once(__DIR__ . '/classes/Puppy.php');
                     $query = $_GET['query'];
                     switch ($query) {
                         case 'litter':
-                            $stmt = $conn->query(getAllPuppiesByLitter());
+                            $stmt = $pdo->connect()->query(getAllPuppiesByLitter());
                             break;
                         case 'litterreverse':
-                            $stmt = $conn->query(getAllPuppiesByLastLitter());
+                            $stmt = $pdo->connect()->query(getAllPuppiesByLastLitter());
                             break;
                         case 'active':
-                            $stmt = $conn->query(getAllPuppiesByEnable());
+                            $stmt = $pdo->connect()->query(getAllPuppiesByEnable());
                             break;
                         case 'default';
-                            $stmt = $conn->query(getAllPuppiesByPosition());
+                            $stmt = $pdo->connect()->query(getAllPuppiesByPosition());
                             break;
                         default:
-                            $stmt = $conn->query(getAllPuppies());
+                            $stmt = $pdo->connect()->query(getAllPuppies());
                     }
                 } else {
-                    $stmt = $conn->query(getAllPuppiesByPosition());
+                    $stmt = $pdo->connect()->query(getAllPuppiesByPosition());
                 }
                 while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
                     $puppy = new Puppy();
-                    $puppy->fillFromStdClass($puppyData, $conn);
+                    $puppy->fillFromStdClass($puppyData, $pdo->connect());
                 ?>
                     <div class="card justify-content-between col-10 col-sm-6 col-lg-4 col-xl-3 p-2 mt-1 
             <?php if ($puppy->getEnable() == 0) {
                         echo 'disable-filter';
                     }; ?>">
                         <div class='litter-number-info bg-primary text-light'>
-                            <p class='text-center'>Portée <?php echo $puppy->getLitter()->getLitterNumberSCC() . ' - (' . $puppy->getLitter()->getMother()->getName() . ' x ' . $puppy->getLitter()->getFather()->getName() . ')' ?></p>
+                            <p class='text-center'>Portée
+                                <?php echo $puppy->getLitter()->getLitterNumberSCC() . ' - (' . $puppy->getLitter()->getMother()->getName() . ' x ' . $puppy->getLitter()->getFather()->getName() . ')' ?>
+                            </p>
                         </div>
                         <div class="m1 p2 text-center bg-dark text-light">
                             <p class="w-100 col-12 text-center bg-dark text-light">Position : </p>
