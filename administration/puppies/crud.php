@@ -2,13 +2,16 @@
 session_start();
 require_once('../sql/puppies_request.php');
 require_once('../utilities/usefull_functions.php');
-require_once('../../secret/connexion.php');
+// require_once('../../secret/connexion.php');
 require_once(__DIR__ . '/../classes/Puppy.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
+require_once(__DIR__ . '/../../php/resizer.php');
 
 //Mettre le logo de la Romance des Damoiseaux
 define('DEFAULT_PUPPY_PATH_IMG', '../../puppies_img/default.jpg');
 
 if (check_session_start($_SESSION)) {
+    $pdo = new RequestPDO();
 
     if (isset($_GET['id'])) {
         // Delete
@@ -18,7 +21,7 @@ if (check_session_start($_SESSION)) {
             $arrayImg = scandir($imgDirectory);
             $regImg = '/^' . preg_quote($id, '/') . '-.*/';
 
-            $stmt = $conn->prepare(deletePuppy($id));
+            $stmt = $pdo->connect()->prepare(deletePuppy($id));
             $stmt->bindValue(':id', $id);
             try {
                 $stmt->execute();
@@ -34,13 +37,13 @@ if (check_session_start($_SESSION)) {
         }
         // Modify
         $id = $_GET['id'];
-        $stmt = $conn->prepare(getPuppyFromId());
+        $stmt = $pdo->connect()->prepare(getPuppyFromId());
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         try {
             $puppyData = $stmt->fetch(PDO::FETCH_OBJ);
             $puppy = new Puppy();
-            $puppy->fillFromStdClass($puppyData, $conn);
+            $puppy->fillFromStdClass($puppyData);
             include(__DIR__ . '/../templates/puppy_form.php');
         } catch (PDOException $e) {
             echo "Une erreur s'est produite : " . $e->getMessage();
@@ -55,9 +58,12 @@ if (check_session_start($_SESSION)) {
 
             foreach ($imagesUploadedTmp as $imageTmpName) {
                 $prefix = substr($imageTmpName, -8, -4);
-                $destination = '../../puppies_img/' . $_POST['puppy_id'] . '-' . $prefix . '.jpg';
+                $destination_name = $_POST['puppy_id'] . '-' . $prefix;
+                $destination_folder = '../../puppies_img/';
+                $destination = $destination_folder . $destination_name . '.jpg';
                 move_uploaded_file($imageTmpName, $destination);
-                $stmt = $conn->prepare(savePuppyImages());
+                resizeimage($destination, $destination_name, '/puppies_img/');
+                $stmt = $pdo->connect()->prepare(savePuppyImages());
                 $stmt->bindParam(':dogId', $_POST['puppy_id']);
                 $stmt->bindParam(':path', $destination);
                 $stmt->execute();
@@ -66,7 +72,7 @@ if (check_session_start($_SESSION)) {
             }
         }
 
-        $stmt = $conn->prepare(updatePuppy());
+        $stmt = $pdo->connect()->prepare(updatePuppy());
         $stmt->bindParam(':id', $_POST['puppy_id']);
         $stmt->bindParam(':name', $_POST['name']);
         $stmt->bindParam(':sex', $_POST['sex']);
@@ -82,11 +88,14 @@ if (check_session_start($_SESSION)) {
                 die();
             }
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
+            $destination_name = replace_reunion_char(replace_accent($file_name));
+            $destination_folder = '/puppies_img/';
             $file_destination = '../../puppies_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             move_uploaded_file($file_tmp, $file_destination);
+            resizeimage($file_destination, $destination_name, $destination_folder);
             $stmt->bindValue(':main_img_path',  $file_destination);
         } else {
-            $stateImg = $conn->prepare(getPuppyFromId());
+            $stateImg = $pdo->connect()->prepare(getPuppyFromId());
             $stateImg->bindParam(':id', $_POST['puppy_id']);
             $stateImg->execute();
             $puppyImgDb = $stateImg->fetch(PDO::FETCH_ASSOC);
@@ -106,7 +115,7 @@ if (check_session_start($_SESSION)) {
         $enable = 1;
         $LitterNull = 7;
 
-        $stmt = $conn->prepare(createPuppy());
+        $stmt = $pdo->connect()->prepare(createPuppy());
         $stmt->bindParam(':name', $_POST['name']);
         $stmt->bindParam(':sex', $_POST['sex']);
         $stmt->bindParam(':color', $_POST['color']);
@@ -120,7 +129,7 @@ if (check_session_start($_SESSION)) {
         // $stmt->bindParam(':mother_champion', $_POST['mother_champion']);
         // $stmt->bindValue(':litter_id', 0);
 
-        $stmt_id = $conn->prepare("SELECT id from puppies");
+        $stmt_id = $pdo->connect()->prepare("SELECT id from puppies");
         $stmt_id->execute();
         $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
         $position = end($id_array)->id + 1;
@@ -154,7 +163,7 @@ if (check_session_start($_SESSION)) {
                 $prefix = substr($imageTmpName, -8, -4);
                 $destination = '../../puppies_img/' . $idNumber . '-' . $prefix . '.jpg';
                 move_uploaded_file($imageTmpName, $destination);
-                $stmt = $conn->prepare(savePuppyImages());
+                $stmt = $pdo->connect()->prepare(savePuppyImages());
                 $stmt->bindParam(':dogId', $idNumber);
                 $stmt->bindParam(':path', $destination);
                 $stmt->execute();

@@ -1,6 +1,6 @@
 <?php
 
-extension_loaded('gd') or die('GD extension not available');
+// extension_loaded('gd') or die('GD extension not available');
 function resizeimage($picture, $destination_name = null, $destination_folder = null)
 {
     $infos = getimagesize($picture);
@@ -15,7 +15,7 @@ function resizeimage($picture, $destination_name = null, $destination_folder = n
     if ($destination_folder === null) {
         $destination_folder = __DIR__ . '/../..' . '/src/img/diapos/tmp/';
     } else {
-        $destination_folder = __DIR__ . $destination_folder;
+        $destination_folder = __DIR__ . '/../' . $destination_folder;
     }
     if ($destination_name === null) {
         $destination_name = substr($picture, -10, 10);
@@ -49,6 +49,11 @@ function resizeimage($picture, $destination_name = null, $destination_folder = n
         // On multiplie par x(step)% pour réduire au fur et à mesure
         $new_width *= $witdh_step;
         $new_height *= $height_step;
+
+        // On passe la valeur en INT si elle est float
+        $new_width = intval($new_width, 10);
+        $new_height = intval($new_height, 10);
+
         // On créé l'image vierge
         $new_image = imagecreatetruecolor($new_width, $new_height);
 

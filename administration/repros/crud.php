@@ -3,9 +3,11 @@
 session_start();
 require_once('../sql/repros_request.php');
 require_once('../utilities/usefull_functions.php');
-require_once('../../secret/connexion.php');
+// require_once('../../secret/connexion.php');
 require_once('../classes/Repro.php');
+require_once(__DIR__ . '/../../php/resizer.php');
 
+$pdo = new RequestPDO();
 $repro = new Repro();
 $repro->setBirthdate(date('Y-m-d'));
 $repro->setLofselect('https://www.centrale-canine.fr/lofselect/recherche-chien');
@@ -13,7 +15,7 @@ if (check_session_start($_SESSION)) {
     $_SESSION['error'] = [];
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
         try {
-            $stmt = $conn->prepare(deleteRepro());
+            $stmt = $pdo->connect()->prepare(deleteRepro());
             $stmt->bindParam(':id', $_GET['id']);
             $stmt->execute();
             header('Location:../repros.php');
@@ -27,7 +29,7 @@ if (check_session_start($_SESSION)) {
         }
     }
     if (isset($_GET['id'])) {
-        $stmt = $conn->prepare(getReproFromId());
+        $stmt = $pdo->connect()->prepare(getReproFromId());
         $stmt->bindParam(':id', $_GET['id']);
         $stmt->execute();
         $reproData = $stmt->fetch(PDO::FETCH_OBJ);
@@ -43,7 +45,9 @@ if (check_session_start($_SESSION)) {
                 $prefix = substr($imageTmpName, -8, -4);
                 $destination = '../../repros_img/' . $_POST['repro_id'] . '-' . $prefix . '.jpg';
                 move_uploaded_file($imageTmpName, $destination);
-                $stmt = $conn->prepare(saveReproImages());
+                resizeimage($file_destination, $_POST['repro_id'] . '-' . $prefix, '/repros_img/');
+
+                $stmt = $pdo->connect()->prepare(saveReproImages());
                 $stmt->bindParam(':reproId', $_POST['repro_id']);
                 $stmt->bindParam(':path', $destination);
                 $stmt->execute();
@@ -54,7 +58,7 @@ if (check_session_start($_SESSION)) {
             $reproId = $_POST['repro_id'];
             $repro->setMainImgPath($_POST['repro_img']);
         } else {
-            $stmt_id = $conn->prepare("SELECT id from repros");
+            $stmt_id = $pdo->connect()->prepare("SELECT id from repros");
             $stmt_id->execute();
             $id_array = $stmt_id->fetchAll(PDO::FETCH_OBJ);
             $reproId = end($id_array)->id + 1;
@@ -78,15 +82,16 @@ if (check_session_start($_SESSION)) {
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
             $file_destination = '../../repros_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             move_uploaded_file($file_tmp, $file_destination);
+            resizeimage($file_destination, $file_name, '/repros_img/');
             $repro->setMainImgPath($file_destination);
         }
 
         // Modification du reproducteur si son ID est transmis, ou création d'un nouveau
         if (isset($_POST['repro_id'])) {
-            $stmt = $conn->prepare(updateRepro());
+            $stmt = $pdo->connect()->prepare(updateRepro());
             $stmt->bindValue(':id', $_POST['repro_id']);
         } else {
-            $stmt = $conn->prepare(createRepro());
+            $stmt = $pdo->connect()->prepare(createRepro());
         }
         // Bind Value avant Fetch sur la base de donnée depuis l'entité Class::Repro via les méthodes de l'objet
         try {

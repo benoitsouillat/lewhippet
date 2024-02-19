@@ -41,7 +41,7 @@ class Puppy extends Dog
         // $this->pdo = new RequestPDO();
     }
 
-    public function fillFromStdClass(stdClass $data, $conn)
+    public function fillFromStdClass(stdClass $data)
     {
         $this->setId($data->id);
         $this->setName($data->name);

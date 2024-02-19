@@ -9,6 +9,6 @@ try {
     $stmt->execute();
     header("Location:../puppies/crud.php?id={$_GET['puppy_id']}");
 } catch (PDOException $e) {
-    "Une erreur s'est produite : " . $e;
+    "Une erreur s'est produite lors de la suppression de l'image : " . $e;
     echo "<a href='../gerance.php'>Retour à la gestion</a>";
 }
