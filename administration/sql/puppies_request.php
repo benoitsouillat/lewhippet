@@ -23,7 +23,7 @@ function getAllPuppiesByLastLitter()
 }
 function getAllPuppiesByPositionAndLitter()
 {
-    return "SELECT * FROM puppies WHERE Litter = :litter_id ORDER BY position";
+    return "SELECT * FROM puppies WHERE Litter = :litter_id ORDER BY available ASC, position";
 };
 
 function createPuppy()

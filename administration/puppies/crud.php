@@ -138,8 +138,11 @@ if (check_session_start($_SESSION)) {
         if (isset($_FILES['main_img_path']) && $_FILES['main_img_path']['name'] != null) {
             $file_name = $idNumber . '-' . replace_reunion_char(replace_accent($_POST['name']));
             $file_tmp = $_FILES['main_img_path']['tmp_name'];
+            $destination_name = replace_reunion_char(replace_accent($file_name));
+            $destination_folder = '/puppies_img/';
             $file_destination = '../../puppies_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
             if (move_uploaded_file($file_tmp, $file_destination)) {
+                resizeimage($file_destination, $destination_name, $destination_folder);
                 echo "L'image a été enregistrée avec succès.";
             }
         }

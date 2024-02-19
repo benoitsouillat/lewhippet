@@ -2,14 +2,17 @@
 
 session_start();
 require_once('../utilities/usefull_functions.php');
-require_once('../../secret/connexion.php');
+// require_once('../../secret/connexion.php');
 require_once('../sql/repros_request.php');
 require_once('../sql/litters_request.php');
 require_once('../classes/Repro.php');
 require_once('../classes/Litter.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
+
 
 if (check_session_start($_SESSION)) {
     $_SESSION['error'] = [];
+    $pdo = new RequestPDO();
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
         try {
             $stmt = $conn->prepare(deleteLitter());

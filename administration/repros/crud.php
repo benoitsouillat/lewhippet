@@ -5,6 +5,7 @@ require_once('../sql/repros_request.php');
 require_once('../utilities/usefull_functions.php');
 // require_once('../../secret/connexion.php');
 require_once('../classes/Repro.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
 require_once(__DIR__ . '/../../php/resizer.php');
 
 $pdo = new RequestPDO();
@@ -54,7 +55,7 @@ if (check_session_start($_SESSION)) {
             }
         }
         // Récupération de l'id s'il est envoyé ou création d'un ID +1 depuis la table Repros
-        if ($_POST['repro_id']) {
+        if (isset($_POST['repro_id'])) {
             $reproId = $_POST['repro_id'];
             $repro->setMainImgPath($_POST['repro_img']);
         } else {

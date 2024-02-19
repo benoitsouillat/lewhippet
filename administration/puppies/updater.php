@@ -1,17 +1,20 @@
 <?php
 
-require_once('../../secret/connexion.php');
+// require_once('../../secret/connexion.php');
 require_once('../sql/puppies_request.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
+
+$pdo = new RequestPDO();
 
 $puppyId = $_GET['puppyId'];
-$stmt = $conn->prepare(getAllPuppies());
+$stmt = $pdo->connect()->prepare(getAllPuppies());
 $stmt->execute();
 $dataPuppies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt = $conn->prepare(getPuppyFromId());
+$stmt = $pdo->connect()->prepare(getPuppyFromId());
 $stmt->bindParam(':id', $puppyId);
 $stmt->execute();
 $puppyWillBeChange = $stmt->fetch(PDO::FETCH_ASSOC);
-$stmt = $conn->prepare(updatePuppyPosition());
+$stmt = $pdo->connect()->prepare(updatePuppyPosition());
 $stmt->bindParam(':id', $puppyId);
 
 
@@ -45,7 +48,7 @@ if (isset($_GET['positionInputer']) && $_GET['positionInputer'] != $puppyWillBeC
 } elseif (isset($_GET['positionInputer']) && $_GET['positionInputer'] == $puppyWillBeChange['position']) {
     header('Location: ../puppies.php');
 } elseif (isset($_GET['enable'])) {
-    $stmtToggler = $conn->prepare(togglePuppy());
+    $stmtToggler = $pdo->connect()->prepare(togglePuppy());
     $stmtToggler->bindParam(':id', $puppyId);
     $stmtToggler->bindParam(':enable', $_GET['enable']);
     try {
