@@ -64,7 +64,7 @@ $pdo = new RequestPDO();
                             $stmt = $pdo->connect()->query(getAllPuppies());
                     }
                 } else {
-                    $stmt = $pdo->connect()->query(getAllPuppiesByPosition());
+                    $stmt = $pdo->connect()->query(getAllPuppiesByLitter());
                 }
                 while ($puppyData = $stmt->fetch(PDO::FETCH_OBJ)) :
                     $puppy = new Puppy();
@@ -75,8 +75,9 @@ $pdo = new RequestPDO();
                         echo 'disable-filter';
                     }; ?>">
                         <div class='litter-number-info bg-primary text-light'>
-                            <p class='text-center'>Portée
-                                <?php echo $puppy->getLitter()->getLitterNumberSCC() . ' - (' . $puppy->getLitter()->getMother()->getName() . ' x ' . $puppy->getLitter()->getFather()->getName() . ')' ?>
+                            <p class='text-center'>Né le
+                                <?php echo $puppy->getLitter()->getBirthdate() . ' - ' . $puppy->getLitter()->getMother()->getName() . ' : N° ' . $puppy->getLitter()->getLitterNumberSCC();
+                                ')' ?>
                             </p>
                         </div>
                         <div class="m1 p2 text-center bg-dark text-light">
