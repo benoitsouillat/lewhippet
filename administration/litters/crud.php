@@ -15,7 +15,7 @@ if (check_session_start($_SESSION)) {
     $pdo = new RequestPDO();
     if (isset($_GET['delete']) && $_GET['delete'] == true) {
         try {
-            $stmt = $conn->prepare(deleteLitter());
+            $stmt = $pdo->connect()->prepare(deleteLitter());
             $stmt->bindParam(':id', $_GET['id']);
             $stmt->execute();
             header('Location:../litters.php');
@@ -34,27 +34,27 @@ if (check_session_start($_SESSION)) {
     if (isset($_GET['repro_id']) && $_GET['repro_id'] != 0) {
         $getReproId = $_GET['repro_id'];
         $motherRepro = new Repro();
-        $motherRepro->fetchFromDatabase($getReproId, $conn);
+        $motherRepro->fetchFromDatabase($getReproId);
         $litter->setMother($motherRepro);
 
-        $stmt = $conn->prepare(getAllMales());
+        $stmt = $pdo->connect()->prepare(getAllMales());
         $stmt->execute();
         $reprosMales = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     if (isset($_GET['id'])) {
-        $stmt = $conn->prepare(getLitterFromId());
+        $stmt = $pdo->connect()->prepare(getLitterFromId());
         $stmt->bindParam(':id', $_GET['id']);
         $stmt->execute();
         $litterData = $stmt->fetch(PDO::FETCH_OBJ);
-        $litter->fillFromStdClass($litterData, $conn);
+        $litter->fillFromStdClass($litterData);
         $litter->setLitterNumberSCC($litterData->litter_number);
         include_once('../templates/litter_modify_form.php');
     } elseif (isset($_POST) && isset($_POST['mother_id'])) {
         $mother = new Repro();
-        $mother->fetchFromDatabase($_POST['mother_id'], $conn);
+        $mother->fetchFromDatabase($_POST['mother_id']);
         $litter->setMother($mother);
         $father = new Repro();
-        $father->fetchFromDatabase(intval($_POST['father_id']), $conn);
+        $father->fetchFromDatabase(intval($_POST['father_id']));
         $litter->setFather($father);
         $litter->setBirthdate($_POST['birthdate']);
         if (isset($_POST['numberFemales'])) {
@@ -64,10 +64,10 @@ if (check_session_start($_SESSION)) {
         $litter->setNumberPuppies($litter->getNumberFemales() + $litter->getNumberMales());
         $litter->setLitterNumberSCC($_POST['sccNumber']);
         if (isset($_POST['litter_id'])) {
-            $stmt = $conn->prepare(updateLitter());
+            $stmt = $pdo->connect()->prepare(updateLitter());
             $stmt->bindValue(':id', $_POST['litter_id']); //Use GetId() ?
         } else {
-            $stmt = $conn->prepare(createLitter());
+            $stmt = $pdo->connect()->prepare(createLitter());
         }
         try {
             $stmt->bindValue(':birthdate', $litter->getBirthdate());
@@ -79,8 +79,8 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':litterNumberSCC', $litter->getLitterNumberSCC());
             $stmt->execute();
             if (!isset($_POST['litter_id'])) {
-                $litter->generatePuppiesMales($conn);
-                $litter->generatePuppiesFemales($conn);
+                $litter->generatePuppiesMales();
+                $litter->generatePuppiesFemales();
             }
             header('Location:../litters.php');
         } catch (PDOException $e) {

@@ -1,9 +1,11 @@
 <?php
 
-require_once('../../secret/connexion.php');
+// require_once('../../secret/connexion.php');
 require_once('../../administration/sql/puppies_request.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
+$pdo = new RequestPDO();
 
-$stmt = $conn->prepare(deletePuppyImage());
+$stmt = $pdo->connect()->prepare(deletePuppyImage());
 $stmt->bindParam('imageId', $_GET['id']);
 try {
     $stmt->execute();

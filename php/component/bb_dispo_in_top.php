@@ -5,7 +5,8 @@
             <div class="diapo-container justify-content-center" data-speed="3500" data-dog-id="unreve">
                 <div class="diapo diapo-unreve">
                     <img src="../../puppies_img/puppy-solo/unreve.jpg" alt="Chiot Whippet Disponible">
-                    <img src="../../puppies_img/puppy-solo/unreve2.jpg" alt="seconde image d'un chiot whippet" loading="lazy">
+                    <img src="../../puppies_img/puppy-solo/unreve2.jpg" alt="seconde image d'un chiot whippet"
+                        loading="lazy">
                     <img src="../../puppies_img/puppy-solo/unreve3.jpg" alt="Chiot Whippet Disponible" loading="lazy">
                     <img src="../../puppies_img/puppy-solo/unreve4.jpg" alt="Chiot Whippet Disponible" loading="lazy">
                     <img src="../../puppies_img/puppy-solo/unreve.jpg" alt="Chiot Whippet Disponible">
@@ -72,7 +73,7 @@
                     </p>
                 </div>
                 <div class="puppy-description-container">
-                    <p class="puppy-description">Adorable chiot de 4 mois et demi et très attachant.
+                    <p class="puppy-description">Adorable chiot né le 05 Août 2023 et très attachant.
                         Il adore la compagnie mais sait rester seul. Il adore aussi partager les balades et les jeux.
                         <br> Il est habitué aux chats et aux autres chiens. Il est câlin et affectueux mais sait aussi
                         rester sage et discret
