@@ -9,7 +9,8 @@
                 les portées</a>
             <a href="../../administration/puppies.php" class="btn btn-success m-1">Gérer
                 les chiots</a>
-
+            <a href="../../administration/news.php" class="btn btn-info m-1">Gérer
+                les actualités</a>
             <!--         
                 <a href="#" class="btn btn-secondary mb-1">Modifier mon profil</a>
             <a href="#" class="btn btn-warning mb-1">Gérer les résultats d'exposition</a>

@@ -4,10 +4,12 @@ require_once(__DIR__ . '/requestPDO.php');
 require_once(__DIR__ . '/../administration/classes/Repro.php');
 require_once(__DIR__ . '/../administration/classes/Litter.php');
 require_once(__DIR__ . '/../administration/classes/Puppy.php');
+require_once(__DIR__ . '/../administration/classes/News.php');
 require_once(__DIR__ . '/../administration/sql/users_request.php');
 require_once(__DIR__ . '/../administration/sql/repros_request.php');
 require_once(__DIR__ . '/../administration/sql/litters_request.php');
 require_once(__DIR__ . '/../administration/sql/puppies_request.php');
+require_once(__DIR__ . '/../administration/sql/news_request.php');
 
 $pdo = new RequestPDO();
 $admin_email = 'admin@email.fr';

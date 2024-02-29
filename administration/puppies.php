@@ -32,6 +32,7 @@ $pdo = new RequestPDO();
             <div class="admin-menu">
                 <a href="./repros.php" class="btn btn-primary m-1">Gérer les reproducteurs</a>
                 <a href="./litters.php" class="btn btn-pink m-1">Gérer les portées</a>
+                <a href="./news.php" class="btn btn-info m-1">Gérer les actualités</a>
                 <a href="./gerance.php" class="btn btn-dark m-1">Retour à la gestion</a>
                 <!-- <a href="puppies/crud.php" class="btn btn-success m-1">Créer une vente isolée</a> -->
                 <a href="logout.php" class="btn btn-danger m-1">Se déconnecter</a>
