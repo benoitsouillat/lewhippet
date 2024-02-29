@@ -18,11 +18,11 @@ function getNewsFromId()
 }
 function createNews()
 {
-    return "INSERT INTO news (news_id, title, description, display, image) VALUES (:newsID, :title, :description, :display, :image)";
+    return "INSERT INTO news (title, description, display, image) VALUES (:title, :description, :display, :image)";
 };
 function updateNews()
 {
-    return "UPDATE news SET title = :title, description = :description, display = :display, image = :image";
+    return "UPDATE news SET title = :title, description = :description, display = :display, image = :image WHERE news_id = :newsID";
 };
 function deleteNews()
 {

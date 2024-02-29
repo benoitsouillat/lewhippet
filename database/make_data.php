@@ -84,3 +84,10 @@ $litter = new Litter(
 $litter->fetchToDatabase();
 $litter->generatePuppiesMales();
 $litter->generatePuppiesFemales();
+
+$news = new News(
+    'Une extraordinaire journée',
+    'Un super Lorem Ipsum avec des mots dans tous les sens pour représenter la description de cet évènement Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus doloremque quod atque ipsum totam commodi accusantium vel eum molestiae recusandae, necessitatibus natus inventore quis perspiciatis excepturi alias similique dolore eveniet dolorem modi optio facere ullam impedit vitae. Cum asperiores neque cumque, voluptatum delectus accusamus minus sunt eos? Ea commodi possimus, repudiandae adipisci aperiam deserunt voluptates optio autem totam impedit vel ipsum quidem tenetur ipsa iusto quos in architecto, sed temporibus? Cupiditate eos distinctio voluptatibus alias, harum quo enim quia accusantium veniam voluptatum laudantium libero ad architecto cum quae voluptatem minima.',
+    true
+);
+$news->createNews();

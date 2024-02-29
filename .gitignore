@@ -11,6 +11,7 @@ photos/
 poeme/
 puppies_img/*
 repros_img/*
+news_img/*
 sommaire/
 Video/
 albums-galeries-whippet.htm
@@ -30,6 +31,7 @@ secret/*
 !guide-pratique/
 !puppies_img/default.jpg
 !repros_img/default.jpg
+!news_img/default.jpg
 !secret/bddScript.php
 !secret/bddDeleteSomeData.php
 !css/component/_*

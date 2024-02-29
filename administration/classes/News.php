@@ -1,10 +1,11 @@
 <?php
 require_once(__DIR__ . '/../../database/requestPDO.php');
 require_once(__DIR__ . '/../../php/resizer.php');
+require_once(__DIR__ . '/../utilities/usefull_functions.php');
 
 class News
 {
-    private $id;
+    private $id = 0;
     private $title = '';
     private $description = '';
     private $display = true;
@@ -15,7 +16,7 @@ class News
         $title = '',
         $description = '',
         $display = true,
-        $image = ''
+        $image = '/news_img/default.jpg'
     ) {
         $this->title = $title;
         $this->description = $description;
@@ -37,6 +38,22 @@ class News
             echo "Une erreur est subvenue durant l'enregistrement de cette actualité : " . $e;
         }
     }
+    public function updateNews()
+    {
+        $stmt = $this->pdo->connect()->prepare(updateNews());
+        $stmt->bindValue(':newsID', $this->id);
+        $stmt->bindValue(':title', $this->title);
+        $stmt->bindValue(':description', $this->description);
+        $stmt->bindValue(':display', $this->display);
+        // var_dump($this->image);
+        // die();
+        $stmt->bindValue(':image', $this->image);
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Une erreur est subvenue durant la mise à jour de cette actualité : " . $e;
+        }
+    }
 
     public function fillFromStdClass(stdClass $datas)
     {
@@ -51,7 +68,7 @@ class News
         $stmt = $this->pdo->connect()->prepare(getNewsFromId());
         $stmt->bindParam(':newsID', $id);
         $stmt->execute();
-        $datas = $stmt->fetch(PDO::FETCH_ASSOC);
+        $datas = $stmt->fetch(PDO::FETCH_OBJ);
         $this->fillFromStdClass($datas);
     }
     public function fillFromArray($array)
@@ -60,14 +77,30 @@ class News
         $this->setTitle($array['title']);
         $this->setDescription($array['description']);
         $this->setDisplay($array['display']);
-        $this->setImage($array['image']);
+        $this->setImage($array['news_image']);
     }
     public function fillFromForm($post)
     {
+        $this->id = $post['news_id'];
+        if ($post['news_id'] > 0) {
+            $this->fillFromDatabase($post['news_id']);
+        }
         $this->title = $post['title'];
         $this->description = $post['description'];
         $this->display = $post['display'];
-        $this->image = $post['image'];
+    }
+    public function moveNewsImage($files)
+    {
+        $file_name = $this->getTitle() . $this->getId();
+        if (isset($files['news_image']) && $files['news_image']['name'] != null) {
+            $file_tmp = $files['news_image']['tmp_name'];
+            $destination_name = replace_reunion_char(replace_accent($file_name));
+            $destination_folder = '/news_img/';
+            $file_destination = '../../news_img/' . replace_reunion_char(replace_accent($file_name)) . '.jpg';
+            move_uploaded_file($file_tmp, $file_destination);
+            resizeimage($file_destination, $destination_name, $destination_folder);
+            $this->setImage($file_destination);
+        }
     }
 
     /**
