@@ -2230,6 +2230,9 @@ address {
 .news_list_container .news_list_content .text .row_description {
   padding: 10px;
 }
+.news_list_container .news_list_content .text .row_create_date {
+  padding: 12px;
+}
 .news_list_container .news_list_content img {
   -o-object-fit: contain;
      object-fit: contain;

@@ -30,6 +30,12 @@ const confirmDeleteLitter = (id, name) => {
     }
 }
 
+const confirmDeleteNews = (id) => {
+    if (confirm(`Etes-vous sûr de vouloir supprimer cette actu ??`)) {
+        location.assign('../administration/news/crud_news.php?id=' + id + "&delete=true");
+    }
+}
+
 const errorReproDisplay = () => {
     errorContainer = document.getElementById('errorContainer');
     errorArray.forEach(error => {

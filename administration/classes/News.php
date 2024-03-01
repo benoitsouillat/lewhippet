@@ -10,28 +10,33 @@ class News
     private $description = '';
     private $display = true;
     private $image;
+    private $createdAt = null;
     private $pdo = null;
 
     public function __construct(
         $title = '',
         $description = '',
         $display = true,
-        $image = '/news_img/default.jpg'
+        $image = '/news_img/default.jpg',
     ) {
         $this->title = $title;
         $this->description = $description;
         $this->display = $display;
         $this->image = $image;
         $this->pdo = new RequestPDO();
+        $this->createdAt = '';
     }
 
     public function createNews()
     {
+        $this->createdAt = new DateTime('now');
+        $this->setCreatedAt($this->createdAt->format('Y-m-d'));
         $stmt = $this->pdo->connect()->prepare(createNews());
         $stmt->bindValue(':title', $this->title);
         $stmt->bindValue(':description', $this->description);
         $stmt->bindValue(':display', $this->display);
         $stmt->bindValue(':image', $this->image);
+        $stmt->bindValue(':createdAt', $this->createdAt);
         try {
             $stmt->execute();
         } catch (PDOException $e) {
@@ -45,13 +50,21 @@ class News
         $stmt->bindValue(':title', $this->title);
         $stmt->bindValue(':description', $this->description);
         $stmt->bindValue(':display', $this->display);
-        // var_dump($this->image);
-        // die();
         $stmt->bindValue(':image', $this->image);
         try {
             $stmt->execute();
         } catch (PDOException $e) {
             echo "Une erreur est subvenue durant la mise à jour de cette actualité : " . $e;
+        }
+    }
+    public function deleteNews()
+    {
+        $stmt = $this->pdo->connect()->prepare(deleteNews());
+        $stmt->bindValue(':newsID', $this->id);
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Impossible de supprimer cette actu ! Contactez l'administrateur du site !";
         }
     }
 
@@ -62,6 +75,7 @@ class News
         $this->setDescription($datas->description);
         $this->setDisplay($datas->display);
         $this->setImage($datas->image);
+        $this->setCreatedAt($datas->created_at);
     }
     public function fillFromDatabase(int $id)
     {
@@ -78,6 +92,7 @@ class News
         $this->setDescription($array['description']);
         $this->setDisplay($array['display']);
         $this->setImage($array['news_image']);
+        $this->setCreatedAt($array['news_createdAt']);
     }
     public function fillFromForm($post)
     {
@@ -199,6 +214,26 @@ class News
     public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of createdAt
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set the value of createdAt
+     *
+     * @return  self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

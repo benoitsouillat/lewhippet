@@ -18,7 +18,7 @@ function getNewsFromId()
 }
 function createNews()
 {
-    return "INSERT INTO news (title, description, display, image) VALUES (:title, :description, :display, :image)";
+    return "INSERT INTO news (title, description, display, image, created_at) VALUES (:title, :description, :display, :image, :createdAt)";
 };
 function updateNews()
 {

@@ -77,6 +77,7 @@ $table_news = "CREATE TABLE IF NOT EXISTS `damoiseaux`.`news` (
     `description` TEXT,
     `display` BOOLEAN NOT NULL DEFAULT TRUE,
     `image` VARCHAR(255) NOT NULL DEFAULT '',
+    `created_at` DATE NOT NULL DEFAULT '2024-01-01',
     PRIMARY KEY (`news_id`)) ENGINE = InnoDB;";
 
 $pdo->connect()->exec($database);
