@@ -12,6 +12,10 @@ function getAllNewsActives()
 {
     return "SELECT * FROM news WHERE display = true";
 };
+function displayIndex()
+{
+    return "SELECT * FROM news WHERE display = true ORDER BY `news_id` DESC LIMIT 3";
+}
 function getNewsFromId()
 {
     return "SELECT * FROM news WHERE :newsID = `news_id`";

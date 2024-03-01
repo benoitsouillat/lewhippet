@@ -1,6 +1,31 @@
-<section class="index__expo__result col-12 text-center d-flex flex-column justify-content-start align-items-center">
+<?php
+require_once(__DIR__ . '/../../administration/classes/News.php');
+require_once(__DIR__ . '/../../administration/sql/news_request.php');
+require_once(__DIR__ . '/../../database/requestPDO.php');
+
+$pdo = new RequestPDO();
+$stmt = $pdo->connect()->prepare(displayIndex());
+$stmt->execute();
+$datas = $stmt->fetchAll(PDO::FETCH_OBJ);
+?>
+
+<section class="index__expo__result">
     <h2>Nos dernières actualités</h2>
-    <div id="prodige" class="w-75 text-center">
+    <?php
+    foreach ($datas as $data) {
+        $news = new News();
+        $news->fillFromStdClass($data);
+        echo "
+        <div class='news_displayer'>
+        <h3>{$news->getTitle()}</h3>
+        <img src='{$news->getImage()}' alt='{$news->getTitle()}'><br>
+        <p>{$news->getDescription()}</p>
+        <p class='article_date'>Edité le : {$news->getCreatedAt()}</p>
+    </div>";
+    }
+    ?>
+    <!--
+    <div class="w-75 text-center">
         <h3>Précieuse nous offre de magnifiques bébés</h3>
         <img src="/images/naissance_tetee_precieuse.jpg" alt="Bébé de Précieuse"><br>
 
@@ -52,7 +77,7 @@
         </p>
     </div>
 
-    <!-- <div id="prodige" class="w-75 text-center">
+    <div id="prodige" class="w-75 text-center">
         <h3>Prodige, un prénom bien choisi</h3>
         <img src="/expo_img/prodige.jpg" alt="Prodige et ses chiots disponibles"><br>
 
@@ -95,7 +120,7 @@
         </p>
         <a href="/chiots/bb_dispo.php#prodige" class="btn btn-pink">Voir ses bébés</a>
     </div> -->
-
+    <!--
     <div class="w-75">
         <h3>Carcassonne CACIB 2023</h3>
         <p> Voici les résultats de la Romance des Damoiseaux à Carcassonne cette année</p>
@@ -121,5 +146,5 @@
         <br>
         <p>Journée géniale en compagnie du soutien de La Romance des Damoiseaux, merci encore à tous.</p>
         <img src="/expo_img/zazie_bis_montlucon23.jpg" alt="Exposition Canine La Romance des Damoiseaux à Montlucon">
-    </div>
+    </div> -->
 </section>
