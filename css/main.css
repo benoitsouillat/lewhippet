@@ -1942,7 +1942,13 @@ address {
 /* FlexBox */
 /* Animation */
 /* Loading keyframes */
+header.header_admin {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .admin-menu {
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2220,6 +2226,12 @@ address {
 .news_list_container .news_list_content .text {
   width: 50%;
 }
+@media all and (max-width: 576px) {
+  .news_list_container .news_list_content .text {
+    width: 70%;
+    text-align: center;
+  }
+}
 .news_list_container .news_list_content .text .row_title {
   font-weight: bold;
   font-size: 20px;
@@ -2240,6 +2252,11 @@ address {
   max-height: 200px;
   overflow: hidden;
 }
+@media all and (max-width: 576px) {
+  .news_list_container .news_list_content img {
+    display: none;
+  }
+}
 .news_list_container .news_list_content .button_container {
   display: flex;
   flex-direction: column;
@@ -2250,6 +2267,87 @@ address {
 .news_list_container .news_list_content .badge {
   padding: 0.5rem;
   margin: 20px;
+}
+
+.news_crud_container {
+  max-width: 100%;
+}
+.news_crud_container form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.news_crud_container form label {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.news_crud_container form input {
+  max-width: 80%;
+  transition: all 300ms 10ms linear;
+}
+.news_crud_container form input:hover, .news_crud_container form input:focus {
+  border-color: #C69;
+  box-shadow: 0 0 10px 0.15rem #C69;
+}
+@media all and (max-width: 576px) {
+  .news_crud_container form input {
+    max-width: 90%;
+  }
+}
+.news_crud_container form input[type=submit]:hover, .news_crud_container form input[type=submit]:focus {
+  border-color: green;
+  box-shadow: 5px 5px 10px 0.15rem black;
+}
+.news_crud_container form textarea {
+  max-width: 90%;
+  transition: all 300ms 10ms linear;
+}
+.news_crud_container form textarea:hover, .news_crud_container form textarea:focus {
+  border-color: #C69;
+  box-shadow: 0 0 10px 0.15rem #C69;
+}
+.news_crud_container form select {
+  max-width: 30%;
+  text-align: center;
+  font-weight: bold;
+  transition: all 500ms 10ms linear;
+}
+.news_crud_container form select .news_oui {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+.news_crud_container form select .news_non {
+  background-color: #ff1a1a;
+  color: white;
+  font-weight: bold;
+}
+.news_crud_container form select:hover, .news_crud_container form select:focus {
+  color: white;
+  text-shadow: 2px 2px 2px grey;
+  background-color: #C69;
+}
+.news_crud_container form select option:focus {
+  color: green;
+}
+.news_crud_container form select option:active {
+  color: lightblue;
+}
+.news_crud_container form select option:target {
+  color: blue;
+}
+.news_crud_container form img {
+  max-height: 50vh;
+  max-width: 60%;
+  text-align: center;
+}
+@media all and (max-width: 768px) {
+  .news_crud_container form img {
+    max-width: 80%;
+  }
 }
 
 html {
