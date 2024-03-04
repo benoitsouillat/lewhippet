@@ -255,6 +255,13 @@ header.header_admin {
                 text-wrap: nowrap;
                 padding: 10px;
                 width: 100%;
+                color: $violet;
+                text-decoration-color: $violet;
+
+                &:hover {
+                    color: $violet;
+                    transform: scale(1.01);
+                }
             }
 
             .row_description {

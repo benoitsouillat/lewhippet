@@ -121,8 +121,15 @@
     }
 
     h3 {
+      max-width: 95%;
       word-wrap: normal;
       text-wrap: nowrap;
+
+      @media all and (max-width: $sm) {
+        max-width: 95%;
+        min-width: 90%;
+        text-wrap: wrap;
+      }
     }
 
     p {

@@ -15,11 +15,12 @@ $datas = $stmt->fetchAll(PDO::FETCH_OBJ);
     foreach ($datas as $data) {
         $news = new News();
         $news->fillFromStdClass($data);
+        $description = nl2br($news->getDescription());
         echo "
         <div class='news_displayer'>
         <h3>{$news->getTitle()}</h3>
         <img src='{$news->getImage()}' alt='{$news->getTitle()}'><br>
-        <p>{$news->getDescription()}</p>
+        <p>{$description}</p>
         <p class='article_date'>Edité le : {$news->getCreatedAt()}</p>
     </div>";
     }

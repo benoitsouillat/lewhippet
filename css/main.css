@@ -422,8 +422,16 @@
   }
 }
 .index__expo__result .news_displayer h3 {
+  max-width: 95%;
   word-wrap: normal;
   text-wrap: nowrap;
+}
+@media all and (max-width: 576px) {
+  .index__expo__result .news_displayer h3 {
+    max-width: 95%;
+    min-width: 90%;
+    text-wrap: wrap;
+  }
 }
 .index__expo__result .news_displayer p {
   max-width: 80%;
@@ -2286,6 +2294,12 @@ header.header_admin {
   text-wrap: nowrap;
   padding: 10px;
   width: 100%;
+  color: #8a4784;
+  text-decoration-color: #8a4784;
+}
+.news_list_container .news_list_content .text .row_title:hover {
+  color: #8a4784;
+  transform: scale(1.01);
 }
 .news_list_container .news_list_content .text .row_description {
   padding: 10px;
