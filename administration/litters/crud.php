@@ -77,6 +77,7 @@ if (check_session_start($_SESSION)) {
             $stmt->bindValue(':numberMales', $litter->getNumberMales());
             $stmt->bindValue(':numberFemales', $litter->getNumberFemales());
             $stmt->bindValue(':litterNumberSCC', $litter->getLitterNumberSCC());
+            $stmt->bindValue(':position', $litter->getPosition());
             $stmt->execute();
             if (!isset($_POST['litter_id'])) {
                 $litter->generatePuppiesMales();

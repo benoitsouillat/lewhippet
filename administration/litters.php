@@ -69,6 +69,11 @@ $pdo = new RequestPDO();
                         <h4 class="text-center">Portée de <br>
                             <?php echo $litter->getMother()->getName() . ' et de ' . $litter->getFather()->getName() ?>
                         </h4>
+                        <form class="form-control bg-dark d-flex flex-row justify-content-around flex-shrink-1 col-12" action="./litters/updater.php" method="get">
+                            <input type="hidden" name="litterId" value="<?php echo $litter->getId() ?>">
+                            <input name="position" type="number" class="text-center col-4" value="<?php echo $litter->getPosition() ?>">
+                            <button class="btn btn-dark" type="submit">Valider</button>
+                        </form>
                         <?php
                         echo ("
                 <a href=\"./litters/crud.php?id={$litterData->id}&repro_id={$litter->getMother()->getId()}\">

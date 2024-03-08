@@ -39,6 +39,7 @@ $table_litters = "CREATE TABLE  IF NOT EXISTS `damoiseaux`.`litters` (
     `number_of_females` INT,
     `litter_number` VARCHAR(255) NOT NULL,
     `enable` BOOLEAN NOT NULL DEFAULT FALSE,
+    `position` INT NOT NULL DEFAULT 0,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`mother_id`) REFERENCES `repros`(`id`),
     FOREIGN KEY (`father_id`) REFERENCES `repros`(`id`)) 
@@ -70,7 +71,6 @@ $table_images = "CREATE TABLE  IF NOT EXISTS `damoiseaux`.`images` (
     FOREIGN KEY (`dog_id`) REFERENCES `puppies`(`id`)) ENGINE = InnoDB;";
 // Permet de supprimer une portée en cas de suppression d'un reproducteur -- RESTRICT est mieux pour protéger des erreurs
 $table_litter_foreign_key = "ALTER TABLE `litters` DROP FOREIGN KEY `litters_ibfk_1`; ALTER TABLE `litters` ADD CONSTRAINT `litters_ibfk_1` FOREIGN KEY (`mother_id`) REFERENCES `repros`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT; ALTER TABLE `litters` DROP FOREIGN KEY `litters_ibfk_2`; ALTER TABLE `litters` ADD CONSTRAINT `litters_ibfk_2` FOREIGN KEY (`father_id`) REFERENCES `repros`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;";
-
 $table_news = "CREATE TABLE IF NOT EXISTS `damoiseaux`.`news` (
     `news_id` INT NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(255) NOT NULL,
@@ -79,6 +79,8 @@ $table_news = "CREATE TABLE IF NOT EXISTS `damoiseaux`.`news` (
     `image` VARCHAR(255) NOT NULL DEFAULT '',
     `created_at` DATE NOT NULL DEFAULT '2024-01-01',
     PRIMARY KEY (`news_id`)) ENGINE = InnoDB;";
+
+
 
 $pdo->connect()->exec($database);
 $pdo->connect()->exec($table_users);

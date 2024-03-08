@@ -1,12 +1,11 @@
 <?php
-
-// require_once('../../secret/connexion.php');
 require_once('../sql/litters_request.php');
 require_once(__DIR__ . '/../../database/requestPDO.php');
 
 $pdo = new RequestPDO();
 
 $litterId = $_GET['litterId'];
+
 $stmt = $pdo->connect()->prepare(getAllLitters());
 $stmt->execute();
 $dataLitters = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -26,6 +25,16 @@ if (isset($_GET['enable'])) {
         header('Location:../litters.php');
     } catch (PDOException $e) {
         echo 'Une erreur : ' . $e;
+    }
+} elseif (isset($_GET['position'])) {
+    $stmtPosition = $pdo->connect()->prepare(updateLitterPosition());
+    $stmtPosition->bindParam(':litterID', $_GET['litterId']);
+    $stmtPosition->bindParam(':position', $_GET['position']);
+    try {
+        $stmtPosition->execute();
+        header('Location:../litters.php');
+    } catch (PDOException $e) {
+        echo 'Une erreur lors du changement de position: ' . $e;
     }
 } else {
     echo 'Une erreur s\'est produite - Contactez l\'administrateur du site';

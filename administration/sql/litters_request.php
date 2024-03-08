@@ -2,7 +2,7 @@
 
 function getAllLitters()
 {
-    return "SELECT * FROM `litters`";
+    return "SELECT * FROM `litters` ORDER BY position ASC";
 }
 function getAllLittersIds()
 {
@@ -10,7 +10,7 @@ function getAllLittersIds()
 }
 function getAllLittersActive()
 {
-    return "SELECT * FROM `litters` WHERE `enable` = true";
+    return "SELECT * FROM `litters` WHERE `enable` = true ORDER BY position ASC";
 }
 function getLitterFromId()
 {
@@ -25,7 +25,8 @@ function createLitter()
         number_of_puppies, 
         number_of_males, 
         number_of_females, 
-        litter_number) 
+        litter_number,
+        position) 
         VALUES (
         :birthdate, 
         :mother_id, 
@@ -33,12 +34,17 @@ function createLitter()
         :numberPuppies, 
         :numberMales, 
         :numberFemales, 
-        :litterNumberSCC)";
+        :litterNumberSCC,
+        :position)";
 }
 
 function updateLitter()
 {
-    return "UPDATE `litters` SET birthdate = :birthdate, mother_id = :mother_id, father_id = :father_id, number_of_puppies = :numberPuppies, number_of_males = :numberMales, number_of_females = :numberFemales, litter_Number = :litterNumberSCC WHERE id = :id";
+    return "UPDATE `litters` SET birthdate = :birthdate, mother_id = :mother_id, father_id = :father_id, number_of_puppies = :numberPuppies, number_of_males = :numberMales, number_of_females = :numberFemales, litter_Number = :litterNumberSCC, position = :position WHERE id = :id";
+}
+function updateLitterPosition()
+{
+    return "UPDATE `litters` SET position = :position WHERE id = :litterID";
 }
 function toggleLitter()
 {

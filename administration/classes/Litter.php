@@ -19,6 +19,7 @@ class Litter
     private Int $numberFemales = 0;
     private String $litterNumberSCC = '';
     private bool $enable = false;
+    private int $position = 1;
     private ?RequestPDO $pdo = null;
 
     function __construct(
@@ -56,6 +57,7 @@ class Litter
         $this->setNumberFemales($data->number_of_females);
         $this->setLitterNumberSCC($data->litter_number);
         $this->setEnable($data->enable);
+        $this->setPosition($data->position);
     }
     public function fetchFromDatabase($id)
     {
@@ -78,6 +80,7 @@ class Litter
         $stmt->bindValue(':numberMales', $this->getNumberMales());
         $stmt->bindValue(':numberFemales', $this->getNumberFemales());
         $stmt->bindValue(':litterNumberSCC', $this->getLitterNumberSCC());
+        $stmt->bindValue(':position', $this->getPosition());
         try {
             $stmt->execute();
         } catch (PDOException $e) {
@@ -375,6 +378,26 @@ class Litter
     public function setEnable($enable)
     {
         $this->enable = $enable;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of position
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Set the value of position
+     *
+     * @return  self
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
 
         return $this;
     }
