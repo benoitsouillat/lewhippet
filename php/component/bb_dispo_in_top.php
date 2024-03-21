@@ -23,7 +23,7 @@
             <figcaption>
                 <div class="header-caption-container labels">
                     <h4><span class="text-center">Un rêve</span> <i class="bi bi-gender-male"> </i> </h4>
-                    <p class="alert alert-success">Disponible</p>
+                    <p class="alert alert-warning">En Option</p>
                 </div>
                 <div class="mother-description-container">
                     <p class="mother-description">Issu de Promesse (
